@@ -82,6 +82,18 @@ brew install hdf5 fftw pkg-config
 ```
 
 #### Troubleshooting
+Possible errors and their recommended fixes: 
+
+* If you have multiple accounts on your computer but only one of them has homebrew installed, you may receive a **"the following directories are not writable by your user" error**. To resolve this error, you can change the ownership of the directories to the current user and make sure this user has write permission. 
+* When executing step 2.1.1.4 (installing hdf5, fftw, and pkg-config), if you receive the error **"No available formula with the name "hdf5".**, there might bee an issue with the location of Homebrew. Try the following commands in your terminal: 
+
+```sh
+rm -rf "/usr/local/Homebrew/Library/Taps/homebrew/homebrew-core"
+```
+and then 
+```sh
+brew tap homebrew/core
+```
 
 --- 
 
@@ -120,28 +132,13 @@ Copy and paste the following command into the RStudio console to download templa
 
 You have successfully downloaded RAVE! 
 
-#### Troubleshooting
+### Troubleshooting
+* When updating RAVE, if you receive a "timeout of 60 seconds was reached" warning message, try switching to a faster network connection. 
+
 
 --- 
 
-## Starting RAVE 
-*Note:* you must quit and restart RStudio if you have just downloaded or updated RAVE in order for the application to start successfully.
-
-After restarting RStudio, copy and paste the following command into the RStudio console to open RAVE: 
-
-```sh
- rave::start_rave()
-```
-
-RAVE will display in a new web browser (Google Chrome is recommended for optimal use). A screenshot is displayed below: 
-
---- 
-
-## Closing RAVE 
-
---- 
-
-## Updating RAVE
+## Updating RAVE after initial download
 If you've already downloaded RAVE and simply wish to update the application to the most recent version, copy and paste the following command into the RStudio console: 
 
 ```sh
@@ -153,3 +150,9 @@ If you've already downloaded RAVE and simply wish to update the application to t
 **Note:** When re-updating, a pop-up might appear in RStudio asking if you want to reinstall the N27 template brain. As the template is already installed, you can click no.  
 
 ![Screenshot of RStudio console stop sign](static/image/RStudioConsoleStopSign.png) 
+
+
+
+
+
+

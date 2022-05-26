@@ -1,0 +1,25 @@
+# Get Started
+
+<!--- [click](#install-the-prerequisites) --> 
+
+Now that you've successfully installed RAVE, review the following instructions to get started using the tool.  
+
+## Starting RAVE
+
+*Note:* you must quit and restart RStudio if you have just downloaded or updated RAVE in order for the application to start successfully.
+
+After restarting RStudio, copy and paste the following command into the RStudio console to open RAVE: 
+
+```sh
+ rave::start_rave()
+```
+
+RAVE will display in a new web browser (Google Chrome is recommended for optimal use). 
+
+## Closing RAVE 
+To completely close the RAVE server: 
+1). Click the red stop sign in the bottom left panel of RStudio.
+2). Quit the RStudio application. If asked whether you want to **Save workspace image?**, click no.  
+
+**Note:** Closing the RAVE display tab on your web browser will only close the display, not the actual RAVE server. 
+
