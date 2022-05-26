@@ -228,29 +228,41 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="get-started" class="section level1 hasAnchor" number="3">
 <h1><span class="header-section-number">Chapter 3</span> Get Started<a href="get-started.html#get-started" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<!--- [click](#install-the-prerequisites) -->
-<p>Now that you’ve successfully installed RAVE, review the following instructions to get started using the tool.</p>
+<p>Now that you’ve successfully installed RAVE, review the following instructions to get started using it.</p>
+<hr />
 <div id="starting-rave" class="section level2 hasAnchor" number="3.1">
 <h2><span class="header-section-number">3.1</span> Starting RAVE<a href="get-started.html#starting-rave" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><em>Note:</em> you must quit and restart RStudio if you have just downloaded or updated RAVE in order for the application to start successfully.</p>
 <p>After restarting RStudio, copy and paste the following command into the RStudio console to open RAVE:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="get-started.html#cb1-1" aria-hidden="true" tabindex="-1"></a> rave<span class="sc">::</span><span class="fu">start_rave</span>()</span></code></pre></div>
 <p>RAVE will display in a new web browser (Google Chrome is recommended for optimal use).</p>
+<hr />
 </div>
 <div id="closing-rave" class="section level2 hasAnchor" number="3.2">
 <h2><span class="header-section-number">3.2</span> Closing RAVE<a href="get-started.html#closing-rave" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>To completely close the RAVE server:
-1). Click the red stop sign in the bottom left panel of RStudio.
-2). Quit the RStudio application. If asked whether you want to <strong>Save workspace image?</strong>, click no.</p>
-<p><strong>Note:</strong> Closing the RAVE display tab on your web browser will only close the display, not the actual RAVE server.</p>
-<p><strong>Note:</strong> You must stop processes that are currently being executed by the console before trying to initiate another command. To do this, click the red stop sign on the bottom left panel of RStudio. For example, if you have just opened RAVE and wish to update the application, click the red stop sign. Refer to the following screenshot for guidance.</p>
+1). Click the red stop sign in the bottom left panel of RStudio (refer to the screenshot below to find the stop sign).</p>
 <div class="figure">
 <img src="static/image/RStudioConsoleStopSign.png" alt="" />
 <p class="caption">Screenshot of RStudio console stop sign</p>
 </div>
+<p>2). Quit the RStudio application. If asked whether you want to <strong>Save workspace image?</strong>, click no.</p>
+<p><strong>Note:</strong> Closing the RAVE display tab on your web browser will only close the display, not the actual RAVE server.</p>
+<hr />
 </div>
 <div id="change-rave-settings" class="section level2 hasAnchor" number="3.3">
 <h2><span class="header-section-number">3.3</span> Change RAVE Settings<a href="get-started.html#change-rave-settings" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>To access and change RAVE settings, copy and paste the following command into the RStudio console:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="get-started.html#cb2-1" aria-hidden="true" tabindex="-1"></a> rave<span class="sc">::</span><span class="fu">rave_options</span>()</span></code></pre></div>
+<ul>
+<li><strong>Modules:</strong> Summary of all RAVE modules</li>
+<li><strong>Core Settings:</strong> Allows you to change where RAVE data is stored.<br />
+</li>
+<li><strong>System:</strong> Allows you to change RAM and number of CPU cores RAVE can use to alter speed at which data is read</li>
+<li><strong>3D Viewer:</strong> Allows you to change which downloaded brain data to use as the template brain for electrode template mapping; the default template brain is <code>N27</code>.</li>
+</ul>
+<hr />
+<p><strong>Note:</strong> In general, you must stop processes that are currently being executed by the console before trying to initiate another command. To do this, click the red stop sign on the bottom left panel of RStudio. For example, if you have just opened RAVE and wish to update the application, click the red stop sign. Refer to the following screenshot for guidance.</p>
 
 </div>
 </div>
