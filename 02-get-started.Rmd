@@ -1,8 +1,8 @@
 # Get Started
 
-<!--- [click](#install-the-prerequisites) --> 
+Now that you've successfully installed RAVE, review the following instructions to get started using it.  
 
-Now that you've successfully installed RAVE, review the following instructions to get started using the tool.  
+--- 
 
 ## Starting RAVE
 
@@ -10,16 +10,38 @@ Now that you've successfully installed RAVE, review the following instructions t
 
 After restarting RStudio, copy and paste the following command into the RStudio console to open RAVE: 
 
-```sh
+```r
  rave::start_rave()
 ```
 
 RAVE will display in a new web browser (Google Chrome is recommended for optimal use). 
 
+--- 
+
 ## Closing RAVE 
 To completely close the RAVE server: 
-1). Click the red stop sign in the bottom left panel of RStudio.
+1). Click the red stop sign in the bottom left panel of RStudio (refer to the screenshot below to find the stop sign). 
+
+![Screenshot of RStudio console stop sign](static/image/RStudioConsoleStopSign.png) 
+
 2). Quit the RStudio application. If asked whether you want to **Save workspace image?**, click no.  
 
 **Note:** Closing the RAVE display tab on your web browser will only close the display, not the actual RAVE server. 
 
+--- 
+
+## Change RAVE Settings
+To access and change RAVE settings, copy and paste the following command into the RStudio console: 
+
+```r 
+ rave::rave_options()
+```
+
+* **Modules:** Summary of all RAVE modules
+* **Core Settings:** Allows you to change where RAVE data is stored.  
+* **System:** Allows you to change RAM and number of CPU cores RAVE can use to alter speed at which data is read 
+* **3D Viewer:** Allows you to change which downloaded brain data to use as the template brain for electrode template mapping; the default template brain is `N27`. 
+
+--- 
+
+**Note:** In general, you must stop processes that are currently being executed by the console before trying to initiate another command. To do this, click the red stop sign on the bottom left panel of RStudio. For example, if you have just opened RAVE and wish to update the application, click the red stop sign. Refer to the following screenshot for guidance. 

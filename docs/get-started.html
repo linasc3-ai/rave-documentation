@@ -173,18 +173,19 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="2.2" data-path="installation-guide.html"><a href="installation-guide.html#install-rave"><i class="fa fa-check"></i><b>2.2</b> Install RAVE</a>
 <ul>
-<li class="chapter" data-level="2.2.1" data-path="installation-guide.html"><a href="installation-guide.html#download-rave-packages"><i class="fa fa-check"></i><b>2.2.1</b> Download RAVE packages</a></li>
-<li class="chapter" data-level="2.2.2" data-path="installation-guide.html"><a href="installation-guide.html#install-rave-packages-on-rstudio"><i class="fa fa-check"></i><b>2.2.2</b> Install RAVE packages on RStudio</a></li>
-<li class="chapter" data-level="2.2.3" data-path="installation-guide.html"><a href="installation-guide.html#update-rave-to-most-recent-version"><i class="fa fa-check"></i><b>2.2.3</b> Update RAVE to most recent version</a></li>
-<li class="chapter" data-level="2.2.4" data-path="installation-guide.html"><a href="installation-guide.html#download-and-install-templates-and-demo-subject-data"><i class="fa fa-check"></i><b>2.2.4</b> Download and install templates and demo subject data</a></li>
-<li class="chapter" data-level="2.2.5" data-path="installation-guide.html"><a href="installation-guide.html#troubleshooting-1"><i class="fa fa-check"></i><b>2.2.5</b> Troubleshooting</a></li>
+<li class="chapter" data-level="2.2.1" data-path="installation-guide.html"><a href="installation-guide.html#download-and-configure"><i class="fa fa-check"></i><b>2.2.1</b> Download and Configure</a></li>
+<li class="chapter" data-level="2.2.2" data-path="installation-guide.html"><a href="installation-guide.html#validate-the-installation"><i class="fa fa-check"></i><b>2.2.2</b> Validate the Installation</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="installation-guide.html"><a href="installation-guide.html#updating-rave-after-initial-download"><i class="fa fa-check"></i><b>2.3</b> Updating RAVE after initial download</a></li>
+<li class="chapter" data-level="2.3" data-path="installation-guide.html"><a href="installation-guide.html#updating-rave-after-download"><i class="fa fa-check"></i><b>2.3</b> Updating RAVE after download</a>
+<ul>
+<li class="chapter" data-level="" data-path="installation-guide.html"><a href="installation-guide.html#whats-next"><i class="fa fa-check"></i>What’s Next</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="get-started.html"><a href="get-started.html"><i class="fa fa-check"></i><b>3</b> Get Started</a>
 <ul>
 <li class="chapter" data-level="3.1" data-path="get-started.html"><a href="get-started.html#starting-rave"><i class="fa fa-check"></i><b>3.1</b> Starting RAVE</a></li>
 <li class="chapter" data-level="3.2" data-path="get-started.html"><a href="get-started.html#closing-rave"><i class="fa fa-check"></i><b>3.2</b> Closing RAVE</a></li>
+<li class="chapter" data-level="3.3" data-path="get-started.html"><a href="get-started.html#change-rave-settings"><i class="fa fa-check"></i><b>3.3</b> Change RAVE Settings</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="parts.html"><a href="parts.html"><i class="fa fa-check"></i><b>4</b> Parts</a></li>
 <li class="chapter" data-level="5" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html"><i class="fa fa-check"></i><b>5</b> Footnotes and citations</a>
@@ -233,7 +234,7 @@ div.csl-indent {
 <h2><span class="header-section-number">3.1</span> Starting RAVE<a href="get-started.html#starting-rave" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><em>Note:</em> you must quit and restart RStudio if you have just downloaded or updated RAVE in order for the application to start successfully.</p>
 <p>After restarting RStudio, copy and paste the following command into the RStudio console to open RAVE:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="get-started.html#cb1-1" aria-hidden="true" tabindex="-1"></a> <span class="fu">rave::start_rave()</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="get-started.html#cb1-1" aria-hidden="true" tabindex="-1"></a> rave<span class="sc">::</span><span class="fu">start_rave</span>()</span></code></pre></div>
 <p>RAVE will display in a new web browser (Google Chrome is recommended for optimal use).</p>
 </div>
 <div id="closing-rave" class="section level2 hasAnchor" number="3.2">
@@ -242,6 +243,14 @@ div.csl-indent {
 1). Click the red stop sign in the bottom left panel of RStudio.
 2). Quit the RStudio application. If asked whether you want to <strong>Save workspace image?</strong>, click no.</p>
 <p><strong>Note:</strong> Closing the RAVE display tab on your web browser will only close the display, not the actual RAVE server.</p>
+<p><strong>Note:</strong> You must stop processes that are currently being executed by the console before trying to initiate another command. To do this, click the red stop sign on the bottom left panel of RStudio. For example, if you have just opened RAVE and wish to update the application, click the red stop sign. Refer to the following screenshot for guidance.</p>
+<div class="figure">
+<img src="static/image/RStudioConsoleStopSign.png" alt="" />
+<p class="caption">Screenshot of RStudio console stop sign</p>
+</div>
+</div>
+<div id="change-rave-settings" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Change RAVE Settings<a href="get-started.html#change-rave-settings" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 
 </div>
 </div>

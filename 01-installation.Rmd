@@ -18,7 +18,7 @@ Carefully follow the steps below to install RAVE:
 ## Install the Prerequisites
 Because RAVE is written in the programming language "R", it is necessary to download R and its integrated development editor "RStudio" onto your computer. Correctly installing the following pre-requisites is necessary for RAVE to work properly. 
 
-**Note:** RAVE requires the latest versions of R and RStudio to run properly. To avoid errors in the download process, if you already have R and RStudio on your computer, be sure they are updated to the most recently released versions. 
+**Note:** RAVE requires the latest versions of R and RStudio to run properly. To avoid errors in the download process, if you already have R and RStudio on your computer, be sure they are updated to the most recent versions. 
 
 <!--- ### Windows
 
@@ -41,7 +41,7 @@ If you have not downloaded Homebrew to your computer before, you will be prompte
 Password:
 ```
 
-Please enter your user password. The password you typed won't be displayed into the screen. Once you've finished, press the return or enter key to proceed. 
+**Enter your user password.** Note that the password won't be displayed into the screen as you type for security reasons. Once you've finish typing, press the RETURN or ENTER key to proceed. 
 
 ```
 ==> This script will install:
@@ -51,26 +51,26 @@ Press RETURN/ENTER to continue or any other key to abort:
 Please press the RETURN or ENTER key to continue. 
 
 ##### Add brew to path {-}
-The terminal commands used to add homebrew to the path depend on your computer's CPU chip. Copy and paste the appropriate command lines based on your computer's chip type. 
+The terminal commands used to add homebrew to the path depend on your computer's CPU chip. Copy and paste the appropriate command lines into the terminal based on your computer's chip type. 
 
-**For M1 Chips** 
+* **For M1 Chips** 
 ```sh
  echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
  echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.profile
  echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.bash_profile
 ```
 
-**For Intel Chips** 
+* **For Intel Chips** 
 
 
 #### Install R Language 
-Download the latest version of R directly from the website: https://cran.r-project.org/bin/macosx/ Be sure to download the package that corresponds to your computer's OS version and CPU type. 
+Download and install the latest version of R directly from the website: https://cran.r-project.org/bin/macosx/ Be sure to download the package that corresponds to your computer's OS version and CPU type. 
 
 * For Intel Macs, download `R-X.X.X.pkg` 
 * For M1 Macs, download `R-X.X.X-arm64.pkg` 
 
 #### Install RStudio Desktop 
-You can install RStudio Desktop by directly downloading from the website. Visit the following link to download the application: https://www.rstudio.com/products/rstudio/download/ Be sure to download the version that corresponds to your OS system. Refer to the following screenshot for guidance. 
+Download and install RStudio Desktop directly from the website: https://www.rstudio.com/products/rstudio/download/ Be sure to download the version that corresponds to your OS system. Refer to the following screenshot for guidance. 
 
 ![Screenshot of RStudio Website](static/image/RStudioScreenshot.png) 
 
@@ -98,59 +98,77 @@ brew tap homebrew/core
 --- 
 
 ## Install RAVE
-Now that you have installed the pre-requisites, the following steps will walk you through the process of downloading and installing the RAVE application on your computer. 
 
-### Download RAVE packages
-Open the RStudio application and click on the Console tab located in bottom left panel of your screen. Copy and paste the following command onto the console to download the RAVE packages from the online repository: 
+Now that you have installed the pre-requisites, follow the steps below to download and install the RAVE package on your computer. 
 
-```sh
-options(repos = c(ropensci = 'https://beauchamplab.r-universe.dev', CRAN = 'https://cloud.r-project.org'))
-```
+### Download and Configure
 
-### Install RAVE packages on RStudio 
-Copy and paste the following command into the RStudio console to install RAVE and its built-in modules onto your computer. 
+Open the RStudio application and click on the *Console* tab (if RStudio is set to default settings, this tab is usually located in bottom left panel of your screen). 
 
-```sh
+Copy and paste the following command onto the console to **download the RAVE packages from the online repository and install them** on your computer: 
+
+```r
+options(repos = c(ropensci = 'https://beauchamplab.r-universe.dev', 
+                  CRAN = 'https://cloud.r-project.org'))
 install.packages(c('rave', 'ravebuiltins'))
 ```
 
-Please note that this process can take some time.
+Copy and paste the following command onto the console to **update RAVE to the latest available version** (this will account for recent bug fixes and newly added features): 
 
-### Update RAVE to most recent version
-Copy and paste the following command into the RStudio console to update RAVE and its dependencies to the most recent version. 
-
-```sh
- rave::check_dependencies(nightly = TRUE)
+```r
+rave::check_dependencies(nightly = TRUE)
 ```
 
-### Download and install templates and demo subject data
-Copy and paste the following command into the RStudio console to download template and demo subject data. This will allow you to try out RAVE's features with sample data! 
+Copy and paste the following command onto the console to: 
+* **Download template brain** (`N27`, `fsaverage`) for electrode template mapping
+* **Download demo subject data** for single- and group-level analyses
 
-```sh
- rave::finalize_installation(upgrade = 'ask')
+```r
+rave::finalize_installation(upgrade = 'ask')
 ```
+
+#### Troubleshooting
+* When updating RAVE, if you receive a "timeout of 60 seconds was reached" warning message, try switching to a faster network connection.
+
+### Validate the Installation
+
+To check whether RAVE was properly installed, copy and paste the following commands
+onto the console to start the program: 
+
+```r
+ rave::start_rave()
+```
+
+If installation was successful, a new web browser window should automatically open with the 
+RAVE display. A screenshot is shown below: 
+
+![RAVE Start Screen](static/image/RAVEStartScreen.png) 
 
 You have successfully downloaded RAVE! 
 
-### Troubleshooting
-* When updating RAVE, if you receive a "timeout of 60 seconds was reached" warning message, try switching to a faster network connection. 
-
+#### Troubleshooting 
+** The RAVE data should be located [default location]. If located elsewhere on the window, copy and paste the following command onto the console to set the data directory to the correct location: 
+```r
+ rave::rave_options()
+```
 
 --- 
 
-## Updating RAVE after initial download
+## Updating RAVE after download
 If you've already downloaded RAVE and simply wish to update the application to the most recent version, copy and paste the following command into the RStudio console: 
 
-```sh
+```r
  rave::check_dependencies(nightly = TRUE)
 ```
 
-**Note:** You must stop processes that are currently being executed by the console before trying to initiate another command. To do this, click the red stop sign on the bottom left panel of RStudio. For example, if you have just opened RAVE and wish to update the application, click the red stop sign. Refer to the following screenshot for guidance. 
+**Note:** When re-updating, a pop-up might appear in RStudio asking if you want to reinstall the N27 template brain. Because the template is already installed, click no.  
 
-**Note:** When re-updating, a pop-up might appear in RStudio asking if you want to reinstall the N27 template brain. As the template is already installed, you can click no.  
 
-![Screenshot of RStudio console stop sign](static/image/RStudioConsoleStopSign.png) 
+### What's Next {-}
+Now that you've completed installation, visit the following pages to start using RAVE! 
 
+* [Starting RAVE](#starting-rave)
+* [Change RAVE settings](#change-rave-settings) 
 
 
 

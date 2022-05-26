@@ -36,3 +36,8 @@ pages
 metadata-for-sharing
 url-your-book-url-like-httpsbookdown.orgyihuibookdown
 linux
+download-and-configure
+validate-the-installation
+troubleshooting-2
+updating-rave-after-download
+change-rave-settings
