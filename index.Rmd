@@ -5,6 +5,7 @@ date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
+biblio-style: "apalike"
 # url: your book url like https://bookdown.org/yihui/bookdown
 # cover-image: path to the social sharing image like images/cover.jpg
 description: |
@@ -15,39 +16,24 @@ github-repo: rstudio/bookdown-demo
 
 # About
 
-RAVE is an open-source software for the reproducible analysis and visualization of intracranial EEG data. This book contains documentation for how to use RAVE, from installation to key features. 
+**R** **A**nalysis and **V**isualization of intracranial **E**EG (RAVE) is free and open-source software for the analysis of intracranial electroencephalogram (iEEG) data, including data collected using strips and grids (electrocorticography, ECoG) and depth electrodes (stereotactic EEG). 
 
-## Usage 
+![Brief Introduction to RAVE](https://youtu.be/s6EnlqF-Q8E)
 
-Each **bookdown** chapter is an .Rmd file, and each .Rmd file can contain one (and only one) chapter. A chapter *must* start with a first-level heading: `# A good chapter`, and can contain one (and only one) first-level heading.
+## Citations
 
-Use second-level and higher headings within chapters like: `## A short section` or `### An even shorter section`.
+RAVE has been developed since 2017 with funding provided by NIH-1R24MH117529. If you use RAVE, please cite:
 
-The `index.Rmd` file is required, and is also your first book chapter. It will be the homepage when you render the book.
+* Magnotti, John F, Zhengjia Wang, and Michael S Beauchamp. 2020. “RAVE: Comprehensive Open-Source Software for Reproducible Analysis and Visualization of Intracranial EEG Data.” NeuroImage 223: 117341.
 
-## Render book
 
-You can render the HTML version of this example book without changing anything:
+Other papers published using RAVE:
 
-1. Find the **Build** pane in the RStudio IDE, and
+* Karas, Patrick J, John F Magnotti, Brian A Metzger, Lin L Zhu, Kristen B Smith, Daniel Yoshor, and Michael S Beauchamp. 2019. "The Visual Speech Head Start Improves Perception and Reduces Superior Temporal Cortex Responses to Auditory Speech." Elife 8: e48116.
+* Metzger, Brian A, John F Magnotti, Zhengjia Wang, Elizabeth Nesbitt, Patrick J Karas, Daniel Yoshor, and Michael S Beauchamp. 2020. "Responses to Visual Speech in Human Posterior Superior Temporal Gyrus Examined with iEEG Deconvolution." Journal of Neuroscience 40 (36): 6938–48.
+* Wang, Zhengjia, Magnotti, John, Beauchamp, Michael S., and Li, Meng. 2022 "Functional group bridge for simultaneous regression and support estimation." Biometrics, 00, 1– 13. 
 
-1. Click on **Build Book**, then select your output format, or select "All formats" if you'd like to use multiple formats from the same book source files.
-
-Or build the book from the R console:
-
-```{r, eval=FALSE}
-bookdown::render_book()
-```
-
-To render this example to PDF as a `bookdown::pdf_book`, you'll need to install XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <https://yihui.org/tinytex/>.
-
-## Preview book
-
-As you work, you may start a local server to live preview this HTML book. This preview will update as you edit the book when you save individual .Rmd files. You can start the server in a work session by using the RStudio add-in "Preview book", or from the R console:
-
-```{r eval=FALSE}
-bookdown::serve_book()
-```
+<!--- [@magnotti2020rave], [@metzger2020responses], [@karas2019visual] -->
 
 
 ```{r include=FALSE}
