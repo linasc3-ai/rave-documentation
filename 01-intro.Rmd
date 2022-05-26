@@ -1,11 +1,155 @@
-# Hello bookdown 
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+# Installation Guide
 
-All chapters start with a first-level heading followed by your chapter title, like the line above. There should be only one first-level heading (`#`) per .Rmd file.
+Installing RAVE involves two parts: 
+1). installing the pre-requisites
+2). downloading RAVE
 
-## A section
+Carefully follow the steps below to install RAVE: 
 
-All chapter sections start with a second-level (`##`) or higher heading followed by your section title, like the sections above and below here. You can have as many as you want within a chapter.
+**Note:** For optimal use of RAVE, it is recommended your computer has at least 64GB RAM and a 4-core CPU. 
 
-### An unnumbered section {-}
+---
 
-Chapters and sections are numbered by default. To un-number a heading, add a `{.unnumbered}` or the shorter `{-}` at the end of the heading, like in this section.
+## Install the Prerequisites
+Because RAVE is written in the programming language "R", it is necessary to download R and its integrated development editor "RStudio" onto your computer. Correctly installing the following pre-requisites is necessary for RAVE to work properly. 
+
+**Note:** RAVE requires the latest versions of R and RStudio to run properly. To avoid errors in the download process, if you already have R and RStudio on your computer, be sure they are updated to the most recently released versions. 
+
+<!--- ### Windows
+
+### Linux -->
+
+### MacOS
+
+#### Install Homebrew
+
+[Homebrew](https://brew.sh/) is a package manager that adds functions missing from the Apple operating system. It can be installed by copying and pasting the following line into your terminal (**note:** the terminal can be found through searching the applications folder on your computer): 
+
+```sh
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+If you have not downloaded Homebrew to your computer before, you will be prompted with the following questions: 
+
+```
+==> Checking for `sudo` access (which may request your password)...
+Password:
+```
+
+Please enter your user password. The password you typed won't be displayed into the screen. Once you've finished, press the return or enter key to proceed. 
+
+```
+==> This script will install:
+... 
+Press RETURN/ENTER to continue or any other key to abort:
+```
+Please press the RETURN or ENTER key to continue. 
+
+##### Add brew to path {-}
+The terminal commands used to add homebrew to the path depend on your computer's CPU chip. Copy and paste the appropriate command lines based on your computer's chip type. 
+
+**For M1 Chips** 
+```sh
+ echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+ echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.profile
+ echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.bash_profile
+```
+
+**For Intel Chips** 
+
+
+#### Install R Language 
+Download the latest version of R directly from the website: https://cran.r-project.org/bin/macosx/ Be sure to download the package that corresponds to your computer's OS version and CPU type. 
+
+* For Intel Macs, download `R-X.X.X.pkg` 
+* For M1 Macs, download `R-X.X.X-arm64.pkg` 
+
+#### Install RStudio Desktop 
+You can install RStudio Desktop by directly downloading from the website. Visit the following link to download the application: https://www.rstudio.com/products/rstudio/download/ Be sure to download the version that corresponds to your OS system. Refer to the following screenshot for guidance. 
+
+![Screenshot of RStudio Website](static/image/RStudioScreenshot.png) 
+
+#### Install system libraries
+You will need to download the libraries hdf5, fftw, and pkg-config. This can be done by copying and pasting the following line into your terminal: 
+
+```sh
+brew install hdf5 fftw pkg-config
+```
+
+#### Troubleshooting
+
+--- 
+
+## Install RAVE
+Now that you have installed the pre-requisites, the following steps will walk you through the process of downloading and installing the RAVE application on your computer. 
+
+### Download RAVE packages
+Open the RStudio application and click on the Console tab located in bottom left panel of your screen. Copy and paste the following command onto the console to download the RAVE packages from the online repository: 
+
+```sh
+options(repos = c(ropensci = 'https://beauchamplab.r-universe.dev', CRAN = 'https://cloud.r-project.org'))
+```
+
+### Install RAVE packages on RStudio 
+Copy and paste the following command into the RStudio console to install RAVE and its built-in modules onto your computer. 
+
+```sh
+install.packages(c('rave', 'ravebuiltins'))
+```
+
+Please note that this process can take some time.
+
+### Update RAVE to most recent version
+Copy and paste the following command into the RStudio console to update RAVE and its dependencies to the most recent version. 
+
+```sh
+ rave::check_dependencies(nightly = TRUE)
+```
+
+### Download and install templates and demo subject data
+Copy and paste the following command into the RStudio console to download template and demo subject data. This will allow you to try out RAVE's features with sample data! 
+
+```sh
+ rave::finalize_installation(upgrade = 'ask')
+```
+
+You have successfully downloaded RAVE! 
+
+#### Troubleshooting
+
+--- 
+
+## Starting RAVE 
+*Note:* you must quit and restart RStudio if you have just downloaded or updated RAVE in order for the application to start successfully.
+
+After restarting RStudio, copy and paste the following command into the RStudio console to open RAVE: 
+
+```sh
+ rave::start_rave()
+```
+
+RAVE will display in a new web browser (Google Chrome is recommended for optimal use). A screenshot is displayed below: 
+
+--- 
+
+## Closing RAVE 
+
+--- 
+
+## Updating RAVE
+If you've already downloaded RAVE and simply wish to update the application to the most recent version, copy and paste the following command into the RStudio console: 
+
+```sh
+ rave::check_dependencies(nightly = TRUE)
+```
+
+**Note:** You must stop processes that are currently being executed by the console before trying to initiate another command. To do this, click the red stop sign on the bottom left panel of RStudio. For example, if you have just opened RAVE and wish to update the application, click the red stop sign. Refer to the following screenshot for guidance. 
+
+**Note:** When re-updating, a pop-up might appear in RStudio asking if you want to reinstall the N27 template brain. As the template is already installed, you can click no.  
+
+![Screenshot of RStudio console stop sign](static/image/RStudioConsoleStopSign.png) 
