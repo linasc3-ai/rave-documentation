@@ -1,10 +1,13 @@
+fig:nice-fig
+tab:nice-tab
+eq:binom
+thm:tri
 about
 usage
 render-book
 preview-book
 installation-guide
 install-the-prerequisites
-linux
 macos
 install-homebrew
 install-r-language
