@@ -18,3 +18,12 @@ get-started
 starting-rave
 closing-rave
 change-rave-settings
+linux
+url-your-book-url-like-httpsbookdown.orgyihuibookdown
+qas
+installation
+get-started-1
+starting-rave-1
+closing-rave-1
+change-rave-settings-1
+import-data

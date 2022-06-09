@@ -1,0 +1,18 @@
+# Q&As
+
+--- 
+
+## Installation
+
+We use the following command to get `YAB` data. 
+```r
+rave::download_sample_data("YAB")
+```
+Does this download the data into the `<raw_dir>` folder? Can I substitute "YAB" for "KC" as well because these all constitute the demo data available in RAVE? 
+
+> Answer: Yes, the raw data are included and will be downloaded into raw directories by default. You can replace `"YAB"` with `"KC"` and other demo subjects. The available demo subjects are `KC`, `YAB`, `YAD`, `YAF`, `YAH`, `YAI`, `YAJ`, and `YAK`.
+
+
+ 
+
+
