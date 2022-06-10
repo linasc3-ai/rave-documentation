@@ -2,17 +2,39 @@
 
 --- 
 
+This page contains possible questions that may arise when using RAVE and their answers. Questions are organized by section. 
+
 ## Installation
 
-We use the following command to get `YAB` data. 
+
+## Getting Started with RAVE
+
+
+
+## Downloading Demo Data 
+
+**Question:** We use the following command to get `YAB` data. 
 ```r
 rave::download_sample_data("YAB")
 ```
 Does this download the data into the `<raw_dir>` folder? Can I substitute "YAB" for "KC" as well because these all constitute the demo data available in RAVE? 
 
-> Answer: Yes, the raw data are included and will be downloaded into raw directories by default. You can replace `"YAB"` with `"KC"` and other demo subjects. The available demo subjects are `KC`, `YAB`, `YAD`, `YAF`, `YAH`, `YAI`, `YAJ`, and `YAK`.
+> Answer: Yes, the raw data are included and will be downloaded into raw directories by default. You can replace `"YAB"` with `"KC"` and other demo subjects. The available demo subjects are `KC`, `YAB`, `YAD`, `YAF`, `YAH`, `YAI`, `YAJ`, and `YAK`. 
 
 
- 
+## Importing Data
 
+**Question:** What does the term "channel" refer to? 
+
+**Question:** In step 3, why are the "folders" and "electrode" fields designated as "read-only"?
+
+> Answer: If these fields are designated as "read only," this means you have already imported the entered subject. To preserve reproducibility, once raw data for a subject is imported and notch filtered, you can not change the channel options. 
+
+**Question:** In step 3, what does the term "block" refer to? 
+
+> Answer: RAVE defines "block" as a period or session of continuous recording. A block should be named with a zero-padded integer according to the order they were recorded (e.g. 001 for the first session, 002 for the second). 
+
+**Question:** How do I ensure my subject is validated?  
+
+> Answer: When you hit the "check subject" button, the bottom right panel will let you know if any electrode files are missing based on the electrode numbers you entered in step three. Also make to sure to check that the channels are correct. 
 

@@ -27,3 +27,9 @@ starting-rave-1
 closing-rave-1
 change-rave-settings-1
 import-data
+downloading-demo-data
+getting-started-with-rave
+downloading-demo-data-1
+importing-data
+preprocessing-import-data
+importing-demo-data

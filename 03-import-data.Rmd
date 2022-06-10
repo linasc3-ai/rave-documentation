@@ -1,4 +1,44 @@
-# Import Data
+# Preprocessing: Import Data
 
-Now that you've successfully installed RAVE, review the following instructions to get started using it.  
+Now that you have installed RAVE and understand how to start/close the program, you can proceed to importing your iEEG data into RAVE so that it can be preprocessed and used in future modules.
+
+## Downloading demo data 
+
+Before importing your own data, you may wish to gain familiarity by trying RAVE's demo data in various modules. By default, RAVE already has a DemoSubject whose raw data has already been imported. You can also download other demo subjects by copying and pasting the following command into the RStudio console: 
+
+```r
+rave::download_sample_data("subject_code")
+```
+
+You will need to substitute "subject_code" with one of the available demo subjects: `KC`, `YAB`, `YAD`, `YAF`, `YAH`, `YAI`, `YAJ`, and `YAK`. 
+
+For example, to download subject YAB, use the following command: 
+```r
+rave::download_sample_data("YAB")
+```
+
+Note that downloaded demo data will be stored in the `raw_dir` folder of the `rave_data` folder in your home directory. Within `raw_dir`, each subject's data is stored in its own folder (e.g. YAB's data will be stored in the YAB folder in `raw_dir`). Refer to the following screenshot for clarity. 
+
+![Screenshot of location of downloaded demo data](static/image/DemoDownloadImage.png) 
+
+You can proceed to the "importing demo data" instructions to load this raw data into RAVE for cleaning (? double check). 
  
+## Importing data
+
+To launch the RAVE Preprocessing module, copy and paste the following command into the RStudio console: 
+
+```r 
+ rave::rave_preprocess()
+```
+
+The Preprocessing module will then open in a browser window, allowing you to see the Overview page. The Overview page allows you to import raw iEEG data into RAVE for cleaning and consists of three panels. 
+* Overview: 
+* Information: 
+* Import Widgets: 
+
+### Step 1: Select Subject
+### Step 2: Select Project or Create New One 
+### Step 3: Validate Data 
+
+Refer to the following screenshot for clarity. 
+
