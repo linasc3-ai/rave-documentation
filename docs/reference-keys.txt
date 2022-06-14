@@ -33,3 +33,7 @@ downloading-demo-data-1
 importing-data
 preprocessing-import-data
 importing-demo-data
+step-1-select-subject
+step-2-select-project-or-create-new-one
+step-3-validate-data
+importing-data-1

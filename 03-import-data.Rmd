@@ -37,8 +37,48 @@ The Preprocessing module will then open in a browser window, allowing you to see
 * Import Widgets: 
 
 ### Step 1: Select Subject
+Enter the code for the demo subject whose iEEG data you want to import into RAVE. Note that a subject's data should be stored in its own folder within the raw directory (`raw_dir` folder) within `rave_data`. 
+
+E.g. if you want to select demo subject KC, enter "KC" and you should receive the following message letting you know the subject has been found: /Users/your_home_directory/rave_data/raw_dir/KC (found!)
+
 ### Step 2: Select Project or Create New One 
+This step allows you to specify where you want the cleaned data to be stored. If you wish to create a new project, select "New Project" from the drop down menu and indicate your desired project name. Note that by default, this project folder will be created within the data directory (`data_dir`) within `rave_data`, with a new folder for the subject. 
+
+E.g. if you wish to store demo subject KC in a new project called "Test", you should receive the following message: 
+Subject [Test/KC] will be stored at: /Users/your_home_directory/rave_data/data_dir/Test/KC
+
+Then, click "create subject" to proceed. 
+
+<!-- // mention built-in demo folder --> 
+
 ### Step 3: Validate Data 
+In this step, you will have to specify your desired channel options: 
+
+<!-- // add note that once you notch filter these, --> 
+
+* **Folders:** Each folder corresponds to a block, aka a period or session of continuous electrode recording. Select the blocks that correspond to the trials you want to analyze. (E.g. for KC, you could select blocks 003 and 004.) 
+
+* **Electrodes:** Indicate the electrodes you want to analyze. Note that it is reccomended that you run the preprocessing steps on all electrodes at once. (E.g. for KC, you should indicate 1-92.) 
+
+>!-- // why is there a jump in labeling the electrode files (e.g. in KC, in block 004, the electrode values go from 1 to 92 but then there's also 129 and 130?) --> 
+
+* **Sample Rate:** Indicate the sample rate of your iEEG recording equipment; this value will determine the rate at which the preprocessing will be run. (E.g. for KC, you could indicate '2000'). 
+
+* **Physical Unit:** 
+
+* **File Format:** 
+
+Click the **Check Subject** button to proceed. (Note: this process can take a few minutes; progress will be displayed via pop-ups in the bottom right.) 
+
+> Note: In the import widgets panel at bottom right, a message may pop-up informing you that electrode files are missing. Be sure to double check that you indicated the correct electrode numbers in step 3 and that each block contains the appropriate files. (?? should this be in the Q&A instead)
+
+Click the **Start Import** button to proceed. (Note: this process can take a few minutes.)
+
+
+<!-- // how to do they know what to put in for a demo subject --> 
+
 
 Refer to the following screenshot for clarity. 
 
+
+// setting up the data properly 

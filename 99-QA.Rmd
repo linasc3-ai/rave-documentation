@@ -21,6 +21,7 @@ Does this download the data into the `<raw_dir>` folder? Can I substitute "YAB" 
 
 > Answer: Yes, the raw data are included and will be downloaded into raw directories by default. You can replace `"YAB"` with `"KC"` and other demo subjects. The available demo subjects are `KC`, `YAB`, `YAD`, `YAF`, `YAH`, `YAI`, `YAJ`, and `YAK`. 
 
+// maybe change this question to "why does it say the demo subject data is not found" and answer is because you need to download the demo subject data first before importing 
 
 ## Importing Data
 
