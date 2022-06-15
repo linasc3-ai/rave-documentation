@@ -30,13 +30,13 @@ jobs:
           restore-keys: bookdown-
       
       - name: Install bookdown
-        run: Rscript -e 'install.packages("bookdown")'
+        run: Rscript -e 'if(system.file(package="bookdown")==""){ install.packages("bookdown") }'
 
       - name: Build site
         run: Rscript -e 'bookdown::render_book("index.Rmd", quiet = TRUE)'
 
       - name: Deploy to GitHub pages 🚀
-        uses: JamesIves/github-pages-deploy-action@4.1.4
+        uses: JamesIves/github-pages-deploy-action@v4.3.3
         with:
           branch: gh-pages
-          folder: _book
+          folder: ./docs
