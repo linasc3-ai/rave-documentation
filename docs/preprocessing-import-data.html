@@ -23,7 +23,7 @@
 <meta name="author" content="Lina Chihoub" />
 
 
-<meta name="date" content="2022-06-14" />
+<meta name="date" content="2022-06-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -233,18 +233,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>E.g. if you wish to store demo subject KC in a new project called “Test”, you should receive the following message:
 Subject [Test/KC] will be stored at: /Users/your_home_directory/rave_data/data_dir/Test/KC</p>
 <p>Then, click “create subject” to proceed.</p>
-<p>// mention built-in demo folder</p>
+<!-- // mention built-in demo folder -->
 </div>
 <div id="step-3-validate-data" class="section level3 hasAnchor" number="4.2.3">
 <h3><span class="header-section-number">4.2.3</span> Step 3: Validate Data<a href="preprocessing-import-data.html#step-3-validate-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>In this step, you will have to specify your desired channel options:
-* <strong>Folders:</strong> Each folder corresponds to a block, aka a period or session of continuous electrode recording (#importing-data).
-* <strong>Electrodes:</strong>
-* <strong>Sample Rate:</strong>
-* <strong>Physical Unit:</strong>
-* <strong>File Format:</strong></p>
-<p>// how to do they know what to put in for a demo subject</p>
+<p>In this step, you will have to specify your desired channel options:</p>
+<!-- // add note that once you notch filter these, -->
+<ul>
+<li><p><strong>Folders:</strong> Each folder corresponds to a block, aka a period or session of continuous electrode recording. Select the blocks that correspond to the trials you want to analyze. (E.g. for KC, you could select blocks 003 and 004.)</p></li>
+<li><p><strong>Electrodes:</strong> Indicate the electrodes you want to analyze. Note that it is reccomended that you run the preprocessing steps on all electrodes at once. (E.g. for KC, you should indicate 1-92.)</p></li>
+</ul>
+<blockquote>
+<p>!– // why is there a jump in labeling the electrode files (e.g. in KC, in block 004, the electrode values go from 1 to 92 but then there’s also 129 and 130?) –&gt;</p>
+</blockquote>
+<ul>
+<li><p><strong>Sample Rate:</strong> Indicate the sample rate of your iEEG recording equipment; this value will determine the rate at which the preprocessing will be run. (E.g. for KC, you could indicate ‘2000’).</p></li>
+<li><p><strong>Physical Unit:</strong></p></li>
+<li><p><strong>File Format:</strong></p></li>
+</ul>
+<p>Click the <strong>Check Subject</strong> button to proceed. (Note: this process can take a few minutes; progress will be displayed via pop-ups in the bottom right.)</p>
+<blockquote>
+<p>Note: In the import widgets panel at bottom right, a message may pop-up informing you that electrode files are missing. Be sure to double check that you indicated the correct electrode numbers in step 3 and that each block contains the appropriate files. (?? should this be in the Q&amp;A instead)</p>
+</blockquote>
+<p>Click the <strong>Start Import</strong> button to proceed. (Note: this process can take a few minutes.)</p>
+<!-- // how to do they know what to put in for a demo subject -->
 <p>Refer to the following screenshot for clarity.</p>
+<p>// setting up the data properly</p>
 
 </div>
 </div>

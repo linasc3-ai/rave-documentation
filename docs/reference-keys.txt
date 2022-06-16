@@ -37,3 +37,9 @@ step-1-select-subject
 step-2-select-project-or-create-new-one
 step-3-validate-data
 importing-data-1
+importing-your-own-data
+organizing-your-directories
+preprocessing
+step-1-notch-filter
+step-2-wavelet
+step-3-localization

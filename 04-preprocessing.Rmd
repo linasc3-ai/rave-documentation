@@ -1,0 +1,7 @@
+# Preprocessing 
+
+## Step #1: Notch Filter
+
+## Step #2: Wavelet
+
+## Step #3: Localization 

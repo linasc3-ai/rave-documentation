@@ -5,27 +5,45 @@
 This page contains possible questions that may arise when using RAVE and their answers. Questions are organized by section. 
 
 ## Installation
+<!-- note: these are sourced from the troubleshooting section of my documentation, not sure if they're better placed here or in those troubleshooting sections --> 
+**Question:** When updating RAVE, I received a “timeout of 60 seconds was reached” warning message. How do I fix this? 
+> Answer: Try switching to a faster network connection. 
 
+**Question:** I already have R and RStudio downloaded. Can I skip the prerequisites? 
+> Answer: RAVE is dependent on the most recent versions of these applications, so please make sure they are properly updated. Be sure to also review the other pre-requisite steps, like installing Homebrew and the system libraries. The most common reason for issues in the installation of RAVE is failure to properly download these prerequisites. 
+
+**Question:** How can I check my computer's OS version or CPU type? 
+> Answer: If you're using a Mac, this can be found by clicking the apple logo at the top left of your screen, and then clicking "About this Mac". The version and processor (CPU type) will be listed there. 
+
+**Question:** I received a “the following directories are not writable by your user” error. How do I fix this? 
+> Answer: If you have multiple accounts on your computer but only one of them has homebrew installed, you may receive that error. To resolve it, you can change the ownership of the directories to the current user and make sure this user has write permission.
 
 ## Getting Started with RAVE
 
-
+**Question**: I copied a command into the RStudio console, but nothing is happening. What is the issue? 
+> Make sure you click the red stop sign at the top right of the console to stop the current command. This is necessary if you want to execute a different command. 
 
 ## Downloading Demo Data 
 
-**Question:** We use the following command to get `YAB` data. 
+**Question:** I received this message when trying to import a demo subject. 
+
+/Users/aliavyanne/rave_data/raw_dir/YAI (NOT found) /Users/aliavyanne/rave_data/bids_dir//Test/sub-YAI (NOT found)
+
+How do I fix this? 
+
+> Answer: You forgot to download this demo subject before importing them. You can use the following command to download the demo subject YAI: 
+
 ```r
-rave::download_sample_data("YAB")
+rave::download_sample_data("YAI")
 ```
-Does this download the data into the `<raw_dir>` folder? Can I substitute "YAB" for "KC" as well because these all constitute the demo data available in RAVE? 
 
-> Answer: Yes, the raw data are included and will be downloaded into raw directories by default. You can replace `"YAB"` with `"KC"` and other demo subjects. The available demo subjects are `KC`, `YAB`, `YAD`, `YAF`, `YAH`, `YAI`, `YAJ`, and `YAK`. 
-
-// maybe change this question to "why does it say the demo subject data is not found" and answer is because you need to download the demo subject data first before importing 
+**Question:** Where does the demo data come from? 
+> Answer: The demo data available in RAVE is sourced from experiments run by the Beauchamp Lab at the Perelman School of Medicine, which investigates the neural mechanisms for multisensory integration and visual perception in human subjects. Read more at: https://www.med.upenn.edu/beauchamplab/
 
 ## Importing Data
 
 **Question:** What does the term "channel" refer to? 
+> Answer: In the early design of RAVE, we focused on exploring one channel per electrode cases, hence we equivalent "channel" to "electrode" here. 
 
 **Question:** In step 3, why are the "folders" and "electrode" fields designated as "read-only"?
 
@@ -35,7 +53,19 @@ Does this download the data into the `<raw_dir>` folder? Can I substitute "YAB" 
 
 > Answer: RAVE defines "block" as a period or session of continuous recording. A block should be named with a zero-padded integer according to the order they were recorded (e.g. 001 for the first session, 002 for the second). 
 
-**Question:** How do I ensure my subject is validated?  
+**Question:** On the import widgets panel at bottom right, I got a message that electrode files are missing. How do I resolve this? 
 
-> Answer: When you hit the "check subject" button, the bottom right panel will let you know if any electrode files are missing based on the electrode numbers you entered in step three. Also make to sure to check that the channels are correct. 
+> Answer: When you hit the "check subject" button, the bottom right panel will let you know if any electrode files are missing based on the electrode numbers you entered in step three. Be sure to double check that you indicated the correct electrode numbers in step 3.
+
+**Question:** Does RAVE automatically validate my data? 
+> Answer: You should check for yourself to make sure that each block contains the appropriate files. RAVE will not automatically check this for you. 
+
+**Question:** How do I know which file format to select in step 3? 
+> Answer: When you select a file format from the drop down, RAVE will display brief information on what that format entails and a sample organization for the data directory. Select the format that matches that of your data. 
+
+**Question:** Where are my inputs and configurations stored for a given subject? 
+> Answer: This information is stored within `data_dir/<project>/subject>/rave/preprocess/rave.yaml` of your home directory. 
+
+**Question:** I've already performed the notch filter, but RAVE is not letting me update my channel options. How can I fix this? 
+> Answer: Once the data is imported and notch filtered, you cannot change the channel options. You should make a new project to change the channel options in this case. 
 
