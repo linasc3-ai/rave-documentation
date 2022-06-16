@@ -1,6 +1,6 @@
 --- 
 title: "RAVE Documentation"
-author: "Lina Chihoub"
+author: ""
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
@@ -20,6 +20,9 @@ github-repo: rstudio/bookdown-demo
 
 <!--- ![Brief Introduction to RAVE](https://youtu.be/s6EnlqF-Q8E) -->
 <iframe width="560" height="315" src="https://www.youtube.com/embed/s6EnlqF-Q8E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Contact Us 
+Questions? Email us at help@rave.wiki.
 
 ## Citations
 
