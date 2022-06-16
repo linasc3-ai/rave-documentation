@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 4 Preprocessing: Import Data | RAVE Documentation</title>
   <meta name="description" content="RAVE documentation" />
-  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 4 Preprocessing: Import Data | RAVE Documentation" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Lina Chihoub" />
 
 
-<meta name="date" content="2022-06-15" />
+<meta name="date" content="2022-06-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -49,25 +49,24 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -87,7 +86,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -137,35 +136,45 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">RAVE Manual</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> About</a><ul>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> url: your book url like <span>https://bookdown.org/yihui/bookdown</span></a>
+<ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#citations"><i class="fa fa-check"></i><b>1.1</b> Citations</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="installation-guide.html"><a href="installation-guide.html"><i class="fa fa-check"></i><b>2</b> Installation Guide</a><ul>
-<li class="chapter" data-level="2.1" data-path="installation-guide.html"><a href="installation-guide.html#install-the-prerequisites"><i class="fa fa-check"></i><b>2.1</b> Install the Prerequisites</a><ul>
-<li class="chapter" data-level="2.1.1" data-path="installation-guide.html"><a href="installation-guide.html#macos"><i class="fa fa-check"></i><b>2.1.1</b> MacOS</a></li>
+<li class="chapter" data-level="2" data-path="installation-guide.html"><a href="installation-guide.html"><i class="fa fa-check"></i><b>2</b> Installation Guide</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="installation-guide.html"><a href="installation-guide.html#install-the-prerequisites"><i class="fa fa-check"></i><b>2.1</b> Install the Prerequisites</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="installation-guide.html"><a href="installation-guide.html#linux"><i class="fa fa-check"></i><b>2.1.1</b> Linux –&gt;</a></li>
+<li class="chapter" data-level="2.1.2" data-path="installation-guide.html"><a href="installation-guide.html#macos"><i class="fa fa-check"></i><b>2.1.2</b> MacOS</a></li>
 </ul></li>
-<li class="chapter" data-level="2.2" data-path="installation-guide.html"><a href="installation-guide.html#install-rave"><i class="fa fa-check"></i><b>2.2</b> Install RAVE</a><ul>
+<li class="chapter" data-level="2.2" data-path="installation-guide.html"><a href="installation-guide.html#install-rave"><i class="fa fa-check"></i><b>2.2</b> Install RAVE</a>
+<ul>
 <li class="chapter" data-level="2.2.1" data-path="installation-guide.html"><a href="installation-guide.html#download-and-configure"><i class="fa fa-check"></i><b>2.2.1</b> Download and Configure</a></li>
 <li class="chapter" data-level="2.2.2" data-path="installation-guide.html"><a href="installation-guide.html#validate-the-installation"><i class="fa fa-check"></i><b>2.2.2</b> Validate the Installation</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="installation-guide.html"><a href="installation-guide.html#updating-rave-after-download"><i class="fa fa-check"></i><b>2.3</b> Updating RAVE after download</a><ul>
+<li class="chapter" data-level="2.3" data-path="installation-guide.html"><a href="installation-guide.html#updating-rave-after-download"><i class="fa fa-check"></i><b>2.3</b> Updating RAVE after download</a>
+<ul>
 <li class="chapter" data-level="" data-path="installation-guide.html"><a href="installation-guide.html#whats-next"><i class="fa fa-check"></i>What’s Next</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="get-started.html"><a href="get-started.html"><i class="fa fa-check"></i><b>3</b> Get Started</a><ul>
+<li class="chapter" data-level="3" data-path="get-started.html"><a href="get-started.html"><i class="fa fa-check"></i><b>3</b> Get Started</a>
+<ul>
 <li class="chapter" data-level="3.1" data-path="get-started.html"><a href="get-started.html#starting-rave"><i class="fa fa-check"></i><b>3.1</b> Starting RAVE</a></li>
 <li class="chapter" data-level="3.2" data-path="get-started.html"><a href="get-started.html#closing-rave"><i class="fa fa-check"></i><b>3.2</b> Closing RAVE</a></li>
 <li class="chapter" data-level="3.3" data-path="get-started.html"><a href="get-started.html#change-rave-settings"><i class="fa fa-check"></i><b>3.3</b> Change RAVE Settings</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="preprocessing-import-data.html"><a href="preprocessing-import-data.html"><i class="fa fa-check"></i><b>4</b> Preprocessing: Import Data</a><ul>
+<li class="chapter" data-level="4" data-path="preprocessing-import-data.html"><a href="preprocessing-import-data.html"><i class="fa fa-check"></i><b>4</b> Preprocessing: Import Data</a>
+<ul>
 <li class="chapter" data-level="4.1" data-path="preprocessing-import-data.html"><a href="preprocessing-import-data.html#downloading-demo-data"><i class="fa fa-check"></i><b>4.1</b> Downloading demo data</a></li>
-<li class="chapter" data-level="4.2" data-path="preprocessing-import-data.html"><a href="preprocessing-import-data.html#importing-data"><i class="fa fa-check"></i><b>4.2</b> Importing data</a><ul>
+<li class="chapter" data-level="4.2" data-path="preprocessing-import-data.html"><a href="preprocessing-import-data.html#importing-data"><i class="fa fa-check"></i><b>4.2</b> Importing data</a>
+<ul>
 <li class="chapter" data-level="4.2.1" data-path="preprocessing-import-data.html"><a href="preprocessing-import-data.html#step-1-select-subject"><i class="fa fa-check"></i><b>4.2.1</b> Step 1: Select Subject</a></li>
 <li class="chapter" data-level="4.2.2" data-path="preprocessing-import-data.html"><a href="preprocessing-import-data.html#step-2-select-project-or-create-new-one"><i class="fa fa-check"></i><b>4.2.2</b> Step 2: Select Project or Create New One</a></li>
 <li class="chapter" data-level="4.2.3" data-path="preprocessing-import-data.html"><a href="preprocessing-import-data.html#step-3-validate-data"><i class="fa fa-check"></i><b>4.2.3</b> Step 3: Validate Data</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="qas.html"><a href="qas.html"><i class="fa fa-check"></i><b>5</b> Q&amp;As</a><ul>
+<li class="chapter" data-level="5" data-path="qas.html"><a href="qas.html"><i class="fa fa-check"></i><b>5</b> Q&amp;As</a>
+<ul>
 <li class="chapter" data-level="5.1" data-path="qas.html"><a href="qas.html#installation"><i class="fa fa-check"></i><b>5.1</b> Installation</a></li>
 <li class="chapter" data-level="5.2" data-path="qas.html"><a href="qas.html#getting-started-with-rave"><i class="fa fa-check"></i><b>5.2</b> Getting Started with RAVE</a></li>
 <li class="chapter" data-level="5.3" data-path="qas.html"><a href="qas.html#downloading-demo-data-1"><i class="fa fa-check"></i><b>5.3</b> Downloading Demo Data</a></li>
@@ -188,16 +197,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="preprocessing-import-data" class="section level1 hasAnchor">
+<div id="preprocessing-import-data" class="section level1 hasAnchor" number="4">
 <h1><span class="header-section-number">Chapter 4</span> Preprocessing: Import Data<a href="preprocessing-import-data.html#preprocessing-import-data" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Now that you have installed RAVE and understand how to start/close the program, you can proceed to importing your iEEG data into RAVE so that it can be preprocessed and used in future modules.</p>
-<div id="downloading-demo-data" class="section level2 hasAnchor">
+<div id="downloading-demo-data" class="section level2 hasAnchor" number="4.1">
 <h2><span class="header-section-number">4.1</span> Downloading demo data<a href="preprocessing-import-data.html#downloading-demo-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Before importing your own data, you may wish to gain familiarity by trying RAVE’s demo data in various modules. By default, RAVE already has a DemoSubject whose raw data has already been imported. You can also download other demo subjects by copying and pasting the following command into the RStudio console:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="preprocessing-import-data.html#cb16-1"></a>rave<span class="op">::</span><span class="kw">download_sample_data</span>(<span class="st">&quot;subject_code&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="preprocessing-import-data.html#cb1-1" aria-hidden="true" tabindex="-1"></a>rave<span class="sc">::</span><span class="fu">download_sample_data</span>(<span class="st">&quot;subject_code&quot;</span>)</span></code></pre></div>
 <p>You will need to substitute “subject_code” with one of the available demo subjects: <code>KC</code>, <code>YAB</code>, <code>YAD</code>, <code>YAF</code>, <code>YAH</code>, <code>YAI</code>, <code>YAJ</code>, and <code>YAK</code>.</p>
 <p>For example, to download subject YAB, use the following command:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="preprocessing-import-data.html#cb17-1"></a>rave<span class="op">::</span><span class="kw">download_sample_data</span>(<span class="st">&quot;YAB&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="preprocessing-import-data.html#cb2-1" aria-hidden="true" tabindex="-1"></a>rave<span class="sc">::</span><span class="fu">download_sample_data</span>(<span class="st">&quot;YAB&quot;</span>)</span></code></pre></div>
 <p>Note that downloaded demo data will be stored in the <code>raw_dir</code> folder of the <code>rave_data</code> folder in your home directory. Within <code>raw_dir</code>, each subject’s data is stored in its own folder (e.g. YAB’s data will be stored in the YAB folder in <code>raw_dir</code>). Refer to the following screenshot for clarity.</p>
 <div class="figure">
 <img src="static/image/DemoDownloadImage.png" alt="" />
@@ -205,20 +214,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <p>You can proceed to the “importing demo data” instructions to load this raw data into RAVE for cleaning (? double check).</p>
 </div>
-<div id="importing-data" class="section level2 hasAnchor">
+<div id="importing-data" class="section level2 hasAnchor" number="4.2">
 <h2><span class="header-section-number">4.2</span> Importing data<a href="preprocessing-import-data.html#importing-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>To launch the RAVE Preprocessing module, copy and paste the following command into the RStudio console:</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="preprocessing-import-data.html#cb18-1"></a> rave<span class="op">::</span><span class="kw">rave_preprocess</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="preprocessing-import-data.html#cb3-1" aria-hidden="true" tabindex="-1"></a> rave<span class="sc">::</span><span class="fu">rave_preprocess</span>()</span></code></pre></div>
 <p>The Preprocessing module will then open in a browser window, allowing you to see the Overview page. The Overview page allows you to import raw iEEG data into RAVE for cleaning and consists of three panels.
 * Overview:
 * Information:
 * Import Widgets:</p>
-<div id="step-1-select-subject" class="section level3 hasAnchor">
+<div id="step-1-select-subject" class="section level3 hasAnchor" number="4.2.1">
 <h3><span class="header-section-number">4.2.1</span> Step 1: Select Subject<a href="preprocessing-import-data.html#step-1-select-subject" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Enter the code for the demo subject whose iEEG data you want to import into RAVE. Note that a subject’s data should be stored in its own folder within the raw directory (<code>raw_dir</code> folder) within <code>rave_data</code>.</p>
 <p>E.g. if you want to select demo subject KC, enter “KC” and you should receive the following message letting you know the subject has been found: /Users/your_home_directory/rave_data/raw_dir/KC (found!)</p>
 </div>
-<div id="step-2-select-project-or-create-new-one" class="section level3 hasAnchor">
+<div id="step-2-select-project-or-create-new-one" class="section level3 hasAnchor" number="4.2.2">
 <h3><span class="header-section-number">4.2.2</span> Step 2: Select Project or Create New One<a href="preprocessing-import-data.html#step-2-select-project-or-create-new-one" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>This step allows you to specify where you want the cleaned data to be stored. If you wish to create a new project, select “New Project” from the drop down menu and indicate your desired project name. Note that by default, this project folder will be created within the data directory (<code>data_dir</code>) within <code>rave_data</code>, with a new folder for the subject.</p>
 <p>E.g. if you wish to store demo subject KC in a new project called “Test”, you should receive the following message:
@@ -226,7 +235,7 @@ Subject [Test/KC] will be stored at: /Users/your_home_directory/rave_data/data_d
 <p>Then, click “create subject” to proceed.</p>
 <!-- // mention built-in demo folder -->
 </div>
-<div id="step-3-validate-data" class="section level3 hasAnchor">
+<div id="step-3-validate-data" class="section level3 hasAnchor" number="4.2.3">
 <h3><span class="header-section-number">4.2.3</span> Step 3: Validate Data<a href="preprocessing-import-data.html#step-3-validate-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>In this step, you will have to specify your desired channel options:</p>
 <!-- // add note that once you notch filter these, -->

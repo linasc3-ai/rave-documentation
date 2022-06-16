@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 6 Q&amp;As | RAVE Documentation</title>
+  <title>Chapter 5 Preprocessing | RAVE Documentation</title>
   <meta name="description" content="RAVE documentation" />
   <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 6 Q&amp;As | RAVE Documentation" />
+  <meta property="og:title" content="Chapter 5 Preprocessing | RAVE Documentation" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="RAVE documentation" />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 6 Q&amp;As | RAVE Documentation" />
+  <meta name="twitter:title" content="Chapter 5 Preprocessing | RAVE Documentation" />
   
   <meta name="twitter:description" content="RAVE documentation" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="preprocessing.html"/>
-
+<link rel="prev" href="import-data.html"/>
+<link rel="next" href="qas.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -196,63 +196,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="qas" class="section level1 hasAnchor">
-<h1><span class="header-section-number">Chapter 6</span> Q&amp;As<a href="qas.html#qas" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<hr />
-<p>This page contains possible questions that may arise when using RAVE and their answers. Questions are organized by section.</p>
-<div id="installation" class="section level2 hasAnchor">
-<h2><span class="header-section-number">6.1</span> Installation<a href="qas.html#installation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<!-- note: these are sourced from the troubleshooting section of my documentation, not sure if they're better placed here or in those troubleshooting sections -->
-<p><strong>Question:</strong> When updating RAVE, I received a “timeout of 60 seconds was reached” warning message. How do I fix this?
-&gt; Answer: Try switching to a faster network connection.</p>
-<p><strong>Question:</strong> I already have R and RStudio downloaded. Can I skip the prerequisites?
-&gt; Answer: RAVE is dependent on the most recent versions of these applications, so please make sure they are properly updated. Be sure to also review the other pre-requisite steps, like installing Homebrew and the system libraries. The most common reason for issues in the installation of RAVE is failure to properly download these prerequisites.</p>
-<p><strong>Question:</strong> How can I check my computer’s OS version or CPU type?
-&gt; Answer: If you’re using a Mac, this can be found by clicking the apple logo at the top left of your screen, and then clicking “About this Mac”. The version and processor (CPU type) will be listed there.</p>
-<p><strong>Question:</strong> I received a “the following directories are not writable by your user” error. How do I fix this?
-&gt; Answer: If you have multiple accounts on your computer but only one of them has homebrew installed, you may receive that error. To resolve it, you can change the ownership of the directories to the current user and make sure this user has write permission.</p>
+<div id="preprocessing" class="section level1 hasAnchor">
+<h1><span class="header-section-number">Chapter 5</span> Preprocessing<a href="preprocessing.html#preprocessing" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="step-1-notch-filter" class="section level2 hasAnchor">
+<h2><span class="header-section-number">5.1</span> Step #1: Notch Filter<a href="preprocessing.html#step-1-notch-filter" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 </div>
-<div id="getting-started-with-rave" class="section level2 hasAnchor">
-<h2><span class="header-section-number">6.2</span> Getting Started with RAVE<a href="qas.html#getting-started-with-rave" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><strong>Question</strong>: I copied a command into the RStudio console, but nothing is happening. What is the issue?
-&gt; Make sure you click the red stop sign at the top right of the console to stop the current command. This is necessary if you want to execute a different command.</p>
+<div id="step-2-wavelet" class="section level2 hasAnchor">
+<h2><span class="header-section-number">5.2</span> Step #2: Wavelet<a href="preprocessing.html#step-2-wavelet" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 </div>
-<div id="downloading-demo-data-1" class="section level2 hasAnchor">
-<h2><span class="header-section-number">6.3</span> Downloading Demo Data<a href="qas.html#downloading-demo-data-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><strong>Question:</strong> I received this message when trying to import a demo subject.</p>
-<p>/Users/aliavyanne/rave_data/raw_dir/YAI (NOT found) /Users/aliavyanne/rave_data/bids_dir//Test/sub-YAI (NOT found)</p>
-<p>How do I fix this?</p>
-<blockquote>
-<p>Answer: You forgot to download this demo subject before importing them. You can use the following command to download the demo subject YAI:</p>
-</blockquote>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="qas.html#cb20-1"></a>rave<span class="op">::</span><span class="kw">download_sample_data</span>(<span class="st">&quot;YAI&quot;</span>)</span></code></pre></div>
-<p><strong>Question:</strong> Where does the demo data come from?
-&gt; Answer: The demo data available in RAVE is sourced from experiments run by the Beauchamp Lab at the Perelman School of Medicine, which investigates the neural mechanisms for multisensory integration and visual perception in human subjects. Read more at: <a href="https://www.med.upenn.edu/beauchamplab/" class="uri">https://www.med.upenn.edu/beauchamplab/</a></p>
-</div>
-<div id="importing-data" class="section level2 hasAnchor">
-<h2><span class="header-section-number">6.4</span> Importing Data<a href="qas.html#importing-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><strong>Question:</strong> What does the term “channel” refer to?
-&gt; Answer: In the early design of RAVE, we focused on exploring one channel per electrode cases, hence we equivalent “channel” to “electrode” here.</p>
-<p><strong>Question:</strong> In step 3, why are the “folders” and “electrode” fields designated as “read-only”?</p>
-<blockquote>
-<p>Answer: If these fields are designated as “read only,” this means you have already imported the entered subject. To preserve reproducibility, once raw data for a subject is imported and notch filtered, you can not change the channel options.</p>
-</blockquote>
-<p><strong>Question:</strong> In step 3, what does the term “block” refer to?</p>
-<blockquote>
-<p>Answer: RAVE defines “block” as a period or session of continuous recording. A block should be named with a zero-padded integer according to the order they were recorded (e.g. 001 for the first session, 002 for the second).</p>
-</blockquote>
-<p><strong>Question:</strong> On the import widgets panel at bottom right, I got a message that electrode files are missing. How do I resolve this?</p>
-<blockquote>
-<p>Answer: When you hit the “check subject” button, the bottom right panel will let you know if any electrode files are missing based on the electrode numbers you entered in step three. Be sure to double check that you indicated the correct electrode numbers in step 3.</p>
-</blockquote>
-<p><strong>Question:</strong> Does RAVE automatically validate my data?
-&gt; Answer: You should check for yourself to make sure that each block contains the appropriate files. RAVE will not automatically check this for you.</p>
-<p><strong>Question:</strong> How do I know which file format to select in step 3?
-&gt; Answer: When you select a file format from the drop down, RAVE will display brief information on what that format entails and a sample organization for the data directory. Select the format that matches that of your data.</p>
-<p><strong>Question:</strong> Where are my inputs and configurations stored for a given subject?
-&gt; Answer: This information is stored within <code>data_dir/&lt;project&gt;/subject&gt;/rave/preprocess/rave.yaml</code> of your home directory.</p>
-<p><strong>Question:</strong> I’ve already performed the notch filter, but RAVE is not letting me update my channel options. How can I fix this?
-&gt; Answer: Once the data is imported and notch filtered, you cannot change the channel options. You should make a new project to change the channel options in this case.</p>
+<div id="step-3-localization" class="section level2 hasAnchor">
+<h2><span class="header-section-number">5.3</span> Step #3: Localization<a href="preprocessing.html#step-3-localization" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 
 </div>
 </div>
@@ -261,8 +214,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="preprocessing.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="import-data.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="qas.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -293,7 +246,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/99-QA.Rmd",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/04-preprocessing.Rmd",
 "text": "Edit"
 },
 "history": {
