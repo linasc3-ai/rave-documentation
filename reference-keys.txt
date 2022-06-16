@@ -1,4 +1,5 @@
 about
+contact-us
 citations
 installation-guide
 install-the-prerequisites
