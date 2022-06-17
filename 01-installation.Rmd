@@ -5,20 +5,24 @@ editor_options:
 ---
 # Installation Guide
 
-Installing RAVE involves two parts: 
-1). installing the pre-requisites
-2). downloading RAVE
-
-Carefully follow the steps below to install RAVE: 
-
-**Note:** For optimal use of RAVE, it is recommended your computer has at least 64GB RAM and a 4-core CPU. 
+RAVE is written as an "R" package. To properly install RAVE, please carefully follow the instructions step-by-step. We found 90% installation issues are due to not following the instructions.
 
 ---
 
-## Install the Prerequisites
-Because RAVE is written in the programming language "R", it is necessary to download R and its integrated development editor "RStudio" onto your computer. Correctly installing the following pre-requisites is necessary for RAVE to work properly. 
+## System requirements & prerequisites
 
-**Note:** RAVE requires the latest versions of R and RStudio to run properly. To avoid errors in the download process, if you already have R and RStudio on your computer, be sure they are updated to the most recent versions. 
+**System requirements**: 4 CPU cores with 8 GB RAM
+
+RAVE is written in the programming language "R", it is necessary to download the *latest* version R into your computer. We also strongly recommend installing "RStudio", an integrated development environment to take the maximum benefit of RAVE features. This section will guide you to install the system software. Please click on the following links according to your operating systems.
+
+* [MacOS](#macos)
+* Windows
+* Debian Linux (Ubuntu)
+
+
+<!-- and its integrated development editor "RStudio" onto your computer. Correctly installing the following pre-requisites is necessary for RAVE to work properly. 
+
+**Note:** RAVE requires the latest versions of R and RStudio to run properly. To avoid errors in the download process, if you already have R and RStudio on your computer, be sure they are updated to the most recent versions. -->
 
 <!--- ### Windows
 
@@ -26,7 +30,7 @@ Because RAVE is written in the programming language "R", it is necessary to down
 
 ### MacOS
 
-#### Install Homebrew
+<font size="4">**STEP 1: Install Homebrew**</font>
 
 [Homebrew](https://brew.sh/) is a package manager that adds functions missing from the Apple operating system. It can be installed by copying and pasting the following line into your terminal (**note:** the terminal can be found through searching the applications folder on your computer): 
 
@@ -41,16 +45,18 @@ If you have not downloaded Homebrew to your computer before, you will be prompte
 Password:
 ```
 
-**Enter your user password.** Note that the password won't be displayed into the screen as you type for security reasons. Once you've finish typing, press the RETURN or ENTER key to proceed. 
+Enter your user's password (*the password won't be displayed into the screen as you type for security reasons*). Once you've finish typing, press the `RETURN` or `ENTER` key to proceed. 
 
 ```
 ==> This script will install:
 ... 
 Press RETURN/ENTER to continue or any other key to abort:
 ```
-Please press the RETURN or ENTER key to continue. 
 
-##### Add brew to path {-}
+Please press the `RETURN` or `ENTER` key to continue. 
+
+<font size="4">**STEP 2: Add command `brew` to system search path**</font>
+
 The terminal commands used to add homebrew to the path depend on your computer's CPU chip. Copy and paste the appropriate command lines into the terminal based on your computer's chip type. 
 
 * **For M1 Chips** 
@@ -62,25 +68,40 @@ The terminal commands used to add homebrew to the path depend on your computer's
 
 * **For Intel Chips** 
 
+```sh
+ echo 'eval "$(/usr/local/bin/brew shellenv)"' >> ~/.zprofile
+ echo 'eval "$(/usr/local/bin/brew shellenv)"' >> ~/.profile
+ echo 'eval "$(/usr/local/bin/brew shellenv)"' >> ~/.bash_profile
+```
 
-#### Install R Language 
-Download and install the latest version of R directly from the website: https://cran.r-project.org/bin/macosx/ Be sure to download the package that corresponds to your computer's OS version and CPU type. 
+<font size="4">**STEP 3: Use `brew` to install missing libraries**</font>
 
-* For Intel Macs, download `R-X.X.X.pkg` 
-* For M1 Macs, download `R-X.X.X-arm64.pkg` 
-
-#### Install RStudio Desktop 
-Download and install RStudio Desktop directly from the website: https://www.rstudio.com/products/rstudio/download/ Be sure to download the version that corresponds to your OS system. Refer to the following screenshot for guidance. 
-
-![Screenshot of RStudio Website](static/image/RStudioScreenshot.png) 
-
-#### Install system libraries
-You will need to download the libraries hdf5, fftw, and pkg-config. This can be done by copying and pasting the following line into your terminal: 
+Open your system terminal, paste the following line into your terminal:
 
 ```sh
 brew install hdf5 fftw pkg-config
 ```
 
+This will install three libraries:
+
+* `hdf5`: Shared library to access the universal HDF5 file format
+* `fftw`: Fast-Fourier transform library required by signal processing code
+* `pkg-config`: Package configuration helpers allowing R to find the two libraries above
+
+<font size="4">**STEP 4: Install R**</font>
+
+Download and install the latest version of R directly from the website: https://cran.r-project.org/bin/macosx/ Be sure to download the package that corresponds to your computer's OS version and CPU type. 
+
+* For Intel Macs, download `R-X.X.X.pkg` 
+* For M1 Macs, download `R-X.X.X-arm64.pkg` 
+
+<font size="4">**STEP 5: Install RStudio Desktop**</font>
+
+Download and install RStudio Desktop directly from the website: https://www.rstudio.com/products/rstudio/download/ Be sure to download the version that corresponds to your OS system. Refer to the following screenshot for guidance. 
+
+![Screenshot of RStudio Website](static/image/RStudioScreenshot.png) 
+
+<!--
 #### Troubleshooting
 Possible errors and their recommended fixes: 
 
@@ -94,18 +115,18 @@ and then
 ```sh
 brew tap homebrew/core
 ```
-
+-->
 --- 
 
 ## Install RAVE
 
-Now that you have installed the pre-requisites, follow the steps below to download and install the RAVE package on your computer. 
+IMPORTANT: Before proceeding to rest of this section. Please make sure you have read and finished the previous section: "[System requirements & prerequisites](#system-requirements-prerequisites)".
 
-### Download and Configure
+**Download and Configure**
 
 Open the RStudio application and click on the *Console* tab (if RStudio is set to default settings, this tab is usually located in bottom left panel of your screen). 
 
-Copy and paste the following command onto the console to **download the RAVE packages from the online repository and install them** on your computer: 
+Copy and paste the following R command into the console to install RAVE and its dependence the online repository: 
 
 ```r
 options(repos = c(ropensci = 'https://beauchamplab.r-universe.dev', 
@@ -113,24 +134,28 @@ options(repos = c(ropensci = 'https://beauchamplab.r-universe.dev',
 install.packages(c('rave', 'ravebuiltins'))
 ```
 
-Copy and paste the following command onto the console to **update RAVE to the latest available version** (this will account for recent bug fixes and newly added features): 
+Copy and paste the following command onto the R console to update RAVE to the latest version (with bug fixes and new features): 
 
 ```r
 rave::check_dependencies(nightly = TRUE)
 ```
 
-Copy and paste the following command onto the console to: 
-* **Download template brain** (`N27`, `fsaverage`) for electrode template mapping
-* **Download demo subject data** for single- and group-level analyses
+Copy and paste the following command into the R console: 
+
 
 ```r
 rave::finalize_installation(upgrade = 'ask')
 ```
 
-#### Troubleshooting
-* When updating RAVE, if you receive a "timeout of 60 seconds was reached" warning message, try switching to a faster network connection.
+This finalizing step will download the following additional parts:
 
-### Validate the Installation
+* Template brain: (`N27`, `fsaverage`) for group-level electrode template mapping
+* Demo subject data: for demonstration purposes
+
+<!--#### Troubleshooting
+* When updating RAVE, if you receive a "timeout of 60 seconds was reached" warning message, try switching to a faster network connection.-->
+
+**Validate the Installation**
 
 To check whether RAVE was properly installed, copy and paste the following commands
 onto the console to start the program: 
@@ -144,33 +169,37 @@ RAVE display. A screenshot is shown below:
 
 ![RAVE Start Screen](static/image/RAVEStartScreen.png) 
 
-You have successfully downloaded RAVE! 
+🎉 You have successfully downloaded RAVE! 
 
+Now that you've completed installation, visit the following pages to start using RAVE! 
+
+* [Starting RAVE](#starting-rave)
+* [Upgrade RAVE](#upgrade-rave)
+* [Change RAVE settings](#change-rave-settings) 
+
+
+<!--
 #### Troubleshooting 
 ** The RAVE data should be located [default location]. If located elsewhere on the window, copy and paste the following command onto the console to set the data directory to the correct location: 
 ```r
  rave::rave_options()
 ```
+-->
 
 --- 
 
-## Updating RAVE after download
-If you've already downloaded RAVE and simply wish to update the application to the most recent version, copy and paste the following command into the RStudio console: 
+## Upgrade RAVE
+
+RAVE is actively under development with new features and bug fixes. To enjoy the new features, RAVE has built-in function that allows to update itself directly from the following R command:
 
 ```r
  rave::check_dependencies(nightly = TRUE)
 ```
 
-**Note:** When re-updating, a pop-up might appear in RStudio asking if you want to reinstall the N27 template brain. Because the template is already installed, click no.  
+**Note:** When re-updating, a pop-up might appear asking if you want to re-install the N27 template brain. Simply choose no.
 
 
-### What's Next {-}
-Now that you've completed installation, visit the following pages to start using RAVE! 
-
-* [Starting RAVE](#starting-rave)
-* [Change RAVE settings](#change-rave-settings) 
-
-
+## Troubleshooting
 
 
 
