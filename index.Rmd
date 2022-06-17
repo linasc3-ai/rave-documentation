@@ -14,28 +14,35 @@ link-citations: yes
 github-repo: rstudio/bookdown-demo
 ---
 
-# About
-
-**R** **A**nalysis and **V**isualization of intracranial **E**EG (RAVE) is free and open-source software for the analysis of intracranial electroencephalogram (iEEG) data, including data collected using strips and grids (electrocorticography, ECoG) and depth electrodes (stereotactic EEG). 
+# Introduction
 
 <!--- ![Brief Introduction to RAVE](https://youtu.be/s6EnlqF-Q8E) -->
 <iframe width="560" height="315" src="https://www.youtube.com/embed/s6EnlqF-Q8E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## Contact Us 
-Questions? Email us at help@rave.wiki.
+**R** **A**nalysis and **V**isualization of intracranial **E**EG (RAVE) is free and open-source software for the analysis of intracranial electroencephalogram (iEEG) data, including data collected using strips and grids (electrocorticography, ECoG) and depth electrodes (stereotactic EEG). 
 
-## Citations
+* RAVE official wiki https://rave.wiki
+* Contact us: help@rave.wiki
+* What's NEW!
 
-RAVE has been developed since 2017 with funding provided by NIH-1R24MH117529. If you use RAVE, please cite:
+**Citation**: RAVE has been developed since 2017 with funding provided by NIH-1R24MH117529. If you use RAVE, please cite:
 
-* Magnotti, John F, Zhengjia Wang, and Michael S Beauchamp. 2020. “RAVE: Comprehensive Open-Source Software for Reproducible Analysis and Visualization of Intracranial EEG Data.” NeuroImage 223: 117341.
+* Magnotti, J. F., Wang, Z., & Beauchamp, M. S. (2020). _RAVE: Comprehensive open-source software for reproducible analysis and visualization of intracranial EEG data._ NeuroImage, 223, 117341. [[DOI](https://doi.org/10.1016/j.neuroimage.2020.117341)]
 
+## Showcases {-}
 
-Other papers published using RAVE:
+Conference posters:
 
-* Karas, Patrick J, John F Magnotti, Brian A Metzger, Lin L Zhu, Kristen B Smith, Daniel Yoshor, and Michael S Beauchamp. 2019. "The Visual Speech Head Start Improves Perception and Reduces Superior Temporal Cortex Responses to Auditory Speech." Elife 8: e48116.
-* Metzger, Brian A, John F Magnotti, Zhengjia Wang, Elizabeth Nesbitt, Patrick J Karas, Daniel Yoshor, and Michael S Beauchamp. 2020. "Responses to Visual Speech in Human Posterior Superior Temporal Gyrus Examined with iEEG Deconvolution." Journal of Neuroscience 40 (36): 6938–48.
-* Wang, Zhengjia, Magnotti, John, Beauchamp, Michael S., and Li, Meng. 2022 "Functional group bridge for simultaneous regression and support estimation." Biometrics, 00, 1– 13. 
+* [2022 NIH BRAIN Initiative](https://brainmeeting2022.ipostersessions.com/default.aspx?s=C8-FD-0E-02-1C-00-D5-F3-57-52-C2-13-AE-AE-D6-9A)
+
+Selected journal paper using RAVE:
+
+* Wang, Z., Magnotti, J., Beauchamp, M.S. and Li, M. (2022) Functional group bridge for simultaneous regression and support estimation. Biometrics, 00, 1– 13.
+* Adkinson JA, Tsolaki E, Sheth SA, Metzger BA, Robinson ME, Oswalt D, McIntyre CC, Mathura RK, Waters AC, Allawala AB, Noecker AM. Imaging versus electrographic connectivity in human mood-related fronto-temporal networks. Brain Stimulation. 2022 May 1;15(3):554-65.
+* Metzger BA, Magnotti JF, Wang Z, Nesbitt E, Karas PJ, Yoshor D, Beauchamp MS. Responses to visual speech in human posterior superior temporal gyrus examined with iEEG deconvolution. Journal of Neuroscience. 2020 Sep 2;40(36):6938-48.
+* Geyer K, Campbell F, Chang A, Magnotti J, Beauchamp M, Allen GI. Interpretable visualization and higher-order dimension reduction for ECoG data. 2020 IEEE International Conference on Big Data (Big Data) 2020 Dec 10 (pp. 2664-2673). IEEE.
+* Metzger BA, Kalva P, Mocchi MM, Cui B, Adkinson JA, Wang Z, Mathura R, Gavvala J, Krishnan V, Lin L, Maheshwari A. Intracranial EEG spectral feature analysis and focal brain stimulation reveal affective specialization within dorsal anterior cingulate cortex. bioRxiv. 2022 Jan 1.
+* Karas PJ, Magnotti JF, Metzger BA, Zhu LL, Smith KB, Yoshor D, Beauchamp MS. The visual speech head start improves perception and reduces superior temporal cortex responses to auditory speech. Elife. 2019 Aug 8;8:e48116.
 
 <!--- [@magnotti2020rave], [@metzger2020responses], [@karas2019visual] -->
 
