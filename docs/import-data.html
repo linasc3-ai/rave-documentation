@@ -20,7 +20,6 @@
   <meta name="twitter:description" content="RAVE documentation" />
   
 
-<meta name="author" content="Lina Chihoub" />
 
 
 <meta name="date" content="2022-06-16" />
@@ -136,16 +135,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">RAVE Manual</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> url: your book url like <span>https://bookdown.org/yihui/bookdown</span></a>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> About</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#citations"><i class="fa fa-check"></i><b>1.1</b> Citations</a></li>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#contact-us"><i class="fa fa-check"></i><b>1.1</b> Contact Us</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#citations"><i class="fa fa-check"></i><b>1.2</b> Citations</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="installation-guide.html"><a href="installation-guide.html"><i class="fa fa-check"></i><b>2</b> Installation Guide</a>
 <ul>
 <li class="chapter" data-level="2.1" data-path="installation-guide.html"><a href="installation-guide.html#install-the-prerequisites"><i class="fa fa-check"></i><b>2.1</b> Install the Prerequisites</a>
 <ul>
-<li class="chapter" data-level="2.1.1" data-path="installation-guide.html"><a href="installation-guide.html#linux"><i class="fa fa-check"></i><b>2.1.1</b> Linux –&gt;</a></li>
-<li class="chapter" data-level="2.1.2" data-path="installation-guide.html"><a href="installation-guide.html#macos"><i class="fa fa-check"></i><b>2.1.2</b> MacOS</a></li>
+<li class="chapter" data-level="2.1.1" data-path="installation-guide.html"><a href="installation-guide.html#macos"><i class="fa fa-check"></i><b>2.1.1</b> MacOS</a></li>
 </ul></li>
 <li class="chapter" data-level="2.2" data-path="installation-guide.html"><a href="installation-guide.html#install-rave"><i class="fa fa-check"></i><b>2.2</b> Install RAVE</a>
 <ul>
@@ -212,29 +211,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Now that you have installed and gotten started with RAVE, you can proceed to importing your iEEG data into the software so that it can be preprocessed and used in future modules.</p>
 <div id="downloading-demo-data" class="section level2 hasAnchor" number="4.1">
 <h2><span class="header-section-number">4.1</span> Downloading demo data<a href="import-data.html#downloading-demo-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Before importing your own data, you may wish to gain familiarity by trying RAVE’s demo data in various modules. By default, RAVE already has a DemoSubject whose raw data has already been imported. You can also download other demo subjects by copying and pasting the following command into the RStudio console:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="import-data.html#cb1-1" aria-hidden="true" tabindex="-1"></a>rave<span class="sc">::</span><span class="fu">download_sample_data</span>(<span class="st">&quot;subject_code&quot;</span>)</span></code></pre></div>
+<p>Before importing your own data, you may wish to gain familiarity by trying RAVE’s demo data in various modules. By default, RAVE already has a DemoSubject whose raw data has already been imported. <!-- Double check this, I don't remember what it looked like at default. --> However, you can also download other demo subjects by copying and pasting the following command into the RStudio console:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="import-data.html#cb16-1" aria-hidden="true" tabindex="-1"></a>rave<span class="sc">::</span><span class="fu">download_sample_data</span>(<span class="st">&quot;subject_code&quot;</span>)</span></code></pre></div>
 <p>You will need to substitute “subject_code” with one of the available demo subjects: <code>KC</code>, <code>YAB</code>, <code>YAD</code>, <code>YAF</code>, <code>YAH</code>, <code>YAI</code>, <code>YAJ</code>, and <code>YAK</code>.</p>
 <p>For example, to download subject YAB, use the following command:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="import-data.html#cb2-1" aria-hidden="true" tabindex="-1"></a>rave<span class="sc">::</span><span class="fu">download_sample_data</span>(<span class="st">&quot;YAB&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="import-data.html#cb17-1" aria-hidden="true" tabindex="-1"></a>rave<span class="sc">::</span><span class="fu">download_sample_data</span>(<span class="st">&quot;YAB&quot;</span>)</span></code></pre></div>
 <p>Note that downloaded demo data will be stored in the <code>raw_dir</code> folder of the <code>rave_data</code> folder in your home directory. Within <code>raw_dir</code>, each subject’s data is stored in its own folder (e.g. YAB’s data will be stored in the YAB folder in <code>raw_dir</code>). Refer to the following screenshot for clarity.</p>
 <div class="figure">
 <img src="static/image/DemoDownloadImage.png" alt="" />
 <p class="caption">Screenshot of location of downloaded demo data</p>
 </div>
-<p>You can proceed to the “importing demo data” instructions to load this raw data into RAVE for cleaning (? double check).</p>
+<p>You can proceed to the “importing demo data” instructions to load your newly downloaded raw data into RAVE for cleaning.</p>
 </div>
 <div id="importing-demo-data" class="section level2 hasAnchor" number="4.2">
 <h2><span class="header-section-number">4.2</span> Importing demo data<a href="import-data.html#importing-demo-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>To launch the RAVE Preprocessing module, copy and paste the following command into the RStudio console:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="import-data.html#cb3-1" aria-hidden="true" tabindex="-1"></a> rave<span class="sc">::</span><span class="fu">rave_preprocess</span>()</span></code></pre></div>
-<p>The Preprocessing module will then open in a browser window, allowing you to see the Overview page. The Overview page allows you to import raw iEEG data into RAVE for cleaning and consists of three panels.
-* Overview:
-* Information:
-* Import Widgets:</p>
+<p>You will need to launch the RAVE preprocessing module. Copy and paste the following command into the RStudio console:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="import-data.html#cb18-1" aria-hidden="true" tabindex="-1"></a> rave<span class="sc">::</span><span class="fu">rave_preprocess</span>()</span></code></pre></div>
+<p>The Preprocessing module will then open in a browser window, allowing you to see the Overview page. The Overview page is where you will import or load your data into RAVE. It consists of three panels.
+* <strong>Overview:</strong> this is where you will specify your inputs and configurations.
+* <strong>Information:</strong> a summary of your inputs and configurations is shown here.
+* <strong>Import Widgets</strong></p>
+<p>Proceed to the overview panel to specify these inputs and configurations.</p>
 <div id="step-1-select-subject" class="section level3 hasAnchor" number="4.2.1">
 <h3><span class="header-section-number">4.2.1</span> Step 1: Select Subject<a href="import-data.html#step-1-select-subject" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Enter the code for the demo subject whose iEEG data you want to import into RAVE. Note that a subject’s data should be stored in its own folder within the raw directory (<code>raw_dir</code> folder) within <code>rave_data</code>.</p>
+<p>Enter the code for the demo subject whose iEEG data you want to import into RAVE. Note that a subject’s data should be stored in its own folder within the raw directory (<code>raw_dir</code> folder) within the<code>rave_data</code> folder.</p>
 <p>E.g. if you want to select demo subject KC, enter “KC” and you should receive the following message letting you know the subject has been found: /Users/your_home_directory/rave_data/raw_dir/KC (found!)</p>
 </div>
 <div id="step-2-select-project-or-create-new-one" class="section level3 hasAnchor" number="4.2.2">
@@ -243,32 +243,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>E.g. if you wish to store demo subject KC in a new project called “Test”, you should receive the following message:
 Subject [Test/KC] will be stored at: /Users/your_home_directory/rave_data/data_dir/Test/KC</p>
 <p>Then, click “create subject” to proceed.</p>
-<!-- // mention built-in demo folder -->
+<!-- // is the demo folder built in? -->
 </div>
 <div id="step-3-validate-data" class="section level3 hasAnchor" number="4.2.3">
 <h3><span class="header-section-number">4.2.3</span> Step 3: Validate Data<a href="import-data.html#step-3-validate-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>In this step, you will have to specify your desired channel options:</p>
-<!-- // add note that once you notch filter these, -->
+<p>In this step, you will have to specify your desired electrode (aka channel) options:</p>
+<!-- // add note that once you notch filter these, you can not change them-->
 <ul>
 <li><p><strong>Folders:</strong> Each folder corresponds to a block, aka a period or session of continuous electrode recording. Select the blocks that correspond to the trials you want to analyze. (E.g. for KC, you could select blocks 003 and 004.)</p></li>
 <li><p><strong>Electrodes:</strong> Indicate the electrodes you want to analyze. Note that it is reccomended that you run the preprocessing steps on all electrodes at once. (E.g. for KC, you should indicate 1-92.)</p></li>
-</ul>
-<blockquote>
-<p>!– // why is there a jump in labeling the electrode files (e.g. in KC, in block 004, the electrode values go from 1 to 92 but then there’s also 129 and 130?) –&gt;</p>
-</blockquote>
-<ul>
-<li><p><strong>Sample Rate:</strong> Indicate the sample rate of your iEEG recording equipment; this value will determine the rate at which the preprocessing will be run. (E.g. for KC, you could indicate ‘2000’).</p></li>
-<li><p><strong>Physical Unit:</strong></p></li>
-<li><p><strong>File Format:</strong></p></li>
+<li><p><strong>Sample Rate:</strong> Indicate the sample rate of your iEEG recording equipment; this value will determine the rate at which the preprocessing will be run. For demo subjects, you can indicate <code>2000.</code></p></li>
+<li><p><strong>Physical Unit:</strong> Indicate the units you wish to use to measure voltage. Demo data can be kept at the default <code>as-is (no change)</code> option.</p></li>
+<li><p><strong>File Format:</strong> RAVE currently supports six file formats for your iEEG data. Demo data is stored using <code>.mat/.h5 files</code>, in which one file represents one electrode in a given block. (For guidance when selecting a file format, RAVE will briefly describe the format and display a sample organization of the directory.)</p></li>
 </ul>
 <p>Click the <strong>Check Subject</strong> button to proceed. (Note: this process can take a few minutes; progress will be displayed via pop-ups in the bottom right.)</p>
-<blockquote>
-<p>Note: In the import widgets panel at bottom right, a message may pop-up informing you that electrode files are missing. Be sure to double check that you indicated the correct electrode numbers in step 3 and that each block contains the appropriate files. (?? should this be in the Q&amp;A instead)</p>
-</blockquote>
 <p>Click the <strong>Start Import</strong> button to proceed. (Note: this process can take a few minutes.)</p>
-<!-- // how to do they know what to put in for a demo subject -->
-<p>Refer to the following screenshot for clarity.</p>
-<p>// setting up the data properly</p>
+<p>You have successfully imported a demo subject into RAVE. You can proceed to the preprocessing modules for further cleaning of this data.</p>
+<p>The following screenshot summarizes the data loading process:
+<img src="static/image/ImportDataOverview.png" alt="Labeled screenshot of overview window" /></p>
 </div>
 </div>
 <div id="importing-your-own-data" class="section level2 hasAnchor" number="4.3">
@@ -277,7 +269,7 @@ Subject [Test/KC] will be stored at: /Users/your_home_directory/rave_data/data_d
 <div id="organizing-your-directories" class="section level3 hasAnchor" number="4.3.1">
 <h3><span class="header-section-number">4.3.1</span> Organizing Your Directories<a href="import-data.html#organizing-your-directories" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <!-- This is a work in progress ... not 100% sure how this would be done -->
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="import-data.html#cb4-1" aria-hidden="true" tabindex="-1"></a> rave<span class="sc">::</span>archive_subject</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="import-data.html#cb19-1" aria-hidden="true" tabindex="-1"></a> rave<span class="sc">::</span>archive_subject</span></code></pre></div>
 
 </div>
 </div>
@@ -319,7 +311,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/03-import-data.Rmd",
+"link": "https://github.com/linasc3-ai/rave-documentation/edit/main/03-import-data.Rmd",
 "text": "Edit"
 },
 "history": {

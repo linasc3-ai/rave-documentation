@@ -20,7 +20,6 @@
   <meta name="twitter:description" content="RAVE documentation" />
   
 
-<meta name="author" content="Lina Chihoub" />
 
 
 <meta name="date" content="2022-06-16" />
@@ -136,16 +135,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">RAVE Manual</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> url: your book url like <span>https://bookdown.org/yihui/bookdown</span></a>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> About</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#citations"><i class="fa fa-check"></i><b>1.1</b> Citations</a></li>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#contact-us"><i class="fa fa-check"></i><b>1.1</b> Contact Us</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#citations"><i class="fa fa-check"></i><b>1.2</b> Citations</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="installation-guide.html"><a href="installation-guide.html"><i class="fa fa-check"></i><b>2</b> Installation Guide</a>
 <ul>
 <li class="chapter" data-level="2.1" data-path="installation-guide.html"><a href="installation-guide.html#install-the-prerequisites"><i class="fa fa-check"></i><b>2.1</b> Install the Prerequisites</a>
 <ul>
-<li class="chapter" data-level="2.1.1" data-path="installation-guide.html"><a href="installation-guide.html#linux"><i class="fa fa-check"></i><b>2.1.1</b> Linux –&gt;</a></li>
-<li class="chapter" data-level="2.1.2" data-path="installation-guide.html"><a href="installation-guide.html#macos"><i class="fa fa-check"></i><b>2.1.2</b> MacOS</a></li>
+<li class="chapter" data-level="2.1.1" data-path="installation-guide.html"><a href="installation-guide.html#macos"><i class="fa fa-check"></i><b>2.1.1</b> MacOS</a></li>
 </ul></li>
 <li class="chapter" data-level="2.2" data-path="installation-guide.html"><a href="installation-guide.html#install-rave"><i class="fa fa-check"></i><b>2.2</b> Install RAVE</a>
 <ul>
@@ -225,6 +224,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="getting-started-with-rave" class="section level2 hasAnchor" number="6.2">
 <h2><span class="header-section-number">6.2</span> Getting Started with RAVE<a href="qas.html#getting-started-with-rave" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Question</strong>: I copied a command into the RStudio console, but nothing is happening. What is the issue?
+&gt; Make sure you click the red stop sign at the top right of the console to stop the current command. This is necessary if you want to execute a different command.</p>
 </div>
 <div id="downloading-demo-data-1" class="section level2 hasAnchor" number="6.3">
 <h2><span class="header-section-number">6.3</span> Downloading Demo Data<a href="qas.html#downloading-demo-data-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -234,7 +235,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <blockquote>
 <p>Answer: You forgot to download this demo subject before importing them. You can use the following command to download the demo subject YAI:</p>
 </blockquote>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="qas.html#cb1-1" aria-hidden="true" tabindex="-1"></a>rave<span class="sc">::</span><span class="fu">download_sample_data</span>(<span class="st">&quot;YAI&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="qas.html#cb20-1" aria-hidden="true" tabindex="-1"></a>rave<span class="sc">::</span><span class="fu">download_sample_data</span>(<span class="st">&quot;YAI&quot;</span>)</span></code></pre></div>
 <p><strong>Question:</strong> Where does the demo data come from?
 &gt; Answer: The demo data available in RAVE is sourced from experiments run by the Beauchamp Lab at the Perelman School of Medicine, which investigates the neural mechanisms for multisensory integration and visual perception in human subjects. Read more at: <a href="https://www.med.upenn.edu/beauchamplab/" class="uri">https://www.med.upenn.edu/beauchamplab/</a></p>
 </div>
@@ -260,6 +261,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 &gt; Answer: When you select a file format from the drop down, RAVE will display brief information on what that format entails and a sample organization for the data directory. Select the format that matches that of your data.</p>
 <p><strong>Question:</strong> Where are my inputs and configurations stored for a given subject?
 &gt; Answer: This information is stored within <code>data_dir/&lt;project&gt;/subject&gt;/rave/preprocess/rave.yaml</code> of your home directory.</p>
+<p><strong>Question:</strong> I’ve already performed the notch filter, but RAVE is not letting me update my channel options. How can I fix this?
+&gt; Answer: Once the data is imported and notch filtered, you cannot change the channel options. You should make a new project to change the channel options in this case.</p>
 
 </div>
 </div>
@@ -300,7 +303,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/99-QA.Rmd",
+"link": "https://github.com/linasc3-ai/rave-documentation/edit/main/99-QA.Rmd",
 "text": "Edit"
 },
 "history": {

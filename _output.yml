@@ -4,7 +4,7 @@ bookdown::gitbook:
     toc:
       before: |
         <li><a href="./">RAVE Manual</a></li>
-    edit: https://github.com/USERNAME/REPO/edit/BRANCH/%s
+    edit: https://github.com/linasc3-ai/rave-documentation/edit/main/%s
     download: ["pdf", "epub"]
 bookdown::pdf_book:
   includes:
