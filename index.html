@@ -23,7 +23,7 @@
 <meta name="author" content="" />
 
 
-<meta name="date" content="2022-06-18" />
+<meta name="date" content="2022-06-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -149,9 +149,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.4" data-path="installation-guide.html"><a href="installation-guide.html#troubleshooting"><i class="fa fa-check"></i><b>2.4</b> Troubleshooting</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="get-started.html"><a href="get-started.html"><i class="fa fa-check"></i><b>3</b> Get Started</a><ul>
-<li class="chapter" data-level="3.1" data-path="get-started.html"><a href="get-started.html#starting-rave"><i class="fa fa-check"></i><b>3.1</b> Starting RAVE</a></li>
-<li class="chapter" data-level="3.2" data-path="get-started.html"><a href="get-started.html#closing-rave"><i class="fa fa-check"></i><b>3.2</b> Closing RAVE</a></li>
-<li class="chapter" data-level="3.3" data-path="get-started.html"><a href="get-started.html#change-rave-settings"><i class="fa fa-check"></i><b>3.3</b> Change RAVE Settings</a></li>
+<li class="chapter" data-level="3.1" data-path="get-started.html"><a href="get-started.html#overview-of-rave-structure"><i class="fa fa-check"></i><b>3.1</b> Overview of RAVE Structure</a></li>
+<li class="chapter" data-level="3.2" data-path="get-started.html"><a href="get-started.html#starting-and-closing-rave"><i class="fa fa-check"></i><b>3.2</b> Starting and Closing RAVE</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="import-data.html"><a href="import-data.html"><i class="fa fa-check"></i><b>4</b> Import Data</a><ul>
 <li class="chapter" data-level="4.1" data-path="import-data.html"><a href="import-data.html#downloading-demo-data"><i class="fa fa-check"></i><b>4.1</b> Downloading demo data</a></li>
@@ -194,13 +193,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="header">
 <h1 class="title">RAVE Documentation</h1>
-<p class="date"><em>2022-06-18</em></p>
+<p class="date"><em>2022-06-24</em></p>
 </div>
 <div id="introduction" class="section level1 hasAnchor">
 <h1><span class="header-section-number">Chapter 1</span> Introduction<a href="index.html#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <!--- ![Brief Introduction to RAVE](https://youtu.be/s6EnlqF-Q8E) -->
 <iframe width="560" height="315" src="https://www.youtube.com/embed/s6EnlqF-Q8E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
+<p>The above video provides a brief introduction of what RAVE is, including key features and benefits.</p>
 <p><strong>R</strong> <strong>A</strong>nalysis and <strong>V</strong>isualization of intracranial <strong>E</strong>EG (RAVE) is free and open-source software for the analysis of intracranial electroencephalogram (iEEG) data, including data collected using strips and grids (electrocorticography, ECoG) and depth electrodes (stereotactic EEG).</p>
 <ul>
 <li>RAVE official wiki <a href="https://rave.wiki" class="uri">https://rave.wiki</a></li>
@@ -219,12 +219,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>Selected journal paper using RAVE:</p>
 <ul>
-<li>Wang, Z., Magnotti, J., Beauchamp, M.S. and Li, M. (2022) Functional group bridge for simultaneous regression and support estimation. Biometrics, 00, 1– 13.</li>
-<li>Adkinson JA, Tsolaki E, Sheth SA, Metzger BA, Robinson ME, Oswalt D, McIntyre CC, Mathura RK, Waters AC, Allawala AB, Noecker AM. Imaging versus electrographic connectivity in human mood-related fronto-temporal networks. Brain Stimulation. 2022 May 1;15(3):554-65.</li>
-<li>Metzger BA, Magnotti JF, Wang Z, Nesbitt E, Karas PJ, Yoshor D, Beauchamp MS. Responses to visual speech in human posterior superior temporal gyrus examined with iEEG deconvolution. Journal of Neuroscience. 2020 Sep 2;40(36):6938-48.</li>
-<li>Geyer K, Campbell F, Chang A, Magnotti J, Beauchamp M, Allen GI. Interpretable visualization and higher-order dimension reduction for ECoG data. 2020 IEEE International Conference on Big Data (Big Data) 2020 Dec 10 (pp. 2664-2673). IEEE.</li>
-<li>Metzger BA, Kalva P, Mocchi MM, Cui B, Adkinson JA, Wang Z, Mathura R, Gavvala J, Krishnan V, Lin L, Maheshwari A. Intracranial EEG spectral feature analysis and focal brain stimulation reveal affective specialization within dorsal anterior cingulate cortex. bioRxiv. 2022 Jan 1.</li>
-<li>Karas PJ, Magnotti JF, Metzger BA, Zhu LL, Smith KB, Yoshor D, Beauchamp MS. The visual speech head start improves perception and reduces superior temporal cortex responses to auditory speech. Elife. 2019 Aug 8;8:e48116.</li>
+<li>Wang, Z., Magnotti, J., Beauchamp, M.S. and Li, M. (2022) <em>Functional group bridge for simultaneous regression and support estimation.</em> Biometrics, 00, 1– 13. [<a href="https://doi.org/10.1111/biom.13684">DOI</a>]</li>
+<li>Adkinson, J.A., Tsolaki, E., Sheth, S.A., Metzger, B.A., Robinson M.E., Oswalt, D., McIntyre, C.C., Mathura, R.K., Waters, A.C., Allawala, A.B., Noecker, A.M. (2022) <em>Imaging versus electrographic connectivity in human mood-related fronto-temporal networks.</em> Brain Stimulation, 15(3), 554-65. [<a href="https://doi.org/10.1016/j.brs.2022.03.002">DOI</a>]</li>
+<li>Metzger, B,A., Magnotti, J.F., Wang, Z., Nesbitt, E., Karas, P.J., Yoshor, D., Beauchamp, M.S. (2020) <em>Responses to visual speech in human posterior superior temporal gyrus examined with iEEG deconvolution.</em> Journal of Neuroscience, 40(36), 6938-48. [<a href="https://doi.org/10.1523/JNEUROSCI.0279-20.2020">DOI</a>]</li>
+<li>Geyer, K., Campbell, F., Chang, A., Magnotti, J.F., Beauchamp, M.S., Allen, G.I. (2020) <em>Interpretable visualization and higher-order dimension reduction for ECoG data.</em> 2020 IEEE International Conference on Big Data (Big Data), pp. 2664-2673. [<a href="10.1109/BigData50022.2020.9378462">DOI</a>]</li>
+<li>Metzger, B.A., Kalva, P., Mocchi, M.M., Cui, B., Adkinson, J.A., Wang, Z., Mathura, R., Gavvala, J., Krishnan, V., Lin, L., Maheshwari, A. (2022) <em>Intracranial EEG spectral feature analysis and focal brain stimulation reveal affective specialization within dorsal anterior cingulate cortex. bioRxiv.</em> [<a href="https://doi.org/10.1101/2022.03.01.482354">DOI</a>]</li>
+<li>Karas, P.J., Magnotti, J.F., Metzger, B.A., Zhu, L.L., Smith, K.B., Yoshor, D., Beauchamp, M.S. (2019) <em>The visual speech head start improves perception and reduces superior temporal cortex responses to auditory speech.</em> Elife, 8;8:e48116. [<a href="https://doi.org/10.7554/eLife.48116.001">DOI</a>]</li>
 </ul>
 <!--- [@magnotti2020rave], [@metzger2020responses], [@karas2019visual] -->
 

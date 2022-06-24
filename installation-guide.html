@@ -23,7 +23,7 @@
 <meta name="author" content="" />
 
 
-<meta name="date" content="2022-06-18" />
+<meta name="date" content="2022-06-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -149,9 +149,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.4" data-path="installation-guide.html"><a href="installation-guide.html#troubleshooting"><i class="fa fa-check"></i><b>2.4</b> Troubleshooting</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="get-started.html"><a href="get-started.html"><i class="fa fa-check"></i><b>3</b> Get Started</a><ul>
-<li class="chapter" data-level="3.1" data-path="get-started.html"><a href="get-started.html#starting-rave"><i class="fa fa-check"></i><b>3.1</b> Starting RAVE</a></li>
-<li class="chapter" data-level="3.2" data-path="get-started.html"><a href="get-started.html#closing-rave"><i class="fa fa-check"></i><b>3.2</b> Closing RAVE</a></li>
-<li class="chapter" data-level="3.3" data-path="get-started.html"><a href="get-started.html#change-rave-settings"><i class="fa fa-check"></i><b>3.3</b> Change RAVE Settings</a></li>
+<li class="chapter" data-level="3.1" data-path="get-started.html"><a href="get-started.html#overview-of-rave-structure"><i class="fa fa-check"></i><b>3.1</b> Overview of RAVE Structure</a></li>
+<li class="chapter" data-level="3.2" data-path="get-started.html"><a href="get-started.html#starting-and-closing-rave"><i class="fa fa-check"></i><b>3.2</b> Starting and Closing RAVE</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="import-data.html"><a href="import-data.html"><i class="fa fa-check"></i><b>4</b> Import Data</a><ul>
 <li class="chapter" data-level="4.1" data-path="import-data.html"><a href="import-data.html#downloading-demo-data"><i class="fa fa-check"></i><b>4.1</b> Downloading demo data</a></li>
@@ -199,7 +198,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="system-requirements-prerequisites" class="section level2 hasAnchor">
 <h2><span class="header-section-number">2.1</span> System requirements &amp; prerequisites<a href="installation-guide.html#system-requirements-prerequisites" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong>System requirements</strong>: 4 CPU cores with 8 GB RAM</p>
-<p>RAVE is written in the programming language “R”, it is necessary to download the <em>latest</em> version R into your computer. We also strongly recommend installing “RStudio”, an integrated development environment to take the maximum benefit of RAVE features. This section will guide you to install the system software. Please click on the following links according to your operating systems.</p>
+<p>RAVE is written in the programming language “R”, so it is necessary to download the <em>latest</em> version of R for your computer. We also strongly recommend installing “RStudio”, an integrated development environment, in order to easily utilize RAVE features. This section will guide you to install these and other prerequisites. Please click on the following links according to your operating systems.</p>
 <ul>
 <li><a href="installation-guide.html#macos">MacOS</a></li>
 <li>Windows</li>
@@ -214,6 +213,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="macos" class="section level3 hasAnchor">
 <h3><span class="header-section-number">2.1.1</span> MacOS<a href="installation-guide.html#macos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><font size="4"><strong>STEP 1: Install Homebrew</strong></font></p>
+<p><em>(Note: if you have downloaded Homebrew in the past, you do not need to redownload it now. Move to the next step.)</em></p>
 <p><a href="https://brew.sh/">Homebrew</a> is a package manager that adds functions missing from the Apple operating system. It can be installed by copying and pasting the following line into your terminal (<strong>note:</strong> the terminal can be found through searching the applications folder on your computer):</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="installation-guide.html#cb1-1"></a><span class="ex">/bin/bash</span> -c <span class="st">&quot;</span><span class="va">$(</span><span class="ex">curl</span> -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="va">)</span><span class="st">&quot;</span></span></code></pre></div>
 <p>If you have not downloaded Homebrew to your computer before, you will be prompted with the following questions:</p>
@@ -248,32 +248,17 @@ Press RETURN/ENTER to continue or any other key to abort:</code></pre>
 <li><code>pkg-config</code>: Package configuration helpers allowing R to find the two libraries above</li>
 </ul>
 <p><font size="4"><strong>STEP 4: Install R</strong></font></p>
-<p>Download and install the latest version of R directly from the website: <a href="https://cran.r-project.org/bin/macosx/" class="uri">https://cran.r-project.org/bin/macosx/</a> Be sure to download the package that corresponds to your computer’s OS version and CPU type.</p>
+<p>Download and install the <em>latest</em> version of R directly from the website: <a href="https://cran.r-project.org/bin/macosx/" class="uri">https://cran.r-project.org/bin/macosx/</a> Be sure to download the package that corresponds to your computer’s OS version and CPU type. If you already have R on your computer, simply ensure it is updated to the <em>latest</em> version.</p>
 <ul>
 <li>For Intel Macs, download <code>R-X.X.X.pkg</code></li>
 <li>For M1 Macs, download <code>R-X.X.X-arm64.pkg</code></li>
 </ul>
 <p><font size="4"><strong>STEP 5: Install RStudio Desktop</strong></font></p>
-<p>Download and install RStudio Desktop directly from the website: <a href="https://www.rstudio.com/products/rstudio/download/" class="uri">https://www.rstudio.com/products/rstudio/download/</a> Be sure to download the version that corresponds to your OS system. Refer to the following screenshot for guidance.</p>
+<p>Download and install RStudio Desktop directly from the website: <a href="https://www.rstudio.com/products/rstudio/download/" class="uri">https://www.rstudio.com/products/rstudio/download/</a> Be sure to download the version that corresponds to your OS system. If you already have RStudio downloaded, simply ensure it is updated to the <em>latest</em> version. Refer to the following screenshot for guidance.</p>
 <div class="figure">
 <img src="static/image/RStudioScreenshot.png" alt="" />
 <p class="caption">Screenshot of RStudio Website</p>
 </div>
-<!--
-#### Troubleshooting
-Possible errors and their recommended fixes: 
-
-* If you have multiple accounts on your computer but only one of them has homebrew installed, you may receive a **"the following directories are not writable by your user" error**. To resolve this error, you can change the ownership of the directories to the current user and make sure this user has write permission. 
-* When executing step 2.1.1.4 (installing hdf5, fftw, and pkg-config), if you receive the error **"No available formula with the name "hdf5".**, there might bee an issue with the location of Homebrew. Try the following commands in your terminal: 
-
-```sh
-rm -rf "/usr/local/Homebrew/Library/Taps/homebrew/homebrew-core"
-```
-and then 
-```sh
-brew tap homebrew/core
-```
--->
 <hr />
 </div>
 </div>
@@ -310,17 +295,10 @@ RAVE display. A screenshot is shown below:</p>
 <p>🎉 You have successfully downloaded RAVE!</p>
 <p>Now that you’ve completed installation, visit the following pages to start using RAVE!</p>
 <ul>
-<li><a href="get-started.html#starting-rave">Starting RAVE</a></li>
+<li><a href="#starting-rave">Starting RAVE</a></li>
 <li><a href="installation-guide.html#upgrade-rave">Upgrade RAVE</a></li>
-<li><a href="get-started.html#change-rave-settings">Change RAVE settings</a></li>
+<li><a href="#change-rave-settings">Change RAVE settings</a></li>
 </ul>
-<!--
-#### Troubleshooting 
-** The RAVE data should be located [default location]. If located elsewhere on the window, copy and paste the following command onto the console to set the data directory to the correct location: 
-```r
- rave::rave_options()
-```
--->
 <hr />
 </div>
 <div id="upgrade-rave" class="section level2 hasAnchor">
@@ -331,6 +309,22 @@ RAVE display. A screenshot is shown below:</p>
 </div>
 <div id="troubleshooting" class="section level2 hasAnchor">
 <h2><span class="header-section-number">2.4</span> Troubleshooting<a href="installation-guide.html#troubleshooting" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Possible errors during installation and their solutions:</p>
+<p><strong>Error:</strong> “The following directories are not writable by your user”.
+&gt; Solution: This could occur if you have multiple accountns on your computer, but only one of them has homebrew installed. You should change the ownership of the directories to the current user and make sure this user has write permission.</p>
+<p><strong>Error:</strong> “Can’t update lock in /usr/local/var/homebrew/locks”.
+&gt; Solution: This could occur if you have multiple accountns on your computer, but only one of them has homebrew installed. You can fix permissions by running -R $(whoami) /usr/local/var/homebrew.</p>
+<p><strong>Error:</strong> “No available formula with the name ‘hdf5’”.
+&gt; Solution: There might be an issue with the location of Homebrew. Please ensure you copied and pasted the commands in“STEP 2: Add command brew to system search path”. If you’ve already done that, you can try copying and pasting the following command into your console:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb12-1"><a href="installation-guide.html#cb12-1"></a><span class="fu">rm</span> -rf <span class="st">&quot;/usr/local/Homebrew/Library/Taps/homebrew/homebrew-core&quot;</span></span></code></pre></div>
+<p>and then</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb13-1"><a href="installation-guide.html#cb13-1"></a><span class="ex">brew</span> tap homebrew/core</span></code></pre></div>
+<!-- 
+** The RAVE data should be located [default location]. If located elsewhere on the window, copy and paste the following command onto the console to set the data directory to the correct location: 
+```r
+ rave::rave_options()
+```
+-->
 
 </div>
 </div>

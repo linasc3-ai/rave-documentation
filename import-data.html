@@ -23,7 +23,7 @@
 <meta name="author" content="" />
 
 
-<meta name="date" content="2022-06-18" />
+<meta name="date" content="2022-06-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -149,9 +149,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.4" data-path="installation-guide.html"><a href="installation-guide.html#troubleshooting"><i class="fa fa-check"></i><b>2.4</b> Troubleshooting</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="get-started.html"><a href="get-started.html"><i class="fa fa-check"></i><b>3</b> Get Started</a><ul>
-<li class="chapter" data-level="3.1" data-path="get-started.html"><a href="get-started.html#starting-rave"><i class="fa fa-check"></i><b>3.1</b> Starting RAVE</a></li>
-<li class="chapter" data-level="3.2" data-path="get-started.html"><a href="get-started.html#closing-rave"><i class="fa fa-check"></i><b>3.2</b> Closing RAVE</a></li>
-<li class="chapter" data-level="3.3" data-path="get-started.html"><a href="get-started.html#change-rave-settings"><i class="fa fa-check"></i><b>3.3</b> Change RAVE Settings</a></li>
+<li class="chapter" data-level="3.1" data-path="get-started.html"><a href="get-started.html#overview-of-rave-structure"><i class="fa fa-check"></i><b>3.1</b> Overview of RAVE Structure</a></li>
+<li class="chapter" data-level="3.2" data-path="get-started.html"><a href="get-started.html#starting-and-closing-rave"><i class="fa fa-check"></i><b>3.2</b> Starting and Closing RAVE</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="import-data.html"><a href="import-data.html"><i class="fa fa-check"></i><b>4</b> Import Data</a><ul>
 <li class="chapter" data-level="4.1" data-path="import-data.html"><a href="import-data.html#downloading-demo-data"><i class="fa fa-check"></i><b>4.1</b> Downloading demo data</a></li>
@@ -198,10 +197,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="downloading-demo-data" class="section level2 hasAnchor">
 <h2><span class="header-section-number">4.1</span> Downloading demo data<a href="import-data.html#downloading-demo-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Before importing your own data, you may wish to gain familiarity by trying RAVE’s demo data in various modules. By default, RAVE already has a DemoSubject whose raw data has already been imported. <!-- Double check this, I don't remember what it looked like at default. --> However, you can also download other demo subjects by copying and pasting the following command into the RStudio console:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="import-data.html#cb14-1"></a>rave<span class="op">::</span><span class="kw">download_sample_data</span>(<span class="st">&quot;subject_code&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="import-data.html#cb18-1"></a>rave<span class="op">::</span><span class="kw">download_sample_data</span>(<span class="st">&quot;subject_code&quot;</span>)</span></code></pre></div>
 <p>You will need to substitute “subject_code” with one of the available demo subjects: <code>KC</code>, <code>YAB</code>, <code>YAD</code>, <code>YAF</code>, <code>YAH</code>, <code>YAI</code>, <code>YAJ</code>, and <code>YAK</code>.</p>
 <p>For example, to download subject YAB, use the following command:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="import-data.html#cb15-1"></a>rave<span class="op">::</span><span class="kw">download_sample_data</span>(<span class="st">&quot;YAB&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="import-data.html#cb19-1"></a>rave<span class="op">::</span><span class="kw">download_sample_data</span>(<span class="st">&quot;YAB&quot;</span>)</span></code></pre></div>
 <p>Note that downloaded demo data will be stored in the <code>raw_dir</code> folder of the <code>rave_data</code> folder in your home directory. Within <code>raw_dir</code>, each subject’s data is stored in its own folder (e.g. YAB’s data will be stored in the YAB folder in <code>raw_dir</code>). Refer to the following screenshot for clarity.</p>
 <div class="figure">
 <img src="static/image/DemoDownloadImage.png" alt="" />
@@ -212,7 +211,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="importing-demo-data" class="section level2 hasAnchor">
 <h2><span class="header-section-number">4.2</span> Importing demo data<a href="import-data.html#importing-demo-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>You will need to launch the RAVE preprocessing module. Copy and paste the following command into the RStudio console:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="import-data.html#cb16-1"></a> rave<span class="op">::</span><span class="kw">rave_preprocess</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="import-data.html#cb20-1"></a> rave<span class="op">::</span><span class="kw">rave_preprocess</span>()</span></code></pre></div>
 <p>The Preprocessing module will then open in a browser window, allowing you to see the Overview page. The Overview page is where you will import or load your data into RAVE. It consists of three panels.
 * <strong>Overview:</strong> this is where you will specify your inputs and configurations.
 * <strong>Information:</strong> a summary of your inputs and configurations is shown here.
@@ -255,7 +254,7 @@ Subject [Test/KC] will be stored at: /Users/your_home_directory/rave_data/data_d
 <div id="organizing-your-directories" class="section level3 hasAnchor">
 <h3><span class="header-section-number">4.3.1</span> Organizing Your Directories<a href="import-data.html#organizing-your-directories" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <!-- This is a work in progress ... not 100% sure how this would be done -->
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="import-data.html#cb17-1"></a> rave<span class="op">::</span>archive_subject</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="import-data.html#cb21-1"></a> rave<span class="op">::</span>archive_subject</span></code></pre></div>
 
 </div>
 </div>

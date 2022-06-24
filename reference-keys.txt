@@ -6,9 +6,8 @@ install-rave
 upgrade-rave
 troubleshooting
 get-started
-starting-rave
-closing-rave
-change-rave-settings
+overview-of-rave-structure
+starting-and-closing-rave
 import-data
 downloading-demo-data
 importing-demo-data
