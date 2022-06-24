@@ -36,3 +36,9 @@ installation
 getting-started-with-rave
 downloading-demo-data-1
 importing-data
+url-your-book-url-like-httpsbookdown.orgyihuibookdown
+system-requirements-prerequisites
+upgrade-rave
+linux
+overview-of-rave-structure
+starting-and-closing-rave

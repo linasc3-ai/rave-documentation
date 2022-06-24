@@ -13,12 +13,11 @@ RAVE is written as an "R" package. To properly install RAVE, please carefully fo
 
 **System requirements**: 4 CPU cores with 8 GB RAM
 
-RAVE is written in the programming language "R", it is necessary to download the *latest* version R into your computer. We also strongly recommend installing "RStudio", an integrated development environment to take the maximum benefit of RAVE features. This section will guide you to install the system software. Please click on the following links according to your operating systems.
+RAVE is written in the programming language "R", so it is necessary to download the *latest* version of R for your computer. We also strongly recommend installing "RStudio", an integrated development environment, in order to easily utilize RAVE features. This section will guide you to install these and other prerequisites. Please click on the following links according to your operating systems.
 
 * [MacOS](#macos)
 * Windows
 * Debian Linux (Ubuntu)
-
 
 <!-- and its integrated development editor "RStudio" onto your computer. Correctly installing the following pre-requisites is necessary for RAVE to work properly. 
 
@@ -31,6 +30,8 @@ RAVE is written in the programming language "R", it is necessary to download the
 ### MacOS
 
 <font size="4">**STEP 1: Install Homebrew**</font>
+
+_(Note: if you have downloaded Homebrew in the past, you do not need to redownload it now. Move to the next step.)_
 
 [Homebrew](https://brew.sh/) is a package manager that adds functions missing from the Apple operating system. It can be installed by copying and pasting the following line into your terminal (**note:** the terminal can be found through searching the applications folder on your computer): 
 
@@ -90,32 +91,17 @@ This will install three libraries:
 
 <font size="4">**STEP 4: Install R**</font>
 
-Download and install the latest version of R directly from the website: https://cran.r-project.org/bin/macosx/ Be sure to download the package that corresponds to your computer's OS version and CPU type. 
+Download and install the *latest* version of R directly from the website: https://cran.r-project.org/bin/macosx/ Be sure to download the package that corresponds to your computer's OS version and CPU type. If you already have R on your computer, simply ensure it is updated to the *latest* version.  
 
 * For Intel Macs, download `R-X.X.X.pkg` 
 * For M1 Macs, download `R-X.X.X-arm64.pkg` 
 
 <font size="4">**STEP 5: Install RStudio Desktop**</font>
 
-Download and install RStudio Desktop directly from the website: https://www.rstudio.com/products/rstudio/download/ Be sure to download the version that corresponds to your OS system. Refer to the following screenshot for guidance. 
+Download and install RStudio Desktop directly from the website: https://www.rstudio.com/products/rstudio/download/ Be sure to download the version that corresponds to your OS system. If you already have RStudio downloaded, simply ensure it is updated to the *latest* version. Refer to the following screenshot for guidance.
 
 ![Screenshot of RStudio Website](static/image/RStudioScreenshot.png) 
 
-<!--
-#### Troubleshooting
-Possible errors and their recommended fixes: 
-
-* If you have multiple accounts on your computer but only one of them has homebrew installed, you may receive a **"the following directories are not writable by your user" error**. To resolve this error, you can change the ownership of the directories to the current user and make sure this user has write permission. 
-* When executing step 2.1.1.4 (installing hdf5, fftw, and pkg-config), if you receive the error **"No available formula with the name "hdf5".**, there might bee an issue with the location of Homebrew. Try the following commands in your terminal: 
-
-```sh
-rm -rf "/usr/local/Homebrew/Library/Taps/homebrew/homebrew-core"
-```
-and then 
-```sh
-brew tap homebrew/core
-```
--->
 --- 
 
 ## Install RAVE
@@ -177,15 +163,6 @@ Now that you've completed installation, visit the following pages to start using
 * [Upgrade RAVE](#upgrade-rave)
 * [Change RAVE settings](#change-rave-settings) 
 
-
-<!--
-#### Troubleshooting 
-** The RAVE data should be located [default location]. If located elsewhere on the window, copy and paste the following command onto the console to set the data directory to the correct location: 
-```r
- rave::rave_options()
-```
--->
-
 --- 
 
 ## Upgrade RAVE
@@ -200,6 +177,29 @@ RAVE is actively under development with new features and bug fixes. To enjoy the
 
 
 ## Troubleshooting
+Possible errors during installation and their solutions: 
 
+**Error:** "The following directories are not writable by your user". 
+> Solution: This could occur if you have multiple accountns on your computer, but only one of them has homebrew installed. You should change the ownership of the directories to the current user and make sure this user has write permission. 
+
+**Error:** "Can't update lock in /usr/local/var/homebrew/locks". 
+> Solution: This could occur if you have multiple accountns on your computer, but only one of them has homebrew installed. You can fix permissions by running -R $(whoami) /usr/local/var/homebrew. 
+
+**Error:** "No available formula with the name 'hdf5'". 
+> Solution: There might be an issue with the location of Homebrew. Please ensure you copied and pasted the commands in"STEP 2: Add command brew to system search path". If you've already done that, you can try copying and pasting the following command into your console: 
+
+```sh
+rm -rf "/usr/local/Homebrew/Library/Taps/homebrew/homebrew-core"
+```
+and then 
+```sh
+brew tap homebrew/core
+```
+<!-- 
+** The RAVE data should be located [default location]. If located elsewhere on the window, copy and paste the following command onto the console to set the data directory to the correct location: 
+```r
+ rave::rave_options()
+```
+--> 
 
 

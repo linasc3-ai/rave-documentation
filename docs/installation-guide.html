@@ -22,7 +22,7 @@
 
 
 
-<meta name="date" content="2022-06-16" />
+<meta name="date" content="2022-06-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -135,26 +135,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">RAVE Manual</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> About</a>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> url: your book url like <span>https://bookdown.org/yihui/bookdown</span></a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#contact-us"><i class="fa fa-check"></i><b>1.1</b> Contact Us</a></li>
-<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#citations"><i class="fa fa-check"></i><b>1.2</b> Citations</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#showcases"><i class="fa fa-check"></i>Showcases</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="installation-guide.html"><a href="installation-guide.html"><i class="fa fa-check"></i><b>2</b> Installation Guide</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="installation-guide.html"><a href="installation-guide.html#install-the-prerequisites"><i class="fa fa-check"></i><b>2.1</b> Install the Prerequisites</a>
+<li class="chapter" data-level="2.1" data-path="installation-guide.html"><a href="installation-guide.html#system-requirements-prerequisites"><i class="fa fa-check"></i><b>2.1</b> System requirements &amp; prerequisites</a>
 <ul>
 <li class="chapter" data-level="2.1.1" data-path="installation-guide.html"><a href="installation-guide.html#macos"><i class="fa fa-check"></i><b>2.1.1</b> MacOS</a></li>
 </ul></li>
-<li class="chapter" data-level="2.2" data-path="installation-guide.html"><a href="installation-guide.html#install-rave"><i class="fa fa-check"></i><b>2.2</b> Install RAVE</a>
-<ul>
-<li class="chapter" data-level="2.2.1" data-path="installation-guide.html"><a href="installation-guide.html#download-and-configure"><i class="fa fa-check"></i><b>2.2.1</b> Download and Configure</a></li>
-<li class="chapter" data-level="2.2.2" data-path="installation-guide.html"><a href="installation-guide.html#validate-the-installation"><i class="fa fa-check"></i><b>2.2.2</b> Validate the Installation</a></li>
-</ul></li>
-<li class="chapter" data-level="2.3" data-path="installation-guide.html"><a href="installation-guide.html#updating-rave-after-download"><i class="fa fa-check"></i><b>2.3</b> Updating RAVE after download</a>
-<ul>
-<li class="chapter" data-level="" data-path="installation-guide.html"><a href="installation-guide.html#whats-next"><i class="fa fa-check"></i>What’s Next</a></li>
-</ul></li>
+<li class="chapter" data-level="2.2" data-path="installation-guide.html"><a href="installation-guide.html#install-rave"><i class="fa fa-check"></i><b>2.2</b> Install RAVE</a></li>
+<li class="chapter" data-level="2.3" data-path="installation-guide.html"><a href="installation-guide.html#upgrade-rave"><i class="fa fa-check"></i><b>2.3</b> Upgrade RAVE</a></li>
+<li class="chapter" data-level="2.4" data-path="installation-guide.html"><a href="installation-guide.html#troubleshooting"><i class="fa fa-check"></i><b>2.4</b> Troubleshooting</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="get-started.html"><a href="get-started.html"><i class="fa fa-check"></i><b>3</b> Get Started</a>
 <ul>
@@ -208,35 +201,38 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="installation-guide" class="section level1 hasAnchor" number="2">
 <h1><span class="header-section-number">Chapter 2</span> Installation Guide<a href="installation-guide.html#installation-guide" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Installing RAVE involves two parts:
-1). installing the pre-requisites
-2). downloading RAVE</p>
-<p>Carefully follow the steps below to install RAVE:</p>
-<p><strong>Note:</strong> For optimal use of RAVE, it is recommended your computer has at least 64GB RAM and a 4-core CPU.</p>
+<p>RAVE is written as an “R” package. To properly install RAVE, please carefully follow the instructions step-by-step. We found 90% installation issues are due to not following the instructions.</p>
 <hr />
-<div id="install-the-prerequisites" class="section level2 hasAnchor" number="2.1">
-<h2><span class="header-section-number">2.1</span> Install the Prerequisites<a href="installation-guide.html#install-the-prerequisites" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Because RAVE is written in the programming language “R”, it is necessary to download R and its integrated development editor “RStudio” onto your computer. Correctly installing the following pre-requisites is necessary for RAVE to work properly.</p>
-<p><strong>Note:</strong> RAVE requires the latest versions of R and RStudio to run properly. To avoid errors in the download process, if you already have R and RStudio on your computer, be sure they are updated to the most recent versions.</p>
+<div id="system-requirements-prerequisites" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> System requirements &amp; prerequisites<a href="installation-guide.html#system-requirements-prerequisites" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>System requirements</strong>: 4 CPU cores with 8 GB RAM</p>
+<p>RAVE is written in the programming language “R”, so it is necessary to download the <em>latest</em> version of R for your computer. We also strongly recommend installing “RStudio”, an integrated development environment, in order to easily utilize RAVE features. This section will guide you to install these and other prerequisites. Please click on the following links according to your operating systems.</p>
+<ul>
+<li><a href="installation-guide.html#macos">MacOS</a></li>
+<li>Windows</li>
+<li>Debian Linux (Ubuntu)</li>
+</ul>
+<!-- and its integrated development editor "RStudio" onto your computer. Correctly installing the following pre-requisites is necessary for RAVE to work properly. 
+
+**Note:** RAVE requires the latest versions of R and RStudio to run properly. To avoid errors in the download process, if you already have R and RStudio on your computer, be sure they are updated to the most recent versions. -->
 <!--- ### Windows
 
 ### Linux -->
 <div id="macos" class="section level3 hasAnchor" number="2.1.1">
 <h3><span class="header-section-number">2.1.1</span> MacOS<a href="installation-guide.html#macos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="install-homebrew" class="section level4 hasAnchor" number="2.1.1.1">
-<h4><span class="header-section-number">2.1.1.1</span> Install Homebrew<a href="installation-guide.html#install-homebrew" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><font size="4"><strong>STEP 1: Install Homebrew</strong></font></p>
+<p><em>(Note: if you have downloaded Homebrew in the past, you do not need to redownload it now. Move to the next step.)</em></p>
 <p><a href="https://brew.sh/">Homebrew</a> is a package manager that adds functions missing from the Apple operating system. It can be installed by copying and pasting the following line into your terminal (<strong>note:</strong> the terminal can be found through searching the applications folder on your computer):</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="installation-guide.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">/bin/bash</span> <span class="at">-c</span> <span class="st">&quot;</span><span class="va">$(</span><span class="ex">curl</span> <span class="at">-fsSL</span> https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="va">)</span><span class="st">&quot;</span></span></code></pre></div>
 <p>If you have not downloaded Homebrew to your computer before, you will be prompted with the following questions:</p>
 <pre><code>==&gt; Checking for `sudo` access (which may request your password)...
 Password:</code></pre>
-<p><strong>Enter your user password.</strong> Note that the password won’t be displayed into the screen as you type for security reasons. Once you’ve finish typing, press the RETURN or ENTER key to proceed.</p>
+<p>Enter your user’s password (<em>the password won’t be displayed into the screen as you type for security reasons</em>). Once you’ve finish typing, press the <code>RETURN</code> or <code>ENTER</code> key to proceed.</p>
 <pre><code>==&gt; This script will install:
 ... 
 Press RETURN/ENTER to continue or any other key to abort:</code></pre>
-<p>Please press the RETURN or ENTER key to continue.</p>
-<div id="add-brew-to-path" class="section level5 unnumbered hasAnchor">
-<h5>Add brew to path<a href="installation-guide.html#add-brew-to-path" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Please press the <code>RETURN</code> or <code>ENTER</code> key to continue.</p>
+<p><font size="4"><strong>STEP 2: Add command <code>brew</code> to system search path</strong></font></p>
 <p>The terminal commands used to add homebrew to the path depend on your computer’s CPU chip. Copy and paste the appropriate command lines into the terminal based on your computer’s chip type.</p>
 <ul>
 <li><strong>For M1 Chips</strong></li>
@@ -247,100 +243,97 @@ Press RETURN/ENTER to continue or any other key to abort:</code></pre>
 <ul>
 <li><strong>For Intel Chips</strong></li>
 </ul>
-</div>
-</div>
-<div id="install-r-language" class="section level4 hasAnchor" number="2.1.1.2">
-<h4><span class="header-section-number">2.1.1.2</span> Install R Language<a href="installation-guide.html#install-r-language" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Download and install the latest version of R directly from the website: <a href="https://cran.r-project.org/bin/macosx/" class="uri">https://cran.r-project.org/bin/macosx/</a> Be sure to download the package that corresponds to your computer’s OS version and CPU type.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="installation-guide.html#cb5-1" aria-hidden="true" tabindex="-1"></a> <span class="bu">echo</span> <span class="st">&#39;eval &quot;$(/usr/local/bin/brew shellenv)&quot;&#39;</span> <span class="op">&gt;&gt;</span> ~/.zprofile</span>
+<span id="cb5-2"><a href="installation-guide.html#cb5-2" aria-hidden="true" tabindex="-1"></a> <span class="bu">echo</span> <span class="st">&#39;eval &quot;$(/usr/local/bin/brew shellenv)&quot;&#39;</span> <span class="op">&gt;&gt;</span> ~/.profile</span>
+<span id="cb5-3"><a href="installation-guide.html#cb5-3" aria-hidden="true" tabindex="-1"></a> <span class="bu">echo</span> <span class="st">&#39;eval &quot;$(/usr/local/bin/brew shellenv)&quot;&#39;</span> <span class="op">&gt;&gt;</span> ~/.bash_profile</span></code></pre></div>
+<p><font size="4"><strong>STEP 3: Use <code>brew</code> to install missing libraries</strong></font></p>
+<p>Open your system terminal, paste the following line into your terminal:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="installation-guide.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install hdf5 fftw pkg-config</span></code></pre></div>
+<p>This will install three libraries:</p>
+<ul>
+<li><code>hdf5</code>: Shared library to access the universal HDF5 file format</li>
+<li><code>fftw</code>: Fast-Fourier transform library required by signal processing code</li>
+<li><code>pkg-config</code>: Package configuration helpers allowing R to find the two libraries above</li>
+</ul>
+<p><font size="4"><strong>STEP 4: Install R</strong></font></p>
+<p>Download and install the <em>latest</em> version of R directly from the website: <a href="https://cran.r-project.org/bin/macosx/" class="uri">https://cran.r-project.org/bin/macosx/</a> Be sure to download the package that corresponds to your computer’s OS version and CPU type. If you already have R on your computer, simply ensure it is updated to the <em>latest</em> version.</p>
 <ul>
 <li>For Intel Macs, download <code>R-X.X.X.pkg</code></li>
 <li>For M1 Macs, download <code>R-X.X.X-arm64.pkg</code></li>
 </ul>
-</div>
-<div id="install-rstudio-desktop" class="section level4 hasAnchor" number="2.1.1.3">
-<h4><span class="header-section-number">2.1.1.3</span> Install RStudio Desktop<a href="installation-guide.html#install-rstudio-desktop" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Download and install RStudio Desktop directly from the website: <a href="https://www.rstudio.com/products/rstudio/download/" class="uri">https://www.rstudio.com/products/rstudio/download/</a> Be sure to download the version that corresponds to your OS system. Refer to the following screenshot for guidance.</p>
+<p><font size="4"><strong>STEP 5: Install RStudio Desktop</strong></font></p>
+<p>Download and install RStudio Desktop directly from the website: <a href="https://www.rstudio.com/products/rstudio/download/" class="uri">https://www.rstudio.com/products/rstudio/download/</a> Be sure to download the version that corresponds to your OS system. If you already have RStudio downloaded, simply ensure it is updated to the <em>latest</em> version. Refer to the following screenshot for guidance.</p>
 <div class="figure">
 <img src="static/image/RStudioScreenshot.png" alt="" />
 <p class="caption">Screenshot of RStudio Website</p>
 </div>
-</div>
-<div id="install-system-libraries" class="section level4 hasAnchor" number="2.1.1.4">
-<h4><span class="header-section-number">2.1.1.4</span> Install system libraries<a href="installation-guide.html#install-system-libraries" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>You will need to download the libraries hdf5, fftw, and pkg-config. This can be done by copying and pasting the following line into your terminal:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="installation-guide.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install hdf5 fftw pkg-config</span></code></pre></div>
-</div>
-<div id="troubleshooting" class="section level4 hasAnchor" number="2.1.1.5">
-<h4><span class="header-section-number">2.1.1.5</span> Troubleshooting<a href="installation-guide.html#troubleshooting" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Possible errors and their recommended fixes:</p>
-<ul>
-<li>If you have multiple accounts on your computer but only one of them has homebrew installed, you may receive a <strong>“the following directories are not writable by your user” error</strong>. To resolve this error, you can change the ownership of the directories to the current user and make sure this user has write permission.</li>
-<li>When executing step 2.1.1.4 (installing hdf5, fftw, and pkg-config), if you receive the error <strong>“No available formula with the name”hdf5”.</strong>, there might bee an issue with the location of Homebrew. Try the following commands in your terminal:</li>
-</ul>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="installation-guide.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="at">-rf</span> <span class="st">&quot;/usr/local/Homebrew/Library/Taps/homebrew/homebrew-core&quot;</span></span></code></pre></div>
-<p>and then</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="installation-guide.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> tap homebrew/core</span></code></pre></div>
 <hr />
-</div>
 </div>
 </div>
 <div id="install-rave" class="section level2 hasAnchor" number="2.2">
 <h2><span class="header-section-number">2.2</span> Install RAVE<a href="installation-guide.html#install-rave" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Now that you have installed the pre-requisites, follow the steps below to download and install the RAVE package on your computer.</p>
-<div id="download-and-configure" class="section level3 hasAnchor" number="2.2.1">
-<h3><span class="header-section-number">2.2.1</span> Download and Configure<a href="installation-guide.html#download-and-configure" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>IMPORTANT: Before proceeding to rest of this section. Please make sure you have read and finished the previous section: “<a href="installation-guide.html#system-requirements-prerequisites">System requirements &amp; prerequisites</a>”.</p>
+<p><strong>Download and Configure</strong></p>
 <p>Open the RStudio application and click on the <em>Console</em> tab (if RStudio is set to default settings, this tab is usually located in bottom left panel of your screen).</p>
-<p>Copy and paste the following command onto the console to <strong>download the RAVE packages from the online repository and install them</strong> on your computer:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="installation-guide.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repos =</span> <span class="fu">c</span>(<span class="at">ropensci =</span> <span class="st">&#39;https://beauchamplab.r-universe.dev&#39;</span>, </span>
-<span id="cb8-2"><a href="installation-guide.html#cb8-2" aria-hidden="true" tabindex="-1"></a>                  <span class="at">CRAN =</span> <span class="st">&#39;https://cloud.r-project.org&#39;</span>))</span>
-<span id="cb8-3"><a href="installation-guide.html#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">&#39;rave&#39;</span>, <span class="st">&#39;ravebuiltins&#39;</span>))</span></code></pre></div>
-<p>Copy and paste the following command onto the console to <strong>update RAVE to the latest available version</strong> (this will account for recent bug fixes and newly added features):</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="installation-guide.html#cb9-1" aria-hidden="true" tabindex="-1"></a>rave<span class="sc">::</span><span class="fu">check_dependencies</span>(<span class="at">nightly =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
-<p>Copy and paste the following command onto the console to:
-* <strong>Download template brain</strong> (<code>N27</code>, <code>fsaverage</code>) for electrode template mapping
-* <strong>Download demo subject data</strong> for single- and group-level analyses</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="installation-guide.html#cb10-1" aria-hidden="true" tabindex="-1"></a>rave<span class="sc">::</span><span class="fu">finalize_installation</span>(<span class="at">upgrade =</span> <span class="st">&#39;ask&#39;</span>)</span></code></pre></div>
-<div id="troubleshooting-1" class="section level4 hasAnchor" number="2.2.1.1">
-<h4><span class="header-section-number">2.2.1.1</span> Troubleshooting<a href="installation-guide.html#troubleshooting-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Copy and paste the following R command into the console to install RAVE and its dependence the online repository:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="installation-guide.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repos =</span> <span class="fu">c</span>(<span class="at">ropensci =</span> <span class="st">&#39;https://beauchamplab.r-universe.dev&#39;</span>, </span>
+<span id="cb7-2"><a href="installation-guide.html#cb7-2" aria-hidden="true" tabindex="-1"></a>                  <span class="at">CRAN =</span> <span class="st">&#39;https://cloud.r-project.org&#39;</span>))</span>
+<span id="cb7-3"><a href="installation-guide.html#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">&#39;rave&#39;</span>, <span class="st">&#39;ravebuiltins&#39;</span>))</span></code></pre></div>
+<p>Copy and paste the following command onto the R console to update RAVE to the latest version (with bug fixes and new features):</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="installation-guide.html#cb8-1" aria-hidden="true" tabindex="-1"></a>rave<span class="sc">::</span><span class="fu">check_dependencies</span>(<span class="at">nightly =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<p>Copy and paste the following command into the R console:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="installation-guide.html#cb9-1" aria-hidden="true" tabindex="-1"></a>rave<span class="sc">::</span><span class="fu">finalize_installation</span>(<span class="at">upgrade =</span> <span class="st">&#39;ask&#39;</span>)</span></code></pre></div>
+<p>This finalizing step will download the following additional parts:</p>
 <ul>
-<li>When updating RAVE, if you receive a “timeout of 60 seconds was reached” warning message, try switching to a faster network connection.</li>
+<li>Template brain: (<code>N27</code>, <code>fsaverage</code>) for group-level electrode template mapping</li>
+<li>Demo subject data: for demonstration purposes</li>
 </ul>
-</div>
-</div>
-<div id="validate-the-installation" class="section level3 hasAnchor" number="2.2.2">
-<h3><span class="header-section-number">2.2.2</span> Validate the Installation<a href="installation-guide.html#validate-the-installation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<!--#### Troubleshooting
+* When updating RAVE, if you receive a "timeout of 60 seconds was reached" warning message, try switching to a faster network connection.-->
+<p><strong>Validate the Installation</strong></p>
 <p>To check whether RAVE was properly installed, copy and paste the following commands
 onto the console to start the program:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="installation-guide.html#cb11-1" aria-hidden="true" tabindex="-1"></a> rave<span class="sc">::</span><span class="fu">start_rave</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="installation-guide.html#cb10-1" aria-hidden="true" tabindex="-1"></a> rave<span class="sc">::</span><span class="fu">start_rave</span>()</span></code></pre></div>
 <p>If installation was successful, a new web browser window should automatically open with the
 RAVE display. A screenshot is shown below:</p>
 <div class="figure">
 <img src="static/image/RAVEStartScreen.png" alt="" />
 <p class="caption">RAVE Start Screen</p>
 </div>
-<p>You have successfully downloaded RAVE!</p>
-<div id="troubleshooting-2" class="section level4 hasAnchor" number="2.2.2.1">
-<h4><span class="header-section-number">2.2.2.1</span> Troubleshooting<a href="installation-guide.html#troubleshooting-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>** The RAVE data should be located [default location]. If located elsewhere on the window, copy and paste the following command onto the console to set the data directory to the correct location:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="installation-guide.html#cb12-1" aria-hidden="true" tabindex="-1"></a> rave<span class="sc">::</span><span class="fu">rave_options</span>()</span></code></pre></div>
-<hr />
-</div>
-</div>
-</div>
-<div id="updating-rave-after-download" class="section level2 hasAnchor" number="2.3">
-<h2><span class="header-section-number">2.3</span> Updating RAVE after download<a href="installation-guide.html#updating-rave-after-download" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>If you’ve already downloaded RAVE and simply wish to update the application to the most recent version, copy and paste the following command into the RStudio console:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="installation-guide.html#cb13-1" aria-hidden="true" tabindex="-1"></a> rave<span class="sc">::</span><span class="fu">check_dependencies</span>(<span class="at">nightly =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
-<p><strong>Note:</strong> When re-updating, a pop-up might appear in RStudio asking if you want to reinstall the N27 template brain. Because the template is already installed, click no.</p>
-<div id="whats-next" class="section level3 unnumbered hasAnchor">
-<h3>What’s Next<a href="installation-guide.html#whats-next" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>🎉 You have successfully downloaded RAVE!</p>
 <p>Now that you’ve completed installation, visit the following pages to start using RAVE!</p>
 <ul>
 <li><a href="get-started.html#starting-rave">Starting RAVE</a></li>
+<li><a href="installation-guide.html#upgrade-rave">Upgrade RAVE</a></li>
 <li><a href="get-started.html#change-rave-settings">Change RAVE settings</a></li>
 </ul>
-
+<hr />
 </div>
+<div id="upgrade-rave" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Upgrade RAVE<a href="installation-guide.html#upgrade-rave" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>RAVE is actively under development with new features and bug fixes. To enjoy the new features, RAVE has built-in function that allows to update itself directly from the following R command:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="installation-guide.html#cb11-1" aria-hidden="true" tabindex="-1"></a> rave<span class="sc">::</span><span class="fu">check_dependencies</span>(<span class="at">nightly =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<p><strong>Note:</strong> When re-updating, a pop-up might appear asking if you want to re-install the N27 template brain. Simply choose no.</p>
+</div>
+<div id="troubleshooting" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> Troubleshooting<a href="installation-guide.html#troubleshooting" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Possible errors during installation and their solutions:</p>
+<p><strong>Error:</strong> “The following directories are not writable by your user”.
+&gt; Solution: This could occur if you have multiple accountns on your computer, but only one of them has homebrew installed. You should change the ownership of the directories to the current user and make sure this user has write permission.</p>
+<p><strong>Error:</strong> “Can’t update lock in /usr/local/var/homebrew/locks”.
+&gt; Solution: This could occur if you have multiple accountns on your computer, but only one of them has homebrew installed. You can fix permissions by running -R $(whoami) /usr/local/var/homebrew.</p>
+<p><strong>Error:</strong> “No available formula with the name ‘hdf5’”.
+&gt; Solution: There might be an issue with the location of Homebrew. Please ensure you copied and pasted the commands in”STEP 2: Add command brew to system search path”. If you’ve already done that, you can try copying and pasting the following command into your console:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb12-1"><a href="installation-guide.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="at">-rf</span> <span class="st">&quot;/usr/local/Homebrew/Library/Taps/homebrew/homebrew-core&quot;</span></span></code></pre></div>
+<p>and then</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb13-1"><a href="installation-guide.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> tap homebrew/core</span></code></pre></div>
+<!-- 
+** The RAVE data should be located [default location]. If located elsewhere on the window, copy and paste the following command onto the console to set the data directory to the correct location: 
+```r
+ rave::rave_options()
+```
+-->
+
 </div>
 </div>
             </section>
