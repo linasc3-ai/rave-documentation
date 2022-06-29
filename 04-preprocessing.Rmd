@@ -3,13 +3,14 @@
 
 ## Part One 
 <!-- not sure what would be the best name for these headers yet; want to imply the first four are sequential --> 
-<!-- need to specify what type of data is being imported -- iEEG recording info) 
+<!-- need to specify what type of data is being imported -- iEEG recording info) --> 
 
-<font size="4"> Step #1: Import Signals </font>
+<font size="5"> **Step #1: Import Signals** </font>
+
 <!-- have labeled screenshot for each step similar to the one in 04-preprocessing--> 
 Now that you have installed and gotten started with RAVE, you can proceed to importing your iEEG data into the software so that it can be preprocessed and used in future modules.
 
-* **Step 1.1:** Select project & subject
+**Step 1.1:** Select project & subject
 
 First, use the drop down menu to **specify which project** you want the cleaned subject data to be stored in. If you wish to create a new project, select "New Project" from the drop down menu and indicate your desired project name. Note that by default, this project folder will be created within the `rave_data` folder of the data directory (`data_dir`), in a new folder for your subject. 
 
@@ -17,7 +18,7 @@ Next, use the drop down menu to **select the code for the subject** whose data y
 
 Click the **"Create Subject"** button to proceed to the next step. 
 
-* **Step 1.2:** Format & session blocks
+**Step 1.2:** Format & session blocks
 
 RAVE defines a block/session as a period of continuous electrode recording. Here, you should first **select the blocks** that correspond to the trials you want to analyze. 
 
@@ -34,7 +35,7 @@ Note that when you select a format from the drop down, a brief description of th
 
 <!-- maybe cross link each of these file formats to a question in the Q&A session so that if someone wants to learn more about a given file format, they can do so without cluttering up this section. or should i give the description right next to the bullet point --> 
 
-* **Step 1.3:** Channel information
+**Step 1.3:** Channel information
 
 RAVE equates a channel to an electrode. Set the following specifications for your channels:  
 
@@ -54,30 +55,40 @@ Now, select the **Validate & Import** button to validate your data. A pop-up wil
 
 A pop-up will soon appear indicating that you have successfully imported your subject data into RAVE. You can then proceed to the first preprocessing module, notch filter, for further cleaning of this data. 
 
-<font size="4"> Step #2: Notch Filter </font>
-<!-- add very brief description of what this section is for first; essentially it filters out extra noise without disruption to the rest of the signal. it does this by minimizing signals within a narrow bandwith; the rest of the signal is not disrupted because it's not in the bandwidth. a bandwidth is a range of frequencies within a band. a common reason for applying it is because EEG recording setups often include an  --> 
+<font size="5"> **Step #2: Notch Filter** </font>
+<!-- add very brief description of what this section is for first; essentially it filters out extra noise without disruption to the rest of the signal. it does this by minimizing signals within a narrow bandwidth; the rest of the signal is not disrupted because it's not in the bandwidth. a bandwidth is a range of frequencies within a band. a common reason for applying it is because EEG recording setups often include an. 
+AC power grid in US is 60 Hz, issue is the EEG recording equipment will pick up on that and we don't want those signals because they're not from the brain, they're external. so the idea is to remove that data. stopband = a band of frequencies that are reduced by a filter. width is essentially the amount of frequencies --> 
+
+<!-- "calculation of multiples of a base frequency" -- why do you need to do multiples? --> 
 
 Begin in the **Data Selection** window to specify which data you want to perform the notch filter on. Use the drop down to indicate the desired project and subject. Note that you can press the **Sync from [Import LFP] module** link to automatically select the project and subject that you just imported in the Import Signals module. 
 
 Proceed by selecting the **Load Subject** button. A new screen will load with three panels: 
 
-* **Filter Settings:** Here you can specify configurations for the notch filter. 
-* **Inspection:** 
-* **Notch: Inspect Signals:** 
+* **Filter Settings:** Specify configurations for the **filter**
+
+* **Inspection:** Controls settings of the **notch** 
+
+* **Notch: Inspect Signals:** Displays ***raw and filtered iEEG signals** for each channel whose data was imported 
 
 Refer to the following screenshot for further guidance. <!-- label purpose of each section --> 
-<!-- note: they need to specify the configurations for the notch filter, and then 
+<!-- note: they need to specify the configurations for the notch filter, and then --> 
 
-<font size="4"> Step #3: Wavelet </font>
+<font size="5"> **Step #3: Wavelet** </font>
+Wavelet transform 
 
 
-<font size="4"> Step #4: Reference Signals </font>
+<font size="5"> **Step #4: Reference Signals** </font>
+Common average referencing 
 
+--- 
 
 ## Part Two
 
-<font size="4"> Surface Registration Localization </font>
+<font size="5"> **Surface Registration Localization** </font>
+
+--- 
 
 ## Part Three
 
-<font size="4"> Generate Epoch </font>
+<font size="5"> **Generate Epoch** </font>
