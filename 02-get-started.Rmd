@@ -11,7 +11,7 @@ The **main application** enables you to analyze your cleaned iEEG data.
 
 Access it by copying and pasting the following command into the RStudio console: 
 ```r 
- rave::rave_start_rave() 
+ rave::start_rave() 
 ```
 ![Sample screenshot of RAVE main application](static/image/mainapp.png) 
 

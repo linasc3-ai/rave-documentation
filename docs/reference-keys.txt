@@ -42,3 +42,6 @@ upgrade-rave
 linux
 overview-of-rave-structure
 starting-and-closing-rave
+part-one
+part-two
+part-three
