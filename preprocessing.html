@@ -23,7 +23,7 @@
 <meta name="author" content="" />
 
 
-<meta name="date" content="2022-06-24" />
+<meta name="date" content="2022-06-29" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -164,9 +164,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="preprocessing.html"><a href="preprocessing.html"><i class="fa fa-check"></i><b>5</b> Preprocessing</a><ul>
-<li class="chapter" data-level="5.1" data-path="preprocessing.html"><a href="preprocessing.html#step-1-notch-filter"><i class="fa fa-check"></i><b>5.1</b> Step #1: Notch Filter</a></li>
-<li class="chapter" data-level="5.2" data-path="preprocessing.html"><a href="preprocessing.html#step-2-wavelet"><i class="fa fa-check"></i><b>5.2</b> Step #2: Wavelet</a></li>
-<li class="chapter" data-level="5.3" data-path="preprocessing.html"><a href="preprocessing.html#step-3-localization"><i class="fa fa-check"></i><b>5.3</b> Step #3: Localization</a></li>
+<li class="chapter" data-level="5.1" data-path="preprocessing.html"><a href="preprocessing.html#part-one"><i class="fa fa-check"></i><b>5.1</b> Part One</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="qas.html"><a href="qas.html"><i class="fa fa-check"></i><b>6</b> Q&amp;As</a><ul>
 <li class="chapter" data-level="6.1" data-path="qas.html"><a href="qas.html#installation"><i class="fa fa-check"></i><b>6.1</b> Installation</a></li>
@@ -193,15 +191,76 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="preprocessing" class="section level1 hasAnchor">
 <h1><span class="header-section-number">Chapter 5</span> Preprocessing<a href="preprocessing.html#preprocessing" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="step-1-notch-filter" class="section level2 hasAnchor">
-<h2><span class="header-section-number">5.1</span> Step #1: Notch Filter<a href="preprocessing.html#step-1-notch-filter" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-</div>
-<div id="step-2-wavelet" class="section level2 hasAnchor">
-<h2><span class="header-section-number">5.2</span> Step #2: Wavelet<a href="preprocessing.html#step-2-wavelet" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-</div>
-<div id="step-3-localization" class="section level2 hasAnchor">
-<h2><span class="header-section-number">5.3</span> Step #3: Localization<a href="preprocessing.html#step-3-localization" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<!-- will merge with 03 import data section that is already written-->
+<div id="part-one" class="section level2 hasAnchor">
+<h2><span class="header-section-number">5.1</span> Part One<a href="preprocessing.html#part-one" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<!-- not sure what would be the best name for these headers yet; want to imply the first four are sequential -->
+<!-- need to specify what type of data is being imported -- iEEG recording info) 
 
+<font size="4"> Step #1: Import Signals </font>
+<!-- have labeled screenshot for each step similar to the one in 04-preprocessing-->
+<p>Now that you have installed and gotten started with RAVE, you can proceed to importing your iEEG data into the software so that it can be preprocessed and used in future modules.</p>
+<ul>
+<li><strong>Step 1.1:</strong> Select project &amp; subject</li>
+</ul>
+<p>First, use the drop down menu to <strong>specify which project</strong> you want the cleaned subject data to be stored in. If you wish to create a new project, select “New Project” from the drop down menu and indicate your desired project name. Note that by default, this project folder will be created within the <code>rave_data</code> folder of the data directory (<code>data_dir</code>), in a new folder for your subject.</p>
+<p>Next, use the drop down menu to <strong>select the code for the subject</strong> whose data you want to import. Note that a subject’s data should be stored in its own folder within the raw directory (<code>raw_dir</code> folder) within the<code>rave_data</code> folder.</p>
+<p>Click the <strong>“Create Subject”</strong> button to proceed to the next step.</p>
+<ul>
+<li><strong>Step 1.2:</strong> Format &amp; session blocks</li>
+</ul>
+<p>RAVE defines a block/session as a period of continuous electrode recording. Here, you should first <strong>select the blocks</strong> that correspond to the trials you want to analyze.</p>
+<p>Note that when you select a block, a preview of the files it contains will pop-up to the right. This feature helps you check that the way you’ve stored your data is consistent with the file type you’ve selected.</p>
+<p>Then, <strong>specify the file format</strong> your iEEG data is stored in. RAVE currently supports four file formats:</p>
+<ul>
+<li>.mat/.h5 file per electrode per block</li>
+<li>single .mat/.h5 file per block</li>
+<li>single EDF(+) file per block</li>
+<li>single BrainVision file</li>
+</ul>
+<p>Note that when you select a format from the drop down, a brief description of the specific format will pop-up underneath the menu. For more information on these file types, visit the Q&amp;A at <a href="qas.html#importing-data">Importing Data</a></p>
+<!-- maybe cross link each of these file formats to a question in the Q&A session so that if someone wants to learn more about a given file format, they can do so without cluttering up this section. or should i give the description right next to the bullet point -->
+<ul>
+<li><strong>Step 1.3:</strong> Channel information</li>
+</ul>
+<p>RAVE equates a channel to an electrode. Set the following specifications for your channels:</p>
+<!-- this isn't exactly true, so come back later to fix definition -->
+<ul>
+<li><p><strong>Data file:</strong></p></li>
+<li><p><strong>Channel numbers:</strong> Indicate the electrodes you wish to analyze. It is recommended that you run the preprocessing steps on all electrodes at once. Note that RAVE can automatically detect potential electrodes based on the specified blocks and file type; this suggestion is displayed at the bottom of the panel.</p></li>
+<li><p><strong>Physical unit:</strong> Indicate the units you wish to use to measure voltage.</p></li>
+<li><p><strong>Sample rate:</strong> Indicate the rate of your iEEG recording equipment; this value will determine the rate at which the preprocessing will be run.</p></li>
+</ul>
+<p>Now, select the <strong>Validate &amp; Import</strong> button to validate your data. A pop-up will soon appear asking if you are ready to import your data. Please double check all the information you entered is correct, and then select the <strong>Import Data</strong> button to proceed. You will see a progress bar in the bottom left corner.</p>
+<!-- in this paragrraph, make sure to add a note about the skip validate & import button / when it can be used -->
+<p>A pop-up will soon appear indicating that you have successfully imported your subject data into RAVE. You can then proceed to the first preprocessing module, notch filter, for further cleaning of this data.</p>
+<p><font size="4"> Step #2: Notch Filter </font>
+<!-- add very brief description of what this section is for first; essentially it filters out extra noise without disruption to the rest of the signal. it does this by minimizing signals within a narrow bandwith; the rest of the signal is not disrupted because it's not in the bandwidth. a bandwidth is a range of frequencies within a band. a common reason for applying it is because EEG recording setups often include an  --></p>
+<p>Begin in the <strong>Data Selection</strong> window to specify which data you want to perform the notch filter on. Use the drop down to indicate the desired project and subject. Note that you can press the <strong>Sync from [Import LFP] module</strong> link to automatically select the project and subject that you just imported in the Import Signals module.</p>
+<p>Proceed by selecting the <strong>Load Subject</strong> button. A new screen will load with three panels:</p>
+<ul>
+<li><strong>Filter Settings:</strong> Here you can specify configurations for the notch filter.</li>
+<li><strong>Inspection:</strong></li>
+<li><strong>Notch: Inspect Signals:</strong></li>
+</ul>
+<p>Refer to the following screenshot for further guidance. <!-- label purpose of each section -->
+<!-- note: they need to specify the configurations for the notch filter, and then 
+
+<font size="4"> Step #3: Wavelet </font>
+
+
+<font size="4"> Step #4: Reference Signals </font>
+
+
+## Part Two
+
+<font size="4"> Surface Registration Localization </font>
+
+## Part Three
+
+<font size="4"> Generate Epoch </font>
+
+<!--chapter:end:04-preprocessing.Rmd--></p>
 </div>
 </div>
             </section>
@@ -241,7 +300,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/linasc3-ai/rave-documentation/edit/main/04-preprocessing.Rmd",
+"link": "https://github.com/linasc3-ai/rave-documentation/edit/main/99-QA.Rmd",
 "text": "Edit"
 },
 "history": {
