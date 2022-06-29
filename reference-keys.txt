@@ -18,6 +18,8 @@ importing-your-own-data
 organizing-your-directories
 preprocessing
 part-one
+part-two
+part-three
 qas
 installation
 getting-started-with-rave
