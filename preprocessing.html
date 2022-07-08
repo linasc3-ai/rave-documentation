@@ -23,7 +23,7 @@
 <meta name="author" content="" />
 
 
-<meta name="date" content="2022-06-29" />
+<meta name="date" content="2022-07-08" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -173,6 +173,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.2" data-path="qas.html"><a href="qas.html#getting-started-with-rave"><i class="fa fa-check"></i><b>6.2</b> Getting Started with RAVE</a></li>
 <li class="chapter" data-level="6.3" data-path="qas.html"><a href="qas.html#downloading-demo-data-1"><i class="fa fa-check"></i><b>6.3</b> Downloading Demo Data</a></li>
 <li class="chapter" data-level="6.4" data-path="qas.html"><a href="qas.html#importing-data"><i class="fa fa-check"></i><b>6.4</b> Importing Data</a></li>
+<li class="chapter" data-level="6.5" data-path="qas.html"><a href="qas.html#notch-filter"><i class="fa fa-check"></i><b>6.5</b> Notch Filter</a></li>
 </ul></li>
 </ul>
 
@@ -228,20 +229,42 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>Now, select the <strong>Validate &amp; Import</strong> button to validate your data. A pop-up will soon appear asking if you are ready to import your data. Please double check all the information you entered is correct, and then select the <strong>Import Data</strong> button to proceed. You will see a progress bar in the bottom left corner.</p>
 <!-- in this paragrraph, make sure to add a note about the skip validate & import button / when it can be used -->
-<p>A pop-up will soon appear indicating that you have successfully imported your subject data into RAVE. You can then proceed to the first preprocessing module, notch filter, for further cleaning of this data.</p>
+<p>A pop-up will soon appear indicating that you have successfully imported your subject data into RAVE! You can now use the menu on the left side of the screen to select the first preprocessing module, notch filter.</p>
 <p><font size="5"> <strong>Step #2: Notch Filter</strong> </font>
-<!-- add very brief description of what this section is for first; essentially it filters out extra noise without disruption to the rest of the signal. it does this by minimizing signals within a narrow bandwidth; the rest of the signal is not disrupted because it's not in the bandwidth. a bandwidth is a range of frequencies within a band. a common reason for applying it is because EEG recording setups often include an. 
-AC power grid in US is 60 Hz, issue is the EEG recording equipment will pick up on that and we don't want those signals because they're not from the brain, they're external. so the idea is to remove that data. stopband = a band of frequencies that are reduced by a filter. width is essentially the amount of frequencies --></p>
-<!-- "calculation of multiples of a base frequency" -- why do you need to do multiples? -->
-<p>Begin in the <strong>Data Selection</strong> window to specify which data you want to perform the notch filter on. Use the drop down to indicate the desired project and subject. Note that you can press the <strong>Sync from [Import LFP] module</strong> link to automatically select the project and subject that you just imported in the Import Signals module.</p>
-<p>Proceed by selecting the <strong>Load Subject</strong> button. A new screen will load with three panels:</p>
+<!-- add very brief description of what this section is for first; essentially it filters out extra noise without disruption to the rest of the signal. it does this by minimizing signals within a narrow bandwidth; the rest of the signal is not disrupted because it's not in the bandwidth. a bandwidth is a range of frequencies within a band. a common reason for applying it is because EEG recording setups often include an amplifier. 
+AC power grid in US is 60 Hz, issue is the EEG recording equipment will pick up on that and we don't want those signals because they're not from the brain, they're external. so the idea is to remove that data. stopband = a band of frequencies that are reduced by a filter. width is essentially the amount of frequencies -->
+<!-- how do you create notch filter? probably put brief explanation here and then have a question in Q&A where they can learn more with any outside links. "The easiest is to create a notch filter, which basically involves taking the FFT of the signal, zeroing out the Fourier coefficients at/around 50 Hz (best to use gentle slopes to minimize introducing artifacts resulting from sharp edges), then taking the inverse FFT."-->
+<!-- "calculation of multiples of a base frequency" -- why do you need to do multiples? --></p>
+<p><strong>What is a notch filter?</strong> A notch filter blocks a given frequency or a narrow range of frequencies (aka a “bandwidth”) from a signal without affecting the rest of that signal. It is often used to minimize line noise interference in raw iEEG data, which helps ensure that future analyses only consider actual brain data. A common source of this interference is the amplifier used in recording set-ups to convert electrode signals into a form readable by the computer. This interference is commonly introduced at 60 Hz, since that is the standard frequency used in the North American electrical grid system.</p>
+<p>To apply the notch filter to your data, follow the steps below.</p>
+<!-- clarify block -->
+<p>Begin in the <strong>Data Selection</strong> window to <u> specify which data you want to perform the notch filter on </u>. Use the drop down to indicate the desired project and subject. Note that you can press the <strong>Sync from [Import LFP] module</strong> link to automatically select the project and subject that you just imported in the Import Signals module.</p>
+<p><img src="static/image/NFImport.png" alt="Data Selection" />
+<!-- make sure to add in the Q&A what happens if you get errors in this case --></p>
+<p>Proceed by selecting the <strong>Load Subject</strong> button. A new screen will load with three panels: Filter Settings, Inspection, and Notch. Refer to the following screenshot for guidance.</p>
+<div class="figure">
+<img src="static/image/NotchFilter.png" alt="" />
+<p class="caption">Sample Notch Filter Screen</p>
+</div>
+<p><strong>Filter Settings:</strong> Begin my indicating your desired configurations for the <strong>filter(s)</strong>.</p>
 <ul>
-<li><p><strong>Filter Settings:</strong> Specify configurations for the <strong>filter</strong></p></li>
-<li><p><strong>Inspection:</strong> Controls settings of the <strong>notch</strong></p></li>
-<li><p><strong>Notch: Inspect Signals:</strong> Displays *<strong>raw and filtered iEEG signals</strong> for each channel whose data was imported</p></li>
+<li><p><u>Base frequency</u> refers to the frequency introduced by the amplifier that you want to remove. By default, this is set as 60 Hz as that is the frequency introduced by most iEEG amplifiers.</p></li>
+<li><p><u>x Times</u> sets the number of filters you want to use.</p></li>
+<li><p><u>+- Bandwidth (Hz)</u> refers to how wide you wish to make each filter; a higher number will remove a wider range of frequencies whereas a lower number will remove a narrower range of frequencies. You should enter one number for each filter you have. By default, this value is set to 1,2,2 – in other words, your filters will remove the bandwidths <strong>59 - 61 Hz</strong> (aka 60 Hz +/- 1), <strong>118 - 122 Hz</strong> (aka 120 Hz +/- 2), <strong>178 - 182 Hz</strong> (aka 180 Hz +/- 2) respectively.</p></li>
 </ul>
-<p>Refer to the following screenshot for further guidance. <!-- label purpose of each section -->
-<!-- note: they need to specify the configurations for the notch filter, and then --></p>
+<!-- specify why they may wish to do this // how exactly do you wish to set it to this -->
+<p>Based on these configurations, the bottom of the panel will automatically display a summary of how many filters you have and the bandwidths each will remove.</p>
+<p>Click the blue <strong>Apply Notch Filters</strong> button to apply the filters to your data.</p>
+<p><strong>Inspection:</strong> Controls settings of the <strong>notch</strong> <!-- clarify what a notch itself is --></p>
+<p>Use the <u>block</u> and <u>electrode</u> drop down menus to select the data you wish to display in the Notch: Inspect Signals panel located on the right half of the screen. You can use the <code>previous</code> and <code>next</code> buttons to easily switch between which electrode you’re viewing within a selected recording session.</p>
+<ul>
+<li><u>+- Window length</u> refers to</li>
+<li><u>+- Frequency limit</u> refers to</li>
+<li><u>+- Number of histogram bins</u> refers to</li>
+</ul>
+<p><strong>Notch: Inspect Signals:</strong> Displays *<strong>raw and filtered iEEG signals</strong> for each channel whose data was imported</p>
+<!-- Refer to the following screenshot for further guidance. label purpose of each section -->
+<!-- note: they need to specify the configurations for the notch filter, and then -->
 <p><font size="5"> <strong>Step #3: Wavelet</strong> </font>
 Wavelet transform</p>
 <p><font size="5"> <strong>Step #4: Reference Signals</strong> </font>
