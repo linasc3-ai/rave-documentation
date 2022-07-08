@@ -58,14 +58,24 @@ rave::download_sample_data("YAI")
 > Answer: When you hit the "check subject" button, the bottom right panel will let you know if any electrode files are missing based on the electrode numbers you entered in step three. Be sure to double check that you indicated the correct electrode numbers in step 3.
 
 **Question:** Does RAVE automatically validate my data? 
+
 > Answer: You should check for yourself to make sure that each block contains the appropriate files. RAVE will not automatically check this for you. 
 
 **Question:** How do I know which file format to select in step 3? 
+
 > Answer: When you select a file format from the drop down, RAVE will display brief information on what that format entails and a sample organization for the data directory. Select the format that matches that of your data. 
 
 **Question:** Where are my inputs and configurations stored for a given subject? 
+
 > Answer: This information is stored within `data_dir/<project>/subject>/rave/preprocess/rave.yaml` of your home directory. 
 
+## Notch Filter
+
 **Question:** I've already performed the notch filter, but RAVE is not letting me update my channel options. How can I fix this? 
-> Answer: Once the data is imported and notch filtered, you cannot change the channel options. You should make a new project to change the channel options in this case. 
+
+> Answer: Once the data is imported and notch filtered, you cannot change the channel options. You should make a new project to change the channel options in this case.
+
+**Question:** This error popped up when I tried loading a subject into the notch filter module. What do I do? "Found an error while loading the power data: The subject exists but its signal has not been imported yet." 
+
+> Answer: Use the menu at left to go back to the "import signals" module. You will need to import that subject using the "validate & import" button. 
 
