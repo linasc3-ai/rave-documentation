@@ -6,6 +6,7 @@ This page contains possible questions that may arise when using RAVE and their a
 
 ## Installation
 <!-- note: these are sourced from the troubleshooting section of my documentation, not sure if they're better placed here or in those troubleshooting sections --> 
+
 **Question:** When updating RAVE, I received a “timeout of 60 seconds was reached” warning message. How do I fix this? 
 > Answer: Try switching to a faster network connection. 
 
@@ -71,6 +72,20 @@ rave::download_sample_data("YAI")
 
 ## Notch Filter
 
+**Question:** What is fast fourier transform (FFT)? 
+
+> Answer: FFT is an algorithm that can quickly compute the discrete Fourier transform (DFT) of a signal. It transforms the signal from a function of time to the a fucntion of frequency by dividing the signal into its frequency components. Each component constitutes an oscillation with a unique amplitude. This procedure makes it easier to extract a base frequency and its harmonics (e.g. of the amplifier) to perform the notch filter. 
+
+<!-- https://jakevdp.github.io/blog/2013/08/28/understanding-the-fft/, https://www.nti-audio.com/en/support/know-how/fast-fourier-transform-fft#:~:text=The%20%22Fast%20Fourier%20Transform%22%20(,frequency%20information%20about%20the%20signal, http://hyperphysics.phy-astr.gsu.edu/hbase/Math/fft.htmlhttp://hyperphysics.phy-astr.gsu.edu/hbase/Math/fft.html --> 
+
+**Question:** What is a Welch Periodogram? 
+
+> Answer: The Welch method allows for the estimation of the power of a signal at its component frequencies. The time signal is separated into individual blocks, a periodogram is created for each block, and then these periodograms are averaged to estimate the power. The Welch method reduces noise in the power estimation compared to other methods. (Note: a periodogram identifies the dominant frequencies in a time signal.)
+
+**Question:** How can I switch between subjects while on the notch filter or wavelet modules? 
+
+> Answer: In the bottom right corner of the screen, there is a rectangular button that lists the project and subject you're currently analyzing -- e.g. "demo/YAD". Click that button to go back to the load data screen and select a different project and/or subject. 
+
 **Question:** I've already performed the notch filter, but RAVE is not letting me update my channel options. How can I fix this? 
 
 > Answer: Once the data is imported and notch filtered, you cannot change the channel options. You should make a new project to change the channel options in this case.
@@ -79,3 +94,11 @@ rave::download_sample_data("YAI")
 
 > Answer: Use the menu at left to go back to the "import signals" module. You will need to import that subject using the "validate & import" button. 
 
+
+## Wavelet
+
+**Question:** What does wavelet transformation actually entail? 
+
+> Answer: A complex wavelet will undergo convulotion with the iEEG signal. The iEEG signal will then be translated across the time axis, using either high frequency or low frequency wavelets. The result is good frequency resolution but poor temporal resolution at low frequencies, and good temporal resolution and poor frequency resolution at high frequencies. Note that a wavelet is created by multiplying a Gaussian function with a sine function. See more: https://sapienlabs.org/lab-talk/time-frequency-analysis-and-wavelets/v
+
+**Question::** Why can't I down-sample the wavelet coefficients to a sample rate less than or equal to 1? 
