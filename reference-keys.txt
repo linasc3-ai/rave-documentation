@@ -26,3 +26,4 @@ getting-started-with-rave
 downloading-demo-data-1
 importing-data
 notch-filter
+wavelet
