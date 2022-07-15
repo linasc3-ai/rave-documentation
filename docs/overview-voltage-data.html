@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2.4 Upgrade RAVE | RAVE Documentation</title>
+  <title>4.2 Overview: Voltage data | RAVE Documentation</title>
   <meta name="description" content="RAVE documentation" />
   <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2.4 Upgrade RAVE | RAVE Documentation" />
+  <meta property="og:title" content="4.2 Overview: Voltage data | RAVE Documentation" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="RAVE documentation" />
   <meta name="github-repo" content="beauchamplab/rave-documentation" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2.4 Upgrade RAVE | RAVE Documentation" />
+  <meta name="twitter:title" content="4.2 Overview: Voltage data | RAVE Documentation" />
   
   <meta name="twitter:description" content="RAVE documentation" />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="download-demo-data.html"/>
-<link rel="next" href="troubleshooting.html"/>
+<link rel="prev" href="file-hierarchy-and-specification.html"/>
+<link rel="next" href="importing-demo-data.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -205,24 +205,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="upgrade-rave" class="section level2 hasAnchor" number="2.4">
-<h2><span class="header-section-number">2.4</span> Upgrade RAVE<a href="upgrade-rave.html#upgrade-rave" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>RAVE is actively under development with new features and bug fixes. To enjoy the new features, RAVE has built-in function that allows to update itself directly from the following R command:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="upgrade-rave.html#cb13-1" aria-hidden="true" tabindex="-1"></a> rave<span class="sc">::</span><span class="fu">check_dependencies</span>(<span class="at">nightly =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
-<blockquote>
-<p>When upgrading RAVE in RStudio, a pop-up dialogue might appear asking if you want to re-install the N27 template brain or pipeline modules. Simply choose “yes”.</p>
-</blockquote>
-<blockquote>
-<p>Please make sure you have access to the internet when upgrading.</p>
-</blockquote>
+<div id="overview-voltage-data" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Overview: Voltage data<a href="overview-voltage-data.html#overview-voltage-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>RAVE supports various of data formats such as HDF5, EDF(+), BrainVision, and Matlab, etc… Before discussing about these data formats, let’s start from the general workflow with the demo data that has already been installed. (If you haven’t downloaded demo data, please see here for detailed instructions)</p>
+<p>Let’s launch a blank RAVE session:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="overview-voltage-data.html#cb20-1" aria-hidden="true" tabindex="-1"></a>rave<span class="sc">::</span><span class="fu">start_session</span>()</span></code></pre></div>
+<p>In the sidebar, open <code>Import Signals &gt; Native Structure</code> …..</p>
+<!-- Latex PDF use: new page here, no HTML effect -->
+<div style="page-break-after: always;"></div>
+<div id="format-1" class="section level3 hasAnchor" number="4.2.1">
+<h3><span class="header-section-number">4.2.1</span> Format 1<a href="overview-voltage-data.html#format-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="download-demo-data.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="troubleshooting.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="file-hierarchy-and-specification.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="importing-demo-data.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -253,7 +254,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/linasc3-ai/rave-documentation/edit/main/02-installation.md",
+"link": "https://github.com/linasc3-ai/rave-documentation/edit/main/04-import-data.Rmd",
 "text": "Edit"
 },
 "history": {

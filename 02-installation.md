@@ -171,6 +171,28 @@ Now that you've completed installation, visit the following pages to start using
 * [Upgrade RAVE](#upgrade-rave)
 * [Change RAVE settings](#change-rave-settings) 
 
+## Download demo data 
+
+Before importing your own data, you may wish to gain familiarity by trying RAVE's demo data in various modules. By default, RAVE already has a DemoSubject whose raw data has already been imported. <!-- Double check this, I don't remember what it looked like at default. --> However, you can also download other demo subjects by copying and pasting the following command into the RStudio console: 
+
+```r
+rave::download_sample_data("subject_code")
+```
+
+You will need to substitute "subject_code" with one of the available demo subjects: `KC`, `YAB`, `YAD`, `YAF`, `YAH`, `YAI`, `YAJ`, and `YAK`. 
+
+For example, to download subject YAB, use the following command: 
+```r
+rave::download_sample_data("YAB")
+```
+
+Note that downloaded demo data will be stored in the `raw_dir` folder of the `rave_data` folder in your home directory. Within `raw_dir`, each subject's data is stored in its own folder (e.g. YAB's data will be stored in the YAB folder in `raw_dir`). Refer to the following screenshot for clarity. 
+
+![Screenshot of location of downloaded demo data](static/image/DemoDownloadImage.png) 
+
+You can proceed to the "importing demo data" instructions to load your newly downloaded raw data into RAVE for cleaning. 
+ 
+
 ## Upgrade RAVE
 
 RAVE is actively under development with new features and bug fixes. To enjoy the new features, RAVE has built-in function that allows to update itself directly from the following R command:
@@ -179,28 +201,33 @@ RAVE is actively under development with new features and bug fixes. To enjoy the
  rave::check_dependencies(nightly = TRUE)
 ```
 
-**Note:** When re-updating, a pop-up might appear asking if you want to re-install the N27 template brain or pipeline modules. Simply choose "yes".
+> When upgrading RAVE in RStudio, a pop-up dialogue might appear asking if you want to re-install the N27 template brain or pipeline modules. Simply choose "yes".
+
+> Please make sure you have access to the internet when upgrading.
 
 
 ## Troubleshooting 
+
 Possible errors during installation and their solutions: 
 
-**Error:** "The following directories are not writable by your user". 
-> Solution: This could occur if you have multiple accountns on your computer, but only one of them has homebrew installed. You should change the ownership of the directories to the current user and make sure this user has write permission. 
+> **Error:** "Can't update lock in /usr/local/var/homebrew/locks".
+>
+> **Error:** "No available formula with the name <xxxx>". 
 
-**Error:** "Can't update lock in /usr/local/var/homebrew/locks". 
-> Solution: This could occur if you have multiple accountns on your computer, but only one of them has homebrew installed. You can fix permissions by running -R $(whoami) /usr/local/var/homebrew. 
+This error could occur if your computer have multiple accounts, and the current active account does not have the right to manage brew libraries. Please login with account that has the privilege to manage HomeBrew and use that account to install.
 
-**Error:** "No available formula with the name 'hdf5'". 
-> Solution: There might be an issue with the location of Homebrew. Please ensure you copied and pasted the commands in"STEP 2: Add command brew to system search path". If you've already done that, you can try copying and pasting the following command into your console: 
+
+
+> **Error:** "No available formula with the name <xxxx>". 
+
+There might be an issue with your Homebrew: it cannot find proper formula (recipe needed to brew libraies). Please try reseting the brew repository by: 
 
 ```sh
 rm -rf "/usr/local/Homebrew/Library/Taps/homebrew/homebrew-core"
-```
-and then 
-```sh
 brew tap homebrew/core
 ```
+
+
 <!-- 
 ** The RAVE data should be located [default location]. If located elsewhere on the window, copy and paste the following command onto the console to set the data directory to the correct location: 
 ```r

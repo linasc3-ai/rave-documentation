@@ -1,28 +1,64 @@
-# Import Data
+# Get Data into RAVE
 
-Now that you have installed and gotten started with RAVE, you can proceed to importing your iEEG data into the software so that it can be preprocessed and used in future modules.
+<div class="edit-comment">
+~~Now that you have installed and gotten started with RAVE, you can proceed to importing your iEEG data into the software so that it can be preprocessed and used in future modules.~~
 
-## Downloading demo data 
+(Avoid using "you") 
 
-Before importing your own data, you may wish to gain familiarity by trying RAVE's demo data in various modules. By default, RAVE already has a DemoSubject whose raw data has already been imported. <!-- Double check this, I don't remember what it looked like at default. --> However, you can also download other demo subjects by copying and pasting the following command into the RStudio console: 
+It is non-trivial to import data into RAVE. Luckily, RAVE supports multiple universal file conventions such as HDF5, EDF(+), BrainVision, and Matlab data formats. With more and more data formats supported, RAVE will become less dependent on 3rd-party softwares.
+
+This chapter will guide you through the following topics:
+
+* File hierarchy and specification
+* Overview: Voltage data
+  * Import Matlab/HDF5 file per electrode per block
+  * Import One Matlab/HDF5 file per session block
+  * Import Single EDF(+) file per block
+  * Import Single BrainVision file per block
+* Overview: Neuro-Imaging data
+  * Import MR imaging data
+  * Import FreeSurfer data
+  * Import CT data
+
+</div>
+
+## File hierarchy and specification
+
+There are two major data folders in RAVE. One contains the raw, unprocessed data such as analog traces, MRI/CT scans. The other stores processed data which is self-contained and portable. Both data folders are located at your home directory. To get the locations of these two folders, please launch a blank RAVE session:
 
 ```r
-rave::download_sample_data("subject_code")
+rave::start_session()
 ```
 
-You will need to substitute "subject_code" with one of the available demo subjects: `KC`, `YAB`, `YAD`, `YAF`, `YAH`, `YAI`, `YAJ`, and `YAK`. 
+<span class="edit-comment">TODO: Add a figure with captions showing where to find these settings</span>
 
-For example, to download subject YAB, use the following command: 
+
+<span class="edit-comment">TODO Also add a walk-through to each folders</span>
+
+This next section focuses on how to organize the raw data folder. The goal is to import the electrophysiological data into RAVE.
+
+## Overview: Voltage data
+
+RAVE supports various of data formats such as HDF5, EDF(+), BrainVision, and Matlab, etc... Before discussing about these data formats, let's start from the general workflow with the demo data that has already been installed. (If you haven't downloaded demo data, please see here for detailed instructions)
+
+Let's launch a blank RAVE session:
+
 ```r
-rave::download_sample_data("YAB")
+rave::start_session()
 ```
 
-Note that downloaded demo data will be stored in the `raw_dir` folder of the `rave_data` folder in your home directory. Within `raw_dir`, each subject's data is stored in its own folder (e.g. YAB's data will be stored in the YAB folder in `raw_dir`). Refer to the following screenshot for clarity. 
+In the sidebar, open `Import Signals > Native Structure` .....
 
-![Screenshot of location of downloaded demo data](static/image/DemoDownloadImage.png) 
 
-You can proceed to the "importing demo data" instructions to load your newly downloaded raw data into RAVE for cleaning. 
- 
+
+
+
+<!-- Latex PDF use: new page here, no HTML effect -->
+\newpage
+
+### Format 1
+
+
 ## Importing demo data
 
 You will need to launch the RAVE preprocessing module. Copy and paste the following command into the RStudio console: 

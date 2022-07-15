@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2.4 Upgrade RAVE | RAVE Documentation</title>
+  <title>2.3 Download demo data | RAVE Documentation</title>
   <meta name="description" content="RAVE documentation" />
   <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2.4 Upgrade RAVE | RAVE Documentation" />
+  <meta property="og:title" content="2.3 Download demo data | RAVE Documentation" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="RAVE documentation" />
   <meta name="github-repo" content="beauchamplab/rave-documentation" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2.4 Upgrade RAVE | RAVE Documentation" />
+  <meta name="twitter:title" content="2.3 Download demo data | RAVE Documentation" />
   
   <meta name="twitter:description" content="RAVE documentation" />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="download-demo-data.html"/>
-<link rel="next" href="troubleshooting.html"/>
+<link rel="prev" href="install-rave.html"/>
+<link rel="next" href="upgrade-rave.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -205,24 +205,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="upgrade-rave" class="section level2 hasAnchor" number="2.4">
-<h2><span class="header-section-number">2.4</span> Upgrade RAVE<a href="upgrade-rave.html#upgrade-rave" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>RAVE is actively under development with new features and bug fixes. To enjoy the new features, RAVE has built-in function that allows to update itself directly from the following R command:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="upgrade-rave.html#cb13-1" aria-hidden="true" tabindex="-1"></a> rave<span class="sc">::</span><span class="fu">check_dependencies</span>(<span class="at">nightly =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
-<blockquote>
-<p>When upgrading RAVE in RStudio, a pop-up dialogue might appear asking if you want to re-install the N27 template brain or pipeline modules. Simply choose “yes”.</p>
-</blockquote>
-<blockquote>
-<p>Please make sure you have access to the internet when upgrading.</p>
-</blockquote>
+<div id="download-demo-data" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Download demo data<a href="download-demo-data.html#download-demo-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Before importing your own data, you may wish to gain familiarity by trying RAVE’s demo data in various modules. By default, RAVE already has a DemoSubject whose raw data has already been imported. <!-- Double check this, I don't remember what it looked like at default. --> However, you can also download other demo subjects by copying and pasting the following command into the RStudio console:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="download-demo-data.html#cb11-1" aria-hidden="true" tabindex="-1"></a>rave<span class="sc">::</span><span class="fu">download_sample_data</span>(<span class="st">&quot;subject_code&quot;</span>)</span></code></pre></div>
+<p>You will need to substitute “subject_code” with one of the available demo subjects: <code>KC</code>, <code>YAB</code>, <code>YAD</code>, <code>YAF</code>, <code>YAH</code>, <code>YAI</code>, <code>YAJ</code>, and <code>YAK</code>.</p>
+<p>For example, to download subject YAB, use the following command:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="download-demo-data.html#cb12-1" aria-hidden="true" tabindex="-1"></a>rave<span class="sc">::</span><span class="fu">download_sample_data</span>(<span class="st">&quot;YAB&quot;</span>)</span></code></pre></div>
+<p>Note that downloaded demo data will be stored in the <code>raw_dir</code> folder of the <code>rave_data</code> folder in your home directory. Within <code>raw_dir</code>, each subject’s data is stored in its own folder (e.g. YAB’s data will be stored in the YAB folder in <code>raw_dir</code>). Refer to the following screenshot for clarity.</p>
+<div class="figure">
+<img src="static/image/DemoDownloadImage.png" alt="" />
+<p class="caption">Screenshot of location of downloaded demo data</p>
+</div>
+<p>You can proceed to the “importing demo data” instructions to load your newly downloaded raw data into RAVE for cleaning.</p>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="download-demo-data.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="troubleshooting.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="install-rave.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="upgrade-rave.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
