@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 6 Q&amp;As | RAVE Documentation</title>
+  <title>6.5 Notch Filter | RAVE Documentation</title>
   <meta name="description" content="RAVE documentation" />
   <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 6 Q&amp;As | RAVE Documentation" />
+  <meta property="og:title" content="6.5 Notch Filter | RAVE Documentation" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="RAVE documentation" />
   <meta name="github-repo" content="beauchamplab/rave-documentation" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 6 Q&amp;As | RAVE Documentation" />
+  <meta name="twitter:title" content="6.5 Notch Filter | RAVE Documentation" />
   
   <meta name="twitter:description" content="RAVE documentation" />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="part-three.html"/>
-<link rel="next" href="installation.html"/>
+<link rel="prev" href="importing-data.html"/>
+<link rel="next" href="wavelet.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -200,18 +200,37 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="qas" class="section level1 hasAnchor" number="6">
-<h1><span class="header-section-number">Chapter 6</span> Q&amp;As<a href="qas.html#qas" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<hr />
-<p>This page contains possible questions that may arise when using RAVE and their answers. Questions are organized by section.</p>
+<div id="notch-filter" class="section level2 hasAnchor" number="6.5">
+<h2><span class="header-section-number">6.5</span> Notch Filter<a href="notch-filter.html#notch-filter" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Question:</strong> What is fast fourier transform (FFT)?</p>
+<blockquote>
+<p>Answer: FFT is an algorithm that can quickly compute the discrete Fourier transform (DFT) of a signal. It transforms the signal from a function of time to the a fucntion of frequency by dividing the signal into its frequency components. Each component constitutes an oscillation with a unique amplitude. This procedure makes it easier to extract a base frequency and its harmonics (e.g. of the amplifier) to perform the notch filter.</p>
+</blockquote>
+<!-- https://jakevdp.github.io/blog/2013/08/28/understanding-the-fft/, https://www.nti-audio.com/en/support/know-how/fast-fourier-transform-fft#:~:text=The%20%22Fast%20Fourier%20Transform%22%20(,frequency%20information%20about%20the%20signal, http://hyperphysics.phy-astr.gsu.edu/hbase/Math/fft.htmlhttp://hyperphysics.phy-astr.gsu.edu/hbase/Math/fft.html -->
+<p><strong>Question:</strong> What is a Welch Periodogram?</p>
+<blockquote>
+<p>Answer: The Welch method allows for the estimation of the power of a signal at its component frequencies. The time signal is separated into individual blocks, a periodogram is created for each block, and then these periodograms are averaged to estimate the power. The Welch method reduces noise in the power estimation compared to other methods. (Note: a periodogram identifies the dominant frequencies in a time signal.)</p>
+</blockquote>
+<p><strong>Question:</strong> How can I switch between subjects while on the notch filter or wavelet modules?</p>
+<blockquote>
+<p>Answer: In the bottom right corner of the screen, there is a rectangular button that lists the project and subject you’re currently analyzing – e.g. “demo/YAD”. Click that button to go back to the load data screen and select a different project and/or subject.</p>
+</blockquote>
+<p><strong>Question:</strong> I’ve already performed the notch filter, but RAVE is not letting me update my channel options. How can I fix this?</p>
+<blockquote>
+<p>Answer: Once the data is imported and notch filtered, you cannot change the channel options. You should make a new project to change the channel options in this case.</p>
+</blockquote>
+<p><strong>Question:</strong> This error popped up when I tried loading a subject into the notch filter module. What do I do? “Found an error while loading the power data: The subject exists but its signal has not been imported yet.”</p>
+<blockquote>
+<p>Answer: Use the menu at left to go back to the “import signals” module. You will need to import that subject using the “validate &amp; import” button.</p>
+</blockquote>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="part-three.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="installation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="importing-data.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="wavelet.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

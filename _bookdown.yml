@@ -1,5 +1,29 @@
 delete_merged_file: true
 output_dir: "docs"
 language:
+  label:
+    fig: 'Figure '
+    tab: 'Table '
+    eq: 'Equation '
+    thm: 'Theorem '
+    lem: 'Lemma '
+    cor: 'Corollary '
+    prp: 'Proposition '
+    cnj: 'Conjecture '
+    def: 'Definition '
+    exm: 'Example '
+    exr: 'Exercise '
+    hyp: 'Hypothesis '
+    proof: 'Proof. '
+    remark: 'Remark. '
+    solution: 'Solution. '
   ui:
     chapter_name: "Chapter "
+rmd_files:
+  - "index.Rmd"
+  # - "chapters/02-installation/02-installation.md"
+  - "02-installation.md"
+  - "03-get-started.md"
+  - "04-import-data.Rmd"
+  - "05-preprocessing.Rmd"
+  - "99-QA.Rmd"

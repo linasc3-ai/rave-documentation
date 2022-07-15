@@ -1,17 +1,33 @@
 ---
-output: html_document
-editor_options: 
+output:
+  html_document: 
+    toc: yes
+    fig_caption: yes
+  pdf_document: default
+editor_options:
   chunk_output_type: console
 ---
+
 # Installation Guide
 
-RAVE is written as an "R" package. To properly install RAVE, please carefully follow the instructions step-by-step. We found 90% installation issues are due to not following the instructions.
+RAVE is written as an "R" package. To properly install RAVE, please carefully follow the instructions step-by-step. We found 90% installation issues are due to not following the instructions (for example, [system prerequisites](#system-prerequisites)).
 
----
+<span class="underline">
+Hardware Requirements
+</span>
 
-## System requirements & prerequisites
+* Minimal requirement: 4 CPU cores with 8 GB RAM
+* Recommended: 8+ CPU with 32+ GB RAM
 
-**System requirements**: 4 CPU cores with 8 GB RAM
+<span class="underline">
+System Library Prerequisites
+</span>
+
+* [MacOS](#macos)
+* Windows
+* Debian Linux (Ubuntu)
+
+## System Prerequisites
 
 RAVE is written in the programming language "R", so it is necessary to download the *latest* version of R for your computer. We also strongly recommend installing "RStudio", an integrated development environment, in order to easily utilize RAVE features. This section will guide you to install these and other prerequisites. Please click on the following links according to your operating systems.
 
@@ -29,17 +45,17 @@ RAVE is written in the programming language "R", so it is necessary to download 
 
 ### MacOS
 
-<font size="4">**STEP 1: Install Homebrew**</font>
+<span id="step-1-install-homebrew" class="font-5 underline strong">[STEP 1: Install Homebrew]</font>
 
-_(Note: if you have downloaded Homebrew in the past, you do not need to redownload it now. Move to the next step.)_
+_(Note: if you have downloaded **Homebrew** in the past, please skip Step 1 and 2 and jump to the [Step 3](#step-3-use-brew-to-install-missing-libraries).)_
 
-[Homebrew](https://brew.sh/) is a package manager that adds functions missing from the Apple operating system. It can be installed by copying and pasting the following line into your terminal (**note:** the terminal can be found through searching the applications folder on your computer): 
+[Homebrew](https://brew.sh/) is a package manager that adds system libraries missing from the Apple operating system. It can be installed by copying and pasting the following line into your terminal (**note:** the terminal can be found through searching the applications folder on your computer): 
 
 ```sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-If you have not downloaded Homebrew to your computer before, you will be prompted with the following questions: 
+If this is the first time that you install the Homebrew, the following questions might be prompted:
 
 ```
 ==> Checking for `sudo` access (which may request your password)...
@@ -56,9 +72,9 @@ Press RETURN/ENTER to continue or any other key to abort:
 
 Please press the `RETURN` or `ENTER` key to continue. 
 
-<font size="4">**STEP 2: Add command `brew` to system search path**</font>
+<span class="font-5 underline strong">[STEP 2: Add command "brew" to system search path]</span>
 
-The terminal commands used to add homebrew to the path depend on your computer's CPU chip. Copy and paste the appropriate command lines into the terminal based on your computer's chip type. 
+The terminal commands used to add homebrew to the path depend on your computer's CPU chip. Copy and paste the appropriate command lines into the terminal based on your computer's chip type. If you don't know the CPU type, click the `` icon on the top-right, and choose `About This Mac`.
 
 * **For M1 Chips** 
 ```sh
@@ -75,79 +91,80 @@ The terminal commands used to add homebrew to the path depend on your computer's
  echo 'eval "$(/usr/local/bin/brew shellenv)"' >> ~/.bash_profile
 ```
 
-<font size="4">**STEP 3: Use `brew` to install missing libraries**</font>
+<span id="step-3-use-brew-to-install-missing-libraries" class="font-5 underline strong">[STEP 3: Use brew to install missing libraries]</span>
 
-Open your system terminal, paste the following line into your terminal:
+Open the system terminal, paste the following line and press `return` key:
 
 ```sh
 brew install hdf5 fftw pkg-config
 ```
 
-This will install three libraries:
+This command installs the following three libraries:
 
 * `hdf5`: Shared library to access the universal HDF5 file format
 * `fftw`: Fast-Fourier transform library required by signal processing code
 * `pkg-config`: Package configuration helpers allowing R to find the two libraries above
 
-<font size="4">**STEP 4: Install R**</font>
+<span class="font-5 underline strong">[STEP 4: Install R]</span>
 
-Download and install the *latest* version of R directly from the website: https://cran.r-project.org/bin/macosx/ Be sure to download the package that corresponds to your computer's OS version and CPU type. If you already have R on your computer, simply ensure it is updated to the *latest* version.  
+Download and install the **latest** version of R directly from the website: https://cran.r-project.org/bin/macosx/ Be sure to download the package that corresponds to your computer's OS version and CPU type. If R has been installed, we highly recommend that you update to the latest version.  
 
-* For Intel Macs, download `R-X.X.X.pkg` 
-* For M1 Macs, download `R-X.X.X-arm64.pkg` 
+* For Intel Macs, the R installer name should look like `R-X.X.X.pkg` 
+* For M1 Macs, the R installer name should look like `R-X.X.X-arm64.pkg` 
 
-<font size="4">**STEP 5: Install RStudio Desktop**</font>
+<span class="font-5 underline strong">[STEP 5: Install RStudio Desktop]</span>
 
 Download and install RStudio Desktop directly from the website: https://www.rstudio.com/products/rstudio/download/ Be sure to download the version that corresponds to your OS system. If you already have RStudio downloaded, simply ensure it is updated to the *latest* version. Refer to the following screenshot for guidance.
 
-![Screenshot of RStudio Website](static/image/RStudioScreenshot.png) 
-
---- 
+![Screenshot of [RStudio download site](https://www.rstudio.com/products/rstudio/download/)](static/image/RStudioScreenshot.png) 
 
 ## Install RAVE
 
-IMPORTANT: Before proceeding to rest of this section. Please make sure you have read and finished the previous section: "[System requirements & prerequisites](#system-requirements-prerequisites)".
+> Important: Before proceeding to rest of this section. Please make sure you have read and finished the previous section: "[System prerequisites](#system-prerequisites)".
 
 **Download and Configure**
 
-Open the RStudio application and click on the *Console* tab (if RStudio is set to default settings, this tab is usually located in bottom left panel of your screen). 
+Open the RStudio application and click on the *Console* tab. If your RStudio adopts the default settings, this tab should be located in bottom-left. 
 
-Copy and paste the following R command into the console to install RAVE and its dependence the online repository: 
+> Important: Please do NOT mix an R command with a shell command. When running R command, please open `RStudio` and use the `Console` tab to run. If you direct copy the R scripts into system shell terminals, the script will fail!
+
+Copy and paste the following R command into the RStudio console to install RAVE and its dependence from online repositories: 
 
 ```r
 options(repos = c(ropensci = 'https://beauchamplab.r-universe.dev', 
                   CRAN = 'https://cloud.r-project.org'))
-install.packages(c('rave', 'ravebuiltins'))
+install.packages(c('rave', 'ravebuiltins', 'ravedash'))
 ```
 
-Copy and paste the following command onto the R console to update RAVE to the latest version (with bug fixes and new features): 
+Copy and paste the following command into the RStudio console to update RAVE to the latest version (with bug fixes and new features):
 
 ```r
 rave::check_dependencies(nightly = TRUE)
 ```
 
-Copy and paste the following command into the R console: 
+Execute the following R command to download extra data and templates:
 
 
 ```r
-rave::finalize_installation(upgrade = 'ask')
+rave::finalize_installation(upgrade = 'always')
 ```
 
 This finalizing step will download the following additional parts:
 
 * Template brain: (`N27`, `fsaverage`) for group-level electrode template mapping
 * Demo subject data: for demonstration purposes
+* Built-in modules and pipelines
 
 <!--#### Troubleshooting
 * When updating RAVE, if you receive a "timeout of 60 seconds was reached" warning message, try switching to a faster network connection.-->
 
 **Validate the Installation**
 
-To check whether RAVE was properly installed, copy and paste the following commands
-onto the console to start the program: 
+To check whether RAVE has been properly installed, execute the following R command
+to start the program. 
 
 ```r
- rave::start_rave()
+rave::start_rave()
 ```
 
 If installation was successful, a new web browser window should automatically open with the 
@@ -163,8 +180,6 @@ Now that you've completed installation, visit the following pages to start using
 * [Upgrade RAVE](#upgrade-rave)
 * [Change RAVE settings](#change-rave-settings) 
 
---- 
-
 ## Upgrade RAVE
 
 RAVE is actively under development with new features and bug fixes. To enjoy the new features, RAVE has built-in function that allows to update itself directly from the following R command:
@@ -173,10 +188,10 @@ RAVE is actively under development with new features and bug fixes. To enjoy the
  rave::check_dependencies(nightly = TRUE)
 ```
 
-**Note:** When re-updating, a pop-up might appear asking if you want to re-install the N27 template brain. Simply choose no.
+**Note:** When re-updating, a pop-up might appear asking if you want to re-install the N27 template brain or pipeline modules. Simply choose "yes".
 
 
-## Troubleshooting
+## Troubleshooting 
 Possible errors during installation and their solutions: 
 
 **Error:** "The following directories are not writable by your user". 

@@ -1,0 +1,56 @@
+p.caption {
+  color: #777;
+  margin-top: 10px;
+  font-size: 0.8em;
+}
+
+p.caption:before {
+    content: "Caption: ";
+}
+
+p code {
+  white-space: inherit;
+}
+pre {
+  word-break: normal;
+  word-wrap: normal;
+}
+pre code {
+  white-space: inherit;
+}
+
+blockquote {
+  background-color: #ffd60a40;
+  box-shadow: 1px 1px 10px;
+}
+
+/*Dipterix: start the customized styles*/
+.underline {
+  text-decoration: underline;
+}
+
+.strong {
+  font-weight: 700;
+}
+
+/*base font size is 1.6rem*/
+.font-1 {
+  font-size: 2em;
+}
+.font-2 {
+  font-size: 1.75em;
+}
+.font-3 {
+  font-size: 1.5em;
+}
+.font-4 {
+  font-size: 1.25em;
+}
+.font-5 {
+  font-size: 1em;
+}
+.font-6 {
+  font-size: 1em;
+  color: #777;
+}
+
