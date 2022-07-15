@@ -1,12 +1,3 @@
----
-output:
-  html_document: 
-    toc: yes
-    fig_caption: yes
-  pdf_document: default
-editor_options:
-  chunk_output_type: console
----
 
 # Installation Guide
 
