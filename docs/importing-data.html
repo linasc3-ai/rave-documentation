@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>6.4 Importing Data | RAVE Documentation</title>
   <meta name="description" content="RAVE documentation" />
-  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
 
   <meta property="og:title" content="6.4 Importing Data | RAVE Documentation" />
   <meta property="og:type" content="book" />
@@ -208,32 +208,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="importing-data" class="section level2 hasAnchor" number="6.4">
 <h2><span class="header-section-number">6.4</span> Importing Data<a href="importing-data.html#importing-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<blockquote>
 <p><strong>Question:</strong> What does the term “channel” refer to?
-&gt; Answer: In the early design of RAVE, we focused on exploring one channel per electrode cases, hence we equivalent “channel” to “electrode” here.</p>
+Answer: In the early design of RAVE, we focused on exploring one channel per electrode cases, hence we equivalent “channel” to “electrode” here.</p>
+</blockquote>
+<blockquote>
 <p><strong>Question:</strong> In step 3, why are the “folders” and “electrode” fields designated as “read-only”?</p>
-<blockquote>
+</blockquote>
 <p>Answer: If these fields are designated as “read only,” this means you have already imported the entered subject. To preserve reproducibility, once raw data for a subject is imported and notch filtered, you can not change the channel options.</p>
-</blockquote>
+<blockquote>
 <p><strong>Question:</strong> In step 3, what does the term “block” refer to?</p>
-<blockquote>
+</blockquote>
 <p>Answer: RAVE defines “block” as a period or session of continuous recording. A block should be named with a zero-padded integer according to the order they were recorded (e.g. 001 for the first session, 002 for the second).</p>
-</blockquote>
+<blockquote>
 <p><strong>Question:</strong> On the import widgets panel at bottom right, I got a message that electrode files are missing. How do I resolve this?</p>
-<blockquote>
+</blockquote>
 <p>Answer: When you hit the “check subject” button, the bottom right panel will let you know if any electrode files are missing based on the electrode numbers you entered in step three. Be sure to double check that you indicated the correct electrode numbers in step 3.</p>
-</blockquote>
+<blockquote>
 <p><strong>Question:</strong> Does RAVE automatically validate my data?</p>
-<blockquote>
+</blockquote>
 <p>Answer: You should check for yourself to make sure that each block contains the appropriate files. RAVE will not automatically check this for you.</p>
-</blockquote>
+<blockquote>
 <p><strong>Question:</strong> How do I know which file format to select in step 3?</p>
-<blockquote>
+</blockquote>
 <p>Answer: When you select a file format from the drop down, RAVE will display brief information on what that format entails and a sample organization for the data directory. Select the format that matches that of your data.</p>
-</blockquote>
-<p><strong>Question:</strong> Where are my inputs and configurations stored for a given subject?</p>
 <blockquote>
-<p>Answer: This information is stored within <code>data_dir/&lt;project&gt;/subject&gt;/rave/preprocess/rave.yaml</code> of your home directory.</p>
+<p><strong>Question:</strong> Where are my inputs and configurations stored for a given subject?</p>
 </blockquote>
+<p>Answer: This information is stored within <code>data_dir/&lt;project&gt;/subject&gt;/rave/preprocess/rave.yaml</code> of your home directory.</p>
 </div>
             </section>
 
