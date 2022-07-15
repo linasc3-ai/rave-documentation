@@ -30,3 +30,5 @@ downloading-demo-data
 importing-data
 notch-filter
 wavelet
+url-your-book-url-like-httpsbookdown.orgyihuibookdown
+linux

@@ -7,16 +7,20 @@ This page contains possible questions that may arise when using RAVE and their a
 ## Installation
 <!-- note: these are sourced from the troubleshooting section of my documentation, not sure if they're better placed here or in those troubleshooting sections --> 
 
-**Question:** When updating RAVE, I received a “timeout of 60 seconds was reached” warning message. How do I fix this? 
-> Answer: Try switching to a faster network connection. 
+> **Question:** When updating RAVE, I received a “timeout of 60 seconds was reached” warning message. How do I fix this? 
+
+Answer: Try switching to a faster network connection. 
 
 **Question:** I already have R and RStudio downloaded. Can I skip the prerequisites? 
+
 > Answer: RAVE is dependent on the most recent versions of these applications, so please make sure they are properly updated. Be sure to also review the other pre-requisite steps, like installing Homebrew and the system libraries. The most common reason for issues in the installation of RAVE is failure to properly download these prerequisites. 
 
 **Question:** How can I check my computer's OS version or CPU type? 
+
 > Answer: If you're using a Mac, this can be found by clicking the apple logo at the top left of your screen, and then clicking "About this Mac". The version and processor (CPU type) will be listed there. 
 
 **Question:** I received a “the following directories are not writable by your user” error. How do I fix this? 
+
 > Answer: If you have multiple accounts on your computer but only one of them has homebrew installed, you may receive that error. To resolve it, you can change the ownership of the directories to the current user and make sure this user has write permission.
 
 ## Getting Started with RAVE
