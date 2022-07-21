@@ -178,23 +178,34 @@
 <ul>
 <li><p>The <u> select method to generate wavelet parameters </u> drop down menu determines <strong>how</strong> the configurations for the wavelet will be set. By default, it is set to <strong>“built in”</strong>, meaning that the frequency and cycle settings can be set manually on the RAVE interface (see bullet points below). Alternatively, selecting <strong>“upload preset”</strong> is commonly used to save time if one already has their own set configurations they want to use on the data. An upload button will appear; please upload the preset in the form of a csv with two columns for the frequency and cycles. Proceed straight to running the wavelet via the blue “run wavelet” button if a preset is uploaded.</p></li>
 <li><p>Use the <u> frequency range </u> slider to select the range of frequencies that will be decomposed with the wavelet.</p></li>
-<li><p>Use the <u> frequency step size </u> slider</p></li>
-<li><p>Use the <u> wavelet cycles </u> slider to choose the range of cycles to use in the transform. Note that a larger number of cycles will lead to more precise frequency analysis, whereas a smaller number of cycles will lead to more precise temporal analysis.</p></li>
+<li><p>The value selected with the <u> frequency step size </u> slider depends on the frequency desired after the wavelet is performed.</p></li>
+</ul>
+<!-- how to know what value to input for step size; be more specific in step size documentation -->
+<ul>
+<li>Use the <u> wavelet cycles </u> slider to choose the range of cycles to use in the transform. Note that a larger number of cycles will lead to more precise frequency analysis, whereas a smaller number of cycles will lead to more precise temporal analysis.</li>
 </ul>
 <p><strong>Wavelet Kernel:</strong></p>
+<p>The figures displayed on this panel visually display the properties of the wavelet given the selected configurations.</p>
 <ul>
-<li><p>The <u> Wavelet Kernels (Real &amp; Imaginary) </u> graph</p></li>
-<li><p>The <u> Wavelet Length | Frequency </u> graph</p></li>
-<li><p>The <u> Wavelet Cycle | Frequency </u> graph</p></li>
+<li>The <u> Wavelet Kernels (Real &amp; Imaginary) </u> shows the kernel at given frequencies in Hz and times in seconds (aka wavelet length).</li>
+</ul>
+<!-- better define kernel in documentation and add more details to these graphs / describe trends-->
+<ul>
+<li>The <u> Wavelet Length | Frequency </u> graph plots the length of the kernel in seconds at different frequencies in Hz.</li>
+</ul>
+<!-- explain what down log trend means // purpose of each graph -->
+<ul>
+<li>The <u> Wavelet Cycle | Frequency </u> graph plots the number of cycles for the wavelet at different frequencies in Hz.</li>
 </ul>
 <p>To download these figures, hover over the top left corner of the panel and a small, grey save icon will appear. Clicking on the icon will generate a pdf with the figures.</p>
 <p>To download the kernel parameters, click the blue <strong>download kernel parameters</strong> link at the bottom of the window. This will generate a csv file with each frequency and its corresponding number of cycles. To simply view the parameters on the interface, click anywhere on the panel and it will switch the view to display a table with the frequency and cycle data; click anywhere on this table to switch back to the figure view. (Alternatively, on figure view, click on the table icon in the top right corner of the panel.)</p>
-<p>When finished setting the configurations and reviewing the figures, select the blue <strong>Run Wavelet</strong> button. As shown below, a pop-up will appear on the screen asking you to confirm the subject, frequencies, # of cycles, and precision that you selected for the wavelet transformation. Click “confirm” to proceed, or “confirm and run in background” if you wish to continue using RAVE during the decomposition process. Note that this process can take up to 30 minutes; progress bars for each task will be displayed in the lower right corner.</p>
+<p>When finished setting the configurations and reviewing the figures, select the blue <strong>Run Wavelet</strong> button. As shown below, a pop-up will appear on the screen asking to confirm the subject, frequencies, # of cycles, and precision selected for the wavelet transformation. Click “confirm” to proceed, or “confirm and run in background to continue using RAVE during the decomposition process. Note that this process can take up to 30 minutes; progress bars for each task will be displayed in the lower right corner.</p>
 <div class="figure">
 <img src="static/image/waveletconfirmation.png" alt="" />
 <p class="caption">Sample Wavelet Decomposition Confirmation Window</p>
 </div>
-<p>The process is completed if a “success” pop-up appears. Proceed to the next module, referencing!</p>
+<p>The process is completed if a “success” pop-up appears. This means that the signal data for the electrodes within each of the subject’s blocks have been down-sampled (if desired), decomposed by the wavelet into time-frequency data, and down-sampled again.</p>
+<p>Proceed to the next module, referencing!</p>
 </div>
             </section>
 

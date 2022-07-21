@@ -1,16 +1,18 @@
 # Preprocessing 
 <!-- will merge with 03 import data section that is already written--> 
 
-The following steps will walk through the preprocessing of the raw iEEG signal data so that it can optimally be used in future analysis modules. The preprocessing modules are:
+The following steps will walk through the preprocessing of the raw iEEG signal data so that it can optimally be used in future analysis modules. The corresponding modules are:
 
 (These must be done first, in order:)
-- Notch Filter
-- Wavelet
-- Referencing
+
+* Notch Filter
+* Wavelet
+* Referencing
 
 (These can be done after, in any order:)
-- Surface Registration Localization 
-- Generate Epoch  
+
+* Surface Registration Localization
+* Generate Epoch  
 
 ## Step #1: Import Signals 
 <!-- not sure what would be the best name for these headers yet; want to imply the first four are sequential --> 
@@ -219,13 +221,35 @@ The process is completed if a "success" pop-up appears. This means that the sign
 
 Proceed to the next module, referencing! 
 
-## Step #4: Reference Signals
+## Step #4: Reference Channels
 Common average referencing 
 
 --- 
 After the four steps above have been completed, the remaining modules below can be done in any order: 
 
-## Surface Registration Localization 
+## Surface & Electrodes
+
+The surface & electrodes section is composed of two modules: 
+
+<!-- add sentence summarizing overall purpose/goal of surface & electrodes section --> 
+
+### Surface & Registration
+
+The Surface & Registration module has the goal of importing raw magnetic resonance (MR) and computerized tomography (CT) images into RAVE, so that they can be used in future analyses. There are two panels to note: Data settings and Command-line settings. Refer to the following screenshot for guidance. 
+
+![Sample Surface & Registration Window](static/image/WaveletConfirmation.png)
+
+**Data Settings**: 
+
+Start by using the <u> project and subject drop down menus </u> to select the subject whose MRI and CT images that will be imported. 
+
+<!-- any way to upload images for each subject in bulk? -->
+
+**Command-line settings**: 
+
+<!-- the general idea is that after specifying some configurations, this program will generate some command lines that the user should run on their own terminal to undergo the import process --> 
+
+### Electrode Localization
 
 --- 
 

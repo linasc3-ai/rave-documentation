@@ -216,8 +216,6 @@ Possible errors during installation and their solutions:
 
 This error could occur if thee computer has multiple accounts, and the current active account does not have the right to manage brew libraries. Please login with account that has the privilege to manage HomeBrew and use that account to install.
 
-
-
 > **Error:** "No available formula with the name <xxxx>". 
 
 There might be an issue with your Homebrew: it cannot find proper formula (recipe needed to brew libraries). Please try reseting the brew repository by: 

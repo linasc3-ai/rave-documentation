@@ -111,4 +111,8 @@ Answer: A complex wavelet will undergo convulotion with the iEEG signal. The iEE
 
 > **Question:** How is the power sample rate different from the rate used in the iEEG recording setup? 
 
-Answer: The recording rate is associated with raw voltage data, whereas the power sample rate is aassociated with time frequency decomposition. 
+Answer: The recording rate is associated with raw voltage data, whereas the power sample rate is associated with time frequency decomposition. 
+
+## Surface & Registration
+
+## Electrode Localization
