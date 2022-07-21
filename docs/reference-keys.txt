@@ -32,3 +32,8 @@ notch-filter
 wavelet
 url-your-book-url-like-httpsbookdown.orgyihuibookdown
 linux
+step-1-import-signals
+step-2-notch-filter
+step-3-wavelet
+step-4-reference-signals
+generate-epoch

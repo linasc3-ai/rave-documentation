@@ -20,7 +20,7 @@ System Library Prerequisites
 
 ## System Prerequisites
 
-RAVE is written in the programming language "R", so it is necessary to download the *latest* version of R for your computer. We also strongly recommend installing "RStudio", an integrated development environment, in order to easily utilize RAVE features. This section will guide you to install these and other prerequisites. Please click on the following links according to your operating systems.
+RAVE is written in the programming language "R", so it is necessary to download the *latest* version of R on the computer. It is strongly recommended to install "RStudio", an integrated development environment, in order to easily utilize RAVE features. This section will guide the  installation of these and other prerequisites. Please click on the following links according to your operating systems.
 
 * [MacOS](#macos)
 * Windows
@@ -40,20 +40,20 @@ RAVE is written in the programming language "R", so it is necessary to download 
 
 _(Note: if you have downloaded **Homebrew** in the past, please skip Step 1 and 2 and jump to the [Step 3](#step-3-use-brew-to-install-missing-libraries).)_
 
-[Homebrew](https://brew.sh/) is a package manager that adds system libraries missing from the Apple operating system. It can be installed by copying and pasting the following line into your terminal (**note:** the terminal can be found through searching the applications folder on your computer): 
+[Homebrew](https://brew.sh/) is a package manager that adds system libraries missing from the Apple operating system. It can be installed by copying and pasting the following line into the terminal (**note:** the terminal can be found through searching the applications folder on the computer): 
 
 ```sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-If this is the first time that you install the Homebrew, the following questions might be prompted:
+If this is the first time installing Homebrew, the following questions might be prompted:
 
 ```
 ==> Checking for `sudo` access (which may request your password)...
 Password:
 ```
 
-Enter your user's password (*the password won't be displayed into the screen as you type for security reasons*). Once you've finish typing, press the `RETURN` or `ENTER` key to proceed. 
+Enter your user's password (*the password won't be displayed into the screen as you type for security reasons*). Once finished, press the `RETURN` or `ENTER` key to proceed. 
 
 ```
 ==> This script will install:
@@ -98,14 +98,14 @@ This command installs the following three libraries:
 
 <span class="font-5 underline strong">[STEP 4: Install R]</span>
 
-Download and install the **latest** version of R directly from the website: https://cran.r-project.org/bin/macosx/ Be sure to download the package that corresponds to your computer's OS version and CPU type. If R has been installed, we highly recommend that you update to the latest version.  
+Download and install the **latest** version of R directly from the website: https://cran.r-project.org/bin/macosx/ Be sure to download the package that corresponds to the computer's OS version and CPU type. If R has been installed, we highly recommend updating to the latest version.  
 
 * For Intel Macs, the R installer name should look like `R-X.X.X.pkg` 
 * For M1 Macs, the R installer name should look like `R-X.X.X-arm64.pkg` 
 
 <span class="font-5 underline strong">[STEP 5: Install RStudio Desktop]</span>
 
-Download and install RStudio Desktop directly from the website: https://www.rstudio.com/products/rstudio/download/ Be sure to download the version that corresponds to your OS system. If you already have RStudio downloaded, simply ensure it is updated to the *latest* version. Refer to the following screenshot for guidance.
+Download and install RStudio Desktop directly from the website: https://www.rstudio.com/products/rstudio/download/ Be sure to download the version that corresponds to the OS system. If RStudio is already downloaded, simply ensure it is updated to the *latest* version. Refer to the following screenshot for guidance.
 
 ![Screenshot of [RStudio download site](https://www.rstudio.com/products/rstudio/download/)](static/image/RStudioScreenshot.png) 
 
@@ -115,7 +115,7 @@ Download and install RStudio Desktop directly from the website: https://www.rstu
 
 **Download and Configure**
 
-Open the RStudio application and click on the *Console* tab. If your RStudio adopts the default settings, this tab should be located in bottom-left. 
+Open the RStudio application and click on the *Console* tab. If RStudio adopts the default settings, this tab should be located in bottom-left. 
 
 > Important: Please do NOT mix an R command with a shell command. When running R command, please open `RStudio` and use the `Console` tab to run. If you direct copy the R scripts into system shell terminals, the script will fail!
 
@@ -165,7 +165,7 @@ RAVE display. A screenshot is shown below:
 
 🎉 You have successfully downloaded RAVE! 
 
-Now that you've completed installation, visit the following pages to start using RAVE! 
+Now that installation was completed, visit the following pages to start using RAVE! 
 
 * [Starting RAVE](#starting-rave)
 * [Upgrade RAVE](#upgrade-rave)
@@ -173,13 +173,13 @@ Now that you've completed installation, visit the following pages to start using
 
 ## Download demo data 
 
-Before importing your own data, you may wish to gain familiarity by trying RAVE's demo data in various modules. By default, RAVE already has a DemoSubject whose raw data has already been imported. <!-- Double check this, I don't remember what it looked like at default. --> However, you can also download other demo subjects by copying and pasting the following command into the RStudio console: 
+Before importing lab data, to gain familiarity it is recommended to try RAVE's demo data in various modules. By default, RAVE already has a DemoSubject whose raw data has already been imported. <!-- Double check this, I don't remember what it looked like at default. --> However, you can also download other demo subjects by copying and pasting the following command into the RStudio console: 
 
 ```r
 rave::download_sample_data("subject_code")
 ```
 
-You will need to substitute "subject_code" with one of the available demo subjects: `KC`, `YAB`, `YAD`, `YAF`, `YAH`, `YAI`, `YAJ`, and `YAK`. 
+Substitute "subject_code" with one of the available demo subjects: `KC`, `YAB`, `YAD`, `YAF`, `YAH`, `YAI`, `YAJ`, and `YAK`. 
 
 For example, to download subject YAB, use the following command: 
 ```r
@@ -190,7 +190,7 @@ Note that downloaded demo data will be stored in the `raw_dir` folder of the `ra
 
 ![Screenshot of location of downloaded demo data](static/image/DemoDownloadImage.png) 
 
-You can proceed to the "importing demo data" instructions to load your newly downloaded raw data into RAVE for cleaning. 
+Proceed to the "importing demo data" instructions to load your newly downloaded raw data into RAVE for cleaning. 
  
 
 ## Upgrade RAVE
@@ -214,13 +214,13 @@ Possible errors during installation and their solutions:
 >
 > **Error:** "No available formula with the name <xxxx>". 
 
-This error could occur if your computer have multiple accounts, and the current active account does not have the right to manage brew libraries. Please login with account that has the privilege to manage HomeBrew and use that account to install.
+This error could occur if thee computer has multiple accounts, and the current active account does not have the right to manage brew libraries. Please login with account that has the privilege to manage HomeBrew and use that account to install.
 
 
 
 > **Error:** "No available formula with the name <xxxx>". 
 
-There might be an issue with your Homebrew: it cannot find proper formula (recipe needed to brew libraies). Please try reseting the brew repository by: 
+There might be an issue with your Homebrew: it cannot find proper formula (recipe needed to brew libraries). Please try reseting the brew repository by: 
 
 ```sh
 rm -rf "/usr/local/Homebrew/Library/Taps/homebrew/homebrew-core"

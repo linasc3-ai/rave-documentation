@@ -17,17 +17,17 @@ Answer: RAVE is dependent on the most recent versions of these applications, so 
 
 > **Question:** How can I check my computer's OS version or CPU type? 
 
-Answer: If you're using a Mac, this can be found by clicking the apple logo at the top left of your screen, and then clicking "About this Mac". The version and processor (CPU type) will be listed there. 
+Answer: If using a Mac, this can be found by clicking the apple logo at the top left of the screen, and then clicking "About this Mac". The version and processor (CPU type) will be listed there. 
 
 > **Question:** I received a “the following directories are not writable by your user” error. How do I fix this? 
 
-Answer: If you have multiple accounts on your computer but only one of them has homebrew installed, you may receive that error. To resolve it, you can change the ownership of the directories to the current user and make sure this user has write permission.
+Answer: If there are multiple accounts on the computer but only one of them has homebrew installed, this error may result. To resolve it, change the ownership of the directories to the current user and make sure this user has write permission.
 
 ## Getting Started with RAVE
 
 **Question**: I copied a command into the RStudio console, but nothing is happening. What is the issue? 
 
-Make sure you click the red stop sign at the top right of the console to stop the current command. This is necessary if you want to execute a different command. 
+Make sure to click the red stop sign at the top right of the console to stop the current command. This is necessary to execute a different command. 
 
 ## Downloading Demo Data 
 
@@ -37,23 +37,25 @@ Make sure you click the red stop sign at the top right of the console to stop th
 
 How do I fix this? 
 
-Answer: You forgot to download this demo subject before importing them. You can use the following command to download the demo subject YAI: 
+Answer: Download the demo subject before importing them. Use the following command to download the demo subject YAI: 
 
 ```r
 rave::download_sample_data("YAI")
 ```
 
 > **Question:** Where does the demo data come from? 
+
 Answer: The demo data available in RAVE is sourced from experiments run by the Beauchamp Lab at the Perelman School of Medicine, which investigates the neural mechanisms for multisensory integration and visual perception in human subjects. Read more at: https://www.med.upenn.edu/beauchamplab/
 
 ## Importing Data
 
 > **Question:** What does the term "channel" refer to? 
+
 Answer: In the early design of RAVE, we focused on exploring one channel per electrode cases, hence we equivalent "channel" to "electrode" here. 
 
 > **Question:** In step 3, why are the "folders" and "electrode" fields designated as "read-only"?
 
-Answer: If these fields are designated as "read only," this means you have already imported the entered subject. To preserve reproducibility, once raw data for a subject is imported and notch filtered, you can not change the channel options. 
+Answer: If these fields are designated as "read only," this means you have already imported the entered subject. To preserve reproducibility, once raw data for a subject is imported and notch filtered, the channel options can not be changed.  
 
 > **Question:** In step 3, what does the term "block" refer to? 
 
@@ -61,19 +63,19 @@ Answer: RAVE defines "block" as a period or session of continuous recording. A b
 
 > **Question:** On the import widgets panel at bottom right, I got a message that electrode files are missing. How do I resolve this? 
 
-Answer: When you hit the "check subject" button, the bottom right panel will let you know if any electrode files are missing based on the electrode numbers you entered in step three. Be sure to double check that you indicated the correct electrode numbers in step 3.
+Answer: When selecting the "check subject" button, the bottom right panel will indicate if any electrode files are missing based on the electrode numbers you entered in step three. Be sure to double check that the correct electrode numbers in step 3 were indicated.
 
 > **Question:** Does RAVE automatically validate my data? 
 
-Answer: You should check for yourself to make sure that each block contains the appropriate files. RAVE will not automatically check this for you. 
+Answer: Check for yourself to make sure that each block contains the appropriate files. RAVE will not automatically check this. 
 
 > **Question:** How do I know which file format to select in step 3? 
 
-Answer: When you select a file format from the drop down, RAVE will display brief information on what that format entails and a sample organization for the data directory. Select the format that matches that of your data. 
+Answer: When you select a file format from the drop down, RAVE will display brief information on what that format entails and a sample organization for the data directory. Select the format that matches that of the data. 
 
 > **Question:** Where are my inputs and configurations stored for a given subject? 
 
-Answer: This information is stored within `data_dir/<project>/subject>/rave/preprocess/rave.yaml` of your home directory. 
+Answer: This information is stored within `data_dir/<project>/subject>/rave/preprocess/rave.yaml` of the home directory. 
 
 ## Notch Filter
 
@@ -89,7 +91,7 @@ Answer: The Welch method allows for the estimation of the power of a signal at i
 
 > **Question:** How can I switch between subjects while on the notch filter or wavelet modules? 
 
-Answer: In the bottom right corner of the screen, there is a rectangular button that lists the project and subject you're currently analyzing -- e.g. "demo/YAD". Click that button to go back to the load data screen and select a different project and/or subject. 
+Answer: In the bottom right corner of the screen, there is a rectangular button that lists the project and subject currently being analyzed -- e.g. "demo/YAD". Click that button to go back to the load data screen and select a different project and/or subject. 
 
 > **Question:** I've already performed the notch filter, but RAVE is not letting me update my channel options. How can I fix this? 
 
@@ -97,8 +99,7 @@ Answer: Once the data is imported and notch filtered, you cannot change the chan
 
 > **Question:** This error popped up when I tried loading a subject into the notch filter module. What do I do? "Found an error while loading the power data: The subject exists but its signal has not been imported yet." 
 
-Answer: Use the menu at left to go back to the "import signals" module. You will need to import that subject using the "validate & import" button. 
-
+Answer: Use the menu at left to go back to the "import signals" module. It is necessary to import that subject using the "validate & import" button. 
 
 ## Wavelet
 
@@ -106,4 +107,8 @@ Answer: Use the menu at left to go back to the "import signals" module. You will
 
 Answer: A complex wavelet will undergo convulotion with the iEEG signal. The iEEG signal will then be translated across the time axis, using either high frequency or low frequency wavelets. The result is good frequency resolution but poor temporal resolution at low frequencies, and good temporal resolution and poor frequency resolution at high frequencies. Note that a wavelet is created by multiplying a Gaussian function with a sine function. See more: https://sapienlabs.org/lab-talk/time-frequency-analysis-and-wavelets/v
 
-**Question::** Why can't I down-sample the wavelet coefficients to a sample rate less than or equal to 1? 
+> **Question:** Why can't I down-sample the wavelet coefficients to a sample rate less than or equal to 1? 
+
+> **Question:** How is the power sample rate different from the rate used in the iEEG recording setup? 
+
+Answer: The recording rate is associated with raw voltage data, whereas the power sample rate is aassociated with time frequency decomposition. 
