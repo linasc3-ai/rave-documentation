@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 6 Q&amp;As | RAVE Documentation</title>
+  <title>3.2 Starting and Closing RAVE | RAVE Documentation</title>
   <meta name="description" content="RAVE documentation" />
-  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 6 Q&amp;As | RAVE Documentation" />
+  <meta property="og:title" content="3.2 Starting and Closing RAVE | RAVE Documentation" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="RAVE documentation" />
   <meta name="github-repo" content="beauchamplab/rave-documentation" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 6 Q&amp;As | RAVE Documentation" />
+  <meta name="twitter:title" content="3.2 Starting and Closing RAVE | RAVE Documentation" />
   
   <meta name="twitter:description" content="RAVE documentation" />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="part-three.html"/>
-<link rel="next" href="installation.html"/>
+<link rel="prev" href="overview-of-rave-structure.html"/>
+<link rel="next" href="get-data-into-rave.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -135,7 +135,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">RAVE Manual</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> url: your book url like <span>https://bookdown.org/yihui/bookdown</span></a>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
 <ul>
 <li class="chapter" data-level="" data-path="showcases.html"><a href="showcases.html"><i class="fa fa-check"></i>Showcases</a></li>
 </ul></li>
@@ -143,8 +143,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="2.1" data-path="system-prerequisites.html"><a href="system-prerequisites.html"><i class="fa fa-check"></i><b>2.1</b> System Prerequisites</a>
 <ul>
-<li class="chapter" data-level="2.1.1" data-path="system-prerequisites.html"><a href="system-prerequisites.html#linux"><i class="fa fa-check"></i><b>2.1.1</b> Linux –&gt;</a></li>
-<li class="chapter" data-level="2.1.2" data-path="system-prerequisites.html"><a href="system-prerequisites.html#macos"><i class="fa fa-check"></i><b>2.1.2</b> MacOS</a></li>
+<li class="chapter" data-level="2.1.1" data-path="system-prerequisites.html"><a href="system-prerequisites.html#macos"><i class="fa fa-check"></i><b>2.1.1</b> MacOS</a></li>
 </ul></li>
 <li class="chapter" data-level="2.2" data-path="install-rave.html"><a href="install-rave.html"><i class="fa fa-check"></i><b>2.2</b> Install RAVE</a></li>
 <li class="chapter" data-level="2.3" data-path="download-demo-data.html"><a href="download-demo-data.html"><i class="fa fa-check"></i><b>2.3</b> Download demo data</a></li>
@@ -206,18 +205,47 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="qas" class="section level1 hasAnchor" number="6">
-<h1><span class="header-section-number">Chapter 6</span> Q&amp;As<a href="qas.html#qas" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<hr />
-<p>This page contains possible questions that may arise when using RAVE and their answers. Questions are organized by section.</p>
+<div id="starting-and-closing-rave" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Starting and Closing RAVE<a href="starting-and-closing-rave.html#starting-and-closing-rave" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><font size="4"><strong>Starting RAVE</strong></font></p>
+<p><em>Note:</em> you must quit and restart RStudio if you have just downloaded or updated RAVE in order for the application to start successfully.</p>
+<p>After restarting RStudio, copy and paste the following command into the RStudio console to open RAVE:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="starting-and-closing-rave.html#cb18-1" aria-hidden="true" tabindex="-1"></a> rave<span class="sc">::</span><span class="fu">start_rave</span>()</span></code></pre></div>
+<p>RAVE will display in a new web browser (Google Chrome is recommended for optimal use).</p>
+<p><font size="4"><strong>Closing RAVE</strong></font></p>
+<p>To completely close the RAVE server:</p>
+<p>1). Click the red stop sign in the bottom left panel of RStudio (refer to the screenshot below to find the stop sign).</p>
+<div class="figure">
+<img src="static/image/RStudioConsoleStopSign.png" alt="" />
+<p class="caption">Screenshot of RStudio console stop sign</p>
 </div>
+<p>2). Quit the RStudio application. If asked whether you want to <strong>Save workspace image?</strong>, click no.</p>
+<p><strong>Note:</strong> Closing the RAVE display tab on your web browser will only close the display, not the actual RAVE server.</p>
+<hr />
+<!-- ## Change RAVE Settings
+To access and change RAVE settings, copy and paste the following command into the RStudio console: 
+
+```r 
+ rave::rave_options()
+```
+
+* **Modules:** Summary of all RAVE modules
+* **Core Settings:** Allows you to change where RAVE data is stored.  
+* **System:** Allows you to change RAM and number of CPU cores RAVE can use to alter speed at which data is read 
+* **3D Viewer:** Allows you to change which downloaded brain data to use as the template brain for electrode template mapping; the default template brain is `N27`. 
+
+-->
+<p><strong>Note:</strong> In general, you must stop processes that are currently being executed by the console before trying to initiate another command. To do this, click the red stop sign on the bottom left panel of RStudio. For example, if you have just opened RAVE and wish to update the application, click the red stop sign first.</p>
+
+</div>
+<!-- </div> -->
             </section>
 
           </div>
         </div>
       </div>
-<a href="part-three.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="installation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="overview-of-rave-structure.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="get-data-into-rave.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -248,7 +276,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/linasc3-ai/rave-documentation/edit/main/99-QA.Rmd",
+"link": "https://github.com/linasc3-ai/rave-documentation/edit/main/03-get-started.md",
 "text": "Edit"
 },
 "history": {

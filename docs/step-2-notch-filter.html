@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 5 Preprocessing | RAVE Documentation</title>
+  <title>5.2 Step #2: Notch Filter | RAVE Documentation</title>
   <meta name="description" content="RAVE documentation" />
   <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 5 Preprocessing | RAVE Documentation" />
+  <meta property="og:title" content="5.2 Step #2: Notch Filter | RAVE Documentation" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="RAVE documentation" />
   <meta name="github-repo" content="beauchamplab/rave-documentation" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 5 Preprocessing | RAVE Documentation" />
+  <meta name="twitter:title" content="5.2 Step #2: Notch Filter | RAVE Documentation" />
   
   <meta name="twitter:description" content="RAVE documentation" />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="importing-your-own-data.html"/>
-<link rel="next" href="step-1-import-signals.html"/>
+<link rel="prev" href="step-1-import-signals.html"/>
+<link rel="next" href="step-3-wavelet.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -144,29 +144,70 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="preprocessing" class="section level1 hasAnchor" number="5">
-<h1><span class="header-section-number">Chapter 5</span> Preprocessing<a href="preprocessing.html#preprocessing" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<!-- will merge with 03 import data section that is already written-->
-<p>The following steps will walk through the preprocessing of the raw iEEG signal data so that it can optimally be used in future analysis modules. The corresponding modules are:</p>
-<p>(These must be done first, in order:)</p>
+<div id="step-2-notch-filter" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> Step #2: Notch Filter<a href="step-2-notch-filter.html#step-2-notch-filter" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<!-- add very brief description of what this section is for first; essentially it filters out extra noise without disruption to the rest of the signal. it does this by minimizing signals within a narrow bandwidth; the rest of the signal is not disrupted because it's not in the bandwidth. a bandwidth is a range of frequencies within a band. a common reason for applying it is because EEG recording setups often include an amplifier. 
+AC power grid in US is 60 Hz, issue is the EEG recording equipment will pick up on that and we don't want those signals because they're not from the brain, they're external. so the idea is to remove that data. stopband = a band of frequencies that are reduced by a filter. width is essentially the amount of frequencies -->
+<!-- how do you create notch filter? probably put brief explanation here and then have a question in Q&A where they can learn more with any outside links. "The easiest is to create a notch filter, which basically involves taking the FFT of the signal, zeroing out the Fourier coefficients at/around 50 Hz (best to use gentle slopes to minimize introducing artifacts resulting from sharp edges), then taking the inverse FFT."-->
+<!-- "calculation of multiples of a base frequency" -- why do you need to do multiples? -->
+<p><strong>What is a notch filter?</strong> A notch filter blocks a given frequency or a narrow range of frequencies (aka a “bandwidth”) from a signal without affecting the rest of that signal. It is often used to minimize line noise interference in raw iEEG data, which helps ensure that future analyses only consider actual brain data. A common source of this interference is the amplifier used in recording set-ups to convert electrode signals into a form readable by the computer. This interference is commonly introduced at 60 Hz, since that is the standard frequency used in the North American electrical grid system.</p>
+<p>To apply the notch filter, RAVE performs a fast fourier transform (FFT) of the signal. To learn more about FFT, visit the Q&amp;A section at <a href="notch-filter.html#notch-filter">Notch Filter</a>.</p>
+<!-- https://terpconnect.umd.edu/~toh/spectrum/FourierFilter.html, https://towardsdatascience.com/fast-fourier-transform-937926e591cb -->
+<p>To apply the notch filter to your data, follow the steps below.</p>
+<!-- clarify block -->
+<p>Begin in the <strong>Data Selection</strong> window to <u> specify which data to perform the notch filter on </u>. Use the drop down to indicate the desired project and subject. Note that pressing the <strong>Sync from [Import LFP] module</strong> link will automatically select the project and subject that was just imported in the Import Signals module.</p>
+<p><img src="static/image/NFImport.png" alt="Data Selection" />
+<!-- make sure to add in the Q&A what happens if you get errors in this case --></p>
+<p>Proceed by selecting the <strong>Load Subject</strong> button. A new screen will load with three panels: Filter Settings, Inspection, and Notch. Refer to the following screenshot for guidance.</p>
+<div class="figure">
+<img src="static/image/NotchFilter.png" alt="" />
+<p class="caption">Sample Notch Filter Screen</p>
+</div>
+<p><strong>Filter Settings:</strong> Begin my indicating the desired configurations for the <strong>filter(s)</strong>.</p>
 <ul>
-<li>Notch Filter</li>
-<li>Wavelet</li>
-<li>Referencing</li>
+<li><p><u>Base frequency</u> refers to the frequency introduced by the amplifier that should be removed. By default, this is set as 60 Hz as that is the frequency introduced by most iEEG amplifiers.</p></li>
+<li><p><u>x Times</u> sets the multipliers of the base frequency to remove by the filter. This feature accounts for harmonics (waves with frequencies that are positive integer multiples of the base frequency), which result because the signal from the amplifier is not a pure sine wave when undergoing FFT analysis. By default, this value is set as “1,2,3” based on the harmonics that commonly result in iEEG recording set-ups. This default means that 60 Hz (base frequency * 1), 120 Hz (base frequency * 2), 180 Hz (base frequency * 3) are the frequencies that the notch filter will remove.</p></li>
+<li><p><u>+- Bandwidth (Hz)</u> refers to how wide to make each filter; a higher number will remove a wider range of frequencies whereas a lower number will remove a narrower range of frequencies. Enter one number for each filter. By default, this value is set to 1,2,2 – in other words, the filters will remove the bandwidths <strong>59 - 61 Hz</strong> (aka 60 Hz +/- 1), <strong>118 - 122 Hz</strong> (aka 120 Hz +/- 2), <strong>178 - 182 Hz</strong> (aka 180 Hz +/- 2) respectively.</p></li>
 </ul>
-<p>(These can be done after, in any order:)</p>
+<!-- specify why they may wish to do this // how exactly do you wish to set it to this -->
+<p>Based on these configurations, the bottom of the panel will automatically display a summary of how many filters there are and the bandwidths each will remove.</p>
+<p>Click the blue <strong>Apply Notch Filters</strong> button to apply the filters to the data. A pop-up will appear showing a summary of the configurations. Click “Confirm” to proceed.</p>
+<!-- add transition -->
+<!-- add we can not find any imported electrode message on notch -- inspect signals screen -->
+<p><strong>Inspection:</strong> Controls settings of the figures displayed in the Notch: Inspect Signals panel located to the right.</p>
+<p>Use the <u>block</u> and <u>electrode</u> drop down menus to select the data to display in the Notch: Inspect Signals panel. You can use the <code>previous</code> and <code>next</code> buttons to easily switch between which electrode’s data is displayed within a selected recording session.</p>
 <ul>
-<li>Surface Registration Localization</li>
-<li>Generate Epoch</li>
+<li>The <u>window length</u> slider controls the power range displayed for the Welch periodograms. The more the slider is moved to the right, the wider the dB range on the y-axis.</li>
 </ul>
+<!-- include by what amount changing the window length corrresponds to -->
+<ul>
+<li><p>The <u>frequency limit</u> slider controls the frequency range for the Welch periodograms. The more the slider is moved to the right, the higher the frequencies that will be displayed on the x-axis.</p></li>
+<li><p>The <u>number of histogram bins</u> slider controls how wide the voltage ranges on the horizontal axis of the histogram are, where each bin represents a vertical bar on the graph. Choosing a larger number will create narrower voltage ranges and thus more vertical bars, whereas choosing a smaller number will create wider voltage ranges and thus fewer vertical bars. Moving the slider can give a more precise look at which voltages are most represented in the electrode signal.</p></li>
+</ul>
+<p><strong>Notch: Inspect Signals:</strong> Displays *<strong>raw and filtered iEEG signals</strong> for each channel whose data was imported.</p>
+<!-- Refer to the following screenshot for further guidance. label purpose of each section -->
+<!-- note: they need to specify the configurations for the notch filter, and then -->
+<ul>
+<li>The top <u>Local Field Potential Graph</u> plots voltage versus time in seconds to show the raw signal that was recorded from the selected electrode. The red lines on the graph reflect the normalization.</li>
+</ul>
+<!--what do the red lines indicate? // negative voltage -- current flow in opposite direction than potential difference // LFP a summation signal of excitatory and inhibitory dendritic potentials from a large number of neurons in the neighborhood of the recording site. -->
+<ul>
+<li><p>The leftmost <u>Welch Periodogram </u> estimates the power of the signal at its component frequencies. Before applying the notch filter, only the original graph will be shown in grey. After the notch filter has been applied, the filtered signal will be shown in red; it should visibly be evident thaat the the power of the signal is reduced at the base and harmonic frequencies. To learn more about the calculation of the Welch Periodogram, visit the Q&amp;A at <a href="notch-filter.html#notch-filter">Notch Filter</a>.</p></li>
+<li><p>The center <u>Welch Periodogram</u> is the same as the leftmost periodogram, except it is transformed to have a logarithmic x-axis. This graph makes viewing the signals at lower frequencies easier.</p></li>
+<li><p>The <u>Histogram Original</u> plots frequency on the vertical axis and voltage on the horizontal axis to depict how often each range of voltages occurs in the signal.</p></li>
+</ul>
+<!-- perhaps specify what each graph can be used for / purpose of changing the sliders -- e.g. number of histogram bins ... making it larger would allow for more precise look at which voltages are included in the siggnal -->
+<p>To download these figures, simply click the <strong>Download as PDF</strong> link at the bottom of the Inspection panel. This will generate a PDF file in a new tab with a slide for each electrode within each block.</p>
+<!-- add note that it is always possible to lose cerebral data with the filter -->
+<p>Now, use the menu at left to proceed to the wavelet module!</p>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="importing-your-own-data.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="step-1-import-signals.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="step-1-import-signals.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="step-3-wavelet.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

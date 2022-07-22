@@ -1,13 +1,13 @@
 # Get Started
 
-Now that you've successfully installed RAVE, review the following instructions to get started using it.  
+Now that RAVE has successfully been installed, review the following instructions to get started using it.  
 
 --- 
 
 ## Overview of RAVE Structure 
 <font size="4">**Main Application**</font>
 
-The **main application** enables you to analyze your cleaned iEEG data. 
+The **main application** allows for the analysis of cleaned iEEG data. 
 
 Access it by copying and pasting the following command into the RStudio console: 
 ```r 
@@ -17,7 +17,7 @@ Access it by copying and pasting the following command into the RStudio console:
 
 <font size="4">**Preprocess**</font>
 
-The **preprocess** application enables you to load your iEEG data into RAVE and prepare it for analysis in future modules. 
+The **preprocess** application allows for the importing of iEEG data into RAVE and preparing it for analysis in future modules. 
 
 Access it by copying and pasting the following command into the RStudio console: 
 ```r 
@@ -25,25 +25,25 @@ Access it by copying and pasting the following command into the RStudio console:
 ```
 
 It includes four sections: 
-* **Overview:** Allows you to import your data into RAVE and set configurations (e.g. which electrodes you want to use, file type, where to store cleaned data)
-* **Notch Filter:** Allows you to 
-* **Wavelet:** Allows you to 
-* **Localization** Allows you to 
+* **Overview:** 
+* **Notch Filter:** 
+* **Wavelet:** 
+* **Localization** 
 
 ![Screenshot of RAVE preprocess](static/image/preprocess.png)
 
 <font size="4">**Options**</font>
 
-The **options** application enables you to edit RAVE settings. To access options, copy and paste the following command into the RStudio console: 
+The **options** application allows for the editing of RAVE settings. To access options, copy and paste the following command into the RStudio console: 
 
 ```r 
  rave::rave_options()
 ```
 
 * **Modules:** Summary of all RAVE modules
-* **Core Settings:** Allows you to change where RAVE data is stored.  
-* **System:** Allows you to change RAM and number of CPU cores RAVE can use to alter speed at which data is read 
-* **3D Viewer:** Allows you to change which downloaded brain data to use as the template brain for electrode template mapping; the default template brain is `N27`. 
+* **Core Settings:** change where RAVE data is stored.  
+* **System:** change RAM and number of CPU cores RAVE can use to alter speed at which data is read 
+* **3D Viewer:** change which downloaded brain data to use as the template brain for electrode template mapping; the default template brain is `N27`. 
 
 ![Screenshot of RAVE options](static/image/options.png) 
 
@@ -51,7 +51,7 @@ The **options** application enables you to edit RAVE settings. To access options
 
 <font size="4">**Starting RAVE**</font>
 
-*Note:* you must quit and restart RStudio if you have just downloaded or updated RAVE in order for the application to start successfully.
+*Note:* it is necessary to quit and restart RStudio if RAVE has just been downloaded or updated, in order for the application to start successfully.
 
 After restarting RStudio, copy and paste the following command into the RStudio console to open RAVE: 
 
@@ -69,9 +69,9 @@ To completely close the RAVE server:
 
 ![Screenshot of RStudio console stop sign](static/image/RStudioConsoleStopSign.png) 
 
-2). Quit the RStudio application. If asked whether you want to **Save workspace image?**, click no.  
+2). Quit the RStudio application. If asked whether to **Save workspace image?**, click no.  
 
-**Note:** Closing the RAVE display tab on your web browser will only close the display, not the actual RAVE server. 
+**Note:** Closing the RAVE display tab on the web browser will only close the display, not the actual RAVE server. 
 
 ---
 
@@ -89,4 +89,4 @@ To access and change RAVE settings, copy and paste the following command into th
 
 --> 
 
-**Note:** In general, you must stop processes that are currently being executed by the console before trying to initiate another command. To do this, click the red stop sign on the bottom left panel of RStudio. For example, if you have just opened RAVE and wish to update the application, click the red stop sign first. 
+**Note:** In general, it is necessary to stop processes that are currently being executed by the console before trying to initiate another command. To do this, click the red stop sign on the bottom left panel of RStudio. For example, if RAVE has just been opened and one wants to open the preprocessing application next, click the red stop sign first. 

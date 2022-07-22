@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 6 Q&amp;As | RAVE Documentation</title>
+  <title>2.3 Download demo data | RAVE Documentation</title>
   <meta name="description" content="RAVE documentation" />
-  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 6 Q&amp;As | RAVE Documentation" />
+  <meta property="og:title" content="2.3 Download demo data | RAVE Documentation" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="RAVE documentation" />
   <meta name="github-repo" content="beauchamplab/rave-documentation" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 6 Q&amp;As | RAVE Documentation" />
+  <meta name="twitter:title" content="2.3 Download demo data | RAVE Documentation" />
   
   <meta name="twitter:description" content="RAVE documentation" />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="part-three.html"/>
-<link rel="next" href="installation.html"/>
+<link rel="prev" href="install-rave.html"/>
+<link rel="next" href="upgrade-rave.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -135,7 +135,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">RAVE Manual</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> url: your book url like <span>https://bookdown.org/yihui/bookdown</span></a>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
 <ul>
 <li class="chapter" data-level="" data-path="showcases.html"><a href="showcases.html"><i class="fa fa-check"></i>Showcases</a></li>
 </ul></li>
@@ -143,8 +143,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="2.1" data-path="system-prerequisites.html"><a href="system-prerequisites.html"><i class="fa fa-check"></i><b>2.1</b> System Prerequisites</a>
 <ul>
-<li class="chapter" data-level="2.1.1" data-path="system-prerequisites.html"><a href="system-prerequisites.html#linux"><i class="fa fa-check"></i><b>2.1.1</b> Linux –&gt;</a></li>
-<li class="chapter" data-level="2.1.2" data-path="system-prerequisites.html"><a href="system-prerequisites.html#macos"><i class="fa fa-check"></i><b>2.1.2</b> MacOS</a></li>
+<li class="chapter" data-level="2.1.1" data-path="system-prerequisites.html"><a href="system-prerequisites.html#macos"><i class="fa fa-check"></i><b>2.1.1</b> MacOS</a></li>
 </ul></li>
 <li class="chapter" data-level="2.2" data-path="install-rave.html"><a href="install-rave.html"><i class="fa fa-check"></i><b>2.2</b> Install RAVE</a></li>
 <li class="chapter" data-level="2.3" data-path="download-demo-data.html"><a href="download-demo-data.html"><i class="fa fa-check"></i><b>2.3</b> Download demo data</a></li>
@@ -206,18 +205,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="qas" class="section level1 hasAnchor" number="6">
-<h1><span class="header-section-number">Chapter 6</span> Q&amp;As<a href="qas.html#qas" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<hr />
-<p>This page contains possible questions that may arise when using RAVE and their answers. Questions are organized by section.</p>
+<div id="download-demo-data" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Download demo data<a href="download-demo-data.html#download-demo-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Before importing your own data, you may wish to gain familiarity by trying RAVE’s demo data in various modules. By default, RAVE already has a DemoSubject whose raw data has already been imported. <!-- Double check this, I don't remember what it looked like at default. --> However, you can also download other demo subjects by copying and pasting the following command into the RStudio console:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="download-demo-data.html#cb11-1" aria-hidden="true" tabindex="-1"></a>rave<span class="sc">::</span><span class="fu">download_sample_data</span>(<span class="st">&quot;subject_code&quot;</span>)</span></code></pre></div>
+<p>You will need to substitute “subject_code” with one of the available demo subjects: <code>KC</code>, <code>YAB</code>, <code>YAD</code>, <code>YAF</code>, <code>YAH</code>, <code>YAI</code>, <code>YAJ</code>, and <code>YAK</code>.</p>
+<p>For example, to download subject YAB, use the following command:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="download-demo-data.html#cb12-1" aria-hidden="true" tabindex="-1"></a>rave<span class="sc">::</span><span class="fu">download_sample_data</span>(<span class="st">&quot;YAB&quot;</span>)</span></code></pre></div>
+<p>Note that downloaded demo data will be stored in the <code>raw_dir</code> folder of the <code>rave_data</code> folder in your home directory. Within <code>raw_dir</code>, each subject’s data is stored in its own folder (e.g. YAB’s data will be stored in the YAB folder in <code>raw_dir</code>). Refer to the following screenshot for clarity.</p>
+<div class="figure">
+<img src="static/image/DemoDownloadImage.png" alt="" />
+<p class="caption">Screenshot of location of downloaded demo data</p>
+</div>
+<p>You can proceed to the “importing demo data” instructions to load your newly downloaded raw data into RAVE for cleaning.</p>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="part-three.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="installation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="install-rave.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="upgrade-rave.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -248,7 +256,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/linasc3-ai/rave-documentation/edit/main/99-QA.Rmd",
+"link": "https://github.com/linasc3-ai/rave-documentation/edit/main/02-installation.md",
 "text": "Edit"
 },
 "history": {

@@ -4,33 +4,33 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 6 Q&amp;As | RAVE Documentation</title>
+  <title>5.1 Step #1: Import Signals | RAVE Documentation</title>
   <meta name="description" content="RAVE documentation" />
   <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 6 Q&amp;As | RAVE Documentation" />
+  <meta property="og:title" content="5.1 Step #1: Import Signals | RAVE Documentation" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="RAVE documentation" />
   <meta name="github-repo" content="beauchamplab/rave-documentation" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 6 Q&amp;As | RAVE Documentation" />
+  <meta name="twitter:title" content="5.1 Step #1: Import Signals | RAVE Documentation" />
   
   <meta name="twitter:description" content="RAVE documentation" />
   
 
 
 
-<meta name="date" content="2022-07-15" />
+<meta name="date" content="2022-07-21" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="part-three.html"/>
-<link rel="next" href="installation.html"/>
+<link rel="prev" href="preprocessing.html"/>
+<link rel="next" href="step-2-notch-filter.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -53,70 +53,6 @@
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
-<style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-</style>
 
 
 <link rel="stylesheet" href="rave-style.css" type="text/css" />
@@ -176,9 +112,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="5" data-path="preprocessing.html"><a href="preprocessing.html"><i class="fa fa-check"></i><b>5</b> Preprocessing</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="part-one.html"><a href="part-one.html"><i class="fa fa-check"></i><b>5.1</b> Part One</a></li>
-<li class="chapter" data-level="5.2" data-path="part-two.html"><a href="part-two.html"><i class="fa fa-check"></i><b>5.2</b> Part Two</a></li>
-<li class="chapter" data-level="5.3" data-path="part-three.html"><a href="part-three.html"><i class="fa fa-check"></i><b>5.3</b> Part Three</a></li>
+<li class="chapter" data-level="5.1" data-path="step-1-import-signals.html"><a href="step-1-import-signals.html"><i class="fa fa-check"></i><b>5.1</b> Step #1: Import Signals</a></li>
+<li class="chapter" data-level="5.2" data-path="step-2-notch-filter.html"><a href="step-2-notch-filter.html"><i class="fa fa-check"></i><b>5.2</b> Step #2: Notch Filter</a></li>
+<li class="chapter" data-level="5.3" data-path="step-3-wavelet.html"><a href="step-3-wavelet.html"><i class="fa fa-check"></i><b>5.3</b> Step #3: Wavelet</a></li>
+<li class="chapter" data-level="5.4" data-path="step-4-reference-signals.html"><a href="step-4-reference-signals.html"><i class="fa fa-check"></i><b>5.4</b> Step #4: Reference Signals</a></li>
+<li class="chapter" data-level="5.5" data-path="generate-epoch.html"><a href="generate-epoch.html"><i class="fa fa-check"></i><b>5.5</b> Generate Epoch</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="qas.html"><a href="qas.html"><i class="fa fa-check"></i><b>6</b> Q&amp;As</a>
 <ul>
@@ -206,18 +144,48 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="qas" class="section level1 hasAnchor" number="6">
-<h1><span class="header-section-number">Chapter 6</span> Q&amp;As<a href="qas.html#qas" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<hr />
-<p>This page contains possible questions that may arise when using RAVE and their answers. Questions are organized by section.</p>
+<div id="step-1-import-signals" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> Step #1: Import Signals<a href="step-1-import-signals.html#step-1-import-signals" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<!-- not sure what would be the best name for these headers yet; want to imply the first four are sequential -->
+<!-- need to specify what type of data is being imported -- iEEG recording info) -->
+<!-- have labeled screenshot for each step similar to the one in 04-preprocessing-->
+<p>This step involves importing iEEG data into RAVE so that it can be preprocessed and used in future modules.</p>
+<p><strong>Step 1.1:</strong> Select project &amp; subject</p>
+<p>First, use the drop down menu to <strong>specify which project</strong> the cleaned subject data will be stored in. To create a new project, select “New Project” from the drop down menu and indicate the desired project name. Note that by default, this project folder will be created within the <code>rave_data</code> folder of the data directory (<code>data_dir</code>), in a new folder for the subject.</p>
+<p>Next, use the drop down menu to <strong>select the code for the subject</strong> whose data to import. Note that a subject’s data should be stored in its own folder within the raw directory (<code>raw_dir</code> folder) within the<code>rave_data</code> folder.</p>
+<p>Click the <strong>“Create Subject”</strong> button to proceed to the next step.</p>
+<p><strong>Step 1.2:</strong> Format &amp; session blocks</p>
+<p>RAVE defines a block/session as a period of continuous electrode recording. Here, first <strong>select the blocks</strong> that correspond to the trials to analyze.</p>
+<p>Note that when a block is selected, a preview of the files it contains will pop-up to the right. This feature helps check that the way the data is stored is consistent with the file type selected.</p>
+<p>Then, <strong>specify the file format</strong> the iEEG data is stored in. RAVE currently supports four file formats:</p>
+<ul>
+<li>.mat/.h5 file per electrode per block</li>
+<li>single .mat/.h5 file per block</li>
+<li>single EDF(+) file per block</li>
+<li>single BrainVision file</li>
+</ul>
+<p>Note that when a format from the drop down is selected, a brief description of that specific format will pop-up underneath the menu. For more information on these file types, visit the Q&amp;A at <a href="importing-data.html#importing-data">Importing Data</a></p>
+<!-- maybe cross link each of these file formats to a question in the Q&A session so that if someone wants to learn more about a given file format, they can do so without cluttering up this section. or should i give the description right next to the bullet point -->
+<p><strong>Step 1.3:</strong> Channel information</p>
+<p>RAVE equates a channel to an electrode. Set the following specifications for the channels:</p>
+<!-- this isn't exactly true, so come back later to fix definition -->
+<ul>
+<li><p><strong>Data file:</strong></p></li>
+<li><p><strong>Channel numbers:</strong> Indicate the electrodes to analyze. It is recommended that the preprocessing steps are run on all electrodes at once. Note that RAVE can automatically detect potential electrodes based on the specified blocks and file type; this suggestion is displayed at the bottom of the panel.</p></li>
+<li><p><strong>Physical unit:</strong> Indicate the units used to measure voltage.</p></li>
+<li><p><strong>Sample rate:</strong> Indicate the rate of the iEEG recording equipment; this value will determine the rate at which the preprocessing will be run.</p></li>
+</ul>
+<p>Now, select the <strong>Validate &amp; Import</strong> button to validate your data. A pop-up will soon appear asking about readiness to import your data. Please double check all the information entered is correct, and then select the <strong>Import Data</strong> button to proceed. A progress bar will appear in the bottom left corner.</p>
+<!-- in this paragrraph, make sure to add a note about the skip validate & import button / when it can be used -->
+<p>A pop-up will soon appear indicating that the subject data was successfully imported into RAVE! Now, use the menu on the left side of the screen to select the first preprocessing module, notch filter.</p>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="part-three.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="installation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="preprocessing.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="step-2-notch-filter.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -248,7 +216,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/linasc3-ai/rave-documentation/edit/main/99-QA.Rmd",
+"link": "https://github.com/linasc3-ai/rave-documentation/edit/main/05-preprocessing.Rmd",
 "text": "Edit"
 },
 "history": {

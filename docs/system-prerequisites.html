@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 6 Q&amp;As | RAVE Documentation</title>
+  <title>2.1 System Prerequisites | RAVE Documentation</title>
   <meta name="description" content="RAVE documentation" />
-  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 6 Q&amp;As | RAVE Documentation" />
+  <meta property="og:title" content="2.1 System Prerequisites | RAVE Documentation" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="RAVE documentation" />
   <meta name="github-repo" content="beauchamplab/rave-documentation" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 6 Q&amp;As | RAVE Documentation" />
+  <meta name="twitter:title" content="2.1 System Prerequisites | RAVE Documentation" />
   
   <meta name="twitter:description" content="RAVE documentation" />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="part-three.html"/>
-<link rel="next" href="installation.html"/>
+<link rel="prev" href="installation-guide.html"/>
+<link rel="next" href="install-rave.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -135,7 +135,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">RAVE Manual</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> url: your book url like <span>https://bookdown.org/yihui/bookdown</span></a>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
 <ul>
 <li class="chapter" data-level="" data-path="showcases.html"><a href="showcases.html"><i class="fa fa-check"></i>Showcases</a></li>
 </ul></li>
@@ -143,8 +143,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="2.1" data-path="system-prerequisites.html"><a href="system-prerequisites.html"><i class="fa fa-check"></i><b>2.1</b> System Prerequisites</a>
 <ul>
-<li class="chapter" data-level="2.1.1" data-path="system-prerequisites.html"><a href="system-prerequisites.html#linux"><i class="fa fa-check"></i><b>2.1.1</b> Linux –&gt;</a></li>
-<li class="chapter" data-level="2.1.2" data-path="system-prerequisites.html"><a href="system-prerequisites.html#macos"><i class="fa fa-check"></i><b>2.1.2</b> MacOS</a></li>
+<li class="chapter" data-level="2.1.1" data-path="system-prerequisites.html"><a href="system-prerequisites.html#macos"><i class="fa fa-check"></i><b>2.1.1</b> MacOS</a></li>
 </ul></li>
 <li class="chapter" data-level="2.2" data-path="install-rave.html"><a href="install-rave.html"><i class="fa fa-check"></i><b>2.2</b> Install RAVE</a></li>
 <li class="chapter" data-level="2.3" data-path="download-demo-data.html"><a href="download-demo-data.html"><i class="fa fa-check"></i><b>2.3</b> Download demo data</a></li>
@@ -206,18 +205,78 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="qas" class="section level1 hasAnchor" number="6">
-<h1><span class="header-section-number">Chapter 6</span> Q&amp;As<a href="qas.html#qas" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<hr />
-<p>This page contains possible questions that may arise when using RAVE and their answers. Questions are organized by section.</p>
+<div id="system-prerequisites" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> System Prerequisites<a href="system-prerequisites.html#system-prerequisites" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>RAVE is written in the programming language “R”, so it is necessary to download the <em>latest</em> version of R for your computer. We also strongly recommend installing “RStudio”, an integrated development environment, in order to easily utilize RAVE features. This section will guide you to install these and other prerequisites. Please click on the following links according to your operating systems.</p>
+<ul>
+<li><a href="system-prerequisites.html#macos">MacOS</a></li>
+<li>Windows</li>
+<li>Debian Linux (Ubuntu)</li>
+</ul>
+<!-- and its integrated development editor "RStudio" onto your computer. Correctly installing the following pre-requisites is necessary for RAVE to work properly. 
+
+**Note:** RAVE requires the latest versions of R and RStudio to run properly. To avoid errors in the download process, if you already have R and RStudio on your computer, be sure they are updated to the most recent versions. -->
+<!--- ### Windows
+
+### Linux -->
+<div id="macos" class="section level3 hasAnchor" number="2.1.1">
+<h3><span class="header-section-number">2.1.1</span> MacOS<a href="system-prerequisites.html#macos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span id="step-1-install-homebrew" class="font-5 underline strong">[STEP 1: Install Homebrew]</font></p>
+<p><em>(Note: if you have downloaded <strong>Homebrew</strong> in the past, please skip Step 1 and 2 and jump to the <a href="system-prerequisites.html#step-3-use-brew-to-install-missing-libraries">Step 3</a>.)</em></p>
+<p><a href="https://brew.sh/">Homebrew</a> is a package manager that adds system libraries missing from the Apple operating system. It can be installed by copying and pasting the following line into your terminal (<strong>note:</strong> the terminal can be found through searching the applications folder on your computer):</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="system-prerequisites.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">/bin/bash</span> <span class="at">-c</span> <span class="st">&quot;</span><span class="va">$(</span><span class="ex">curl</span> <span class="at">-fsSL</span> https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="va">)</span><span class="st">&quot;</span></span></code></pre></div>
+<p>If this is the first time that you install the Homebrew, the following questions might be prompted:</p>
+<pre><code>==&gt; Checking for `sudo` access (which may request your password)...
+Password:</code></pre>
+<p>Enter your user’s password (<em>the password won’t be displayed into the screen as you type for security reasons</em>). Once you’ve finish typing, press the <code>RETURN</code> or <code>ENTER</code> key to proceed.</p>
+<pre><code>==&gt; This script will install:
+... 
+Press RETURN/ENTER to continue or any other key to abort:</code></pre>
+<p>Please press the <code>RETURN</code> or <code>ENTER</code> key to continue.</p>
+<p><span class="font-5 underline strong">[STEP 2: Add command “brew” to system search path]</span></p>
+<p>The terminal commands used to add homebrew to the path depend on your computer’s CPU chip. Copy and paste the appropriate command lines into the terminal based on your computer’s chip type. If you don’t know the CPU type, click the <code></code> icon on the top-right, and choose <code>About This Mac</code>.</p>
+<ul>
+<li><strong>For M1 Chips</strong></li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="system-prerequisites.html#cb4-1" aria-hidden="true" tabindex="-1"></a> <span class="bu">echo</span> <span class="st">&#39;eval &quot;$(/opt/homebrew/bin/brew shellenv)&quot;&#39;</span> <span class="op">&gt;&gt;</span> ~/.zprofile</span>
+<span id="cb4-2"><a href="system-prerequisites.html#cb4-2" aria-hidden="true" tabindex="-1"></a> <span class="bu">echo</span> <span class="st">&#39;eval &quot;$(/opt/homebrew/bin/brew shellenv)&quot;&#39;</span> <span class="op">&gt;&gt;</span> ~/.profile</span>
+<span id="cb4-3"><a href="system-prerequisites.html#cb4-3" aria-hidden="true" tabindex="-1"></a> <span class="bu">echo</span> <span class="st">&#39;eval &quot;$(/opt/homebrew/bin/brew shellenv)&quot;&#39;</span> <span class="op">&gt;&gt;</span> ~/.bash_profile</span></code></pre></div>
+<ul>
+<li><strong>For Intel Chips</strong></li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="system-prerequisites.html#cb5-1" aria-hidden="true" tabindex="-1"></a> <span class="bu">echo</span> <span class="st">&#39;eval &quot;$(/usr/local/bin/brew shellenv)&quot;&#39;</span> <span class="op">&gt;&gt;</span> ~/.zprofile</span>
+<span id="cb5-2"><a href="system-prerequisites.html#cb5-2" aria-hidden="true" tabindex="-1"></a> <span class="bu">echo</span> <span class="st">&#39;eval &quot;$(/usr/local/bin/brew shellenv)&quot;&#39;</span> <span class="op">&gt;&gt;</span> ~/.profile</span>
+<span id="cb5-3"><a href="system-prerequisites.html#cb5-3" aria-hidden="true" tabindex="-1"></a> <span class="bu">echo</span> <span class="st">&#39;eval &quot;$(/usr/local/bin/brew shellenv)&quot;&#39;</span> <span class="op">&gt;&gt;</span> ~/.bash_profile</span></code></pre></div>
+<p><span id="step-3-use-brew-to-install-missing-libraries" class="font-5 underline strong">[STEP 3: Use brew to install missing libraries]</span></p>
+<p>Open the system terminal, paste the following line and press <code>return</code> key:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="system-prerequisites.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install hdf5 fftw pkg-config</span></code></pre></div>
+<p>This command installs the following three libraries:</p>
+<ul>
+<li><code>hdf5</code>: Shared library to access the universal HDF5 file format</li>
+<li><code>fftw</code>: Fast-Fourier transform library required by signal processing code</li>
+<li><code>pkg-config</code>: Package configuration helpers allowing R to find the two libraries above</li>
+</ul>
+<p><span class="font-5 underline strong">[STEP 4: Install R]</span></p>
+<p>Download and install the <strong>latest</strong> version of R directly from the website: <a href="https://cran.r-project.org/bin/macosx/" class="uri">https://cran.r-project.org/bin/macosx/</a> Be sure to download the package that corresponds to your computer’s OS version and CPU type. If R has been installed, we highly recommend that you update to the latest version.</p>
+<ul>
+<li>For Intel Macs, the R installer name should look like <code>R-X.X.X.pkg</code></li>
+<li>For M1 Macs, the R installer name should look like <code>R-X.X.X-arm64.pkg</code></li>
+</ul>
+<p><span class="font-5 underline strong">[STEP 5: Install RStudio Desktop]</span></p>
+<p>Download and install RStudio Desktop directly from the website: <a href="https://www.rstudio.com/products/rstudio/download/" class="uri">https://www.rstudio.com/products/rstudio/download/</a> Be sure to download the version that corresponds to your OS system. If you already have RStudio downloaded, simply ensure it is updated to the <em>latest</em> version. Refer to the following screenshot for guidance.</p>
+<div class="figure">
+<img src="static/image/RStudioScreenshot.png" alt="" />
+<p class="caption">Screenshot of <a href="https://www.rstudio.com/products/rstudio/download/">RStudio download site</a></p>
+</div>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="part-three.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="installation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="installation-guide.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="install-rave.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -248,7 +307,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/linasc3-ai/rave-documentation/edit/main/99-QA.Rmd",
+"link": "https://github.com/linasc3-ai/rave-documentation/edit/main/02-installation.md",
 "text": "Edit"
 },
 "history": {

@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 5 Preprocessing | RAVE Documentation</title>
+  <title>5.3 Step #3: Wavelet | RAVE Documentation</title>
   <meta name="description" content="RAVE documentation" />
   <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 5 Preprocessing | RAVE Documentation" />
+  <meta property="og:title" content="5.3 Step #3: Wavelet | RAVE Documentation" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="RAVE documentation" />
   <meta name="github-repo" content="beauchamplab/rave-documentation" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 5 Preprocessing | RAVE Documentation" />
+  <meta name="twitter:title" content="5.3 Step #3: Wavelet | RAVE Documentation" />
   
   <meta name="twitter:description" content="RAVE documentation" />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="importing-your-own-data.html"/>
-<link rel="next" href="step-1-import-signals.html"/>
+<link rel="prev" href="step-2-notch-filter.html"/>
+<link rel="next" href="step-4-reference-signals.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -144,29 +144,76 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="preprocessing" class="section level1 hasAnchor" number="5">
-<h1><span class="header-section-number">Chapter 5</span> Preprocessing<a href="preprocessing.html#preprocessing" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<!-- will merge with 03 import data section that is already written-->
-<p>The following steps will walk through the preprocessing of the raw iEEG signal data so that it can optimally be used in future analysis modules. The corresponding modules are:</p>
-<p>(These must be done first, in order:)</p>
+<div id="step-3-wavelet" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> Step #3: Wavelet<a href="step-3-wavelet.html#step-3-wavelet" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Once you click the wavelet tab on the left menu, a data selection window will appear to select the project and subject whose data to apply the wavelet decomposition to. (Remember clicking the “sync from [import LFP] module” will automatically select the subject that was just imported.) Note: The notch filter must have been applied to the selected subject before trying to apply the wavelet transformation.</p>
+<p>After selecting the “Load Subject” button, a new screen will load with two panels: Wavelet Settings and Wavelet Kernel. Refer to the following screenshot for guidance.</p>
+<div class="figure">
+<img src="static/image/Wavelet.png" alt="" />
+<p class="caption">Sample Wavelet Decomposition Screen</p>
+</div>
+<p>Wavelet decomposition is a type of time frequency analysis that is used for non-stationary signals (i.e. properties change over time), like that of iEEG. It separates the signal into differing frequency and phase components, which is helpful because signals in the brain are very dynamic. This process makes it so that changes in the signal’s power spectra can be visualized across both frequency and time.</p>
+<p>To learn more about how wavelet transform works, visit the Q&amp;A at <a href="wavelet.html#wavelet">Wavelet</a>.</p>
+<!-- in Q&A compare to time analysis -->
+<p>In this module, RAVE will:
+- downsample the signal before running the wavelet, if desired
+- run a wavelet on each block in the selected subject’s folder
+- downsample the wavelet coefficients to 100.0 Hz to reduce the amount of space needed to save the information onto the computer’s disk</p>
+<p><strong>Wavelet Settings:</strong></p>
+<!-- why did you remove option to select electrodes like old version -->
+<p>Begin by setting the basic configurations:</p>
 <ul>
-<li>Notch Filter</li>
-<li>Wavelet</li>
-<li>Referencing</li>
+<li><u>Power sample rate</u> refers to the rate at which the signal will be taken into time frequency decomposition. By default, it is recommended to keep this set to the default 100 Hz; this balances the data so that precision is conserved without taking up too much space on the disk. Typically, this value should only be increased if neural signals will be analyzed at very high frequencies. (<strong>Note:</strong> this is <em>not</em> the same as the signaling rate used in the iEEG recording set-up. For further explanation, see the Q&amp;A at <a href="wavelet.html#wavelet">Wavelet</a>.)</li>
 </ul>
-<p>(These can be done after, in any order:)</p>
+<!-- double check above definition. wasn't sure best way to explain it -->
+<!-- explain default; is this the same as the sample rate set in importing signals? -->
 <ul>
-<li>Surface Registration Localization</li>
-<li>Generate Epoch</li>
+<li>The <u>Down-sample before wavelet </u> drop down menu has the option to select a factor of 1, 2, 4, or 8 to use to reduce the sample rate. Reducing the sampling rate is done to run the wavelet transform faster and use less of the computer’s disk space. Note that selecting 1 equates to no reduction in the sampling rate. Reducing the rate by a higher factor allows for analyzing a greater frequency range.</li>
 </ul>
+<!-- list what it is set to by default; how do they know which number specifically to pick? or things to consider -->
+<p>To further reduce the amount of time it takes to run the wavelet, please select the <strong>use single float precision</strong> checkbox.</p>
+<p><strong>Note:</strong> Setting the down-sample value to 1 and leaving the box unchecked will preserve precision of the calculations and is appropriate if there are many hours available to run the wavelet. However, if quick processing of data is needed, such as in clinical situations, it is better to downsample and use single float precision.</p>
+<!--  also explain why this increases speed -->
+<p>Proceed by setting the frequency and cycle configurations:</p>
+<ul>
+<li><p>The <u> select method to generate wavelet parameters </u> drop down menu determines <strong>how</strong> the configurations for the wavelet will be set. By default, it is set to <strong>“built in”</strong>, meaning that the frequency and cycle settings can be set manually on the RAVE interface (see bullet points below). Alternatively, selecting <strong>“upload preset”</strong> is commonly used to save time if one already has their own set configurations they want to use on the data. An upload button will appear; please upload the preset in the form of a csv with two columns for the frequency and cycles. Proceed straight to running the wavelet via the blue “run wavelet” button if a preset is uploaded.</p></li>
+<li><p>Use the <u> frequency range </u> slider to select the range of frequencies that will be decomposed with the wavelet.</p></li>
+<li><p>The value selected with the <u> frequency step size </u> slider depends on the frequency desired after the wavelet is performed.</p></li>
+</ul>
+<!-- how to know what value to input for step size; be more specific in step size documentation -->
+<ul>
+<li>Use the <u> wavelet cycles </u> slider to choose the range of cycles to use in the transform. Note that a larger number of cycles will lead to more precise frequency analysis, whereas a smaller number of cycles will lead to more precise temporal analysis.</li>
+</ul>
+<p><strong>Wavelet Kernel:</strong></p>
+<p>The figures displayed on this panel visually display the properties of the wavelet given the selected configurations.</p>
+<ul>
+<li>The <u> Wavelet Kernels (Real &amp; Imaginary) </u> shows the kernel at given frequencies in Hz and times in seconds (aka wavelet length).</li>
+</ul>
+<!-- better define kernel in documentation and add more details to these graphs / describe trends-->
+<ul>
+<li>The <u> Wavelet Length | Frequency </u> graph plots the length of the kernel in seconds at different frequencies in Hz.</li>
+</ul>
+<!-- explain what down log trend means // purpose of each graph -->
+<ul>
+<li>The <u> Wavelet Cycle | Frequency </u> graph plots the number of cycles for the wavelet at different frequencies in Hz.</li>
+</ul>
+<p>To download these figures, hover over the top left corner of the panel and a small, grey save icon will appear. Clicking on the icon will generate a pdf with the figures.</p>
+<p>To download the kernel parameters, click the blue <strong>download kernel parameters</strong> link at the bottom of the window. This will generate a csv file with each frequency and its corresponding number of cycles. To simply view the parameters on the interface, click anywhere on the panel and it will switch the view to display a table with the frequency and cycle data; click anywhere on this table to switch back to the figure view. (Alternatively, on figure view, click on the table icon in the top right corner of the panel.)</p>
+<p>When finished setting the configurations and reviewing the figures, select the blue <strong>Run Wavelet</strong> button. As shown below, a pop-up will appear on the screen asking to confirm the subject, frequencies, # of cycles, and precision selected for the wavelet transformation. Click “confirm” to proceed, or “confirm and run in background to continue using RAVE during the decomposition process. Note that this process can take up to 30 minutes; progress bars for each task will be displayed in the lower right corner.</p>
+<div class="figure">
+<img src="static/image/waveletconfirmation.png" alt="" />
+<p class="caption">Sample Wavelet Decomposition Confirmation Window</p>
+</div>
+<p>The process is completed if a “success” pop-up appears. This means that the signal data for the electrodes within each of the subject’s blocks have been down-sampled (if desired), decomposed by the wavelet into time-frequency data, and down-sampled again.</p>
+<p>Proceed to the next module, referencing!</p>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="importing-your-own-data.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="step-1-import-signals.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="step-2-notch-filter.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="step-4-reference-signals.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

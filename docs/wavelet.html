@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 6 Q&amp;As | RAVE Documentation</title>
+  <title>6.6 Wavelet | RAVE Documentation</title>
   <meta name="description" content="RAVE documentation" />
   <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 6 Q&amp;As | RAVE Documentation" />
+  <meta property="og:title" content="6.6 Wavelet | RAVE Documentation" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="RAVE documentation" />
   <meta name="github-repo" content="beauchamplab/rave-documentation" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 6 Q&amp;As | RAVE Documentation" />
+  <meta name="twitter:title" content="6.6 Wavelet | RAVE Documentation" />
   
   <meta name="twitter:description" content="RAVE documentation" />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="part-three.html"/>
-<link rel="next" href="installation.html"/>
+<link rel="prev" href="notch-filter.html"/>
+
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -206,18 +206,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="qas" class="section level1 hasAnchor" number="6">
-<h1><span class="header-section-number">Chapter 6</span> Q&amp;As<a href="qas.html#qas" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<hr />
-<p>This page contains possible questions that may arise when using RAVE and their answers. Questions are organized by section.</p>
+<div id="wavelet" class="section level2 hasAnchor" number="6.6">
+<h2><span class="header-section-number">6.6</span> Wavelet<a href="wavelet.html#wavelet" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<blockquote>
+<p><strong>Question:</strong> What does wavelet transformation actually entail?</p>
+</blockquote>
+<p>Answer: A complex wavelet will undergo convulotion with the iEEG signal. The iEEG signal will then be translated across the time axis, using either high frequency or low frequency wavelets. The result is good frequency resolution but poor temporal resolution at low frequencies, and good temporal resolution and poor frequency resolution at high frequencies. Note that a wavelet is created by multiplying a Gaussian function with a sine function. See more: <a href="https://sapienlabs.org/lab-talk/time-frequency-analysis-and-wavelets/v" class="uri">https://sapienlabs.org/lab-talk/time-frequency-analysis-and-wavelets/v</a></p>
+<p><strong>Question::</strong> Why can’t I down-sample the wavelet coefficients to a sample rate less than or equal to 1?</p>
+
 </div>
+<!-- </div> -->
             </section>
 
           </div>
         </div>
       </div>
-<a href="part-three.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="installation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="notch-filter.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

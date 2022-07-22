@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 6 Q&amp;As | RAVE Documentation</title>
+  <title>6.3 Downloading Demo Data | RAVE Documentation</title>
   <meta name="description" content="RAVE documentation" />
   <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 6 Q&amp;As | RAVE Documentation" />
+  <meta property="og:title" content="6.3 Downloading Demo Data | RAVE Documentation" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="RAVE documentation" />
   <meta name="github-repo" content="beauchamplab/rave-documentation" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 6 Q&amp;As | RAVE Documentation" />
+  <meta name="twitter:title" content="6.3 Downloading Demo Data | RAVE Documentation" />
   
   <meta name="twitter:description" content="RAVE documentation" />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="part-three.html"/>
-<link rel="next" href="installation.html"/>
+<link rel="prev" href="getting-started-with-rave.html"/>
+<link rel="next" href="importing-data.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -206,18 +206,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="qas" class="section level1 hasAnchor" number="6">
-<h1><span class="header-section-number">Chapter 6</span> Q&amp;As<a href="qas.html#qas" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<hr />
-<p>This page contains possible questions that may arise when using RAVE and their answers. Questions are organized by section.</p>
+<div id="downloading-demo-data" class="section level2 hasAnchor" number="6.3">
+<h2><span class="header-section-number">6.3</span> Downloading Demo Data<a href="downloading-demo-data.html#downloading-demo-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<blockquote>
+<p><strong>Question:</strong> I received this message when trying to import a demo subject.</p>
+</blockquote>
+<p>/Users/aliavyanne/rave_data/raw_dir/YAI (NOT found) /Users/aliavyanne/rave_data/bids_dir//Test/sub-YAI (NOT found)</p>
+<p>How do I fix this?</p>
+<p>Answer: You forgot to download this demo subject before importing them. You can use the following command to download the demo subject YAI:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="downloading-demo-data.html#cb1-1" aria-hidden="true" tabindex="-1"></a>rave<span class="sc">::</span><span class="fu">download_sample_data</span>(<span class="st">&quot;YAI&quot;</span>)</span></code></pre></div>
+<blockquote>
+<p><strong>Question:</strong> Where does the demo data come from?
+Answer: The demo data available in RAVE is sourced from experiments run by the Beauchamp Lab at the Perelman School of Medicine, which investigates the neural mechanisms for multisensory integration and visual perception in human subjects. Read more at: <a href="https://www.med.upenn.edu/beauchamplab/" class="uri">https://www.med.upenn.edu/beauchamplab/</a></p>
+</blockquote>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="part-three.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="installation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="getting-started-with-rave.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="importing-data.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

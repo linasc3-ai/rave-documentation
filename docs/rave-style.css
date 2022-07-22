@@ -1,0 +1,69 @@
+p.caption {
+  color: #777;
+  margin-top: 10px;
+  font-size: 0.8em;
+}
+
+p.caption:before {
+    content: "Caption: ";
+}
+
+p code {
+  white-space: inherit;
+}
+pre {
+  word-break: normal;
+  word-wrap: normal;
+}
+pre code {
+  white-space: inherit;
+}
+
+blockquote {
+  background-color: #eff6e0a0;
+  box-shadow: 0px 0px 3px;
+  border-radius: 0 5px 5px 0;
+  padding: 15px 15px 5px 15px !important;
+  color: black;
+  border-left: 5px solid #eff6e0 !important;
+}
+
+/*start the customized styles*/
+.underline {
+  text-decoration: underline;
+}
+
+.strong {
+  font-weight: 700;
+}
+
+.edit-comment {
+  color: red;
+  background-color: #e2e2e2;
+}
+
+.edit-comment del {
+  background-color: white;
+}
+
+/*base font size is 1.6rem*/
+.font-1 {
+  font-size: 2em;
+}
+.font-2 {
+  font-size: 1.75em;
+}
+.font-3 {
+  font-size: 1.5em;
+}
+.font-4 {
+  font-size: 1.25em;
+}
+.font-5 {
+  font-size: 1em;
+}
+.font-6 {
+  font-size: 1em;
+  color: #777;
+}
+
