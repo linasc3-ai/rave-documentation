@@ -113,13 +113,13 @@ Download and install RStudio Desktop directly from the website: https://www.rstu
 
 > Important: Before proceeding to rest of this section. Please make sure you have read and finished the previous section: "[System prerequisites](#system-prerequisites)".
 
-**Download and Configure**
+**Step #1: Download and Configure**
 
 Open the RStudio application and click on the *Console* tab. If RStudio adopts the default settings, this tab should be located in bottom-left. 
 
 > Important: Please do NOT mix an R command with a shell command. When running R command, please open `RStudio` and use the `Console` tab to run. If you direct copy the R scripts into system shell terminals, the script will fail!
 
-Copy and paste the following R command into the RStudio console to install RAVE and its dependence from online repositories: 
+Copy and paste the following R command into the RStudio console to install RAVE and its dependencies from online repositories: 
 
 ```r
 options(repos = c(ropensci = 'https://beauchamplab.r-universe.dev', 
@@ -149,7 +149,7 @@ This finalizing step will download the following additional parts:
 <!--#### Troubleshooting
 * When updating RAVE, if you receive a "timeout of 60 seconds was reached" warning message, try switching to a faster network connection.-->
 
-**Validate the Installation**
+**Step #2: Validate the Installation**
 
 To check whether RAVE has been properly installed, execute the following R command
 to start the program. 
