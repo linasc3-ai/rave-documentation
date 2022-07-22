@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 6 Q&amp;As | RAVE Documentation</title>
+  <title>3.1 Overview of RAVE Structure | RAVE Documentation</title>
   <meta name="description" content="RAVE documentation" />
   <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 6 Q&amp;As | RAVE Documentation" />
+  <meta property="og:title" content="3.1 Overview of RAVE Structure | RAVE Documentation" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="RAVE documentation" />
   <meta name="github-repo" content="beauchamplab/rave-documentation" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 6 Q&amp;As | RAVE Documentation" />
+  <meta name="twitter:title" content="3.1 Overview of RAVE Structure | RAVE Documentation" />
   
   <meta name="twitter:description" content="RAVE documentation" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="generate-epoch.html"/>
-<link rel="next" href="installation.html"/>
+<link rel="prev" href="get-started.html"/>
+<link rel="next" href="starting-and-closing-rave.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -201,18 +201,51 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="qas" class="section level1 hasAnchor">
-<h1><span class="header-section-number">Chapter 6</span> Q&amp;As<a href="qas.html#qas" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<hr />
-<p>This page contains possible questions that may arise when using RAVE and their answers. Questions are organized by section.</p>
+<div id="overview-of-rave-structure" class="section level2 hasAnchor">
+<h2><span class="header-section-number">3.1</span> Overview of RAVE Structure<a href="overview-of-rave-structure.html#overview-of-rave-structure" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><font size="4"><strong>Main Application</strong></font></p>
+<p>The <strong>main application</strong> allows for the analysis of cleaned iEEG data.</p>
+<p>Access it by copying and pasting the following command into the RStudio console:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="overview-of-rave-structure.html#cb15-1"></a> rave<span class="op">::</span><span class="kw">start_rave</span>() </span></code></pre></div>
+<div class="figure">
+<img src="static/image/mainapp.png" alt="" />
+<p class="caption">Sample screenshot of RAVE main application</p>
+</div>
+<p><font size="4"><strong>Preprocess</strong></font></p>
+<p>The <strong>preprocess</strong> application allows for the importing of iEEG data into RAVE and preparing it for analysis in future modules.</p>
+<p>Access it by copying and pasting the following command into the RStudio console:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="overview-of-rave-structure.html#cb16-1"></a> rave<span class="op">::</span><span class="kw">rave_preprocess</span>() </span></code></pre></div>
+<p>It includes four sections:
+* <strong>Overview:</strong>
+* <strong>Notch Filter:</strong>
+* <strong>Wavelet:</strong>
+* <strong>Localization</strong></p>
+<div class="figure">
+<img src="static/image/preprocess.png" alt="" />
+<p class="caption">Screenshot of RAVE preprocess</p>
+</div>
+<p><font size="4"><strong>Options</strong></font></p>
+<p>The <strong>options</strong> application allows for the editing of RAVE settings. To access options, copy and paste the following command into the RStudio console:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="overview-of-rave-structure.html#cb17-1"></a> rave<span class="op">::</span><span class="kw">rave_options</span>()</span></code></pre></div>
+<ul>
+<li><strong>Modules:</strong> Summary of all RAVE modules</li>
+<li><strong>Core Settings:</strong> change where RAVE data is stored.<br />
+</li>
+<li><strong>System:</strong> change RAM and number of CPU cores RAVE can use to alter speed at which data is read</li>
+<li><strong>3D Viewer:</strong> change which downloaded brain data to use as the template brain for electrode template mapping; the default template brain is <code>N27</code>.</li>
+</ul>
+<div class="figure">
+<img src="static/image/options.png" alt="" />
+<p class="caption">Screenshot of RAVE options</p>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="generate-epoch.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="installation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="get-started.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="starting-and-closing-rave.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -243,7 +276,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/linasc3-ai/rave-documentation/edit/main/99-QA.Rmd",
+"link": "https://github.com/linasc3-ai/rave-documentation/edit/main/03-get-started.md",
 "text": "Edit"
 },
 "history": {

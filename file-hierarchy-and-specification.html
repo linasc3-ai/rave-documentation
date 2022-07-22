@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 6 Q&amp;As | RAVE Documentation</title>
+  <title>4.1 File hierarchy and specification | RAVE Documentation</title>
   <meta name="description" content="RAVE documentation" />
   <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 6 Q&amp;As | RAVE Documentation" />
+  <meta property="og:title" content="4.1 File hierarchy and specification | RAVE Documentation" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="RAVE documentation" />
   <meta name="github-repo" content="beauchamplab/rave-documentation" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 6 Q&amp;As | RAVE Documentation" />
+  <meta name="twitter:title" content="4.1 File hierarchy and specification | RAVE Documentation" />
   
   <meta name="twitter:description" content="RAVE documentation" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="generate-epoch.html"/>
-<link rel="next" href="installation.html"/>
+<link rel="prev" href="get-data-into-rave.html"/>
+<link rel="next" href="overview-voltage-data.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -201,18 +201,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="qas" class="section level1 hasAnchor">
-<h1><span class="header-section-number">Chapter 6</span> Q&amp;As<a href="qas.html#qas" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<hr />
-<p>This page contains possible questions that may arise when using RAVE and their answers. Questions are organized by section.</p>
+<div id="file-hierarchy-and-specification" class="section level2 hasAnchor">
+<h2><span class="header-section-number">4.1</span> File hierarchy and specification<a href="file-hierarchy-and-specification.html#file-hierarchy-and-specification" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>There are two major data folders in RAVE. One contains the raw, unprocessed data such as analog traces, MRI/CT scans. The other stores processed data which is self-contained and portable. Both data folders are located at your home directory. To get the locations of these two folders, please launch a blank RAVE session:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="file-hierarchy-and-specification.html#cb19-1"></a>rave<span class="op">::</span><span class="kw">start_session</span>()</span></code></pre></div>
+<p><span class="edit-comment">TODO: Add a figure with captions showing where to find these settings</span></p>
+<p><span class="edit-comment">TODO Also add a walk-through to each folders</span></p>
+<p>This next section focuses on how to organize the raw data folder. The goal is to import the electrophysiological data into RAVE.</p>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="generate-epoch.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="installation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="get-data-into-rave.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="overview-voltage-data.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -243,7 +246,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/linasc3-ai/rave-documentation/edit/main/99-QA.Rmd",
+"link": "https://github.com/linasc3-ai/rave-documentation/edit/main/04-import-data.Rmd",
 "text": "Edit"
 },
 "history": {

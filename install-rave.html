@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 6 Q&amp;As | RAVE Documentation</title>
+  <title>2.2 Install RAVE | RAVE Documentation</title>
   <meta name="description" content="RAVE documentation" />
   <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 6 Q&amp;As | RAVE Documentation" />
+  <meta property="og:title" content="2.2 Install RAVE | RAVE Documentation" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="RAVE documentation" />
   <meta name="github-repo" content="beauchamplab/rave-documentation" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 6 Q&amp;As | RAVE Documentation" />
+  <meta name="twitter:title" content="2.2 Install RAVE | RAVE Documentation" />
   
   <meta name="twitter:description" content="RAVE documentation" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="generate-epoch.html"/>
-<link rel="next" href="installation.html"/>
+<link rel="prev" href="system-prerequisites.html"/>
+<link rel="next" href="download-demo-data.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -201,18 +201,57 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="qas" class="section level1 hasAnchor">
-<h1><span class="header-section-number">Chapter 6</span> Q&amp;As<a href="qas.html#qas" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<hr />
-<p>This page contains possible questions that may arise when using RAVE and their answers. Questions are organized by section.</p>
+<div id="install-rave" class="section level2 hasAnchor">
+<h2><span class="header-section-number">2.2</span> Install RAVE<a href="install-rave.html#install-rave" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<blockquote>
+<p>Important: Before proceeding to rest of this section. Please make sure you have read and finished the previous section: “<a href="system-prerequisites.html#system-prerequisites">System prerequisites</a>”.</p>
+</blockquote>
+<p><strong>Download and Configure</strong></p>
+<p>Open the RStudio application and click on the <em>Console</em> tab. If RStudio adopts the default settings, this tab should be located in bottom-left.</p>
+<blockquote>
+<p>Important: Please do NOT mix an R command with a shell command. When running R command, please open <code>RStudio</code> and use the <code>Console</code> tab to run. If you direct copy the R scripts into system shell terminals, the script will fail!</p>
+</blockquote>
+<p>Copy and paste the following R command into the RStudio console to install RAVE and its dependence from online repositories:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="install-rave.html#cb7-1"></a><span class="kw">options</span>(<span class="dt">repos =</span> <span class="kw">c</span>(<span class="dt">ropensci =</span> <span class="st">&#39;https://beauchamplab.r-universe.dev&#39;</span>, </span>
+<span id="cb7-2"><a href="install-rave.html#cb7-2"></a>                  <span class="dt">CRAN =</span> <span class="st">&#39;https://cloud.r-project.org&#39;</span>))</span>
+<span id="cb7-3"><a href="install-rave.html#cb7-3"></a><span class="kw">install.packages</span>(<span class="kw">c</span>(<span class="st">&#39;rave&#39;</span>, <span class="st">&#39;ravebuiltins&#39;</span>, <span class="st">&#39;ravedash&#39;</span>))</span></code></pre></div>
+<p>Copy and paste the following command into the RStudio console to update RAVE to the latest version (with bug fixes and new features):</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="install-rave.html#cb8-1"></a>rave<span class="op">::</span><span class="kw">check_dependencies</span>(<span class="dt">nightly =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<p>Execute the following R command to download extra data and templates:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="install-rave.html#cb9-1"></a>rave<span class="op">::</span><span class="kw">finalize_installation</span>(<span class="dt">upgrade =</span> <span class="st">&#39;always&#39;</span>)</span></code></pre></div>
+<p>This finalizing step will download the following additional parts:</p>
+<ul>
+<li>Template brain: (<code>N27</code>, <code>fsaverage</code>) for group-level electrode template mapping</li>
+<li>Demo subject data: for demonstration purposes</li>
+<li>Built-in modules and pipelines</li>
+</ul>
+<!--#### Troubleshooting
+* When updating RAVE, if you receive a "timeout of 60 seconds was reached" warning message, try switching to a faster network connection.-->
+<p><strong>Validate the Installation</strong></p>
+<p>To check whether RAVE has been properly installed, execute the following R command
+to start the program.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="install-rave.html#cb10-1"></a>rave<span class="op">::</span><span class="kw">start_rave</span>()</span></code></pre></div>
+<p>If installation was successful, a new web browser window should automatically open with the
+RAVE display. A screenshot is shown below:</p>
+<div class="figure">
+<img src="static/image/RAVEStartScreen.png" alt="" />
+<p class="caption">RAVE Start Screen</p>
+</div>
+<p>🎉 You have successfully downloaded RAVE!</p>
+<p>Now that installation was completed, visit the following pages to start using RAVE!</p>
+<ul>
+<li><a href="#starting-rave">Starting RAVE</a></li>
+<li><a href="upgrade-rave.html#upgrade-rave">Upgrade RAVE</a></li>
+<li><a href="#change-rave-settings">Change RAVE settings</a></li>
+</ul>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="generate-epoch.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="installation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="system-prerequisites.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="download-demo-data.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -243,7 +282,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/linasc3-ai/rave-documentation/edit/main/99-QA.Rmd",
+"link": "https://github.com/linasc3-ai/rave-documentation/edit/main/02-installation.md",
 "text": "Edit"
 },
 "history": {
