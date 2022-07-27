@@ -224,7 +224,6 @@ Proceed to the next module, referencing!
 ## Step #4: Reference Channels
 Common average referencing 
 
---- 
 After the four steps above have been completed, the remaining modules below can be done in any order: 
 
 ## Surface & Electrodes

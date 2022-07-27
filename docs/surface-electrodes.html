@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>5.6 Generate Epoch | RAVE Documentation</title>
+  <title>5.5 Surface &amp; Electrodes | RAVE Documentation</title>
   <meta name="description" content="RAVE documentation" />
   <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="5.6 Generate Epoch | RAVE Documentation" />
+  <meta property="og:title" content="5.5 Surface &amp; Electrodes | RAVE Documentation" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="RAVE documentation" />
   <meta name="github-repo" content="beauchamplab/rave-documentation" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="5.6 Generate Epoch | RAVE Documentation" />
+  <meta name="twitter:title" content="5.5 Surface &amp; Electrodes | RAVE Documentation" />
   
   <meta name="twitter:description" content="RAVE documentation" />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="surface-electrodes.html"/>
-<link rel="next" href="qas.html"/>
+<link rel="prev" href="step-4-reference-channels.html"/>
+<link rel="next" href="generate-epoch.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -151,18 +151,59 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="generate-epoch" class="section level2 hasAnchor" number="5.6">
-<h2><span class="header-section-number">5.6</span> Generate Epoch<a href="generate-epoch.html#generate-epoch" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-
+<div id="surface-electrodes" class="section level2 hasAnchor" number="5.5">
+<h2><span class="header-section-number">5.5</span> Surface &amp; Electrodes<a href="surface-electrodes.html#surface-electrodes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The surface &amp; electrodes section is composed of two modules:</p>
+<!-- add sentence summarizing overall purpose/goal of surface & electrodes section -->
+<div id="surface-registration" class="section level3 hasAnchor" number="5.5.1">
+<h3><span class="header-section-number">5.5.1</span> Surface &amp; Registration<a href="surface-electrodes.html#surface-registration" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The Surface &amp; Registration module has the goal of importing raw magnetic resonance (MR) and computerized tomography (CT) images into RAVE, so that they can be used in future analyses. There are two panels to note: Data settings and Command-line settings. Refer to the following screenshot for guidance.</p>
+<div class="figure">
+<img src="static/image/Surface&amp;Registration.png" alt="" />
+<p class="caption">Sample Surface &amp; Registration Window</p>
 </div>
-<!-- </div> -->
+<p><strong>Data Settings</strong>:</p>
+<p>Start by using the <u> project and subject drop down menus </u> to select the subject whose MRI and CT images that will be imported. Once again, using the blue “sync project &amp; subject from [Import LFP] module” link at the bottom of the panel will automatically select the project and subject that was just being worked on.</p>
+<p>Next, use the <u> MRI drop down menu </u> to select the <strong>raw MRI image</strong> for the selected subject. RAVE currently accepts two input types for MRI images:</p>
+<ul>
+<li><strong>DICOM:</strong> submit a folder of DICOM files, representing a series of 2D brain slices (e.g. ______)</li>
+<li><strong>Nifti:</strong> submit a single Nifti file representing the full 3D brain scan (e.g. subject_MRI.nii)</li>
+</ul>
+<blockquote>
+<p>Note: Select the checkbox “Skip the FreeSurfer Reconstruction” if reconstructing the subject’s cortical surface model is not necessary. By default, this box will be checked.</p>
+</blockquote>
+<!-- explain why it's checked by default -->
+<p>Similarly, use the <u> Raw CT DICOM folder </u> drop down menu to select the <strong>raw CT image</strong> for the selected subject. Your input should be a <strong>DICOM folder</strong> ()</p>
+<!-- double check ... what if you just have nifti -->
+<blockquote>
+<p>Note: Select the checkbox “Skip the CT Co-Registration” if it is not desired to align and overlay the subject’s CT scan with their MRI image. By default, this will be unchecked because aligning/overlaying this data allows for precise electrode localization.</p>
+</blockquote>
+<p>For more information on these file formats, visit the Q&amp;A at <a href="#Surface&amp;Registration">Surface&amp;Registration</a>.
+<!-- maybe add a question on the file formats, but also more info about what co-registration iss --></p>
+<p>Then, proceed to the command-line settings panel.</p>
+<!-- if you select a nii file, then it doesn't need to be converted to nifti format, so does RAVE just skip the dcm2niix command? -->
+<!-- any way to upload images for each subject in bulk? -->
+<p><strong>Command-line settings</strong>:</p>
+<!-- the general idea is that after specifying some configurations, this program will generate some command lines that the user should run on their own terminal to undergo the import process -->
+</div>
+<div id="electrode-localization" class="section level3 hasAnchor" number="5.5.2">
+<h3><span class="header-section-number">5.5.2</span> Electrode Localization<a href="surface-electrodes.html#electrode-localization" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>When the electrode localization tab is selected from the RAVE module menu at left, two panels will appear on the screen: Data Selection &amp; Electrode Plan. Refer to the following screenshot for guidance.</p>
+<!-- describe what electrode localization even is -->
+<p><img src="static/image/electrodelocalization1.png" alt="Electrode Localization Screen" />
+<strong>Data Selection:</strong></p>
+<p>Begin in the data selection panel at left. Use the <u> project and subject drop down menus </u> to select the subject whose electrodes you wish to localize. You can once again use the “Sync from [Import LFP] module” to automatically select the project and subject you were just working on.</p>
+<p><strong>Electrode Plan:</strong></p>
+<hr />
+</div>
+</div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="surface-electrodes.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="qas.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="step-4-reference-channels.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="generate-epoch.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
