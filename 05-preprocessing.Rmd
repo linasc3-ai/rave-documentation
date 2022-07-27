@@ -243,23 +243,6 @@ The Surface & Registration module has the goal of importing raw magnetic resonan
 
 Start by using the <u> project and subject drop down menus </u> to select the subject whose MRI and CT images that will be imported. 
 
-Next, use the <u> MRI drop down menu </u> to select the raw MRI image for the selected subject. RAVE currently accepts two input types for MRI images: 
-
-* **DICOM:** submit a folder of DICOM files, representing a series of 2D brain slices (e.g. ______)
-* **Nifti:** submit a single Nifti file representing the 3D brain scan (e.g. subject_MRI.nii)
-
-> Note: Select the checkbox "Skip the FreeSurfer Reconstruction" if _______. By default, this will be checked because ______. 
-
-Similarly, use the <u> Raw CT DICOM folder </u> drop down menu to select the raw CT image for the selected subject. Your input should be a **DICOM folder** ()
-
-> Note: Select the checkbox "Skip the CT Co-Registration" if ______. By default, this will be unchecked because __________. 
-
-For more information on these file formats, visit the Q&A at [Surface&Registration](#Surface&Registration).
-
-Then, select 
-
-<!-- if you select a nii file, then it doesn't need to be converted to nifti format, so does RAVE just skip the dcm2niix command? --> 
-
 <!-- any way to upload images for each subject in bulk? -->
 
 **Command-line settings**: 
@@ -267,15 +250,6 @@ Then, select
 <!-- the general idea is that after specifying some configurations, this program will generate some command lines that the user should run on their own terminal to undergo the import process --> 
 
 ### Electrode Localization
-
-When the electrode localization tab is selected from the RAVE module menu at left, two panels will appear on the screen: Data Selection & Electrode Plan. Refer to the following screenshot for guidance.  
-
-![Electrode Localization Screen](static/image/electrodelocalization1.png)
-**Data Selection:** 
-
-Begin in the data selection panel at left. 
-
-**Electrode Plan:** 
 
 --- 
 
