@@ -24,6 +24,9 @@ step-1-import-signals
 step-2-notch-filter
 step-3-wavelet
 step-4-reference-channels
+surface-electrodes
+surface-registration
+electrode-localization
 generate-epoch
 qas
 installation
@@ -32,5 +35,5 @@ downloading-demo-data
 importing-data
 notch-filter
 wavelet
-surface-registration
-electrode-localization
+surface-registration-1
+electrode-localization-1

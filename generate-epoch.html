@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>5.5 Generate Epoch | RAVE Documentation</title>
+  <title>5.6 Generate Epoch | RAVE Documentation</title>
   <meta name="description" content="RAVE documentation" />
   <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="5.5 Generate Epoch | RAVE Documentation" />
+  <meta property="og:title" content="5.6 Generate Epoch | RAVE Documentation" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="RAVE documentation" />
   <meta name="github-repo" content="beauchamplab/rave-documentation" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="5.5 Generate Epoch | RAVE Documentation" />
+  <meta name="twitter:title" content="5.6 Generate Epoch | RAVE Documentation" />
   
   <meta name="twitter:description" content="RAVE documentation" />
   
@@ -30,7 +30,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="step-4-reference-channels.html"/>
+<link rel="prev" href="surface-electrodes.html"/>
 <link rel="next" href="qas.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -172,7 +172,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.2" data-path="step-2-notch-filter.html"><a href="step-2-notch-filter.html"><i class="fa fa-check"></i><b>5.2</b> Step #2: Notch Filter</a></li>
 <li class="chapter" data-level="5.3" data-path="step-3-wavelet.html"><a href="step-3-wavelet.html"><i class="fa fa-check"></i><b>5.3</b> Step #3: Wavelet</a></li>
 <li class="chapter" data-level="5.4" data-path="step-4-reference-channels.html"><a href="step-4-reference-channels.html"><i class="fa fa-check"></i><b>5.4</b> Step #4: Reference Channels</a></li>
-<li class="chapter" data-level="5.5" data-path="generate-epoch.html"><a href="generate-epoch.html"><i class="fa fa-check"></i><b>5.5</b> Generate Epoch</a></li>
+<li class="chapter" data-level="5.5" data-path="surface-electrodes.html"><a href="surface-electrodes.html"><i class="fa fa-check"></i><b>5.5</b> Surface &amp; Electrodes</a><ul>
+<li class="chapter" data-level="5.5.1" data-path="surface-electrodes.html"><a href="surface-electrodes.html#surface-registration"><i class="fa fa-check"></i><b>5.5.1</b> Surface &amp; Registration</a></li>
+<li class="chapter" data-level="5.5.2" data-path="surface-electrodes.html"><a href="surface-electrodes.html#electrode-localization"><i class="fa fa-check"></i><b>5.5.2</b> Electrode Localization</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="generate-epoch.html"><a href="generate-epoch.html"><i class="fa fa-check"></i><b>5.6</b> Generate Epoch</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="qas.html"><a href="qas.html"><i class="fa fa-check"></i><b>6</b> Q&amp;As</a><ul>
 <li class="chapter" data-level="6.1" data-path="installation.html"><a href="installation.html"><i class="fa fa-check"></i><b>6.1</b> Installation</a></li>
@@ -181,8 +185,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.4" data-path="importing-data.html"><a href="importing-data.html"><i class="fa fa-check"></i><b>6.4</b> Importing Data</a></li>
 <li class="chapter" data-level="6.5" data-path="notch-filter.html"><a href="notch-filter.html"><i class="fa fa-check"></i><b>6.5</b> Notch Filter</a></li>
 <li class="chapter" data-level="6.6" data-path="wavelet.html"><a href="wavelet.html"><i class="fa fa-check"></i><b>6.6</b> Wavelet</a></li>
-<li class="chapter" data-level="6.7" data-path="surface-registration.html"><a href="surface-registration.html"><i class="fa fa-check"></i><b>6.7</b> Surface &amp; Registration</a></li>
-<li class="chapter" data-level="6.8" data-path="electrode-localization.html"><a href="electrode-localization.html"><i class="fa fa-check"></i><b>6.8</b> Electrode Localization</a></li>
+<li class="chapter" data-level="6.7" data-path="surface-registration-1.html"><a href="surface-registration-1.html"><i class="fa fa-check"></i><b>6.7</b> Surface &amp; Registration</a></li>
+<li class="chapter" data-level="6.8" data-path="electrode-localization-1.html"><a href="electrode-localization-1.html"><i class="fa fa-check"></i><b>6.8</b> Electrode Localization</a></li>
 </ul></li>
 </ul>
 
@@ -202,7 +206,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="generate-epoch" class="section level2 hasAnchor">
-<h2><span class="header-section-number">5.5</span> Generate Epoch<a href="generate-epoch.html#generate-epoch" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<h2><span class="header-section-number">5.6</span> Generate Epoch<a href="generate-epoch.html#generate-epoch" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 
 </div>
 <!-- </div> -->
@@ -211,7 +215,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="step-4-reference-channels.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="surface-electrodes.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="qas.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
