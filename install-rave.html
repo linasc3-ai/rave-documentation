@@ -23,7 +23,7 @@
 <meta name="author" content="" />
 
 
-<meta name="date" content="2022-07-22" />
+<meta name="date" content="2022-07-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -206,12 +206,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <blockquote>
 <p>Important: Before proceeding to rest of this section. Please make sure you have read and finished the previous section: “<a href="system-prerequisites.html#system-prerequisites">System prerequisites</a>”.</p>
 </blockquote>
-<p><strong>Download and Configure</strong></p>
+<p><strong>Step #1: Download and Configure</strong></p>
 <p>Open the RStudio application and click on the <em>Console</em> tab. If RStudio adopts the default settings, this tab should be located in bottom-left.</p>
 <blockquote>
 <p>Important: Please do NOT mix an R command with a shell command. When running R command, please open <code>RStudio</code> and use the <code>Console</code> tab to run. If you direct copy the R scripts into system shell terminals, the script will fail!</p>
 </blockquote>
-<p>Copy and paste the following R command into the RStudio console to install RAVE and its dependence from online repositories:</p>
+<p>Copy and paste the following R command into the RStudio console to install RAVE and its dependencies from online repositories:</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="install-rave.html#cb7-1"></a><span class="kw">options</span>(<span class="dt">repos =</span> <span class="kw">c</span>(<span class="dt">ropensci =</span> <span class="st">&#39;https://beauchamplab.r-universe.dev&#39;</span>, </span>
 <span id="cb7-2"><a href="install-rave.html#cb7-2"></a>                  <span class="dt">CRAN =</span> <span class="st">&#39;https://cloud.r-project.org&#39;</span>))</span>
 <span id="cb7-3"><a href="install-rave.html#cb7-3"></a><span class="kw">install.packages</span>(<span class="kw">c</span>(<span class="st">&#39;rave&#39;</span>, <span class="st">&#39;ravebuiltins&#39;</span>, <span class="st">&#39;ravedash&#39;</span>))</span></code></pre></div>
@@ -227,7 +227,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <!--#### Troubleshooting
 * When updating RAVE, if you receive a "timeout of 60 seconds was reached" warning message, try switching to a faster network connection.-->
-<p><strong>Validate the Installation</strong></p>
+<p><strong>Step #2: Validate the Installation</strong></p>
 <p>To check whether RAVE has been properly installed, execute the following R command
 to start the program.</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="install-rave.html#cb10-1"></a>rave<span class="op">::</span><span class="kw">start_rave</span>()</span></code></pre></div>
