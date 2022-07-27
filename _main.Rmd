@@ -1,3 +1,73 @@
+--- 
+title: "RAVE Documentation"
+author: ""
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: "apalike"
+# url: your book url like https://bookdown.org/yihui/bookdown
+# cover-image: path to the social sharing image like images/cover.jpg
+description: |
+  RAVE documentation
+link-citations: yes
+github-repo: beauchamplab/rave-documentation
+---
+
+# url: your book url like https://bookdown.org/yihui/bookdown
+
+Placeholder
+
+
+## Showcases {-}
+
+<!--chapter:end:index.Rmd-->
+
+
+# Installation Guide
+
+Placeholder
+
+
+## System Prerequisites
+### Linux -->
+### MacOS
+## Install RAVE
+## Download demo data 
+## Upgrade RAVE
+## Troubleshooting 
+
+<!--chapter:end:02-installation.md-->
+
+
+# Get Started
+
+Placeholder
+
+
+## Overview of RAVE Structure 
+## Starting and Closing RAVE
+
+<!--chapter:end:03-get-started.md-->
+
+
+# Get Data into RAVE
+
+Placeholder
+
+
+## File hierarchy and specification
+## Overview: Voltage data
+### Format 1
+## Importing demo data
+### Step 1: Select Subject
+### Step 2: Select Project or Create New One 
+### Step 3: Validate Data 
+## Importing Your Own Data
+### Organizing Your Directories 
+
+<!--chapter:end:04-import-data.Rmd-->
+
 # Preprocessing 
 <!-- will merge with 03 import data section that is already written--> 
 
@@ -290,3 +360,23 @@ Begin in the data selection panel at left. Use the <u> project and subject drop 
 --- 
 
 ## Generate Epoch 
+
+<!--chapter:end:05-preprocessing.Rmd-->
+
+
+# Q&As
+
+Placeholder
+
+
+## Installation
+## Getting Started with RAVE
+## Downloading Demo Data 
+## Importing Data
+## Notch Filter
+## Wavelet
+## Surface & Registration
+## Electrode Localization
+
+<!--chapter:end:99-QA.Rmd-->
+
