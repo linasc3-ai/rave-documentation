@@ -115,4 +115,12 @@ Answer: The recording rate is associated with raw voltage data, whereas the powe
 
 ## Surface & Registration
 
+> **Question:** What is the command-line? 
+
+Answer: The computer's command-line is an interface that allows the user to run programs, add/delete files, and use other text-based commands. In the context of surface & registration, RAVE relies on the command-line to run dcm2niix (converts DICOM files to Nifti format), FreeSurfer (allows for the reconstruction of the cortical surface), and FSL home (aligns/overlays the CT image with the MRI data). 
+
 ## Electrode Localization
+
+> **Question:** When trying to load a subject, why did I recieve this error? "The electrode pllan table (n=0) has inconsistent length with registered electrode length (n=84)." 
+
+Answer: 

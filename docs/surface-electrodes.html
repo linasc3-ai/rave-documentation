@@ -22,7 +22,7 @@
 
 
 
-<meta name="date" content="2022-07-27" />
+<meta name="date" content="2022-07-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -176,25 +176,82 @@
 <p>Similarly, use the <u> Raw CT DICOM folder </u> drop down menu to select the <strong>raw CT image</strong> for the selected subject. Your input should be a <strong>DICOM folder</strong> ()</p>
 <!-- double check ... what if you just have nifti -->
 <blockquote>
-<p>Note: Select the checkbox “Skip the CT Co-Registration” if it is not desired to align and overlay the subject’s CT scan with their MRI image. By default, this will be unchecked because aligning/overlaying this data allows for precise electrode localization.</p>
+<p>Note: Select the checkbox “Skip the CT Co-Registration” if it is not desired to align and overlay the subject’s CT scan with their MRI image. By default, this will be unchecked because aligning/overlaying this data allows for the accurate localization of electrodes.</p>
 </blockquote>
-<p>For more information on these file formats, visit the Q&amp;A at <a href="#Surface&amp;Registration">Surface&amp;Registration</a>.
+<p>For more information on these file formats, visit the Q&amp;A at <a href="#Surface&amp;Registration">Surface &amp; Registration</a>.
 <!-- maybe add a question on the file formats, but also more info about what co-registration iss --></p>
 <p>Then, proceed to the command-line settings panel.</p>
 <!-- if you select a nii file, then it doesn't need to be converted to nifti format, so does RAVE just skip the dcm2niix command? -->
 <!-- any way to upload images for each subject in bulk? -->
-<p><strong>Command-line settings</strong>:</p>
+<p><strong>Command-line settings</strong>:
+The following steps will involve the computer’s <u> command-line interface. </u> (On Mac, this refers to the Terminal. On Windows, it refers to Command Prompt.)</p>
+<ul>
+<li><p><strong>Dcm2niix path</strong>:
+Dcm2niix is a library that is used to convert neuroimaging data from DICOM files to a Nifti file. Enter</p></li>
+<li><p><strong>FreeSurfer home</strong> (‘FREESURFER_HOME’, needed for surface reconstruction):</p></li>
+<li><p><strong>FSL home</strong> (‘FSLDIR’, needed for co-registration):</p></li>
+</ul>
+<!-- clarify what entering something for these 3 will do (will RAVE invoke system command?), because it does let you proceed without entering anything. i think the next screen will be manual copy/paste of the commands -->
+<p>Now, click the blue <strong>“Check data and command-line tools”</strong> button. A pop-up will appear indicating the external commands that will be used based on what was entered for Dcm2niix path, FreeSurfer home, and FSL home above. Please also pay attention to any warnings that will be listed (e.g. if RAVE can not find FSL-flirt). When ready, hit “proceed”.</p>
+<p>The following screen will appear, with four panels: Subject Information, Import DICOM Images, Surface Reconstruction, and Co-Registration CT to T1. Refer to the following screenshot for guidance.</p>
+<div class="figure">
+<img src="static/image/Surface&amp;Registration2.jpg" alt="" />
+<p class="caption">Surface and Registration Screen 2</p>
+</div>
+<ul>
+<li><p><strong>Subject Information:</strong> The project and subject whose MRI and CT data is currently being used will be displayed here. A task list will also be displayed. By default, three tasks will be listed: 1). Convert .dcm images to .nii, 2). Surface reconstruction, and 3). CT co-registration. If on the previous screen it was opted to skip FreeSurfer reconstruction or CT co-registration, those tasks won’t be listed. When a task is completed, the blue “x” will change to a green checkmark.</p></li>
+<li><p><strong>Import DICOM Images:</strong></p></li>
+</ul>
+<p>Begin here to convert DICOM images to the Nifti format using the dcm2niix external library.</p>
+<blockquote>
+<p>Note: This script requires the Unix <code>sh</code> terminal in order to run commands read from the command-line interface. If using a Mac, this should already be provided. If using Windows, please install the Linux sub-system.</p>
+</blockquote>
+<p>Specify the following configurations using a drop-down menu:</p>
+<p>** Merge 2D slices from same series regardless of echo, exposure, etc:</p>
+<p>** Crop 3D acquisition:</p>
+<!-- why is Merge 2D slices from same series regardless of echo, exposure, etc still present -->
+<p>Based on these configurations, a series of commands will be automatically generated in the greyspace below. As mentioned earlier, it is recommended to copy these commands and run them on the computer’s command-line interface (e.g. Terminal). Select the “save &amp; run by yourself” button to save the commands for manual use. However, to run these commands directly from RAVE, select the grey “Run from RAVE” button.</p>
+<blockquote>
+<p>Note: The grey text represents comments. The purple texts are the actual commands that will be run by the computer.</p>
+</blockquote>
+<!-- why recommended to run on your own -->
+<ul>
+<li><strong>Surface Reconstruction:</strong></li>
+</ul>
+<p>This panel sets the specifications desired for the reconstruction of the subject’s cortical surface. It utilizes <code>FreeSurfer</code>, a package for the visualization and analysis of neuroimaging data.</p>
+<blockquote>
+<p>Note: This script requires the Unix <code>bash</code> terminal in order to run commands read from the command-line interface. If using a Mac, this should already be provided. If using Windows, please install the Linux sub-system.</p>
+</blockquote>
+<p>Start by selecting the <strong>MRI File</strong> desired. Next, select the <strong>recon flag</strong>, which refers to which FreeSurfer steps are desired for the reconstruction of the brain model. Visit the <a href="https://surfer.nmr.mgh.harvard.edu/fswiki/recon-all">FreeSurfer website</a> to learn more about the seven choices. Use the drop-down menu on RAVE to select the recon flag that is fitting for the project. A screenshot has been included below for convenience:</p>
+<p><img src="static/image/FreeSurferFlags.png" alt="FreeSurfer Flags" />
+&gt;Note: Most flags can take several hours for the computer to run. If the quickest flag is desired, select -autorecon1 in the drop-down menu; it encompasses minimal steps and so only takes 10 minutes to run.</p>
+<p>Proceed to the “Remove existing work before running the command (if applicable)” checkbox. By default, this will be unchecked ______ <!-- what does this do --></p>
+<p>Commands will be generated in the greyspace below. Once again, to run them manually, click the blue “Save &amp; run by yourself” button. To have RAVE invoke system command, select the “Run from RAVE” button.</p>
+<ul>
+<li><strong>Co-Registration CT to T1:</strong></li>
+</ul>
+<p>This panel will generate commands to align and overlay the subject’s MRI &amp; CT images. FSL-flirt, a tool for registering these images, will be used.</p>
+<p>Simply use the drop down menu to select the <strong>CT file</strong>. Commands will be available in the greyspace below. Once again, select the appropriate button based on whether the commands will be run manually or through RAVE.</p>
+<!-- add what refresh button does; maybe needs more specific name -->
+<blockquote>
+<p>Note: This script requires the Unix <code>bash</code> terminal in order to run commands read from the command-line interface. If using a Mac, this should already be provided. If using Windows, please install the Linux sub-system.</p>
+</blockquote>
 <!-- the general idea is that after specifying some configurations, this program will generate some command lines that the user should run on their own terminal to undergo the import process -->
+<p>At this point, the MRI and CT images should have been converted to the Nifti forrmat, and based on the selected configurations, the reconstruction of the subject’s brain model and co-registration of the MRI &amp; CT images will or will not have been processed. Now, proceed to the electrode localization module to begin identifying electrodes!</p>
 </div>
 <div id="electrode-localization" class="section level3 hasAnchor" number="5.5.2">
 <h3><span class="header-section-number">5.5.2</span> Electrode Localization<a href="surface-electrodes.html#electrode-localization" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>When the electrode localization tab is selected from the RAVE module menu at left, two panels will appear on the screen: Data Selection &amp; Electrode Plan. Refer to the following screenshot for guidance.</p>
+<p>When the electrode localization tab is selected, two panels will appear on the screen: Data Selection &amp; Electrode Plan. Refer to the following screenshot for guidance.</p>
 <!-- describe what electrode localization even is -->
 <p><img src="static/image/electrodelocalization1.png" alt="Electrode Localization Screen" />
 <strong>Data Selection:</strong></p>
-<p>Begin in the data selection panel at left. Use the <u> project and subject drop down menus </u> to select the subject whose electrodes you wish to localize. You can once again use the “Sync from [Import LFP] module” to automatically select the project and subject you were just working on.</p>
+<p>Begin in the data selection panel at left. Use the <strong>project and subject drop down menus</strong> to select the subject whose electrodes you wish to localize. You can once again use the “Sync from [Import LFP] module” to automatically select the project and subject you were just working on.</p>
+<p>Next, use the drop down menu in <strong>choose CT</strong> to select the CT scan that was converted to the Nifti format and aligned to the MRI image in the previous module. It is alternatively possible to upload a CT image already in the Nifti format directly using the browse button.</p>
+<p>If it is preferred <u> not </u> to localize with the CT image, select the checkbox “Do not localize with CT.” By default, this will be unchecked as _______.</p>
+<!-- why would someone not want to localize with CT, what does this mean -- kinda vague -->
+<!-- why do you need to upload just the CT again; i thought coregistration happened in the previous module -->
+<p>Proceed to the Electrode Plan panel.</p>
 <p><strong>Electrode Plan:</strong></p>
-<hr />
 </div>
 </div>
             </section>
