@@ -241,6 +241,9 @@ Dcm2niix is a library that is used to convert neuroimaging data from DICOM files
 </div>
 <div id="electrode-localization" class="section level3 hasAnchor" number="5.5.2">
 <h3><span class="header-section-number">5.5.2</span> Electrode Localization<a href="surface-electrodes.html#electrode-localization" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>RAVE’s electrode localization module features a built-in 3D viewer and allows for the quick and precise identification of where in the brain electrodes are located. The module is based on the CT image’s visualization of electrodes and the MRI’s visualization of brain structure.</p>
+<!-- add: Users are able to _______, label electrodes, and form groups. like expand on features -- able to view on screen -->
+<!-- explain some more about why you need CT & MRI image -->
 <p>When the electrode localization tab is selected, two panels will appear on the screen: Data Selection &amp; Electrode Plan. Refer to the following screenshot for guidance.</p>
 <!-- describe what electrode localization even is -->
 <p><img src="static/image/electrodelocalization1.png" alt="Electrode Localization Screen" />
@@ -252,6 +255,21 @@ Dcm2niix is a library that is used to convert neuroimaging data from DICOM files
 <!-- why do you need to upload just the CT again; i thought coregistration happened in the previous module -->
 <p>Proceed to the Electrode Plan panel.</p>
 <p><strong>Electrode Plan:</strong></p>
+<p>This panel allows for the creation of groups for the subject’s electrodes.</p>
+<p>For each group, specify the:</p>
+<ul>
+<li><p><strong>Label:</strong> the desired name for the group.</p></li>
+<li><p><strong>Dimension:</strong> the number of electrodes within the group.</p></li>
+<li><p><strong>Type:</strong> the type of exam the electrodes were used in Select from electroencephalogram (EEG), intracranial EEG (iEEG), stereotactic EEG (sEEG), ElectroCochleoGraphy (ECoG), or “other”.</p></li>
+</ul>
+<p>Note that for each group, a summary will be displayed to indicate the individual electrode labels (e.g. G1 - G32), as well as total number of electrodes.</p>
+<p>Scroll through the panel to review all electrode groups. Use the <strong>plus button</strong> in the bottom left corner of the panel to add a new group, or the <strong>minus button</strong> to delete the bottom-most group.</p>
+<p>When the groups are ready, click the blue <strong>Load Subject</strong> button to proceed. If there are any errors, a pop-up will appear indicating the error and a recommended fix (e.g. “invalid CT file. Please specify or upload your own.”) If there are no errors, a “loading in progress” pop-up will appear indicating that the CT file and 3D viewer are being loaded.</p>
+<!-- do I need to explain different types? I feel like no because a researcher should know that, but double check anyway -->
+<!-- how/why do people usually group the electrodes? e.g. by location? because it makes it easier for analysis? -->
+<!-- so can they skip to electrode localization if they already did the surface/registration steps on their own -->
+<!-- can someone have no groups -->
+<!-- instead of other, can they type in what they want? look into difference between types -->
 </div>
 </div>
             </section>

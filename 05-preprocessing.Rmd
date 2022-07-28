@@ -366,8 +366,11 @@ Proceed to the Electrode Plan panel.
 This panel allows for the creation of groups for the subject's electrodes. 
 
 For each group, specify the: 
+
 * **Label:** the desired name for the group.
+
 * **Dimension:** the number of electrodes within the group. 
+
 * **Type:** the type of exam the electrodes were used in Select from electroencephalogram (EEG), intracranial EEG (iEEG), stereotactic EEG (sEEG), ElectroCochleoGraphy (ECoG), or "other". 
 
 Note that for each group, a summary will be displayed to indicate the individual electrode labels (e.g. G1 - G32), as well as total number of electrodes. 
@@ -388,3 +391,9 @@ When the groups are ready, click the blue **Load Subject** button to proceed. If
 
 
 ## Generate Epoch 
+
+// talk about same import subject/project window/screen 
+
+![Generate Epoch Screen](static/image/generateepoch.jpg)
+
+<!-- no error message when you try to load subject but it doesn't work ... what is wrong? --> 
