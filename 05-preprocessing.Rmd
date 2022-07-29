@@ -120,7 +120,7 @@ Use the <u>block</u> and <u>electrode</u> drop down menus to select the data to 
 
 * The <u>number of histogram bins</u> slider controls how wide the voltage ranges on the horizontal axis of the histogram are, where each bin represents a vertical bar on the graph. Choosing a larger number will create narrower voltage ranges and thus more vertical bars, whereas choosing a smaller number will create wider voltage ranges and thus fewer vertical bars. Moving the slider can give a more precise look at which voltages are most represented in the electrode signal. 
 
-**Notch: Inspect Signals:** Displays ***raw and filtered iEEG signals** for each channel whose data was imported. 
+**Notch: Inspect Signals:** Displays **raw and filtered iEEG signals** for each channel whose data was imported. 
 
 <!-- Refer to the following screenshot for further guidance. label purpose of each section --> 
 <!-- note: they need to specify the configurations for the notch filter, and then --> 
@@ -343,14 +343,14 @@ RAVE's electrode localization module features a built-in 3D viewer and allows fo
 
 <!-- explain some more about why you need CT & MRI image --> 
 
-When the electrode localization tab is selected, two panels will appear on the screen: Data Selection & Electrode Plan. Refer to the following screenshot for guidance.  
+When the electrode localization module is selected, two panels will appear on the screen: Data Selection & Electrode Plan. Refer to the following screenshot for guidance.  
 
 <!-- describe what electrode localization even is --> 
 
 ![Electrode Localization Screen](static/image/electrodelocalization1.png)
 **Data Selection:** 
 
-Begin in the data selection panel at left. Use the **project and subject drop down menus** to select the subject whose electrodes you wish to localize. You can once again use the "Sync from [Import LFP] module" to automatically select the project and subject you were just working on. 
+Begin in the data selection panel at left. Use the **project and subject drop down menus** to select the subject whose electrodes you wish to localize. You can once again use the "Sync from [Import LFP] module" to automatically select the project and subject that was just imported. 
 
 Next, use the drop down menu in **choose CT** to select the CT scan that was converted to the Nifti format and aligned to the MRI image in the previous module. It is alternatively possible to upload a CT image already in the Nifti format directly using the browse button. 
 
@@ -392,8 +392,45 @@ When the groups are ready, click the blue **Load Subject** button to proceed. If
 
 ## Generate Epoch 
 
-// talk about same import subject/project window/screen 
+<!-- add general overview -- what does it mean to generate epochs --> 
+
+When the Generate Epoch module is first selected, a data selection window will appear. Simply select the project and subject whose data will be used. Once again, selecting "Sync from [Import LFP] module" will automatically select the project and subject that was just imported. Click the blue "Load Subject" button to proceed. 
+
+Three panels will then appear on the screen: Load Epoch Channel and Transform & Threshold on the left side, and Interactive Selector on the right side. Refer to the following screenshot for guidance.  
 
 ![Generate Epoch Screen](static/image/generateepoch.jpg)
+* **Load Epoch Channel:** 
+
+** Load existing epoch: 
+
+** Choose a block to generate epoch: 
+
+** File containing epoch channel: 
+
+Then, click the blue **"Load Epoch File"** button to proceed. 
+
+The next two fields will specify the channel settings. <!-- be more specific --> 
+
+** Variable Name: 
+
+** Epoch Channel Sample Rate:  <!-- i believe this is the same as voltage recording rate, i.e. the 2000? --> 
+
+* **Transform & Threshold:** 
+
+** Plot range: 
+
+Two checkboxes: Difference Plot & Absolute Plot 
+
+** Threshold direction: 
+
+** Minimum duration (s): 
+
+* **Interactive Selector:** 
+
+** Graphical Visualization: 
+
+** Threshold results: 
+
+To **download the staged table,** click the blue link in the bottom right corner of the panel. Note that the file will be saved to the subject's meta folder within the 
 
 <!-- no error message when you try to load subject but it doesn't work ... what is wrong? --> 
