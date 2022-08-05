@@ -4,7 +4,7 @@ editor: visual
 
 # Installation Guide
 
-RAVE is written as an "R" package. To properly install RAVE, please carefully follow the instructions step-by-step. We found 90% installation issues are due to not following the instructions (for example, [system prerequisites](#system-prerequisites)).
+RAVE is written as an "R" package. To properly install RAVE, please carefully follow the instructions step-by-step. We found that the vast majority of installation issues are due to not following the instructions. 
 
 [Hardware Requirements]{.underline}
 
@@ -203,11 +203,9 @@ RAVE is actively under development with new features and bug fixes. To enjoy the
 
 ## Troubleshooting
 
-Possible errors during installation and their solutions:
+Possible errors during the installation of RAVE and their solutions:
 
 > **Error:** "Can't update lock in /usr/local/var/homebrew/locks".
->
-> **Error:** "No available formula with the name <xxxx>".
 
 This error could occur if thee computer has multiple accounts, and the current active account does not have the right to manage brew libraries. Please login with account that has the privilege to manage HomeBrew and use that account to install.
 
@@ -231,47 +229,42 @@ brew tap homebrew/core
 
 ## Install external programs (`dcm2niix`, `FreeSurfer`, `FSL`, `AFNI`)
 
-The following external programs are used by RAVE in the Surface Reconstruction and Electrode Localization module, and so it is helpful to download them now. 
+The following external programs are used by RAVE in the Surface Reconstruction and Electrode Localization module, and so it is helpful to download them now.
 
--   `dcm2niix`: A package used to convert DICOM image files into the `NifTi-1` file format. 
+* `dcm2niix`: A package used to convert DICOM image files into the `NifTi-1` file format.
 
--   `FreeSurfer`: A package used for the analysis and visualization of neuroimaging data. RAVE uses `FreeSurfer` to reconstruct cortical surfaces based on a subject's MRI scan. 
+* `FreeSurfer`: A package used for the analysis and visualization of neuroimaging data. RAVE uses it to reconstruct cortical surfaces based on a subject's MRI scan.
 
+<!-- 
     -   `-autorecon1`: Normalize MRI, skull-strip...
     -   ...2
     -   ...3
+    
+    -->
 
--   `FSL` OR `ANFI`: `FSL` is a library used for the analysis of fMRI, MRI, and DTI brain images. `ANFI` is a software used for the analysis and display of MRI data. Either can be downloaded; RAVE will use the program to align the CT scan to the MRI image. 
+* `FSL` OR `ANFI`: `FSL` is a library used for the analysis of fMRI, MRI, and DTI brain images. `ANFI` (Analysis of Functional NeuroImages) is a software used for the analysis and display of MRI data. Pick either one to download; RAVE will use the selected program to align a CT scan to a MRI image.
 
-<!-- maybe include more details to help someone decide which they should use --> 
-<!-- use full names first time, not abbreviation? --> 
-<!-- mention that it varies based on your operating system --> 
+<!-- maybe include more details to help someone decide which they should use -->
+
 
 For download instructions, see the following resources:
 
--   `dcm2niix`
-    -   Visit the [GitHub repository] (<https://github.com/rordenlab/dcm2niix/blob/master/README.md#install>). Note that the dcm2niix library can be downloaded easily using Homebrew on the computer's terminal: `brew install dcm2niix`. 
-    
--   `FreeSurfer`
-    -   <https://surfer.nmr.mgh.harvard.edu/fswiki/rel7downloads>
+* `dcm2niix`: Visit the [GitHub repository] (<https://github.com/rordenlab/dcm2niix/blob/master/README.md#install>). There are various ways to install based on the computer's operating system.
 
-    -   (using pkg installer might be easier)
+    <!-- Note that the dcm2niix library can be downloaded easily using Homebrew on the computer's terminal: `brew install  dcm2niix`. this is specific to mac so probably not necessary -->
 
-    -   <https://surfer.nmr.mgh.harvard.edu/fswiki//FS7_mac>
--   `FSL`
-    -   mention that they'll have to agree to license after clicking the download button. also have to enter the operating system there and it will generate instructions after agreeing based on your system. one issue -- doesn't have a spot for macOS monterey, so maybe instruct to pick most recent one?
+* `FreeSurfer`: Visit the [`FreeSurfer` wiki](https://surfer.nmr.mgh.harvard.edu/fswiki/rel7downloads). There are various ways to install based on the computer's operating system.
 
-        -   <https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FslInstallation>
+> Note: When RAVE invokes FreeSurfer, an error may arise indicating that the FreeSurfer license file was not found. To avoid errors down the road, visit <https://surfer.nmr.mgh.harvard.edu/fswiki/License>. Follow the instructions to fill out a form requesting the **free license key,** recieve a license.txt file via email, and then place that file in the appropriate folder.
 
-        -   <https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FslInstallation/MacOsX>
+> Note: If trying to download `FreeSurfer` on a Mac, it is necessary to download and install the `Xquartz` 2.8.2 release from <https://www.xquartz.org>. Xquartz enables applications that were not designed for MacOS to still run on Mac computers.
 
-        -   installed using python?
+* `FSL`: Visit the [`FSL` Website](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FslInstallation). Fill out the form to request a **FSL license** and specify the computer's operating system. Instructions will then be given for the selected system. Pay particular attention to any notes given in the instructions (e.g. administrative privileges, Mac Monterey users).
 
-        -   add as a note: "The FSL software suite requires the X11 windowing system - please install [XQuartz](http://xquartz.macosforge.org/landing/) before continuing with the FSL installation. The FSL install script will warn you if it is unable to find X11 on your computer." (The XQuartz project is an open-source effort to develop a version of the [X.Org X Window System](https://www.x.org/) that runs on macOS)
+> Note: If trying to download `FSL` on a Mac, it is necessary to download and install `Xquartz` release from <https://www.xquartz.org>. Xquartz enables applications that were not designed for MacOS to still run on Mac computers.
 
-        -   add note about security preferences
+* `AFNI`: Visit the [`AFNI` Website](https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/background_install/main_toc.html). Select the appropriate link based on the computer's operating system. In the resulting download guide, please skip over steps to install Homebrew and R as installing RAVE already necessitated doing so. (The most important step is "Install AFNI".) When following the final step, "Evaluating Setup," any warnings regarding an old X version, login shell, matplotlib, or insufficient data for AFNI bootcamp can be ignored as RAVE does not require these configurations.
 
-        -   mention that if you're on monterry, may not have python (their installation wiki mentions that anyway though)
--   `AFNI`
-    -   <https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/background_install/main_toc.html#>
-    mention xquartz also required  / pay attention to pre-requsities (XQuartz, packages, r, homebrew, gfortran)
+> Note: If trying to download `AFNI` on a Mac, it is necessary to download and install `Xquartz` from <https://www.xquartz.org>. Xquartz enables applications that were not designed for MacOS to still run on Mac computers.
+
+<!-- mention xquartz also required  / pay attention to pre-requsities (XQuartz, packages, r, homebrew, gfortran, make sure to restart to see effects) -->

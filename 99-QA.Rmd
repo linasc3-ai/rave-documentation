@@ -4,7 +4,7 @@
 
 This page contains possible questions that may arise when using RAVE and their answers. Questions are organized by section. 
 
-## Installation
+## RAVE Installation
 <!-- note: these are sourced from the troubleshooting section of my documentation, not sure if they're better placed here or in those troubleshooting sections --> 
 
 > **Question:** When updating RAVE, I received a “timeout of 60 seconds was reached” warning message. How do I fix this? 
@@ -23,9 +23,15 @@ Answer: If using a Mac, this can be found by clicking the apple logo at the top 
 
 Answer: If there are multiple accounts on the computer but only one of them has homebrew installed, this error may result. To resolve it, change the ownership of the directories to the current user and make sure this user has write permission.
 
+## External Program Installation (dcm2niix, FreeSurfer, FSL/AFNI)
+
+>Question: When trying to download these external softwares on MacOS, a "cannot be opened because package is from unidentified developer" error message resulted. How do I allow the downloads? 
+
+Answer: Please go to System Preferences > Security & Privacy > General to give the computer permission to download the software. 
+
 ## Getting Started with RAVE
 
-**Question**: I copied a command into the RStudio console, but nothing is happening. What is the issue? 
+> **Question**: I copied a command into the RStudio console, but nothing is happening. What is the issue? 
 
 Make sure to click the red stop sign at the top right of the console to stop the current command. This is necessary to execute a different command. 
 
@@ -113,11 +119,19 @@ Answer: A complex wavelet will undergo convulotion with the iEEG signal. The iEE
 
 Answer: The recording rate is associated with raw voltage data, whereas the power sample rate is associated with time frequency decomposition. 
 
-## Surface & Registration
+## Reconstruction & Coregistration
 
 > **Question:** What is the command-line? 
 
 Answer: The computer's command-line is an interface that allows the user to run programs, add/delete files, and use other text-based commands. In the context of surface & registration, RAVE relies on the command-line to run dcm2niix (converts DICOM files to Nifti format), FreeSurfer (allows for the reconstruction of the cortical surface), and FSL home (aligns/overlays the CT image with the MRI data). 
+
+> **Question:** When I press "Check data & command-line tools," I recieve the following warning: "Found existing FreeSurfer reconstructed directory. `recon-all` will ignore the imported T1 images." How do I resolve it? 
+
+Answer: By default, FreeSurfer will continue working on the existing directory. To start from scratch, please manually remove the directory. The warning message will indicate where the directory is located; it will be labeled "fs". E.g. /Users/beauchamplab/rave_data/raw_dir/YCQ/rave-imaging/fs 
+
+> **Question:** When RAVE tries to run the FreeSurfer commands, I recieve the following error in my command-line interface: ERROR: FreeSurfer license file /Applications/freesurfer/7.3.0/.license not found. How do I fix it? 
+
+Answer: A free license file is required to use FreeSurfer. Please refer to the instructions in the installation guide on how to obtain this file and place it in the appropriate place in the file directory: [Install External Programs](#install-external-programs-dcm2niix-freesurfer-fsl-afni).
 
 ## Electrode Localization
 

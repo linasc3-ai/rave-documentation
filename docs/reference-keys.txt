@@ -43,3 +43,8 @@ surface-registration
 electrode-localization
 surface-registration-1
 electrode-localization-1
+install-external-programs-dcm2niix-freesurfer-fsl-afni
+rave-installation
+external-program-installation-dcm2niix-freesurfer-fslafni
+reconstruction-coregistration
+reconstruction-coregistration-1

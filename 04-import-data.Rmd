@@ -57,6 +57,7 @@ In the sidebar, open `Import Signals > Native Structure` .....
 ### Format 1
 
 
+<!-- 
 ## Importing demo data
 
 Launch the RAVE preprocessing module by copy and paste the following command into the RStudio console: 
@@ -85,12 +86,10 @@ Subject [Test/KC] will be stored at: /Users/your_home_directory/rave_data/data_d
 
 Then, click "create subject" to proceed. 
 
-<!-- // is the demo folder built in? --> 
-
 ### Step 3: Validate Data 
 In this step, specify your desired electrode (aka channel) options: 
 
-<!-- // add note that once you notch filter these, you can not change them--> 
+<!-- // add note that once you notch filter these, you can not change them 
 
 * **Folders:** Each folder corresponds to a block, aka a period or session of continuous electrode recording. Select the blocks that correspond to the trials to analyze. (E.g. for KC, you could select blocks 003 and 004.) 
 
@@ -110,7 +109,7 @@ The demo subject has successfully been imported into RAVE. Proceed to the prepro
 
 The following screenshot summarizes the data loading process: 
 ![Labeled screenshot of overview window](static/image/ImportDataOverview.png) 
-
+--> 
 
 ## Importing Your Own Data
 If ready to start using RAVE with lab data, follow the steps below to import the data so that it can be preprocessed and used in future modules.   
