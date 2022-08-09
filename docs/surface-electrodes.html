@@ -267,8 +267,14 @@ Notice that the right panel contains the <strong>3D Viewer,</strong> which consi
 </ol>
 <p>(To <strong>refine the electrode locations,</strong> set <code>Edit Mode</code> to “refine” and then press the <code>Auto-Adjust All</code> button. Alternatively, manually select a single electrode. It will turn red and the keyboard keys <code>1</code>, <code>2</code>, and <code>3</code> can then be used to move the electrode around.)</p>
 <p>Double-click on a row in the table to open a drop-down menu to set the <strong>FreeSurfer label</strong> of each electrode. RAVE can automatically select the anatomical region of the brain that the electrode is located in, or it can be selected manually.</p>
+<blockquote>
 <p>Note: each electrode’s MNI152 coordinates are hyperlinked to Neurosynth, a platform for fMRI data. The link contains data on past maps, studies, and associations that have been associated with the electrode’s coordinates.</p>
+</blockquote>
+<p>Use the blue <strong>Reset current group</strong> button above the table to completely reset the coordinate and label data in the table.</p>
 <p>Repeat the localization steps for each group. When finished, to see all of the subject’s electrodes in one table, click the <strong>Stage &amp; Show Electrode Table</strong> button in the bottom left corner of the screen. Click <strong>Save to Subject</strong> button to save this data for use in later RAVE sessions.</p>
+<blockquote>
+<p>Note: Adjust groups at any time (without losing electrode localization progress) by selecting the “Load Data” button in the top menu bar.</p>
+</blockquote>
 <p>It may be helpful to <strong>adjust 3D viewer settings</strong> to more easily localize electrodes. There are various settings for the viewer that can be changed using the black box on the right side of the panel:</p>
 <p><strong>Default Settings:</strong></p>
 <ul>
@@ -324,11 +330,41 @@ Notice that the right panel contains the <strong>3D Viewer,</strong> which consi
 <!-- add more detail to surface color to explain how the different methods are used, or go to Q&A. ask about differences in this -->
 <p><strong>Electrodes:</strong></p>
 <ul>
-<li><p><u> Map Electrodes: </u></p></li>
-<li><p><u> Visibility: </u></p></li>
+<li>The <u> Map Electrodes: </u> checkbox controls whether or not electrodes are mapped to the brain surface. By default, this is unchecked. If the box is checked, a <code>surface mapping</code> drop-down menu will appear to select the surface to map the electrodes to (options: std.141, mni305, or no mapping) and <code>volume mapping</code> to alternatively select the volume to display the electrodes in if surface mapping isn’t used (options: mni305 or no mapping).</li>
+</ul>
+<!-- clarify what map electrodes does -->
+<ul>
+<li>Use the <u> Visibility: </u> drop-down menu to control which localized electrodes are visible in the 3D viewer. The default setting is <code>all visible</code>, meaning all of a subject’s electrodes are shown on the viewer. <code>Hide inactives</code> will hide electrodes from groups that aren’t currently being worked on. <code>Hidden</code> will hide all electrodes.</li>
 </ul>
 <p><strong>Electrode Localization:</strong></p>
+<ul>
+<li>By default, the <u> Edit mode </u> drop-down menu is set to <code>disabled.</code> Change edit mode to <code>CT/volume</code> (have CT scan) or <code>MRI Slice</code> (no CT scan) when ready to localize electrodes. Use <code>refine</code> if electrodes have already been localized and small changes are just being made to placements.</li>
+</ul>
+<blockquote>
+<p>Note: When <code>refine</code> mode is selected, three new buttons will appear: <code>Auto-Adjust All</code>, which can be used to automatically adjust the coordinates for the electrodes in a group to better fit their positions on the 3D viewer. If certain electrodes in the group were selected in refine mode (shown in red), click <code>Auto-Adjust</code> highlighted to automatically re-adjust just the selected electrodes. Click <code>Reset Highlighted</code> to de-select all red electrodes in the group.</p>
+</blockquote>
+<ul>
+<li><p>Use the <u> Electrode scale: </u> slider to control the size of the yellow circles that represent localized electrodes. Use the <u> Text scale </u> slider to control the size of the numbers used to label each circle.</p></li>
+<li><p>Enable/Disable Electrodes:</p></li>
+</ul>
+<!-- what does electrode in light yellow mean -->
+<p>When hovering over or localizing an electrode in the 3D viewer, the <u> tkrRAS, MNI305, and T1 RAS </u> locations will automatically be shown in these fields.</p>
+<ul>
+<li>Use the <u> Interpolate Size: </u> field to quickly localize electrodes by inputting the total number of electrodes - 2 for the current group, if the first and last electrode in the group have already been localized. Then, press <u> Interpolate from Recently Added </u> to have RAVE automatically localize the remaining electrodes in the group.</li>
+</ul>
+<!-- clarify that they have to be in a line? -->
+<ul>
+<li>Use the <u> Download as CSV: </u> button to download a .csv file for the group whose electrodes are currently being localized. The file will contain coordinates and FsLabels for each electrode in the group, similar to the information shown in the table on Localization Plan Details panel.</li>
+</ul>
 <p><strong>Data Visualization:</strong></p>
+<ul>
+<li><p>Enable the <u> Highlight Box </u> checkbox to automatically add a red box around a currently selected electrode. This box can help with viewing an electrode against the brain surface, or for demonstrative purposes.</p></li>
+<li><p>Enable the <u> Info Text </i> checkbox to label the 3D viewer in the top-right corner with the subject ID, as well as the currently selected electrode’s label and MNI305 coordinates. This can be helpful for demonstrative purposes.</p></li>
+</ul>
+<blockquote>
+<p>Note: To view keyboard shortcuts for all of these settings, visit <a href="https://github.com/dipterix/threeBrain/blob/master/shortcuts.md#3d-brain-viewer-shortcuts">the RAVE Github repository</a></p>
+</blockquote>
+<p><strong>When electrodes in every group have been localized, you are ready to proceed to further analysis modules!</strong></p>
 <!-- how/why do people usually group the electrodes? e.g. by location? by type? because it makes it easier for analysis? -->
 <!-- can someone have no groups -->
 <!-- instead of other, can they type in what they want? look into difference between types -->
