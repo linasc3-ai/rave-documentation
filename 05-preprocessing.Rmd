@@ -402,6 +402,10 @@ Repeat the localization steps for each group. When finished, to see all of the s
 
 >Note: Adjust groups at any time (without losing electrode localization progress) by selecting the "Load Data" button in the top menu bar. 
 
+See the following screenshot for guidance on what electrode localization can look like.
+
+![Electrode Localization Example](static/image/electrodelocalization3.png)
+
 It may be helpful to **adjust 3D viewer settings** to more easily localize electrodes. There are various settings for the viewer that can be changed using the black box on the right side of the panel: 
 
 **Default Settings:** 
@@ -495,7 +499,7 @@ These settings control aspects of the 3D model of the subject's cortical surface
 
 <!-- what does electrode in light yellow mean --> 
 
-When hovering over or localizing an electrode in the 3D viewer, the <u> tkrRAS, MNI305, and T1 RAS </u> locations will automatically be shown in these fields. 
+* When hovering over or localizing an electrode in the 3D viewer, the <u> tkrRAS, MNI305, and T1 RAS </u> locations will automatically be shown in these fields. 
 
 * Use the <u> Interpolate Size: </u> field to quickly localize electrodes by inputting the total number of electrodes - 2 for the current group, if the first and last electrode in the group have already been localized. Then, press <u> Interpolate from Recently Added </u> to have RAVE automatically localize the remaining electrodes in the group. 
 
@@ -507,7 +511,7 @@ When hovering over or localizing an electrode in the 3D viewer, the <u> tkrRAS, 
 
 * Enable the <u> Highlight Box </u> checkbox to automatically add a red box around a currently selected electrode. This box can help with viewing an electrode against the brain surface, or for demonstrative purposes. 
 
-* Enable the <u> Info Text </i> checkbox to label the 3D viewer in the top-right corner with the subject ID, as well as the currently selected electrode's label and MNI305 coordinates. This can be helpful for demonstrative purposes.
+* Enable the <u> Info Text </u> checkbox to label the 3D viewer in the top-right corner with the subject ID, as well as the currently selected electrode's label and MNI305 coordinates. This can be helpful for demonstrative purposes.
 
 > Note: To view keyboard shortcuts for all of these settings, visit [the RAVE Github repository](https://github.com/dipterix/threeBrain/blob/master/shortcuts.md#3d-brain-viewer-shortcuts)
 
