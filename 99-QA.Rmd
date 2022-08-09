@@ -135,6 +135,10 @@ Answer: A free license file is required to use FreeSurfer. Please refer to the i
 
 ## Electrode Localization
 
-> **Question:** When trying to load a subject, why did I recieve this error? "The electrode pllan table (n=0) has inconsistent length with registered electrode length (n=84)." 
+> **Question:** What is the difference between `MeshPhongMaterial` and `MashLambertMaterial`? 
 
-Answer: 
+Answer: MeshPhong and MeshLambert are illumination models used in 3D rendering. MeshPhong computes the lighting of the cortical surface from each pixel, whereas MeshLambert derives the lighting of the brain model from its vertices. 
+
+> **Question:** The brain model shown in the viewer only shows the three planes and not the fully-rendered cortical surface. How do I fix this? 
+
+Answer: To see the full cortical surface on the brain model, it is necessary to use the `-all` flag during the FreeSurfer reconstruction in the Reconstruction & Coregistration module. Please return to this module to re-run the reconstruction. Note that the `-all` flag can take 20 hours to process, so it is recommended to run overnight. 

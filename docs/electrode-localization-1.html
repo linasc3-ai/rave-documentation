@@ -22,7 +22,7 @@
 
 
 
-<meta name="date" content="2022-08-04" />
+<meta name="date" content="2022-08-08" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -219,9 +219,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="electrode-localization-1" class="section level2 hasAnchor" number="6.9">
 <h2><span class="header-section-number">6.9</span> Electrode Localization<a href="electrode-localization-1.html#electrode-localization-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <blockquote>
-<p><strong>Question:</strong> When trying to load a subject, why did I recieve this error? “The electrode pllan table (n=0) has inconsistent length with registered electrode length (n=84).”</p>
+<p><strong>Question:</strong> What is the difference between <code>MeshPhongMaterial</code> and <code>MashLambertMaterial</code>?</p>
 </blockquote>
-<p>Answer:</p>
+<p>Answer: MeshPhong and MeshLambert are illumination models used in 3D rendering. MeshPhong computes the lighting of the cortical surface from each pixel, whereas MeshLambert derives the lighting of the brain model from its vertices.</p>
+<blockquote>
+<p><strong>Question:</strong> The brain model shown in the viewer only shows the three planes and not the fully-rendered cortical surface. How do I fix this?</p>
+</blockquote>
+<p>Answer: To see the full cortical surface on the brain model, it is necessary to use the <code>-reconall</code> flag during the FreeSurfer reconstruction in the</p>
 
 </div>
 <!-- </div> -->
