@@ -52,13 +52,13 @@ If this is the first time installing Homebrew, the following questions might be 
     ==> Checking for `sudo` access (which may request your password)...
     Password:
 
-Enter your user's password (*the password won't be displayed into the screen as you type for security reasons*). Once finished, press the `RETURN` or `ENTER` key to proceed.
+Enter your user's password (*the password won't be displayed into the screen as you type for security reasons*). Once finished, press the `RETURN` or `ENTER` key to proceed. After, the following message should display: 
 
     ==> This script will install:
     ... 
     Press RETURN/ENTER to continue or any other key to abort:
 
-Please press the `RETURN` or `ENTER` key to continue.
+Please press the `RETURN` or `ENTER` key to continue. Note that this process can take several minutes. 
 
 [[STEP 2: Add command "brew" to system search path]]{.font-5 .underline .strong}
 
