@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>5.3 Step #3: Wavelet | RAVE Documentation</title>
   <meta name="description" content="RAVE documentation" />
-  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
 
   <meta property="og:title" content="5.3 Step #3: Wavelet | RAVE Documentation" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="" />
 
 
-<meta name="date" content="2022-08-09" />
+<meta name="date" content="2022-08-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -174,16 +174,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="5.6" data-path="generate-epoch.html"><a href="generate-epoch.html"><i class="fa fa-check"></i><b>5.6</b> Generate Epoch</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="qas.html"><a href="qas.html"><i class="fa fa-check"></i><b>6</b> Q&amp;As</a><ul>
-<li class="chapter" data-level="6.1" data-path="rave-installation.html"><a href="rave-installation.html"><i class="fa fa-check"></i><b>6.1</b> RAVE Installation</a></li>
-<li class="chapter" data-level="6.2" data-path="external-program-installation-dcm2niix-freesurfer-fslafni.html"><a href="external-program-installation-dcm2niix-freesurfer-fslafni.html"><i class="fa fa-check"></i><b>6.2</b> External Program Installation (dcm2niix, FreeSurfer, FSL/AFNI)</a></li>
-<li class="chapter" data-level="6.3" data-path="getting-started-with-rave.html"><a href="getting-started-with-rave.html"><i class="fa fa-check"></i><b>6.3</b> Getting Started with RAVE</a></li>
-<li class="chapter" data-level="6.4" data-path="downloading-demo-data.html"><a href="downloading-demo-data.html"><i class="fa fa-check"></i><b>6.4</b> Downloading Demo Data</a></li>
-<li class="chapter" data-level="6.5" data-path="importing-data.html"><a href="importing-data.html"><i class="fa fa-check"></i><b>6.5</b> Importing Data</a></li>
-<li class="chapter" data-level="6.6" data-path="notch-filter.html"><a href="notch-filter.html"><i class="fa fa-check"></i><b>6.6</b> Notch Filter</a></li>
-<li class="chapter" data-level="6.7" data-path="wavelet.html"><a href="wavelet.html"><i class="fa fa-check"></i><b>6.7</b> Wavelet</a></li>
-<li class="chapter" data-level="6.8" data-path="reconstruction-coregistration-1.html"><a href="reconstruction-coregistration-1.html"><i class="fa fa-check"></i><b>6.8</b> Reconstruction &amp; Coregistration</a></li>
-<li class="chapter" data-level="6.9" data-path="electrode-localization-1.html"><a href="electrode-localization-1.html"><i class="fa fa-check"></i><b>6.9</b> Electrode Localization</a></li>
+<li class="chapter" data-level="6" data-path="supplementary-information.html"><a href="supplementary-information.html"><i class="fa fa-check"></i><b>6</b> Supplementary Information</a><ul>
+<li class="chapter" data-level="6.1" data-path="qas.html"><a href="qas.html"><i class="fa fa-check"></i><b>6.1</b> Q&amp;As</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="qas.html"><a href="qas.html#rave-installation"><i class="fa fa-check"></i><b>6.1.1</b> RAVE Installation</a></li>
+<li class="chapter" data-level="6.1.2" data-path="qas.html"><a href="qas.html#external-program-installation-dcm2niix-freesurfer-fslafni"><i class="fa fa-check"></i><b>6.1.2</b> External Program Installation (dcm2niix, FreeSurfer, FSL/AFNI)</a></li>
+<li class="chapter" data-level="6.1.3" data-path="qas.html"><a href="qas.html#getting-started-with-rave"><i class="fa fa-check"></i><b>6.1.3</b> Getting Started with RAVE</a></li>
+<li class="chapter" data-level="6.1.4" data-path="qas.html"><a href="qas.html#importing-data"><i class="fa fa-check"></i><b>6.1.4</b> Importing Data</a></li>
+<li class="chapter" data-level="6.1.5" data-path="qas.html"><a href="qas.html#notch-filter"><i class="fa fa-check"></i><b>6.1.5</b> Notch Filter</a></li>
+<li class="chapter" data-level="6.1.6" data-path="qas.html"><a href="qas.html#wavelet"><i class="fa fa-check"></i><b>6.1.6</b> Wavelet</a></li>
+<li class="chapter" data-level="6.1.7" data-path="qas.html"><a href="qas.html#reconstruction-coregistration-1"><i class="fa fa-check"></i><b>6.1.7</b> Reconstruction &amp; Coregistration</a></li>
+<li class="chapter" data-level="6.1.8" data-path="qas.html"><a href="qas.html#electrode-localization-1"><i class="fa fa-check"></i><b>6.1.8</b> Electrode Localization</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="d-viewer.html"><a href="d-viewer.html"><i class="fa fa-check"></i><b>6.2</b> 3D Viewer</a></li>
 </ul></li>
 </ul>
 
@@ -210,20 +212,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <img src="static/image/Wavelet.png" alt="" />
 <p class="caption">Sample Wavelet Decomposition Screen</p>
 </div>
-<p>Wavelet decomposition is a type of time frequency analysis that is used for non-stationary signals (i.e. properties change over time), like that of iEEG. It separates the signal into differing frequency and phase components, which is helpful because signals in the brain are very dynamic. This process makes it so that changes in the signal’s power spectra can be visualized across both frequency and time.</p>
-<p>To learn more about how wavelet transform works, visit the Q&amp;A at <a href="wavelet.html#wavelet">Wavelet</a>.</p>
-<!-- in Q&A compare to time analysis -->
+<p>Note: To learn more about how wavelet transform works, visit the Q&amp;A at <a href="qas.html#wavelet">Wavelet</a>.</p>
 <p>In this module, RAVE will:
 - downsample the signal before running the wavelet, if desired
 - run a wavelet on each block in the selected subject’s folder
 - downsample the wavelet coefficients to 100.0 Hz to reduce the amount of space needed to save the information onto the computer’s disk</p>
 <p><strong>Wavelet Settings:</strong></p>
-<!-- why did you remove option to select electrodes like old version -->
 <p>Begin by setting the basic configurations:</p>
 <ul>
-<li><u>Power sample rate</u> refers to the rate at which the signal will be taken into time frequency decomposition. By default, it is recommended to keep this set to the default 100 Hz; this balances the data so that precision is conserved without taking up too much space on the disk. Typically, this value should only be increased if neural signals will be analyzed at very high frequencies. (<strong>Note:</strong> this is <em>not</em> the same as the signaling rate used in the iEEG recording set-up. For further explanation, see the Q&amp;A at <a href="wavelet.html#wavelet">Wavelet</a>.)</li>
+<li><u>Power sample rate</u> refers to the rate at which the signal will be taken into time frequency decomposition. By default, it is recommended to keep this set to the default 100 Hz; this balances the data so that precision is conserved without taking up too much space on the disk. Typically, this value should only be increased if neural signals will be analyzed at very high frequencies. (<strong>Note:</strong> this is <em>not</em> the same as the signaling rate used in the iEEG recording set-up. For further explanation, see the Q&amp;A at <a href="qas.html#wavelet">Wavelet</a>.)</li>
 </ul>
-<!-- double check above definition. wasn't sure best way to explain it -->
 <!-- explain default; is this the same as the sample rate set in importing signals? -->
 <ul>
 <li>The <u>Down-sample before wavelet </u> drop down menu has the option to select a factor of 1, 2, 4, or 8 to use to reduce the sample rate. Reducing the sampling rate is done to run the wavelet transform faster and use less of the computer’s disk space. Note that selecting 1 equates to no reduction in the sampling rate. Reducing the rate by a higher factor allows for analyzing a greater frequency range.</li>

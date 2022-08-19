@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 4 Get Data into RAVE | RAVE Documentation</title>
+  <title>6.2 3D Viewer | RAVE Documentation</title>
   <meta name="description" content="RAVE documentation" />
   <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 4 Get Data into RAVE | RAVE Documentation" />
+  <meta property="og:title" content="6.2 3D Viewer | RAVE Documentation" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="RAVE documentation" />
   <meta name="github-repo" content="beauchamplab/rave-documentation" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 4 Get Data into RAVE | RAVE Documentation" />
+  <meta name="twitter:title" content="6.2 3D Viewer | RAVE Documentation" />
   
   <meta name="twitter:description" content="RAVE documentation" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="starting-and-closing-rave.html"/>
-<link rel="next" href="file-hierarchy-and-specification.html"/>
+<link rel="prev" href="qas.html"/>
+
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -204,37 +204,91 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="get-data-into-rave" class="section level1 hasAnchor">
-<h1><span class="header-section-number">Chapter 4</span> Get Data into RAVE<a href="get-data-into-rave.html#get-data-into-rave" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div class="edit-comment">
-<p><del>Now that you have installed and gotten started with RAVE, you can proceed to importing your iEEG data into the software so that it can be preprocessed and used in future modules.</del></p>
-<p>It is non-trivial to import data into RAVE. Luckily, RAVE supports multiple universal file conventions such as HDF5, EDF(+), BrainVision, and Matlab data formats. With more and more data formats supported, RAVE will become less dependent on 3rd-party softwares.</p>
-<p>This chapter will guide you through the following topics:</p>
+<div id="d-viewer" class="section level2 hasAnchor">
+<h2><span class="header-section-number">6.2</span> 3D Viewer<a href="d-viewer.html#d-viewer" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>This section documents the configurations for RAVE’s 3D viewer, used in modules such as Electrode Localization.</p>
+<p><strong>Default Settings:</strong></p>
 <ul>
-<li>File hierarchy and specification</li>
-<li>Overview: Voltage data
-<ul>
-<li>Import Matlab/HDF5 file per electrode per block</li>
-<li>Import One Matlab/HDF5 file per session block</li>
-<li>Import Single EDF(+) file per block</li>
-<li>Import Single BrainVision file per block</li>
-</ul></li>
-<li>Overview: Neuro-Imaging data
-<ul>
-<li>Import MR imaging data</li>
-<li>Import FreeSurfer data</li>
-<li>Import CT data</li>
-</ul></li>
+<li><p><u> Background color: </u> change the background color of the viewer.</p></li>
+<li><p><u> Record (chrome-on): </u> clicking here will start recording the 3D viewer and clicking again will stop the recording. A video in the .webm format will automatically download to the computer. This feature can be used to generate a video of the localization process.</p></li>
+<li><p><u> Screenshot: </u> click here to take a screenshot of the current image in the 3D viewer. A .pdf file containing the image will automatically download to the computer.</p></li>
+<li><p><u> Reset: </u> reset the brain model to its default position.</p></li>
+<li><p><u> Camera position: </u> use the drop-down to change the view of the brain from the default <code>free rotate</code> (change orientation freely by dragging the cursor) to <code>[lock]</code> (preserve current orientation), <code>right</code>, <code>left</code>, <code>anterior</code>, <code>posterior</code>, <code>superior</code>, or <code>inferior</code>.</p></li>
+<li><p><u> Display coordinates: </u> enabling this checkbox will display the tkRAS coordinate plane in the bottom left corner of the viewer.</p></li>
 </ul>
+<p><strong>Volume Settings:</strong></p>
+<p>These settings control aspects of the view of the 3D model and the CT overlay.</p>
+<!-- add beginning sentence -->
+<ul>
+<li><p><u> Show Panels: </u> Enable this checkbox to simultaneously display the coronal, axial, and sagittal views of the brain. For each viewer, click anywhere on the brain to automatically adjust the other viewers to visualize that position. Clicking the <code>P</code> button will lock the viewer so that clicking on the brain will not readjust the other viewers’ positions. Note also that the <code>+</code> and <code>-</code> buttons can be used to zoom in and out of each viewer and the <code>0</code> button will reset the zoom back to default. Note that dragging the grey bar at the top of each view box can move the box elsewhere on the panel, and dragging the grey triangle at the bottom right corner will expand the box size.</p></li>
+<li><p><u> Reset Position: </u> If the Show Panels checkbox is enabled, clicking this button will reset all three plane viewers (coronal, axial, and sagittal) to their default positions.</p></li>
+<li><p>Use <u> Coronal, Axial, and Sagittal </u> sliders to quickly adjust the positions of the planes on the main and individual viewers. Moving the coronal slider from left to right will move that plane from the posterior to anterior end of the brain, respectively. Moving the axial slider from left to right will move that plane from the inferior to superior end of the brain, respectively. Moving the sagittal slider will move that plane from the left to right end of the brain, respectively. For each slider, a coordinte can also be entered manually to set the plane position. By default, each slider is set to 0. Note that keyboard shortcuts are shown in grey next to each slider.</p></li>
+<li><p><u> Intersect MNI305: </u> displays the coordinates in the MNI305 space where the coronal, axial, and sagittal planes intersect.</p></li>
+<li><p>Use the <u> overlay coronal, axial, and sagittal checkboxes </u> to control whether each plane is visible on the main 3D viewer. By default, these are checked to show all three planes.</p></li>
+<li><p>Use the <u> Distance threshold </u> slider to move selected electrodes above the plane for better viewing, or for demonstrative purposes. It is best to use this feature when the coronal, axial, and sagittal panel views are enabled. By default, this value is set to 2.</p></li>
+<li><p>Use the <u> Voxel Type: </u> drop down menu to select which scan to overlay on the brain model in the 3D viewer. By default, this is set to <code>CT</code> indicating that the subject’s CT is overlaid in green.</p></li>
+</ul>
+<!-- control which scan to overlay on the brain model in the 3D viewer. By default, this is set to **CT scan** and the details of the CT are displayed on the viewer in green. whether or not the subject's CT scan is visible on the 3D viewer. By default, this is set to `CT` indicating that the CT is overlaid in **green** on the subject's brain model.  
+ -->
+<ul>
+<li><p>Use the <u> Voxel Display: </u> drop down menu to control whether or not the selected voxel type (i.e. CT) is visible or hidden on the 3D viewer. By default, it will be set to visible (<code>normal</code>).</p></li>
+<li><p>Use the <u> Voxel Opacity: </u> slider to control the opacity of the voxel type selected, from 0 to 1. A value can also be entered manually. By default, this is set to 1. Note that in this case, 0 and 1 will both render the voxels opaque, as 0 disables transparency information.</p></li>
+<li><p>Use the <u> Voxel Min </u> and <u> Voxel Max </u> sliders to adjust the threshold range for how much of the CT scan is visible on the 3D viewer. <strong>Setting this range is important to ensure clear viewing of the electrodes for easy localization – we want to remove tissues and skeletal substance from the view.</strong> For example, reducing the minimum will display the skull on the 3D viewer. By default, the minimum is set to <code>3000</code> and the maximum is set to <code>3071</code> as these values provide a clear view of the electrodes with minimum interference from the rest of the CT image.</p></li>
+</ul>
+<p>Note that the optimal threshold values can vary between subjects. Generally, a higher threshold may be required if electrodes are near the surface, and a lower threshold can help with electrodes deep in the brain.</p>
+<p><strong>Surface Settings:</strong></p>
+<p>These settings control aspects of the 3D model of the subject’s cortical surface. Note that if a subject’s cortical surface was not reconstructed yet (such as when using the Electrode Localization module), these settings can be ignored.</p>
+<ul>
+<li><p>Use the <u> Subject: </u> drop-down menu to easily switch between which subject’s 3D brain model is displayed in the 3D viewer.</p></li>
+<li><p>Use the <u> Surface Type: </u> drop down menu to switch the surface being viewed. Options include <code>pial</code> (gray matter), <code>white matter</code> only, <code>sulcus</code>, and <code>subcortical structures</code>.</p></li>
+<li><p>Use the <u> Surface Material: </u> drop down menu to select a material to visualize the subject’s cortical surface. The materials, <code>MeshPhong</code> (default) and <code>MeshLambert</code>, differ in how they display lighting of the 3D brain model.</p></li>
+<li><p>Use the <u> Left Hemisphere: </u> and <u> Right Hemisphere: </u> drop-down menus to set the visualization of each hemisphere as <code>normal</code> (complete, solid representation of cortical surface), <code>wireframe</code> (simplified, skeletal representation of cortical surface using lines), or <code>hidden</code> (hemisphere not displayed). By default, each hemisphere is set to <code>normal.</code></p></li>
+<li><p>Use the <u> Left Opacity: </u> and <u> Right Opacity: </u> sliders to control the opacity of each hemisphere, from 0 (hemisphere not displayed) to 1 (hemisphere fully-rendered). Note that a value can also be entered manually. By default, each slider is set to 1.</p></li>
+<li><p>Use the <u> Surface Color: </u> drop-down menu to control how the color of the 3D brain model is rendered. By default, this is set to <code>vertices,</code> where color will be given to each vertice of the triangular shapes that make up the model. Another option is <code>sync from voxels</code> (note that selecting this will open two sliders for the <code>blend factor</code> and <code>sigma</code>, set to 0.4 and 3 by default). This is helpful when using the surface to show volume, like for grey matter. Another option is <code>sync from electrodes</code> (note that in addition to blend factor and sigma, a <code>decay</code> slider will also be displayed, set to 0.15 by default). Each electrode radiates light on the brain model; this is useful to cluster electrodes by different functions. The last option is <code>none</code> (no color rendering on model).</p></li>
+</ul>
+<p><strong>Electrodes:</strong></p>
+<ul>
+<li><p>The <u> Map Electrodes: </u> checkbox controls whether or not electrodes are mapped to the brain surface. By default, this is unchecked. If the box is checked, a <code>surface mapping</code> drop-down menu will appear to select the surface to map the electrodes to (options: std.141, mni305, or no mapping) and <code>volume mapping</code> to alternatively select the volume to display the electrodes in if surface mapping isn’t used (options: mni305 or no mapping). Enabling this feature is helpful when mapping electrodes for more than 1 subject, so that all electrodes from multiple subjects can be visualized on the same coordinate system using a template brain.</p></li>
+<li><p>Use the <u> Visibility: </u> drop-down menu to control which localized electrodes are visible in the 3D viewer. The default setting is <code>all visible</code>, meaning all of a subject’s electrodes are shown on the viewer. <code>Hide inactives</code> will hide electrodes from groups that aren’t currently being worked on. <code>Hidden</code> will hide all electrodes.</p></li>
+</ul>
+<p><strong>Electrode Localization:</strong></p>
+<ul>
+<li>By default, the <u> Edit mode </u> drop-down menu is set to <code>disabled.</code> Change edit mode to <code>CT/volume</code> (have CT scan) or <code>MRI Slice</code> (no CT scan) when ready to localize electrodes. Use <code>refine</code> if electrodes have already been localized and small changes are just being made to placements.</li>
+</ul>
+<blockquote>
+<p>Note: When <code>refine</code> mode is selected, three new buttons will appear: <code>Auto-Adjust All</code>, which can be used to automatically adjust the coordinates for the electrodes in a group to better fit their positions on the 3D viewer. If certain electrodes in the group were selected in refine mode (shown in red), click <code>Auto-Adjust</code> highlighted to automatically re-adjust just the selected electrodes. Click <code>Reset Highlighted</code> to de-select all red electrodes in the group.</p>
+</blockquote>
+<ul>
+<li>Use the <u> Electrode scale: </u> slider to control the size of the yellow circles that represent localized electrodes. Use the <u> Text scale </u> slider to control the size of the numbers used to label each circle.</li>
+</ul>
+<!-- 
+* Use the <u> Enable/Disable Electrodes </u> feature to render selected electrodes active or inactive. -->
+<ul>
+<li><p>When hovering over or localizing an electrode in the 3D viewer, the <u> tkrRAS, MNI305, and T1 RAS </u> locations will automatically be shown in these fields.</p></li>
+<li><p>Use the <u> Interpolate Size: </u> field to quickly localize electrodes by inputting the total number of electrodes - 2 for the current group, if the first and last electrode in the group have already been localized. Then, press <u> Interpolate from Recently Added </u> to have RAVE automatically localize the remaining electrodes in the group.</p></li>
+</ul>
+<!-- clarify that they have to be in a line? -->
+<ul>
+<li>Use the <u> Download as CSV: </u> button to download a .csv file for the group whose electrodes are currently being localized. The file will contain coordinates and FsLabels for each electrode in the group, similar to the information shown in the table on Localization Plan Details panel.</li>
+</ul>
+<p><strong>Data Visualization:</strong></p>
+<ul>
+<li><p>Enable the <u> Highlight Box </u> checkbox to automatically add a red box around a currently selected electrode. This box can help with viewing an electrode against the brain surface, or for demonstrative purposes.</p></li>
+<li><p>Enable the <u> Info Text </u> checkbox to label the 3D viewer in the top-right corner with the subject ID, as well as the currently selected electrode’s label and MNI305 coordinates. This can be helpful for demonstrative purposes.</p></li>
+</ul>
+<blockquote>
+<p>Note: To view keyboard shortcuts for all of these settings, visit <a href="https://github.com/dipterix/threeBrain/blob/master/shortcuts.md#3d-brain-viewer-shortcuts">the RAVE Github repository</a></p>
+</blockquote>
+
 </div>
-</div>
+<!-- </div> -->
             </section>
 
           </div>
         </div>
       </div>
-<a href="starting-and-closing-rave.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="file-hierarchy-and-specification.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="qas.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -265,7 +319,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/linasc3-ai/rave-documentation/edit/main/04-import-data.Rmd",
+"link": "https://github.com/linasc3-ai/rave-documentation/edit/main/99-QA.Rmd",
 "text": "Edit"
 },
 "history": {

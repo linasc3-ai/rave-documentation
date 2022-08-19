@@ -25,13 +25,14 @@ surface-electrodes
 reconstruction-coregistration
 electrode-localization
 generate-epoch
+supplementary-information
 qas
 rave-installation
 external-program-installation-dcm2niix-freesurfer-fslafni
 getting-started-with-rave
-downloading-demo-data
 importing-data
 notch-filter
 wavelet
 reconstruction-coregistration-1
 electrode-localization-1
+d-viewer

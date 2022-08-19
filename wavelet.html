@@ -20,10 +20,9 @@
   <meta name="twitter:description" content="RAVE documentation" />
   
 
-<meta name="author" content="" />
 
 
-<meta name="date" content="2022-08-09" />
+<meta name="date" content="2022-08-08" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -49,25 +48,24 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -87,7 +85,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -137,11 +135,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">RAVE Manual</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> url: your book url like <span>https://bookdown.org/yihui/bookdown</span></a>
+<ul>
 <li class="chapter" data-level="" data-path="showcases.html"><a href="showcases.html"><i class="fa fa-check"></i>Showcases</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="installation-guide.html"><a href="installation-guide.html"><i class="fa fa-check"></i><b>2</b> Installation Guide</a><ul>
-<li class="chapter" data-level="2.1" data-path="system-prerequisites.html"><a href="system-prerequisites.html"><i class="fa fa-check"></i><b>2.1</b> System Prerequisites</a><ul>
+<li class="chapter" data-level="2" data-path="installation-guide.html"><a href="installation-guide.html"><i class="fa fa-check"></i><b>2</b> Installation Guide</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="system-prerequisites.html"><a href="system-prerequisites.html"><i class="fa fa-check"></i><b>2.1</b> System Prerequisites</a>
+<ul>
 <li class="chapter" data-level="2.1.1" data-path="system-prerequisites.html"><a href="system-prerequisites.html#macos"><i class="fa fa-check"></i><b>2.1.1</b> MacOS</a></li>
 </ul></li>
 <li class="chapter" data-level="2.2" data-path="install-rave.html"><a href="install-rave.html"><i class="fa fa-check"></i><b>2.2</b> Install RAVE</a></li>
@@ -150,31 +151,44 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.5" data-path="troubleshooting.html"><a href="troubleshooting.html"><i class="fa fa-check"></i><b>2.5</b> Troubleshooting</a></li>
 <li class="chapter" data-level="2.6" data-path="install-external-programs-dcm2niix-freesurfer-fsl-afni.html"><a href="install-external-programs-dcm2niix-freesurfer-fsl-afni.html"><i class="fa fa-check"></i><b>2.6</b> Install external programs (<code>dcm2niix</code>, <code>FreeSurfer</code>, <code>FSL</code>, <code>AFNI</code>)</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="get-started.html"><a href="get-started.html"><i class="fa fa-check"></i><b>3</b> Get Started</a><ul>
+<li class="chapter" data-level="3" data-path="get-started.html"><a href="get-started.html"><i class="fa fa-check"></i><b>3</b> Get Started</a>
+<ul>
 <li class="chapter" data-level="3.1" data-path="overview-of-rave-structure.html"><a href="overview-of-rave-structure.html"><i class="fa fa-check"></i><b>3.1</b> Overview of RAVE Structure</a></li>
 <li class="chapter" data-level="3.2" data-path="starting-and-closing-rave.html"><a href="starting-and-closing-rave.html"><i class="fa fa-check"></i><b>3.2</b> Starting and Closing RAVE</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="get-data-into-rave.html"><a href="get-data-into-rave.html"><i class="fa fa-check"></i><b>4</b> Get Data into RAVE</a><ul>
+<li class="chapter" data-level="4" data-path="get-data-into-rave.html"><a href="get-data-into-rave.html"><i class="fa fa-check"></i><b>4</b> Get Data into RAVE</a>
+<ul>
 <li class="chapter" data-level="4.1" data-path="file-hierarchy-and-specification.html"><a href="file-hierarchy-and-specification.html"><i class="fa fa-check"></i><b>4.1</b> File hierarchy and specification</a></li>
-<li class="chapter" data-level="4.2" data-path="overview-voltage-data.html"><a href="overview-voltage-data.html"><i class="fa fa-check"></i><b>4.2</b> Overview: Voltage data</a><ul>
+<li class="chapter" data-level="4.2" data-path="overview-voltage-data.html"><a href="overview-voltage-data.html"><i class="fa fa-check"></i><b>4.2</b> Overview: Voltage data</a>
+<ul>
 <li class="chapter" data-level="4.2.1" data-path="overview-voltage-data.html"><a href="overview-voltage-data.html#format-1"><i class="fa fa-check"></i><b>4.2.1</b> Format 1</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="importing-your-own-data.html"><a href="importing-your-own-data.html"><i class="fa fa-check"></i><b>4.3</b> Importing Your Own Data</a><ul>
-<li class="chapter" data-level="4.3.1" data-path="importing-your-own-data.html"><a href="importing-your-own-data.html#organizing-your-directories"><i class="fa fa-check"></i><b>4.3.1</b> Organizing Your Directories</a></li>
+<li class="chapter" data-level="4.3" data-path="importing-demo-data.html"><a href="importing-demo-data.html"><i class="fa fa-check"></i><b>4.3</b> Importing demo data</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="importing-demo-data.html"><a href="importing-demo-data.html#step-1-select-subject"><i class="fa fa-check"></i><b>4.3.1</b> Step 1: Select Subject</a></li>
+<li class="chapter" data-level="4.3.2" data-path="importing-demo-data.html"><a href="importing-demo-data.html#step-2-select-project-or-create-new-one"><i class="fa fa-check"></i><b>4.3.2</b> Step 2: Select Project or Create New One</a></li>
+<li class="chapter" data-level="4.3.3" data-path="importing-demo-data.html"><a href="importing-demo-data.html#step-3-validate-data"><i class="fa fa-check"></i><b>4.3.3</b> Step 3: Validate Data</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="importing-your-own-data.html"><a href="importing-your-own-data.html"><i class="fa fa-check"></i><b>4.4</b> Importing Your Own Data</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="importing-your-own-data.html"><a href="importing-your-own-data.html#organizing-your-directories"><i class="fa fa-check"></i><b>4.4.1</b> Organizing Your Directories</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="preprocessing.html"><a href="preprocessing.html"><i class="fa fa-check"></i><b>5</b> Preprocessing</a><ul>
+<li class="chapter" data-level="5" data-path="preprocessing.html"><a href="preprocessing.html"><i class="fa fa-check"></i><b>5</b> Preprocessing</a>
+<ul>
 <li class="chapter" data-level="5.1" data-path="step-1-import-signals.html"><a href="step-1-import-signals.html"><i class="fa fa-check"></i><b>5.1</b> Step #1: Import Signals</a></li>
 <li class="chapter" data-level="5.2" data-path="step-2-notch-filter.html"><a href="step-2-notch-filter.html"><i class="fa fa-check"></i><b>5.2</b> Step #2: Notch Filter</a></li>
 <li class="chapter" data-level="5.3" data-path="step-3-wavelet.html"><a href="step-3-wavelet.html"><i class="fa fa-check"></i><b>5.3</b> Step #3: Wavelet</a></li>
 <li class="chapter" data-level="5.4" data-path="step-4-reference-channels.html"><a href="step-4-reference-channels.html"><i class="fa fa-check"></i><b>5.4</b> Step #4: Reference Channels</a></li>
-<li class="chapter" data-level="5.5" data-path="surface-electrodes.html"><a href="surface-electrodes.html"><i class="fa fa-check"></i><b>5.5</b> Surface &amp; Electrodes</a><ul>
+<li class="chapter" data-level="5.5" data-path="surface-electrodes.html"><a href="surface-electrodes.html"><i class="fa fa-check"></i><b>5.5</b> Surface &amp; Electrodes</a>
+<ul>
 <li class="chapter" data-level="5.5.1" data-path="surface-electrodes.html"><a href="surface-electrodes.html#reconstruction-coregistration"><i class="fa fa-check"></i><b>5.5.1</b> Reconstruction &amp; Coregistration</a></li>
 <li class="chapter" data-level="5.5.2" data-path="surface-electrodes.html"><a href="surface-electrodes.html#electrode-localization"><i class="fa fa-check"></i><b>5.5.2</b> Electrode Localization</a></li>
 </ul></li>
 <li class="chapter" data-level="5.6" data-path="generate-epoch.html"><a href="generate-epoch.html"><i class="fa fa-check"></i><b>5.6</b> Generate Epoch</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="qas.html"><a href="qas.html"><i class="fa fa-check"></i><b>6</b> Q&amp;As</a><ul>
+<li class="chapter" data-level="6" data-path="qas.html"><a href="qas.html"><i class="fa fa-check"></i><b>6</b> Q&amp;As</a>
+<ul>
 <li class="chapter" data-level="6.1" data-path="rave-installation.html"><a href="rave-installation.html"><i class="fa fa-check"></i><b>6.1</b> RAVE Installation</a></li>
 <li class="chapter" data-level="6.2" data-path="external-program-installation-dcm2niix-freesurfer-fslafni.html"><a href="external-program-installation-dcm2niix-freesurfer-fslafni.html"><i class="fa fa-check"></i><b>6.2</b> External Program Installation (dcm2niix, FreeSurfer, FSL/AFNI)</a></li>
 <li class="chapter" data-level="6.3" data-path="getting-started-with-rave.html"><a href="getting-started-with-rave.html"><i class="fa fa-check"></i><b>6.3</b> Getting Started with RAVE</a></li>
@@ -202,7 +216,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="wavelet" class="section level2 hasAnchor">
+<div id="wavelet" class="section level2 hasAnchor" number="6.7">
 <h2><span class="header-section-number">6.7</span> Wavelet<a href="wavelet.html#wavelet" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <blockquote>
 <p><strong>Question:</strong> What does wavelet transformation actually entail?</p>
