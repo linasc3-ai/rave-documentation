@@ -48,3 +48,5 @@ rave-installation
 external-program-installation-dcm2niix-freesurfer-fslafni
 reconstruction-coregistration
 reconstruction-coregistration-1
+supplementary-information
+d-viewer

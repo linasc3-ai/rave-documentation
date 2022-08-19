@@ -1,5 +1,4 @@
 # Preprocessing 
-<!-- will merge with 03 import data section that is already written--> 
 
 The following steps will walk through the preprocessing of the raw iEEG signal data so that it can optimally be used in future analysis modules. The corresponding modules are:
 
@@ -11,14 +10,10 @@ The following steps will walk through the preprocessing of the raw iEEG signal d
 
 (These can be done after, in any order:)
 
-* Surface Registration Localization
+* Registration & Coregistration & Electrode Localization 
 * Generate Epoch  
 
 ## Step #1: Import Signals 
-<!-- not sure what would be the best name for these headers yet; want to imply the first four are sequential --> 
-<!-- need to specify what type of data is being imported -- iEEG recording info) --> 
-
-<!-- have labeled screenshot for each step similar to the one in 04-preprocessing--> 
 This step involves importing iEEG data into RAVE so that it can be preprocessed and used in future modules.
 
 **Step 1.1:** Select project & subject
@@ -72,15 +67,11 @@ AC power grid in US is 60 Hz, issue is the EEG recording equipment will pick up 
 <!-- how do you create notch filter? probably put brief explanation here and then have a question in Q&A where they can learn more with any outside links. "The easiest is to create a notch filter, which basically involves taking the FFT of the signal, zeroing out the Fourier coefficients at/around 50 Hz (best to use gentle slopes to minimize introducing artifacts resulting from sharp edges), then taking the inverse FFT."--> 
 <!-- "calculation of multiples of a base frequency" -- why do you need to do multiples? --> 
 
-**What is a notch filter?** A notch filter blocks a given frequency or a narrow range of frequencies (aka a "bandwidth") from a signal without affecting the rest of that signal. It is often used to minimize line noise interference in raw iEEG data, which helps ensure that future analyses only consider actual brain data. A common source of this interference is the amplifier used in recording set-ups to convert electrode signals into a form readable by the computer. This interference is commonly introduced at 60 Hz, since that is the standard frequency used in the North American electrical grid system. 
-
-To apply the notch filter, RAVE performs a fast fourier transform (FFT) of the signal. To learn more about FFT, visit the Q&A section at [Notch Filter](#notch-filter).
+Note: To learn more about what a notch filter is, visit the Q&A section at [Notch Filter](#notch-filter). 
 
 <!-- https://terpconnect.umd.edu/~toh/spectrum/FourierFilter.html, https://towardsdatascience.com/fast-fourier-transform-937926e591cb --> 
 
 To apply the notch filter to your data, follow the steps below. 
-
-<!-- clarify block --> 
 
 Begin in the **Data Selection** window to <u> specify which data to perform the notch filter on </u>. Use the drop down to indicate the desired project and subject. Note that pressing the **Sync from [Import LFP] module** link will automatically select the project and subject that was just imported in the Import Signals module. 
 
@@ -151,11 +142,7 @@ After selecting the "Load Subject" button, a new screen will load with two panel
 
 ![Sample Wavelet Decomposition Screen](static/image/Wavelet.png)
 
-Wavelet decomposition is a type of time frequency analysis that is used for non-stationary signals (i.e. properties change over time), like that of iEEG. It separates the signal into differing frequency and phase components, which is helpful because signals in the brain are very dynamic. This process makes it so that changes in the signal's power spectra can be visualized across both frequency and time. 
-
-To learn more about how wavelet transform works, visit the Q&A at [Wavelet](#wavelet).
-
-<!-- in Q&A compare to time analysis --> 
+Note: To learn more about how wavelet transform works, visit the Q&A at [Wavelet](#wavelet).
 
 In this module, RAVE will: 
 - downsample the signal before running the wavelet, if desired 
@@ -164,12 +151,9 @@ In this module, RAVE will:
 
 **Wavelet Settings:** 
 
-<!-- why did you remove option to select electrodes like old version --> 
 Begin by setting the basic configurations: 
 
 * <u>Power sample rate</u> refers to the rate at which the signal will be taken into time frequency decomposition. By default, it is recommended to keep this set to the default 100 Hz; this balances the data so that precision is conserved without taking up too much space on the disk. Typically, this value should only be increased if neural signals will be analyzed at very high frequencies. (**Note:** this is _not_ the same as the signaling rate used in the iEEG recording set-up. For further explanation, see the Q&A at [Wavelet](#wavelet).)
-
-<!-- double check above definition. wasn't sure best way to explain it -->
 
 <!-- explain default; is this the same as the sample rate set in importing signals? --> 
 
@@ -376,9 +360,7 @@ Once finished, the 3D viewer screen will automatically appear, with two panels: 
 ![Electrode Localization 3D Viewer Screen](static/image/electrodelocalization2.png)
 Notice that the right panel contains the **3D Viewer,** which consists of the subject's reconstructed brain model shown in black/white and their electrodes shown in green. Use the computer's mousepad to zoom in and out of the model. 
 
-Begin in the **Localization Plan Details** panel on the left, which displays the groups created on the previous screen. Begin by selecting a group to localize its electrodes. A table will appear with a row for each electrode in the group and columns specifying each electrode's label, tkrRAS location, MNI152, and FSLabel. 
-
-tkrRAS is a surface coordinate system used by FreeSurfer, where R orients toward the right direction, A orients toward the anterior direction, and S orients toward the superior direction. By default, these values will be set to 0,0,0. MNI152 is a volumetric coordinate system derived from averaging 152 individuals' MRI scans. By default, these values will be empty. (To learn more about these coordinate systems, visit the Q&A at [Electrode Localization](#electrode-localization-1).) FSLabel represents the anatomical location of the electrode. By default, these values will be empty. 
+Begin in the **Localization Plan Details** panel on the left, which displays the groups created on the previous screen. Begin by selecting a group to localize its electrodes. A table will appear with a row for each electrode in the group and columns specifying each electrode's label, tkrRAS coordinates, MNI152 coordinates, and FSLabel. By default, these values will be empty. (To learn more about these fields, visit the Q&A at [Electrode Localization](#electrode-localization-1).)
 
 Now, click on the **Show/Hide Localization Instructions** button at the bottom of the panel to **receive specific instructions on how to use the 3D viewer to localize the selected group's electrodes.** Generally speaking, steps will consist of: 
 
@@ -394,7 +376,7 @@ Now, click on the **Show/Hide Localization Instructions** button at the bottom o
 
 Double-click on a row in the table to open a drop-down menu to set the **FreeSurfer label** of each electrode. RAVE can automatically select the anatomical region of the brain that the electrode is located in, or it can be selected manually. 
 
-> Note: each electrode's MNI152 coordinates are hyperlinked to Neurosynth, a platform for fMRI data. The link contains data on past maps, studies, and associations that have been associated with the electrode's coordinates. 
+> Note: each electrode's MNI152 coordinates are hyperlinked to Neurosynth, a platform for fMRI data. 
 
 Use the blue **Reset current group** button above the table to completely reset the coordinate and label data in the table. 
 
@@ -406,114 +388,7 @@ See the following screenshot for guidance on what electrode localization can loo
 
 ![Electrode Localization Example](static/image/electrodelocalization3.png)
 
-It may be helpful to **adjust 3D viewer settings** to more easily localize electrodes. There are various settings for the viewer that can be changed using the black box on the right side of the panel: 
-
-**Default Settings:** 
-
-* <u> Background color: </u> change the background color of the viewer. 
-
-* <u> Record (chrome-on): </u> clicking here will start recording the 3D viewer and clicking again will stop the recording. A video in the .webm format will automatically download to the computer. This feature can be used to generate a video of the localization process. 
-
-* <u> Screenshot: </u> click here to take a screenshot of the current image in the 3D viewer. A .pdf file containing the image will automatically download to the computer. 
-
-* <u> Reset: </u> reset the brain model to its default position.  
-
-* <u> Camera position: </u> use the drop-down to change the view of the brain from the default `free rotate ` (change orientation freely by dragging the cursor) to `[lock]` (preserve current orientation), `right`, `left`, `anterior`, `posterior`, `superior`, or `inferior`.   
-
-* <u> Display coordinates: </u> enabling this checkbox will display the tkRAS coordinate plane in the bottom left corner of the viewer. 
-
-**Volume Settings:** 
-
-These settings control aspects of the view of the 3D model and the CT overlay. 
-
-<!-- add beginning sentence --> 
-
-* <u> Show Panels: </u> Enable this checkbox to simultaneously display the coronal, axial, and sagittal views of the brain. For each viewer, click anywhere on the brain to automatically adjust the other viewers to visualize that position. Clicking the `P` button will lock the viewer so that clicking on the brain will not readjust the other viewers' positions. Note also that the `+` and `-` buttons can be used to zoom in and out of each viewer and the `0` button will reset the zoom back to default. Note that dragging the grey bar at the top of each view box can move the box elsewhere on the panel, and dragging the grey triangle at the bottom right corner will expand the box size. 
-
-* <u> Reset Position: </u> If the Show Panels checkbox is enabled, clicking this button will reset all three plane viewers (coronal, axial, and sagittal) to their default positions. 
-
-* Use <u> Coronal, Axial, and Sagittal </u> sliders to quickly adjust the positions of the planes on the main and individual viewers. Moving the coronal slider from left to right will move that plane from the posterior to anterior end of the brain, respectively. Moving the axial slider from left to right will move that plane from the inferior to superior end of the brain, respectively. Moving the sagittal slider will move that plane from the left to right end of the brain, respectively. For each slider, a coordinte can also be entered manually to set the plane position. By default, each slider is set to 0. Note that keyboard shortcuts are shown in grey next to each slider. 
-
-* <u> Intersect MNI305: </u> displays the coordinates in the MNI305 space where the coronal, axial, and sagittal planes intersect. 
-
-* Use the <u> overlay coronal, axial, and sagittal checkboxes </u> to control whether each plane is visible on the main 3D viewer. By default, these are checked to show all three planes. 
-
-* <u> Dist. threshold: </u> 
-
-<!-- couldn't figure out what this does, didn't notice any changes on the 3D viewer when I played with it --> 
-
-* Use the <u> Voxel Type: </u> drop down menu to select which scan to overlay on the brain model in the 3D viewer. By default, this is set to `CT` indicating that the subject's CT is overlaid in green. 
-
-<!-- control which scan to overlay on the brain model in the 3D viewer. By default, this is set to **CT scan** and the details of the CT are displayed on the viewer in green. whether or not the subject's CT scan is visible on the 3D viewer. By default, this is set to `CT` indicating that the CT is overlaid in **green** on the subject's brain model.  
- -->  
-
-<!-- what does this do / why isn't MRI an option / isn't "voxel" a bit general/vague --> 
-
-* Use the <u> Voxel Display: </u> drop down menu to control whether or not the selected voxel type (i.e. CT) is visible or hidden on the 3D viewer. By default, it will be set to visible (`normal`). 
-
-* Use the <u> Voxel Opacity: </u> slider to control the opacity of the voxel type selected, from 0 (transparent) to 1 (opaque). Note that a value can also be entered manually. By default, this is set to 1. 
-
-<!-- add what is purpose of opacity slider; wouldn't you want it to be opaque --> 
-
-* Use the <u> Voxel Min </u> and <u> Voxel Max </u> sliders to adjust the threshold range for how much of the CT scan is visible on the 3D viewer. **Setting this range is important to ensure clear viewing of the electrodes for easy localization.** For example, reducing the minimum will display the skull on the 3D viewer. By default, the minimum is set to `3000` and the maximum is set to `3071` as these values provide a clear view of the electrodes with minimum interference from the rest of the CT image. 
-
-**Surface Settings:** 
-
-These settings control aspects of the 3D model of the subject's cortical surface.
-
-* Use the <u> Subject: </u> drop-down menu to easily switch between which subject's 3D brain model is displayed in the 3D viewer. 
-
-<!-- confused about this ... didn't we have to select subject on previous screen, so why do we have to select it again here? --> 
-
-* Surface Type: 
-
-* Use the <u> Surface Material: </u> drop down menu to select a material to visualize the subject's cortical surface. The materials, `MeshPhong` (default) and `MeshLambert`, differ in how they display lighting of the 3D brain model. (See the Q&A at [Electrode Localization](#electrode-localization) for more information on this difference.) 
-
-<!-- add more detail to differences? --> 
-
-* Use the <u> Left Hemisphere: </u> and <u> Right Hemisphere: </u> drop-down menus to set the visualization of each hemisphere as `normal` (complete, solid representation of cortical surface), `wireframe` (simplified, skeletal representation of cortical surface using lines), or `hidden` (hemisphere not displayed). By default, each hemisphere is set to `normal.` 
-
-* Use the <u> Left Opacity: </u> and <u> Right Opacity: </u> sliders to control the opacity of each hemisphere, from 0 (hemisphere not displayed) to 1 (hemisphere fully-rendered). Note that a value can also be entered manually. By default, each slider is set to 1. 
-
-* Use the <u> Surface Color: </u> drop-down menu to control how the color of the 3D brain model is rendered. By default, this is set to `vertices`, but other options include `sync from voxels` (note that selecting this will open two sliders for the `blend factor` and `sigma`, set to 0.4 and 3 by default), `sync from electrodes` (note that in addition to blend factor and sigma, a `decay` slider will also be displayed, set to 0.15 by default), or `none` (no color rendering on model). (See the Q&A at [Electrode Localization](#electrode-localization-1) for more information on the differences between these color-rendering methods.)  
-
-<!-- add more detail to surface color to explain how the different methods are used, or go to Q&A. ask about differences in this --> 
-
-**Electrodes:** 
-
-* The <u> Map Electrodes: </u> checkbox controls whether or not electrodes are mapped to the brain surface. By default, this is unchecked. If the box is checked, a `surface mapping` drop-down menu will appear to select the surface to map the electrodes to (options: std.141, mni305, or no mapping) and `volume mapping` to alternatively select the volume to display the electrodes in if surface mapping isn't used (options: mni305 or no mapping). 
-
-<!-- clarify what map electrodes does --> 
-
-* Use the <u> Visibility: </u> drop-down menu to control which localized electrodes are visible in the 3D viewer. The default setting is `all visible`, meaning all of a subject's electrodes are shown on the viewer. `Hide inactives` will hide electrodes from groups that aren't currently being worked on. `Hidden` will hide all electrodes.  
-
-**Electrode Localization:** 
-
-* By default, the <u> Edit mode </u> drop-down menu is set to `disabled.` Change edit mode to `CT/volume` (have CT scan) or `MRI Slice` (no CT scan) when ready to localize electrodes. Use `refine` if electrodes have already been localized and small changes are just being made to placements. 
-
-> Note: When `refine` mode is selected, three new buttons will appear: `Auto-Adjust All`, which can be used to automatically adjust the coordinates for the electrodes in a group to better fit their positions on the 3D viewer. If certain electrodes in the group were selected in refine mode (shown in red), click `Auto-Adjust` highlighted to  automatically re-adjust just the selected electrodes. Click `Reset Highlighted` to de-select all red electrodes in the group.  
-
-* Use the <u> Electrode scale: </u> slider to control the size of the yellow circles that represent localized electrodes. Use the <u> Text scale </u> slider to control the size of the numbers used to label each circle. 
-
-* Enable/Disable Electrodes: 
-
-<!-- what does electrode in light yellow mean --> 
-
-* When hovering over or localizing an electrode in the 3D viewer, the <u> tkrRAS, MNI305, and T1 RAS </u> locations will automatically be shown in these fields. 
-
-* Use the <u> Interpolate Size: </u> field to quickly localize electrodes by inputting the total number of electrodes - 2 for the current group, if the first and last electrode in the group have already been localized. Then, press <u> Interpolate from Recently Added </u> to have RAVE automatically localize the remaining electrodes in the group. 
-
-<!-- clarify that they have to be in a line? --> 
-
-* Use the <u> Download as CSV: </u> button to download a .csv file for the group whose electrodes are currently being localized. The file will contain coordinates and FsLabels for each electrode in the group, similar to the information shown in the table on Localization Plan Details panel.  
-
-**Data Visualization:** 
-
-* Enable the <u> Highlight Box </u> checkbox to automatically add a red box around a currently selected electrode. This box can help with viewing an electrode against the brain surface, or for demonstrative purposes. 
-
-* Enable the <u> Info Text </u> checkbox to label the 3D viewer in the top-right corner with the subject ID, as well as the currently selected electrode's label and MNI305 coordinates. This can be helpful for demonstrative purposes.
-
-> Note: To view keyboard shortcuts for all of these settings, visit [the RAVE Github repository](https://github.com/dipterix/threeBrain/blob/master/shortcuts.md#3d-brain-viewer-shortcuts)
+It may be helpful to **adjust 3D viewer settings** to more easily localize electrodes. There are various settings for the viewer that can be changed using the black box on the right side of the panel. To understand these settings, visit the Q&A at [3D Viewer](#d-viewer).)
 
 **When electrodes in every group have been localized, you are ready to proceed to further analysis modules!**  
 
