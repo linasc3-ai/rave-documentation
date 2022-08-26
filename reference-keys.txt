@@ -2,11 +2,11 @@ introduction
 installation-guide
 system-prerequisites
 macos
+install-external-programs-dcm2niix-freesurfer-fsl-afni
 install-rave
 download-demo-data
 upgrade-rave
 troubleshooting
-install-external-programs-dcm2niix-freesurfer-fsl-afni
 get-started
 overview-of-rave-structure
 starting-and-closing-rave

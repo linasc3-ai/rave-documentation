@@ -23,7 +23,7 @@
 <meta name="author" content="" />
 
 
-<meta name="date" content="2022-08-19" />
+<meta name="date" content="2022-08-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -143,12 +143,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2" data-path="installation-guide.html"><a href="installation-guide.html"><i class="fa fa-check"></i><b>2</b> Installation Guide</a><ul>
 <li class="chapter" data-level="2.1" data-path="system-prerequisites.html"><a href="system-prerequisites.html"><i class="fa fa-check"></i><b>2.1</b> System Prerequisites</a><ul>
 <li class="chapter" data-level="2.1.1" data-path="system-prerequisites.html"><a href="system-prerequisites.html#macos"><i class="fa fa-check"></i><b>2.1.1</b> MacOS</a></li>
+<li class="chapter" data-level="2.1.2" data-path="system-prerequisites.html"><a href="system-prerequisites.html#install-external-programs-dcm2niix-freesurfer-fsl-afni"><i class="fa fa-check"></i><b>2.1.2</b> Install external programs (<code>dcm2niix</code>, <code>FreeSurfer</code>, <code>FSL</code>, <code>AFNI</code>)</a></li>
 </ul></li>
 <li class="chapter" data-level="2.2" data-path="install-rave.html"><a href="install-rave.html"><i class="fa fa-check"></i><b>2.2</b> Install RAVE</a></li>
 <li class="chapter" data-level="2.3" data-path="download-demo-data.html"><a href="download-demo-data.html"><i class="fa fa-check"></i><b>2.3</b> Download demo data</a></li>
 <li class="chapter" data-level="2.4" data-path="upgrade-rave.html"><a href="upgrade-rave.html"><i class="fa fa-check"></i><b>2.4</b> Upgrade RAVE</a></li>
 <li class="chapter" data-level="2.5" data-path="troubleshooting.html"><a href="troubleshooting.html"><i class="fa fa-check"></i><b>2.5</b> Troubleshooting</a></li>
-<li class="chapter" data-level="2.6" data-path="install-external-programs-dcm2niix-freesurfer-fsl-afni.html"><a href="install-external-programs-dcm2niix-freesurfer-fsl-afni.html"><i class="fa fa-check"></i><b>2.6</b> Install external programs (<code>dcm2niix</code>, <code>FreeSurfer</code>, <code>FSL</code>, <code>AFNI</code>)</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="get-started.html"><a href="get-started.html"><i class="fa fa-check"></i><b>3</b> Get Started</a><ul>
 <li class="chapter" data-level="3.1" data-path="overview-of-rave-structure.html"><a href="overview-of-rave-structure.html"><i class="fa fa-check"></i><b>3.1</b> Overview of RAVE Structure</a></li>
@@ -227,11 +227,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>If this is the first time installing Homebrew, the following questions might be prompted:</p>
 <pre><code>==&gt; Checking for `sudo` access (which may request your password)...
 Password:</code></pre>
-<p>Enter your user’s password (<em>the password won’t be displayed into the screen as you type for security reasons</em>). Once finished, press the <code>RETURN</code> or <code>ENTER</code> key to proceed.</p>
+<p>Enter your user’s password (<em>the password won’t be displayed into the screen as you type for security reasons</em>). Once finished, press the <code>RETURN</code> or <code>ENTER</code> key to proceed. After, the following message should display:</p>
 <pre><code>==&gt; This script will install:
 ... 
 Press RETURN/ENTER to continue or any other key to abort:</code></pre>
-<p>Please press the <code>RETURN</code> or <code>ENTER</code> key to continue.</p>
+<p>Please press the <code>RETURN</code> or <code>ENTER</code> key to continue. Note that this process can take several minutes.</p>
 <p><span class="font-5 underline strong">[STEP 2: Add command “brew” to system search path]</span></p>
 <p>The terminal commands used to add homebrew to the path depend on your computer’s CPU chip. Copy and paste the appropriate command lines into the terminal based on your computer’s chip type. If you don’t know the CPU type, click the <code></code> icon on the top-right, and choose <code>About This Mac</code>.</p>
 <ul>
@@ -267,6 +267,27 @@ Press RETURN/ENTER to continue or any other key to abort:</code></pre>
 <img src="static/image/RStudioScreenshot.png" alt="" />
 <p class="caption">Screenshot of <a href="https://www.rstudio.com/products/rstudio/download/">RStudio download site</a></p>
 </div>
+</div>
+<div id="install-external-programs-dcm2niix-freesurfer-fsl-afni" class="section level3 hasAnchor">
+<h3><span class="header-section-number">2.1.2</span> Install external programs (<code>dcm2niix</code>, <code>FreeSurfer</code>, <code>FSL</code>, <code>AFNI</code>)<a href="system-prerequisites.html#install-external-programs-dcm2niix-freesurfer-fsl-afni" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The following external programs are used by RAVE in the Surface Reconstruction and Electrode Localization module, and so it is <strong>necessary</strong> to download them now.</p>
+<blockquote>
+<p>Note: If trying to download <code>FreeSurfer</code>, <code>FSL</code>, or <code>AFNI</code> on a Mac, it is necessary to download and install <code>Xquartz</code> release from <a href="https://www.xquartz.org" class="uri">https://www.xquartz.org</a>. Xquartz enables applications that were not designed for MacOS to still run on Mac computers.</p>
+</blockquote>
+<ol style="list-style-type: decimal">
+<li><p><code>dcm2niix</code>: A package used to convert DICOM image files into the <code>NifTi-1</code> file format. Visit the [GitHub repository] (<a href="https://github.com/rordenlab/dcm2niix/blob/master/README.md#install" class="uri">https://github.com/rordenlab/dcm2niix/blob/master/README.md#install</a>). There are various ways to install based on the computer’s operating system.</p></li>
+<li><p><code>FreeSurfer</code>: A package used for the analysis and visualization of neuroimaging data. RAVE uses it to reconstruct cortical surfaces based on a subject’s MRI scan. Visit the <a href="https://surfer.nmr.mgh.harvard.edu/fswiki/rel7downloads"><code>FreeSurfer</code> wiki</a>. There are various ways to install based on the computer’s operating system.</p></li>
+</ol>
+<blockquote>
+<p>Note: When RAVE invokes FreeSurfer, an error may arise indicating that the FreeSurfer license file was not found. To avoid errors down the road, visit <a href="https://surfer.nmr.mgh.harvard.edu/fswiki/License" class="uri">https://surfer.nmr.mgh.harvard.edu/fswiki/License</a>. Follow the instructions to fill out a form requesting the <strong>free license key,</strong> recieve a license.txt file via email, and then place that file in the appropriate folder.</p>
+</blockquote>
+<ol start="3" style="list-style-type: decimal">
+<li><code>FSL</code> OR <code>ANFI</code>: <code>FSL</code> is a library used for the analysis of fMRI, MRI, and DTI brain images. <code>ANFI</code> (Analysis of Functional NeuroImages) is a software used for the analysis and display of MRI data. Pick either one to download; RAVE will use the selected program to align a CT scan to a MRI image.</li>
+</ol>
+<ul>
+<li><p><code>FSL</code>: Visit the <a href="https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FslInstallation"><code>FSL</code> Website</a>. Fill out the form to request a <strong>FSL license</strong> and specify the computer’s operating system. Instructions will then be given for the selected system. Pay particular attention to any notes given in the instructions (e.g. administrative privileges, Mac Monterey users).</p></li>
+<li><p><code>AFNI</code>: Visit the <a href="https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/background_install/main_toc.html"><code>AFNI</code> Website</a>. Select the appropriate link based on the computer’s operating system. In the resulting download guide, please skip over steps to install Homebrew and R as installing RAVE already necessitated doing so. (The most important step is “Install AFNI”.) When following the final step, “Evaluating Setup,” any warnings regarding an old X version, login shell, matplotlib, or insufficient data for AFNI bootcamp can be ignored as RAVE does not require these configurations.</p></li>
+</ul>
 </div>
 </div>
             </section>

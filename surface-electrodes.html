@@ -23,7 +23,7 @@
 <meta name="author" content="" />
 
 
-<meta name="date" content="2022-08-19" />
+<meta name="date" content="2022-08-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -143,12 +143,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2" data-path="installation-guide.html"><a href="installation-guide.html"><i class="fa fa-check"></i><b>2</b> Installation Guide</a><ul>
 <li class="chapter" data-level="2.1" data-path="system-prerequisites.html"><a href="system-prerequisites.html"><i class="fa fa-check"></i><b>2.1</b> System Prerequisites</a><ul>
 <li class="chapter" data-level="2.1.1" data-path="system-prerequisites.html"><a href="system-prerequisites.html#macos"><i class="fa fa-check"></i><b>2.1.1</b> MacOS</a></li>
+<li class="chapter" data-level="2.1.2" data-path="system-prerequisites.html"><a href="system-prerequisites.html#install-external-programs-dcm2niix-freesurfer-fsl-afni"><i class="fa fa-check"></i><b>2.1.2</b> Install external programs (<code>dcm2niix</code>, <code>FreeSurfer</code>, <code>FSL</code>, <code>AFNI</code>)</a></li>
 </ul></li>
 <li class="chapter" data-level="2.2" data-path="install-rave.html"><a href="install-rave.html"><i class="fa fa-check"></i><b>2.2</b> Install RAVE</a></li>
 <li class="chapter" data-level="2.3" data-path="download-demo-data.html"><a href="download-demo-data.html"><i class="fa fa-check"></i><b>2.3</b> Download demo data</a></li>
 <li class="chapter" data-level="2.4" data-path="upgrade-rave.html"><a href="upgrade-rave.html"><i class="fa fa-check"></i><b>2.4</b> Upgrade RAVE</a></li>
 <li class="chapter" data-level="2.5" data-path="troubleshooting.html"><a href="troubleshooting.html"><i class="fa fa-check"></i><b>2.5</b> Troubleshooting</a></li>
-<li class="chapter" data-level="2.6" data-path="install-external-programs-dcm2niix-freesurfer-fsl-afni.html"><a href="install-external-programs-dcm2niix-freesurfer-fsl-afni.html"><i class="fa fa-check"></i><b>2.6</b> Install external programs (<code>dcm2niix</code>, <code>FreeSurfer</code>, <code>FSL</code>, <code>AFNI</code>)</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="get-started.html"><a href="get-started.html"><i class="fa fa-check"></i><b>3</b> Get Started</a><ul>
 <li class="chapter" data-level="3.1" data-path="overview-of-rave-structure.html"><a href="overview-of-rave-structure.html"><i class="fa fa-check"></i><b>3.1</b> Overview of RAVE Structure</a></li>
@@ -232,7 +232,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Then, proceed to the command-line settings panel.</p>
 <!-- if you select a nii file, then it doesn't need to be converted to nifti format, so does RAVE just skip the dcm2niix command? -->
 <p><strong>Command-line settings</strong>:</p>
-<p>The following steps will involve the computer’s <u> command-line interface. </u> (On Mac, this refers to the Terminal. On Windows, it refers to Command Prompt.) RAVE requires the use of the external programs <code>dcm2niix</code> and <code>FreeSurfer</code>, and then either <code>FSL</code> or <code>AFNI.</code> This panel simply confirms whether the programs were downloaded by displaying the location of the program on the computer. If the file path is <strong>not</strong> automatically filled in for <code>dcm2niix</code>, <code>FreeSurfer</code>, and your choice of <code>FSL</code> or <code>AFNI</code>, please return to the installation guide at <a href="install-external-programs-dcm2niix-freesurfer-fsl-afni.html#install-external-programs-dcm2niix-freesurfer-fsl-afni">Install External Programs</a> and follow the steps to download the missing software. Descriptions of what these programs do are also available in the installation guide.</p>
+<p>The following steps will involve the computer’s <u> command-line interface. </u> (On Mac, this refers to the Terminal. On Windows, it refers to Command Prompt.) RAVE requires the use of the external programs <code>dcm2niix</code> and <code>FreeSurfer</code>, and then either <code>FSL</code> or <code>AFNI.</code> This panel simply confirms whether the programs were downloaded by displaying the location of the program on the computer. If the file path is <strong>not</strong> automatically filled in for <code>dcm2niix</code>, <code>FreeSurfer</code>, and your choice of <code>FSL</code> or <code>AFNI</code>, please return to the installation guide at <a href="system-prerequisites.html#install-external-programs-dcm2niix-freesurfer-fsl-afni">Install External Programs</a> and follow the steps to download the missing software. Descriptions of what these programs do are also available in the installation guide.</p>
 <p>Now, click the blue <strong>Check data and command-line tools</strong> button. A pop-up will appear confirming the MRI/CT inputs and what tasks will be completed using the external programs. Please also pay attention to any warnings that will be listed (e.g. if RAVE can not find FSL-flirt, if there is an existing <code>FreeSurfer</code> reconstruction for a subject). In particular, warnings that say “the script will fail/error” should <strong>not</strong> be ignored, as that indicates some tasks will can not be completed. (For help resolving common warnings, visit the Q&amp;A at <a href="qas.html#reconstruction-coregistration-1">Reconstruction &amp; Coregistration</a>.) When ready, hit “proceed”.</p>
 <p>The following screen will appear, with four panels: Subject Information, Import DICOM Images, Surface Reconstruction, and Co-Registration CT to T1. Refer to the following screenshot for guidance.</p>
 <div class="figure">
