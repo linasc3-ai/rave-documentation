@@ -208,11 +208,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="data-tools" class="section level2 hasAnchor">
 <h2><span class="header-section-number">5.7</span> Data Tools<a href="data-tools.html#data-tools" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This optional module provides the ability to <strong>perform a check for integrity of a given subject’s preprocessed data</strong>, as well as the ability to convert data from the newer version (2.0) of RAVE to a format compatible with the older version (1.0).</p>
-<p>Begin in the Data Selection window to indicate the subject and corresponding project whose data will be checked. Once again, selecting <code>Sync from [Import LFP] module</code> will automatically select the project and subject that was just imported.</p>
+<p>Begin in the Data Selection window to indicate the subject and corresponding project whose data will be checked. Once again, selecting <code>Sync from [Import LFP] module</code> will automatically select the project and subject that was just imported. The following screen should appear:</p>
+<div class="figure">
+<img src="static/image/datatools.png" alt="" />
+<p class="caption">Data Tools Screen</p>
+</div>
 <p>Proceed to the <strong>Data Integrity Check</strong> panel at the top of the window. First, select the subject’s <strong>data version,</strong> i.e. whether their data was preprocessed in the newer RAVE version (2.0) or older version (1.0).</p>
 <p>Then, indicate the <strong>validation mode</strong> which controls how comprehensive the data validation will be. The <code>basic</code> check will only look over small files, such as the configurations saved in the subject’s <code>preprocess</code> folder, or the electrode csv saved in the subject’s <code>meta</code> folder. The <code>normal</code> or <code>full</code> check takes longer, as it also reviews large data and will indicate whether there are broken or obselete files.</p>
 <p>When ready, click the blue <strong>Check Data</strong> button.</p>
 <p>The panel will expand to indicate the fields checked and whether or not they are valid. <strong>Any check that was failed will be highlighted in purple, along with an explanation of what went wrong.</strong> Checks that passed will be written in grey.</p>
+<p><img src="static/image/datacheck.png" alt="Data Check Screen" />
+In the <strong>Backwards compatibility</strong> panel below the Data integrity panel, there is the ability to convert the subject’s data from the newer RAVE (2.0) format, to be compatible with the older version of RAVE (1.0). Simply select the blue <strong>Make this subject RAVE 1.0 compatible</strong> button if desired. A pop-up will appear indicating that the conversion is in process, with progress bars in the lower right corner of the screen. The process takes a few seconds and is finished when the pop-up indicates the conversion is done.</p>
 
 </div>
 <!-- </div> -->
