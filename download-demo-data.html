@@ -168,9 +168,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.2" data-path="step-2-notch-filter.html"><a href="step-2-notch-filter.html"><i class="fa fa-check"></i><b>5.2</b> Step #2: Notch Filter</a></li>
 <li class="chapter" data-level="5.3" data-path="step-3-wavelet.html"><a href="step-3-wavelet.html"><i class="fa fa-check"></i><b>5.3</b> Step #3: Wavelet</a></li>
 <li class="chapter" data-level="5.4" data-path="step-4-reference-channels.html"><a href="step-4-reference-channels.html"><i class="fa fa-check"></i><b>5.4</b> Step #4: Reference Channels</a></li>
-<li class="chapter" data-level="5.5" data-path="surface-electrodes.html"><a href="surface-electrodes.html"><i class="fa fa-check"></i><b>5.5</b> Surface &amp; Electrodes</a><ul>
-<li class="chapter" data-level="5.5.1" data-path="surface-electrodes.html"><a href="surface-electrodes.html#reconstruction-coregistration"><i class="fa fa-check"></i><b>5.5.1</b> Reconstruction &amp; Coregistration</a></li>
-<li class="chapter" data-level="5.5.2" data-path="surface-electrodes.html"><a href="surface-electrodes.html#electrode-localization"><i class="fa fa-check"></i><b>5.5.2</b> Electrode Localization</a></li>
+<li class="chapter" data-level="5.5" data-path="steps-5-6-surface-electrodes.html"><a href="steps-5-6-surface-electrodes.html"><i class="fa fa-check"></i><b>5.5</b> Steps #5-6: Surface &amp; Electrodes</a><ul>
+<li class="chapter" data-level="5.5.1" data-path="steps-5-6-surface-electrodes.html"><a href="steps-5-6-surface-electrodes.html#step-5-reconstruction-coregistration"><i class="fa fa-check"></i><b>5.5.1</b> Step #5: Reconstruction &amp; Coregistration</a></li>
+<li class="chapter" data-level="5.5.2" data-path="steps-5-6-surface-electrodes.html"><a href="steps-5-6-surface-electrodes.html#step-6-electrode-localization"><i class="fa fa-check"></i><b>5.5.2</b> Step #6: Electrode Localization</a></li>
 </ul></li>
 <li class="chapter" data-level="5.6" data-path="generate-epoch.html"><a href="generate-epoch.html"><i class="fa fa-check"></i><b>5.6</b> Generate Epoch</a></li>
 </ul></li>
@@ -182,8 +182,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.1.4" data-path="qas.html"><a href="qas.html#importing-data"><i class="fa fa-check"></i><b>6.1.4</b> Importing Data</a></li>
 <li class="chapter" data-level="6.1.5" data-path="qas.html"><a href="qas.html#notch-filter"><i class="fa fa-check"></i><b>6.1.5</b> Notch Filter</a></li>
 <li class="chapter" data-level="6.1.6" data-path="qas.html"><a href="qas.html#wavelet"><i class="fa fa-check"></i><b>6.1.6</b> Wavelet</a></li>
-<li class="chapter" data-level="6.1.7" data-path="qas.html"><a href="qas.html#reconstruction-coregistration-1"><i class="fa fa-check"></i><b>6.1.7</b> Reconstruction &amp; Coregistration</a></li>
-<li class="chapter" data-level="6.1.8" data-path="qas.html"><a href="qas.html#electrode-localization-1"><i class="fa fa-check"></i><b>6.1.8</b> Electrode Localization</a></li>
+<li class="chapter" data-level="6.1.7" data-path="qas.html"><a href="qas.html#reconstruction-coregistration"><i class="fa fa-check"></i><b>6.1.7</b> Reconstruction &amp; Coregistration</a></li>
+<li class="chapter" data-level="6.1.8" data-path="qas.html"><a href="qas.html#electrode-localization"><i class="fa fa-check"></i><b>6.1.8</b> Electrode Localization</a></li>
 </ul></li>
 <li class="chapter" data-level="6.2" data-path="d-viewer.html"><a href="d-viewer.html"><i class="fa fa-check"></i><b>6.2</b> 3D Viewer</a></li>
 </ul></li>
@@ -206,7 +206,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="download-demo-data" class="section level2 hasAnchor">
 <h2><span class="header-section-number">2.3</span> Download demo data<a href="download-demo-data.html#download-demo-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Before importing lab data, to gain familiarity it is recommended to try RAVE’s demo data in various modules. By default, RAVE already has a DemoSubject whose raw data has already been imported. <!-- Double check this, I don't remember what it looked like at default. --> However, you can also download other demo subjects by copying and pasting the following command into the RStudio console:</p>
+<blockquote>
+<p>Note: data can not be installed while RAVE is running. Please click the red stop sign in the top right of the console to close the server before following the steps below.</p>
+</blockquote>
+<p>To gain familiarity with RAVE, it is recommended to try the built-in demo data in various modules. By default, RAVE already has a DemoSubject whose raw data has already been imported. However, you can also download other demo subjects by copying and pasting the following command into the RStudio console:</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="download-demo-data.html#cb11-1"></a>rave<span class="op">::</span><span class="kw">download_sample_data</span>(<span class="st">&quot;subject_code&quot;</span>)</span></code></pre></div>
 <p>Substitute “subject_code” with one of the available demo subjects: <code>KC</code>, <code>YAB</code>, <code>YAD</code>, <code>YAF</code>, <code>YAH</code>, <code>YAI</code>, <code>YAJ</code>, and <code>YAK</code>.</p>
 <p>For example, to download subject YAB, use the following command:</p>
@@ -216,7 +219,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <img src="static/image/DemoDownloadImage.png" alt="" />
 <p class="caption">Screenshot of location of downloaded demo data</p>
 </div>
-<p>Proceed to the “importing demo data” instructions to load your newly downloaded raw data into RAVE for cleaning.</p>
 </div>
             </section>
 

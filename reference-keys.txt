@@ -21,9 +21,9 @@ step-1-import-signals
 step-2-notch-filter
 step-3-wavelet
 step-4-reference-channels
-surface-electrodes
-reconstruction-coregistration
-electrode-localization
+steps-5-6-surface-electrodes
+step-5-reconstruction-coregistration
+step-6-electrode-localization
 generate-epoch
 supplementary-information
 qas
@@ -33,6 +33,6 @@ getting-started-with-rave
 importing-data
 notch-filter
 wavelet
-reconstruction-coregistration-1
-electrode-localization-1
+reconstruction-coregistration
+electrode-localization
 d-viewer
