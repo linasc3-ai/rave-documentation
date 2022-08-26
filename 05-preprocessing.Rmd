@@ -443,3 +443,17 @@ Two checkboxes: Difference Plot & Absolute Plot
 To **download the staged table,** click the blue link in the bottom right corner of the panel. Note that the file will be saved to the subject's meta folder within the 
 
 <!-- no error message when you try to load subject but it doesn't work ... what is wrong? --> 
+
+## Data Tools 
+
+This optional module provides the ability to **perform a check for integrity of a given subject's preprocessed data**, as well as the ability to convert data from the newer version (2.0) of RAVE to a format compatible with the older version (1.0). 
+
+Begin in the Data Selection window to indicate the subject and corresponding project whose data will be checked. Once again, selecting `Sync from [Import LFP] module` will automatically select the project and subject that was just imported. 
+
+Proceed to the **Data Integrity Check** panel at the top of the window. First, select the subject's **data version,** i.e. whether their data was preprocessed in the newer RAVE version (2.0) or older version (1.0). 
+
+Then, indicate the **validation mode** which controls how comprehensive the data validation will be. The `basic` check will only look over small files, such as the configurations saved in the subject's `preprocess` folder, or the electrode csv saved in the subject's `meta` folder. The `normal` or `full` check takes longer, as it also reviews large data and will indicate whether there are broken or obselete files. 
+
+When ready, click the blue **Check Data** button. 
+
+The panel will expand to indicate the fields checked and whether or not they are valid. **Any check that was failed will be highlighted in purple, along with an explanation of what went wrong.** Checks that passed will be written in grey. 
