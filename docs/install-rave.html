@@ -180,10 +180,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.2" data-path="step-2-notch-filter.html"><a href="step-2-notch-filter.html"><i class="fa fa-check"></i><b>5.2</b> Step #2: Notch Filter</a></li>
 <li class="chapter" data-level="5.3" data-path="step-3-wavelet.html"><a href="step-3-wavelet.html"><i class="fa fa-check"></i><b>5.3</b> Step #3: Wavelet</a></li>
 <li class="chapter" data-level="5.4" data-path="step-4-reference-channels.html"><a href="step-4-reference-channels.html"><i class="fa fa-check"></i><b>5.4</b> Step #4: Reference Channels</a></li>
-<li class="chapter" data-level="5.5" data-path="surface-electrodes.html"><a href="surface-electrodes.html"><i class="fa fa-check"></i><b>5.5</b> Surface &amp; Electrodes</a>
+<li class="chapter" data-level="5.5" data-path="steps-5-6-surface-electrodes.html"><a href="steps-5-6-surface-electrodes.html"><i class="fa fa-check"></i><b>5.5</b> Steps #5-6: Surface &amp; Electrodes</a>
 <ul>
-<li class="chapter" data-level="5.5.1" data-path="surface-electrodes.html"><a href="surface-electrodes.html#reconstruction-coregistration"><i class="fa fa-check"></i><b>5.5.1</b> Reconstruction &amp; Coregistration</a></li>
-<li class="chapter" data-level="5.5.2" data-path="surface-electrodes.html"><a href="surface-electrodes.html#electrode-localization"><i class="fa fa-check"></i><b>5.5.2</b> Electrode Localization</a></li>
+<li class="chapter" data-level="5.5.1" data-path="steps-5-6-surface-electrodes.html"><a href="steps-5-6-surface-electrodes.html#step-5-reconstruction-coregistration"><i class="fa fa-check"></i><b>5.5.1</b> Step #5: Reconstruction &amp; Coregistration</a></li>
+<li class="chapter" data-level="5.5.2" data-path="steps-5-6-surface-electrodes.html"><a href="steps-5-6-surface-electrodes.html#step-6-electrode-localization"><i class="fa fa-check"></i><b>5.5.2</b> Step #6: Electrode Localization</a></li>
 </ul></li>
 <li class="chapter" data-level="5.6" data-path="generate-epoch.html"><a href="generate-epoch.html"><i class="fa fa-check"></i><b>5.6</b> Generate Epoch</a></li>
 </ul></li>
@@ -197,8 +197,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.1.4" data-path="qas.html"><a href="qas.html#importing-data"><i class="fa fa-check"></i><b>6.1.4</b> Importing Data</a></li>
 <li class="chapter" data-level="6.1.5" data-path="qas.html"><a href="qas.html#notch-filter"><i class="fa fa-check"></i><b>6.1.5</b> Notch Filter</a></li>
 <li class="chapter" data-level="6.1.6" data-path="qas.html"><a href="qas.html#wavelet"><i class="fa fa-check"></i><b>6.1.6</b> Wavelet</a></li>
-<li class="chapter" data-level="6.1.7" data-path="qas.html"><a href="qas.html#reconstruction-coregistration-1"><i class="fa fa-check"></i><b>6.1.7</b> Reconstruction &amp; Coregistration</a></li>
-<li class="chapter" data-level="6.1.8" data-path="qas.html"><a href="qas.html#electrode-localization-1"><i class="fa fa-check"></i><b>6.1.8</b> Electrode Localization</a></li>
+<li class="chapter" data-level="6.1.7" data-path="qas.html"><a href="qas.html#reconstruction-coregistration"><i class="fa fa-check"></i><b>6.1.7</b> Reconstruction &amp; Coregistration</a></li>
+<li class="chapter" data-level="6.1.8" data-path="qas.html"><a href="qas.html#electrode-localization"><i class="fa fa-check"></i><b>6.1.8</b> Electrode Localization</a></li>
 </ul></li>
 <li class="chapter" data-level="6.2" data-path="d-viewer.html"><a href="d-viewer.html"><i class="fa fa-check"></i><b>6.2</b> 3D Viewer</a></li>
 </ul></li>
@@ -227,17 +227,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>Step #1: Download and Configure</strong></p>
 <p>Open the RStudio application and click on the <em>Console</em> tab. If RStudio adopts the default settings, this tab should be located in bottom-left.</p>
 <blockquote>
-<p>Important: Please do NOT mix an R command with a shell command. When running R command, please open <code>RStudio</code> and use the <code>Console</code> tab to run. If you direct copy the R scripts into system shell terminals, the script will fail!</p>
+<p>Important: Please do NOT confuse an R command with a shell command. When running R command, please open <code>RStudio</code> and use the <code>Console</code> tab to run. If you direct copy the R scripts into system shell terminals, the script will fail!</p>
 </blockquote>
 <p>Copy and paste the following R command into the RStudio console to install RAVE and its dependencies from online repositories:</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="install-rave.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repos =</span> <span class="fu">c</span>(<span class="at">ropensci =</span> <span class="st">&#39;https://beauchamplab.r-universe.dev&#39;</span>, </span>
 <span id="cb7-2"><a href="install-rave.html#cb7-2" aria-hidden="true" tabindex="-1"></a>                  <span class="at">CRAN =</span> <span class="st">&#39;https://cloud.r-project.org&#39;</span>))</span>
 <span id="cb7-3"><a href="install-rave.html#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">&#39;rave&#39;</span>, <span class="st">&#39;ravebuiltins&#39;</span>, <span class="st">&#39;ravedash&#39;</span>))</span></code></pre></div>
-<p>Copy and paste the following command into the RStudio console to update RAVE to the latest version (with bug fixes and new features):</p>
+<p>Note that whenever you see a blue <code>&gt;</code> in the bottom left of the console, the entered code has finished running. Next, copy and paste the following command into the RStudio console to update RAVE to the latest version (with bug fixes and new features):</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="install-rave.html#cb8-1" aria-hidden="true" tabindex="-1"></a>rave<span class="sc">::</span><span class="fu">check_dependencies</span>(<span class="at">nightly =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
-<p>Execute the following R command to download extra data and templates:</p>
+<p>Finally, execute the following R command to download extra data and templates:</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="install-rave.html#cb9-1" aria-hidden="true" tabindex="-1"></a>rave<span class="sc">::</span><span class="fu">finalize_installation</span>(<span class="at">upgrade =</span> <span class="st">&#39;always&#39;</span>)</span></code></pre></div>
-<p>This finalizing step will download the following additional parts:</p>
+<p>Note that this step can take a few minutes and will download the following additional parts:</p>
 <ul>
 <li>Template brain: (<code>N27</code>, <code>fsaverage</code>) for group-level electrode template mapping</li>
 <li>Demo subject data: for demonstration purposes</li>

@@ -133,7 +133,7 @@ The following external programs are used by RAVE in the Surface Reconstruction a
 
 Open the RStudio application and click on the *Console* tab. If RStudio adopts the default settings, this tab should be located in bottom-left.
 
-> Important: Please do NOT mix an R command with a shell command. When running R command, please open `RStudio` and use the `Console` tab to run. If you direct copy the R scripts into system shell terminals, the script will fail!
+> Important: Please do NOT confuse an R command with a shell command. When running R command, please open `RStudio` and use the `Console` tab to run. If you direct copy the R scripts into system shell terminals, the script will fail!
 
 Copy and paste the following R command into the RStudio console to install RAVE and its dependencies from online repositories:
 
@@ -143,19 +143,19 @@ options(repos = c(ropensci = 'https://beauchamplab.r-universe.dev',
 install.packages(c('rave', 'ravebuiltins', 'ravedash'))
 ```
 
-Copy and paste the following command into the RStudio console to update RAVE to the latest version (with bug fixes and new features):
+Note that whenever you see a blue ` >` in the bottom left of the console, the entered code has finished running. Next, copy and paste the following command into the RStudio console to update RAVE to the latest version (with bug fixes and new features):
 
 ``` r
 rave::check_dependencies(nightly = TRUE)
 ```
 
-Execute the following R command to download extra data and templates:
+Finally, execute the following R command to download extra data and templates:
 
 ``` r
 rave::finalize_installation(upgrade = 'always')
 ```
 
-This finalizing step will download the following additional parts:
+Note that this step can take a few minutes and will download the following additional parts:
 
 -   Template brain: (`N27`, `fsaverage`) for group-level electrode template mapping
 -   Demo subject data: for demonstration purposes
@@ -187,7 +187,9 @@ Now that installation was completed, visit the following pages to start using RA
 
 ## Download demo data
 
-Before importing lab data, to gain familiarity it is recommended to try RAVE's demo data in various modules. By default, RAVE already has a DemoSubject whose raw data has already been imported. <!-- Double check this, I don't remember what it looked like at default. --> However, you can also download other demo subjects by copying and pasting the following command into the RStudio console:
+> Note: data can not be installed while RAVE is running. Please click the red stop sign in the top right of the console to close the server before following the steps below. 
+
+To gain familiarity with RAVE, it is recommended to try the built-in demo data in various modules. By default, RAVE already has a DemoSubject whose raw data has already been imported. However, you can also download other demo subjects by copying and pasting the following command into the RStudio console:
 
 ``` r
 rave::download_sample_data("subject_code")
@@ -205,11 +207,9 @@ Note that downloaded demo data will be stored in the `raw_dir` folder of the `ra
 
 ![Screenshot of location of downloaded demo data](static/image/DemoDownloadImage.png)
 
-Proceed to the "importing demo data" instructions to load your newly downloaded raw data into RAVE for cleaning.
-
 ## Upgrade RAVE {#upgrade-rave}
 
-RAVE is actively under development with new features and bug fixes. To enjoy the new features, RAVE has built-in function that allows to update itself directly from the following R command:
+RAVE is actively under development with new features and bug fixes. To enjoy the new features, RAVE has a built-in function to update itself when the following R command is entered into the console. Using this command regularly is recommended to ensure the newest version of RAVE is running. 
 
 ``` r
  rave::check_dependencies(nightly = TRUE)

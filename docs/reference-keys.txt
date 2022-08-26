@@ -50,3 +50,6 @@ reconstruction-coregistration
 reconstruction-coregistration-1
 supplementary-information
 d-viewer
+step-5-reconstruction-coregistration
+step-6-electrode-localization
+steps-5-6-surface-electrodes

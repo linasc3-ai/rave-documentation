@@ -210,15 +210,15 @@ Common average referencing
 
 After the four steps above have been completed, the remaining modules below can be done in any order: 
 
-## Surface & Electrodes
+## Steps #5-6: Surface & Electrodes
 
 The surface & electrodes section is composed of two modules: Reconstruction & Coregistration and Electrode Localization. 
 
 <!-- add sentence summarizing overall purpose/goal of surface & electrodes section --> 
 
-### Reconstruction & Coregistration
+### Step #5: Reconstruction & Coregistration
 
-The Reconstruction & Coregistration module has three main goals: import raw magnetic resonance (MR) and computerized tomography (CT) images into RAVE, reconstruct a model of the subject's cortical surface, and align the imported MRI & CT images. These tasks are important to ensure proper running of the Electrode Localization module. 
+The Reconstruction & Coregistration module has three main goals: import raw magnetic resonance (MR) and computerized tomography (CT) images into RAVE, reconstruct a model of the subject's cortical surface, and align the imported MRI & CT images. These tasks are **necessary** to ensure proper running of the Electrode Localization module. 
 
 There are two panels to note: Data settings and Command-line settings. Refer to the following screenshot for guidance. 
 
@@ -314,7 +314,7 @@ Click the black triangle on the bottom of the panel to display the commands. Onc
 
 Now, proceed to the electrode localization module to begin identifying electrodes! 
 
-### Electrode Localization
+### Step #6: Electrode Localization
 
 RAVE's electrode localization module features a built-in 3D viewer and allows for the quick and precise identification of where in the brain electrodes are located. The module is based on the co-registered image of the CT and MRI scans, as well as the reconstruction of the subject's cortical surface via the MRI scan. 
 
