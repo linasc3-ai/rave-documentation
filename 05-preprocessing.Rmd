@@ -448,7 +448,9 @@ To **download the staged table,** click the blue link in the bottom right corner
 
 This optional module provides the ability to **perform a check for integrity of a given subject's preprocessed data**, as well as the ability to convert data from the newer version (2.0) of RAVE to a format compatible with the older version (1.0). 
 
-Begin in the Data Selection window to indicate the subject and corresponding project whose data will be checked. Once again, selecting `Sync from [Import LFP] module` will automatically select the project and subject that was just imported. 
+Begin in the Data Selection window to indicate the subject and corresponding project whose data will be checked. Once again, selecting `Sync from [Import LFP] module` will automatically select the project and subject that was just imported. The following screen should appear: 
+
+![Data Tools Screen](static/image/datatools.png)
 
 Proceed to the **Data Integrity Check** panel at the top of the window. First, select the subject's **data version,** i.e. whether their data was preprocessed in the newer RAVE version (2.0) or older version (1.0). 
 
@@ -457,3 +459,6 @@ Then, indicate the **validation mode** which controls how comprehensive the data
 When ready, click the blue **Check Data** button. 
 
 The panel will expand to indicate the fields checked and whether or not they are valid. **Any check that was failed will be highlighted in purple, along with an explanation of what went wrong.** Checks that passed will be written in grey. 
+
+![Data Check Screen](static/image/datacheck.png)
+In the **Backwards compatibility** panel below the Data integrity panel, there is the ability to convert the subject's data from the newer RAVE (2.0) format, to be compatible with the older version of RAVE (1.0). Simply select the blue **Make this subject RAVE 1.0 compatible** button if desired. A pop-up will appear indicating that the conversion is in process, with progress bars in the lower right corner of the screen. The process takes a few seconds and is finished when the pop-up indicates the conversion is done. 
