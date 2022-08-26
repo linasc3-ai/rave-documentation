@@ -11,7 +11,7 @@ RAVE is written as an "R" package. To properly install RAVE, please carefully fo
 -   Minimal requirement: 4 CPU cores with 8 GB RAM
 -   Recommended: 8+ CPU with 32+ GB RAM
 
-[System Library Prerequisites]{.underline}
+[System Library Prerequisites]{.underline} 
 
 -   [MacOS](#macos)
 -   Windows
@@ -106,6 +106,24 @@ Download and install the **latest** version of R directly from the website: <htt
 Download and install RStudio Desktop directly from the website: <https://www.rstudio.com/products/rstudio/download/> Be sure to download the version that corresponds to the OS system. If RStudio is already downloaded, simply ensure it is updated to the *latest* version. Refer to the following screenshot for guidance.
 
 ![Screenshot of [RStudio download site](https://www.rstudio.com/products/rstudio/download/)](static/image/RStudioScreenshot.png)
+
+### Install external programs (`dcm2niix`, `FreeSurfer`, `FSL`, `AFNI`)
+
+The following external programs are used by RAVE in the Surface Reconstruction and Electrode Localization module, and so it is **necessary** to download them now.
+
+> Note: If trying to download `FreeSurfer`, `FSL`, or `AFNI` on a Mac, it is necessary to download and install `Xquartz` release from <https://www.xquartz.org>. Xquartz enables applications that were not designed for MacOS to still run on Mac computers.
+
+1. `dcm2niix`: A package used to convert DICOM image files into the `NifTi-1` file format. Visit the [GitHub repository] (<https://github.com/rordenlab/dcm2niix/blob/master/README.md#install>). There are various ways to install based on the computer's operating system.
+
+2. `FreeSurfer`: A package used for the analysis and visualization of neuroimaging data. RAVE uses it to reconstruct cortical surfaces based on a subject's MRI scan. Visit the [`FreeSurfer` wiki](https://surfer.nmr.mgh.harvard.edu/fswiki/rel7downloads). There are various ways to install based on the computer's operating system.
+
+> Note: When RAVE invokes FreeSurfer, an error may arise indicating that the FreeSurfer license file was not found. To avoid errors down the road, visit <https://surfer.nmr.mgh.harvard.edu/fswiki/License>. Follow the instructions to fill out a form requesting the **free license key,** recieve a license.txt file via email, and then place that file in the appropriate folder.
+
+3. `FSL` OR `ANFI`: `FSL` is a library used for the analysis of fMRI, MRI, and DTI brain images. `ANFI` (Analysis of Functional NeuroImages) is a software used for the analysis and display of MRI data. Pick either one to download; RAVE will use the selected program to align a CT scan to a MRI image.
+
+* `FSL`: Visit the [`FSL` Website](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FslInstallation). Fill out the form to request a **FSL license** and specify the computer's operating system. Instructions will then be given for the selected system. Pay particular attention to any notes given in the instructions (e.g. administrative privileges, Mac Monterey users).
+
+* `AFNI`: Visit the [`AFNI` Website](https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/background_install/main_toc.html). Select the appropriate link based on the computer's operating system. In the resulting download guide, please skip over steps to install Homebrew and R as installing RAVE already necessitated doing so. (The most important step is "Install AFNI".) When following the final step, "Evaluating Setup," any warnings regarding an old X version, login shell, matplotlib, or insufficient data for AFNI bootcamp can be ignored as RAVE does not require these configurations.
 
 ## Install RAVE
 
@@ -226,21 +244,3 @@ brew tap homebrew/core
 ```
 -->
 ````
-
-## Install external programs (`dcm2niix`, `FreeSurfer`, `FSL`, `AFNI`)
-
-The following external programs are used by RAVE in the Surface Reconstruction and Electrode Localization module, and so it is helpful to download them now.
-
-> Note: If trying to download `FreeSurfer`, `FSL`, or `AFNI` on a Mac, it is necessary to download and install `Xquartz` release from <https://www.xquartz.org>. Xquartz enables applications that were not designed for MacOS to still run on Mac computers.
-
-1. `dcm2niix`: A package used to convert DICOM image files into the `NifTi-1` file format. Visit the [GitHub repository] (<https://github.com/rordenlab/dcm2niix/blob/master/README.md#install>). There are various ways to install based on the computer's operating system.
-
-2. `FreeSurfer`: A package used for the analysis and visualization of neuroimaging data. RAVE uses it to reconstruct cortical surfaces based on a subject's MRI scan. Visit the [`FreeSurfer` wiki](https://surfer.nmr.mgh.harvard.edu/fswiki/rel7downloads). There are various ways to install based on the computer's operating system.
-
-> Note: When RAVE invokes FreeSurfer, an error may arise indicating that the FreeSurfer license file was not found. To avoid errors down the road, visit <https://surfer.nmr.mgh.harvard.edu/fswiki/License>. Follow the instructions to fill out a form requesting the **free license key,** recieve a license.txt file via email, and then place that file in the appropriate folder.
-
-3. `FSL` OR `ANFI`: `FSL` is a library used for the analysis of fMRI, MRI, and DTI brain images. `ANFI` (Analysis of Functional NeuroImages) is a software used for the analysis and display of MRI data. Pick either one to download; RAVE will use the selected program to align a CT scan to a MRI image.
-
-* `FSL`: Visit the [`FSL` Website](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FslInstallation). Fill out the form to request a **FSL license** and specify the computer's operating system. Instructions will then be given for the selected system. Pay particular attention to any notes given in the instructions (e.g. administrative privileges, Mac Monterey users).
-
-* `AFNI`: Visit the [`AFNI` Website](https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/background_install/main_toc.html). Select the appropriate link based on the computer's operating system. In the resulting download guide, please skip over steps to install Homebrew and R as installing RAVE already necessitated doing so. (The most important step is "Install AFNI".) When following the final step, "Evaluating Setup," any warnings regarding an old X version, login shell, matplotlib, or insufficient data for AFNI bootcamp can be ignored as RAVE does not require these configurations.
