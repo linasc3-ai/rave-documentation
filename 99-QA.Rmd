@@ -167,7 +167,11 @@ Answer: FSLabel represents the anatomical location of the electrode.
 
 > **Question:** What is Neurosynth? 
 
-Answer: Neurosynth is a platform for fMRI data. In the localization plan table, a given electrode's MNI152 coordinates will be hyperlinked here. The link contains data on past maps, studies, and associations that have been associated with the electrode's coordinates. 
+Answer: Neurosynth is a platform for fMRI data. In the localization plan table, a given electrode's MNI152 coordinates will be hyperlinked here. The link contains data on past maps, studies, and associations that have been associated with the electrode's coordinates.
+
+> **Question:** How do I re-localize an electrode? 
+
+Answer: If edit mode on the 3D viewer is set to CT/Volume, click on the electrode whose position will be changed in the localization plan table. A link will pop-up below the table. Click it, and a white pop-up will appear on the 3D viewer indicating that re-localization mode is active. Simply click on the desired new location for the electrode to adjust the localization. To exit this mode, click the x on the window. If re-localization was requested by mistake, click the link in the white pop-up window. 
 
 ## 3D Viewer
 
