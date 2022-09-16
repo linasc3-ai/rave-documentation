@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>5.5 Steps #5-6: Surface &amp; Electrodes | RAVE Documentation</title>
   <meta name="description" content="RAVE documentation" />
-  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
   <meta property="og:title" content="5.5 Steps #5-6: Surface &amp; Electrodes | RAVE Documentation" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="" />
 
 
-<meta name="date" content="2022-08-26" />
+<meta name="date" content="2022-09-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -308,25 +308,45 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>When the groups are ready, click the blue <strong>Load Subject</strong> button to proceed. If there are any errors, a pop-up will appear indicating the error and a recommended fix (e.g. “invalid CT file. Please specify or upload your own.”) If there are no errors, a “loading in progress” pop-up will appear indicating that the coregistered file and 3D viewer are being loaded. This process can take a few minutes.</p>
 <p>Once finished, the 3D viewer screen will automatically appear, with two panels: Localization Plan Details and Interactive 3D Viewer. Refer to the following screenshot for guidance:</p>
 <p><img src="static/image/electrodelocalization2.png" alt="Electrode Localization 3D Viewer Screen" />
-Notice that the right panel contains the <strong>3D Viewer,</strong> which consists of the subject’s reconstructed brain model shown in black/white and their electrodes shown in green. Use the computer’s mousepad to zoom in and out of the model.</p>
+Notice that the right panel contains the <strong>3D Viewer,</strong> which consists of the subject’s reconstructed brain model shown in black/white and their electrodes shown in <strong>green</strong>. Use the computer’s mousepad to zoom in and out of the model. <strong>It is necessary to wait for the brain model to load on the viewer panel (which may take a few minutes) before proceeding.</strong></p>
 <p>Begin in the <strong>Localization Plan Details</strong> panel on the left, which displays the groups created on the previous screen. Begin by selecting a group to localize its electrodes. A table will appear with a row for each electrode in the group and columns specifying each electrode’s label, tkrRAS coordinates, MNI152 coordinates, and FSLabel. By default, these values will be empty. (To learn more about these fields, visit the Q&amp;A at <a href="#electrode-localization-1">Electrode Localization</a>.)</p>
-<p>Now, click on the <strong>Show/Hide Localization Instructions</strong> button at the bottom of the panel to <strong>receive specific instructions on how to use the 3D viewer to localize the selected group’s electrodes.</strong> Generally speaking, steps will consist of:</p>
+<p>Now, click on the <strong>Show/Hide Localization Instructions</strong> button at the bottom of the panel to <strong>receive specific instructions on how to use the 3D viewer to localize the selected group’s electrodes.</strong></p>
+<p>Steps consist of:</p>
 <ol style="list-style-type: decimal">
 <li><p>In the Electrode Localization settings on the 3D viewer, change <code>Edit Mode</code> from disabled to <code>CT/Volume</code> if the subject’s CT scan is available, or <code>MRI slice</code> if no CT is available.</p></li>
-<li><p><strong>Double click</strong> on the green spot that represents the first electrode of the group. This will mark the spot with a yellow circle labeled “1,” as well as automatically update the tkrRAS and MNI152 coordinate locations of this electrode in the table. Repeat this step for the last electrode of the group.</p></li>
-<li><p>In the Electrode Localization settings on the 3D viewer, change <code>Interpolate Size</code> to the total number of electrodes - 2.</p></li>
-<li><p>In the Electrode Localization settings on the 3D viewer, click <code>Interpolate from Recently Added</code> for RAVE to automatically localize the remaining electrodes in the group. Notice that these electrodes will be labeled on the 3D viewer with yellow circles and coordinate locations will automatically be filled in on the table.</p></li>
+<li><p>In the Volume settings on the 3D viewer, adjust the <code>voxel min</code> and <code>voxel max</code> values to modify the visibility of the juxtaposed CT scan. (Lowering the voxel min can expose more electrodes, while raising it can help remove non-electrode components of the scan from view.) The goal is to have a threshold at which the electrodes are clearly visible.</p></li>
+<li><p>If desired, use the <code>left hemisphere</code> and <code>right hemisphere</code> drop-down menus in surface settings (or corresponding keyboard shortcuts <code>[</code> and <code>]</code>) to adjust the view of the brain surface. Use the <code>left opacity</code> and <code>right opacity</code> sliders to control the opacity of each hemisphere.</p></li>
+<li><p><strong>Double click</strong> on the green dot that represents the electrode of the group that is <strong>deepest within the brain</strong>. This will mark the spot with a yellow circle labeled “1,” as well as automatically update the tkrRAS and MNI152 coordinate locations of this electrode in the table.</p></li>
+<li><p>Count from this first electrode to the last electrode in the shaft to ensure the total number of electrodes in the group are visible on the viewer. If this is the case, double click on the last electrode to localize it.</p></li>
 </ol>
-<p>(To <strong>refine the electrode locations,</strong> set <code>Edit Mode</code> to “refine” and then press the <code>Auto-Adjust All</code> button. Alternatively, manually select a single electrode. It will turn red and the keyboard keys <code>1</code>, <code>2</code>, and <code>3</code> can then be used to move the electrode around.)</p>
-<p>Double-click on a row in the table to open a drop-down menu to set the <strong>FreeSurfer label</strong> of each electrode. RAVE can automatically select the anatomical region of the brain that the electrode is located in, or it can be selected manually.</p>
+<blockquote>
+<p>Note: If the number of electrodes visible on the viewer for this group is not the correct amount, please adjust the voxel min and max threshold in Volume settings. For example, since electrodes should be evenly spaced within a shaft, if a large gap is visible on the 3D viewer, then lower the threshold to expose the potential electrode that should be in that gap. Likewise, if some other artefact from the scan is still visible, raising the threshold can help remove it from view.</p>
+</blockquote>
+<blockquote>
+<p>Note on <strong>removing an electrode localization</strong>: To remove a localized electrode, click on that electrode in the localization plan table (the row will then be highlighted blue). Below the table, click on the link that reads: “To re-localize this electrode, click here”. A white pop-up window will appear on the 3D viewer to indicate that this undo mode is still active (if re-localization is no longer needed, click the link in the window). Click the correct location on the 3D viewer to move the selected electrode there. To exit this mode when finished, simply click the x in the window.</p>
+</blockquote>
+<ol start="5" style="list-style-type: decimal">
+<li><p>In the Electrode Localization settings on the 3D viewer, change <code>Interpolate Size</code> to the total number of electrodes subtracted by 2.</p></li>
+<li><p>In the Electrode Localization settings on the 3D viewer, click <code>Interpolate from Recently Added</code> for RAVE to automatically localize the remaining, in-between electrodes in the group. Notice that these electrodes will be labeled on the 3D viewer with yellow circles and coordinate locations will automatically be filled in on the table.</p></li>
+<li><p>If the localized electrodes appear not well-aligned with their actual positions on the viewer, change the <code>Edit Mode</code> to <code>Refine</code> in the Electrode Localization settings of the viewer. Then click the <code>Auto-Adjust All</code> button, which will automatically adjust the positions of all localized electrodes to better align with the center of the actual electrodes on the scan.</p></li>
+</ol>
+<p>Alternatively, double click on any electrode while in edit mode (it will turn red to indicate such) and use the 1, 2, and 3 keys on the keyboard to individually move a localized electrode’s position. These keyboard shortcuts correspond to RAS coordinates: 1 moves the electrode to the right, shift+1 moves it to the left, etc (2 = anterior, shift+2 = posterior, 3 = superior, shift+3 = inferior).</p>
+<ol start="8" style="list-style-type: decimal">
+<li><p>When the localization of electrodes in a group is finished, click the <code>Stage and Show Electrode Table</code> at the bottom of the screen. A window will appear displaying the data within the table. Click dismiss to save the data to an “electrodes_unsaved.CSV” file in the subject’s <code>meta</code> folder within the home directory.</p></li>
+<li><p>Repeat this process for all electrode groups for the subject.</p></li>
+<li><p>When all electrodes in every group are localized, click <code>Stage and Show Electrode Table</code> again, then click <code>Save to Subject</code>. This will save an <code>electrodes.csv</code> file in the subject’s <code>meta</code> folder, with the complete electrode data.</p></li>
+</ol>
+<p>Additional notes on the localization table:</p>
+<ul>
+<li>Double-click on a row in the table to open a drop-down menu to set the <strong>FreeSurfer label</strong> of each electrode. RAVE can automatically select the anatomical region of the brain that the electrode is located in, or it can be selected manually.</li>
+</ul>
 <blockquote>
 <p>Note: each electrode’s MNI152 coordinates are hyperlinked to Neurosynth, a platform for fMRI data.</p>
 </blockquote>
-<p>Use the blue <strong>Reset current group</strong> button above the table to completely reset the coordinate and label data in the table.</p>
-<p>Repeat the localization steps for each group. When finished, to see all of the subject’s electrodes in one table, click the <strong>Stage &amp; Show Electrode Table</strong> button in the bottom left corner of the screen. Click <strong>Save to Subject</strong> button to save this data for use in later RAVE sessions.</p>
-<blockquote>
-<p>Note: Adjust groups at any time (without losing electrode localization progress) by selecting the “Load Data” button in the top menu bar.</p>
-</blockquote>
+<ul>
+<li><p>Use the blue <strong>Reset current group</strong> button above the table to completely reset the coordinate and label data in the table.</p></li>
+<li><p>Adjust groups at any time (without losing electrode localization progress) by selecting the “Load Data” button in the top menu bar.</p></li>
+</ul>
 <p>See the following screenshot for guidance on what electrode localization can look like.</p>
 <div class="figure">
 <img src="static/image/electrodelocalization3.png" alt="" />
